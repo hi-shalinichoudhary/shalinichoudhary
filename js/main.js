@@ -156,7 +156,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
   	/------------------------------------------------------*/
 		$(".testimonial-carousel.owl-carousel").owlCarousel({
 			loop: true,
-			margin: 30,
+			margin: 10,
 			nav: false,
 			dots: true,
 			autoplay: false,
@@ -171,7 +171,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 					items: 2,
 				},
 				1000: {
-					items: 2,
+					items: 3,
 				},
 			},
 		});
