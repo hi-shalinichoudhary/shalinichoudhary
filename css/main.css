@@ -3442,5 +3442,8 @@ body.absolute_header .breadcrumb_area {
 	height: 35px;
 	border-radius: 50%;
 }
-
+.owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled { display: block;}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot { font-size: 50px;}
+.owl-carousel .owl-next { position: absolute; right: 0;}
+.owl-carousel .owl-prev { position: absolute; left: 0;}
 /* END: Modal CSS */
