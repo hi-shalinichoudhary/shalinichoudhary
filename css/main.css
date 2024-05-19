@@ -477,6 +477,10 @@ body.loaded {
 	z-index: 20;
 }
 
+.tj-single__post ul.bulletpointers { list-style: circle; }
+.tj-single__post ul.bulletpointers li {  }
+.tj-single__post ul.bulletpointers li::before { Content:""; background:#000; height:5px; width:5px; top:9px; }
+
 .load-text span {
 	-webkit-animation: loading 1s infinite alternate;
 	animation: loading 1s infinite alternate;
