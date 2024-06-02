@@ -1185,7 +1185,7 @@ body.loaded {
 	columns: 2;
 }
 .service_details_content .service_info ul li {
-	display: block;
+	display: block; background: url("../images/bullets.png") no-repeat 0 10px;
 	font-size: 16px;
 	color: var(--tj-theme-accent-1);
 	font-weight: var(--tj-fw-medium);
@@ -1193,15 +1193,6 @@ body.loaded {
 	z-index: 1;
 	padding-left: 22px;
 	margin-bottom: 5px;
-}
-.service_details_content .service_info ul li::before {
-	content: "\f00c";
-	font-family: var(--tj-ff-fontawesome);
-	font-weight: var(--tj-fw-medium);
-	color: var(--tj-theme-primary);
-	position: absolute;
-	left: 0;
-	top: 0;
 }
 /* END: Services Section */
 
@@ -3447,7 +3438,7 @@ body.absolute_header .breadcrumb_area {
 	border-radius: 50%;
 }
 .owl-carousel .owl-dots.disabled, .owl-carousel .owl-nav.disabled { display: block;}
-.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot { font-size: 50px;}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot { font-size: 50px; top: 25%;}
 .owl-carousel .owl-next { position: absolute; right: 0;}
 .owl-carousel .owl-prev { position: absolute; left: 0;}
 /* END: Modal CSS */
