@@ -3440,3 +3440,9 @@ body.absolute_header .breadcrumb_area {
 .owl-carousel .owl-next { position: absolute; right: 0;}
 .owl-carousel .owl-prev { position: absolute; left: 0;}
 /* END: Modal CSS */
+
+@media only screen and (max-width: 600px) {
+.hero-content-box {
+    padding: 0 0 0 30px;
+}
+}
