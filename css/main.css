@@ -1501,9 +1501,7 @@ body.loaded {
 	overflow: hidden;
 }
 .popup_modal_img img {
-	height: 100%;
-	-o-object-fit: cover;
-	object-fit: cover;
+	
 }
 .popup_modal_content {
 	background-color: var(--tj-white);
