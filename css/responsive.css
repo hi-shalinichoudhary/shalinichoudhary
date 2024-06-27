@@ -910,7 +910,7 @@
 		padding-bottom: 60px;
 	}
 	.tj-single__post .tj-post__thumb img {
-		min-height: 250px;
+	
 		object-fit: cover;
 	}
 	.tj-single__post p {
