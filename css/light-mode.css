@@ -364,6 +364,8 @@ body.light-mode {
 	.light-mode .tj-header-area .header-menu ul li a {
 		color: var(--tj-white);
 	}
+	.light-mode.inner-page .tj-header-area.header-sticky .header-menu ul li a {color: var(--tj-white);
+	}
 }
 
 
@@ -372,5 +374,8 @@ body.light-mode {
 @media only screen and (max-width: 767px) {
 	.light-mode .tj-header-area .header-menu ul li a {
 		color: var(--tj-white);
+	}
+	
+	.light-mode.inner-page .tj-header-area.header-sticky .header-menu ul li a {color: var(--tj-white);
 	}
 }
