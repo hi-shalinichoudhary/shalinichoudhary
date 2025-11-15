@@ -1,13 +1,193 @@
+/*
+    Custom CSS for Shalini Choudhary SEO Portfolio
+    Theme: High-Contrast Minimalist Grid
+    Font: Inter
+*/
+
+/* --- Base Styling and Typography --- */
+:root {
+    --color-primary: #000;
+    --color-background: #fff;
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevents horizontal scroll bar due to floating elements */
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 900; 
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 3rem; margin-bottom: 40px; }
+h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
+
+/* --- Layout and Structure (THE DEFINING GRID) --- */
+
+/* Wrapper applies the main horizontal separator line */
+.section-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 1px solid var(--color-primary); /* The horizontal line */
+}
+
+/* Base class for creating a vertical 50/50 split */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.split-col {
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+/* The vertical divider line is applied to the left column */
+.split-layout .col-left {
+    border-right: 1px solid var(--color-primary); /* The vertical line */
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.header-col {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+}
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.main-nav {
+    display: flex;
+    gap: 25px;
+    margin-left: auto;
+}
+
+/* --- Hero Section --- */
+.hero-layout {
+    min-height: 70vh;
+}
+.hero-image-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.1); /* Subtle design touch */
+}
+.sub-title {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.lead-text {
+    font-size: 1.2rem;
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* --- CTA Button Style --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-background) !important;
+    padding: 12px 30px;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.cta-button.small-btn {
+    padding: 8px 15px;
+    margin-top: 0;
+}
+
+/* --- Funfacts (Stats) --- */
+.funfacts-section {
+    padding-top: 0;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-primary); /* New line below stats */
+}
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-left: 1px solid var(--color-primary);
+}
+.stat-item {
+    border-right: 1px solid var(--color-primary);
+    padding: 30px 20px;
+    text-align: center;
+}
+.stat-number {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+.stat-label {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* --- Services & Portfolio Headers --- */
+.section-wrapper h2, .section-wrapper .section-description {
+    padding: 0 40px; /* Align content inside the grid boundaries */
+}
+.section-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+
 /* --- Accordion Style for Services (using <details> tag) --- */
 
 .service-grid {
-    /* Keep the grid setup */
+    /* Keeps the services in a neat grid row */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 1px; /* Use 1px gap for the grid line effect */
+    gap: 0; 
     border-top: 1px solid var(--color-primary);
-    border-left: 1px solid var(--color-primary); /* Left border for the grid container */
-    padding: 0; /* Remove padding from grid container to let items handle borders */
+    border-left: 1px solid var(--color-primary); 
+    padding: 0; 
 }
 
 .service-item-details {
@@ -25,6 +205,7 @@
     outline: none;
     user-select: none;
     position: relative;
+    /* Styles for the visible title area */
 }
 
 /* Hide the default triangle arrow */
@@ -35,7 +216,7 @@
     content: "";
 }
 
-/* Custom indicator for the click/expand state (e.g., a plus/minus sign or simple arrow) */
+/* Custom indicator for the click/expand state */
 .service-item-details summary::after {
     content: '+'; /* Plus sign when closed */
     position: absolute;
@@ -57,7 +238,7 @@
     background-color: #f7f7f7; /* Slight highlight when open */
 }
 
-/* Content Area Styling */
+/* Content Area Styling - Hiding the content initially */
 .service-content-detail {
     padding: 0 30px 30px 30px;
     border-top: 1px solid #ddd; /* Separator line for content */
@@ -78,11 +259,186 @@
 }
 
 .process-list {
-    list-style-type: square;
+    list-style-type: disc; /* Changed to disc for standard look */
     padding-left: 20px;
 }
 
 /* Ensure numbers and headers look right */
 .service-item-details h3 {
     margin-top: 10px;
+}
+
+
+/* --- Portfolio Grid Styles --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+    border-top: 1px solid var(--color-primary);
+}
+
+.portfolio-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.card-content-area {
+    padding: 20px;
+}
+.portfolio-link-btn {
+    display: block;
+    text-align: right;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+/* --- Experience Section --- */
+.experience-layout {
+    padding: 0;
+}
+.resume-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.resume-item:last-child {
+    border-bottom: none;
+}
+.resume-item .time {
+    font-weight: 700;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+.resume-item .institute {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px 40px;
+    border-top: 1px solid var(--color-primary);
+    text-align: center;
+}
+.skill-item img {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+/* --- Blog Section --- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+    border-top: 1px solid var(--color-primary);
+}
+.blog-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.blog-content-area {
+    padding: 20px;
+}
+.blog-meta-category {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+
+/* --- Contact Section --- */
+.contact-layout {
+    border-bottom: 1px solid var(--color-primary);
+}
+.contact-col-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.contact-detail-item h3 {
+    margin-bottom: 5px;
+}
+.contact-detail-item a, .contact-detail-item p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* --- Footer --- */
+.tj-footer-area {
+    padding: 30px 40px;
+    text-align: center;
+}
+.footer-nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.copyright {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    
+    /* STACKING THE GRID */
+    .split-layout {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    .split-layout .col-left {
+        border-right: none; /* Remove vertical line when stacked */
+        border-bottom: 1px solid var(--color-primary); /* Add horizontal line to separate stacked elements */
+    }
+    
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-col {
+        padding: 20px 20px;
+    }
+    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid, .blog-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* STACKING STATS */
+    .stat-grid {
+        grid-template-columns: 1fr;
+        border-right: none;
+        border-left: none;
+    }
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    .stat-item:last-child {
+        border-bottom: none;
+    }
 }
