@@ -1,0 +1,88 @@
+/* --- Accordion Style for Services (using <details> tag) --- */
+
+.service-grid {
+    /* Keep the grid setup */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1px; /* Use 1px gap for the grid line effect */
+    border-top: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary); /* Left border for the grid container */
+    padding: 0; /* Remove padding from grid container to let items handle borders */
+}
+
+.service-item-details {
+    border-right: 1px solid var(--color-primary); /* Vertical divider */
+    border-bottom: 1px solid var(--color-primary); /* Horizontal divider */
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for the summary (the clickable header) */
+.service-item-details summary {
+    display: block;
+    cursor: pointer;
+    padding: 30px;
+    outline: none;
+    user-select: none;
+    position: relative;
+}
+
+/* Hide the default triangle arrow */
+.service-item-details summary::-webkit-details-marker {
+    display: none;
+}
+.service-item-details summary::marker {
+    content: "";
+}
+
+/* Custom indicator for the click/expand state (e.g., a plus/minus sign or simple arrow) */
+.service-item-details summary::after {
+    content: '+'; /* Plus sign when closed */
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s;
+}
+
+/* Change icon when open */
+.service-item-details[open] > summary::after {
+    content: '—'; /* Minus sign when open */
+    transform: translateY(-50%);
+}
+
+.service-item-details[open] {
+    background-color: #f7f7f7; /* Slight highlight when open */
+}
+
+/* Content Area Styling */
+.service-content-detail {
+    padding: 0 30px 30px 30px;
+    border-top: 1px solid #ddd; /* Separator line for content */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease;
+}
+
+/* Show content when open */
+.service-item-details[open] .service-content-detail {
+    opacity: 1;
+    max-height: 1000px; /* Large enough value to accommodate content */
+}
+
+.process-title {
+    margin-top: 20px;
+}
+
+.process-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* Ensure numbers and headers look right */
+.service-item-details h3 {
+    margin-top: 10px;
+}
