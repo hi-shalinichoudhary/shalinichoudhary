@@ -1,15 +1,15 @@
 /*
     Custom CSS for Shalini Choudhary SEO Portfolio
     Theme: High-Contrast Minimalist Grid
-    Font: Inter
+    Font: Poppins
 */
 
 /* --- Base Styling and Typography --- */
 :root {
     --color-primary: #000;
     --color-background: #fff;
-    --font-heading: 'Inter', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: 'Poppins', sans-serif; /* Poppins for Headings */
+    --font-body: 'Poppins', sans-serif;    /* Poppins for Body Text */
 }
 
 * {
@@ -23,7 +23,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden; /* Prevents horizontal scroll bar due to floating elements */
+    overflow-x: hidden;
 }
 
 a {
@@ -259,7 +259,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 
 .process-list {
-    list-style-type: disc; /* Changed to disc for standard look */
+    list-style-type: disc;
     padding-left: 20px;
 }
 
