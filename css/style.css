@@ -181,20 +181,18 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 .stat-number {
     font-size: 3rem;
     margin-bottom: 5px;
+    /* Removed redundant font-size and margin-bottom from here */
 }
-/* Ensure the plus sign is aligned correctly for the counter effect */
 .stat-number {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Current size is 3rem, keeping it here for reference */
     font-size: 3rem; 
     margin-bottom: 5px;
 }
 .stat-number .plus-sign {
-    /* Push the plus sign slightly left to hug the number */
     margin-left: 2px;
-    font-size: 0.8em; /* Make it slightly smaller than the number */
+    font-size: 0.8em; 
 }
 .stat-label {
     margin: 0;
@@ -214,7 +212,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 /* --- Accordion Style for Services (using <details> tag) --- */
 
 .service-grid {
-    /* Removed minmax to rely solely on mobile stacking below 992px */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 0; 
@@ -362,19 +359,27 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     margin-bottom: 10px;
 }
 
-/* --- Blog Section --- */
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+/* --- Blog Section (FIXED FOR SWIPER) --- */
+
+.blog-archive-section { /* Assuming you use this class for the Blog Section wrapper */
+    padding-bottom: 0; /* Adjust padding for the carousel */
+}
+
+/* FIX: Added class for the new Swiper container */
+.blog-slider-container { 
     padding: 20px 40px;
     border-top: 1px solid var(--color-primary);
+    /* Swiper will handle the layout and gap */
 }
+
 .blog-card {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
+    /* Ensure the card does not inherit old flex/grid widths */
+    height: auto; 
 }
+
 .blog-image {
     width: 100%;
     height: 200px;
@@ -537,7 +542,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
         border-bottom: none;
     }
     
-    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid, .blog-grid {
+    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid, .blog-slider-container {
         padding-left: 20px;
         padding-right: 20px;
     }
