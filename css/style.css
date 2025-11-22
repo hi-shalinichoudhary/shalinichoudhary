@@ -361,24 +361,29 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
 /* --- Blog Section (FIXED FOR SWIPER) --- */
 
-.blog-archive-section { /* Assuming you use this class for the Blog Section wrapper */
-    padding-bottom: 0; /* Adjust padding for the carousel */
+.blog-archive-section {
+    padding-bottom: 0;
 }
 
 /* FIX: Added class for the new Swiper container */
 .blog-slider-container { 
     padding: 20px 40px;
     border-top: 1px solid var(--color-primary);
-    /* Swiper will handle the layout and gap */
 }
 
+/* FIX: Ensure the Swiper slide elements are allowed to shrink */
+.blog-slider-container .swiper-slide {
+    width: auto !important; 
+}
+
+/* Old styles kept for individual cards */
 .blog-card {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
-    /* Ensure the card does not inherit old flex/grid widths */
     height: auto; 
 }
+/* ... rest of your blog styles ... */
 
 .blog-image {
     width: 100%;
