@@ -81,34 +81,34 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 .main-header {
     padding-top: 0;
     padding-bottom: 0;
+    border-top: none; /* Removed redundant top border */
 }
-.header-col {
+
+/* FIX: New Container for Logo and Nav Alignment */
+.header-row {
     display: flex;
-    /* FIX: Ensures vertical alignment for logo and navigation */
-    align-items: center; 
-    /* NEW: Ensures content doesn't shrink or wrap unnecessarily, maintaining line integrity */
-    flex-wrap: nowrap; 
+    justify-content: space-between; /* Pushes logo left, navigation right */
+    align-items: center; /* CRITICAL: Vertically centers all contents on the line */
     padding: 20px 40px;
 }
 
-/* FIX: Logo Sizing and Constraining Image Height */
+/* Logo Sizing */
 .logo-image {
     max-width: 180px; 
     max-height: 40px; 
     height: auto;
     display: block;
-    /* NEW: Helps with vertical alignment within its flex container */
     vertical-align: middle; 
 }
 
-/* FIX: Navigation is Pushed to the Right and Vertically Aligned */
+/* Navigation Alignment (Simplified) */
 .main-nav {
     display: flex;
     gap: 25px;
-    margin-left: auto; /* CRITICAL: Pushes the navigation links to the far right */
-    align-items: center; /* Centers navigation links vertically within its column */
+    align-items: center; /* Ensures nav links themselves are centered */
 }
 
+/* NOTE: The .split-layout and .split-col classes remain for the rest of the page (Hero, Experience) */
 /* --- Hero Section --- */
 .hero-layout {
     min-height: 70vh;
