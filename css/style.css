@@ -8,8 +8,8 @@
 :root {
     --color-primary: #000;
     --color-background: #fff;
-    --font-heading: 'Poppins', sans-serif; /* Poppins for Headings */
-    --font-body: 'Poppins', sans-serif;    /* Poppins for Body Text */
+    --font-heading: 'Poppins', sans-serif; 
+    --font-body: 'Poppins', sans-serif;    
 }
 
 * {
@@ -37,13 +37,15 @@ a:hover {
 
 h1, h2, h3 {
     font-family: var(--font-heading);
+    /* Set to 700 (Bold) for lighter look */
     font-weight: 700; 
     line-height: 1.1;
     margin-top: 0;
     margin-bottom: 20px;
 }
 
-h1 { font-size: 3rem; }
+/* Reduced H1 size for better layout/flow */
+h1 { font-size: 3.5rem; } 
 h2 { font-size: 3rem; margin-bottom: 40px; }
 h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
@@ -56,7 +58,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     margin: 0 auto;
     padding-top: 50px;
     padding-bottom: 50px;
-    border-top: 1px solid var(--color-primary); /* The horizontal line */
+    border-top: 1px solid var(--color-primary);
 }
 
 /* Base class for creating a vertical 50/50 split */
@@ -72,7 +74,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
 /* The vertical divider line is applied to the left column */
 .split-layout .col-left {
-    border-right: 1px solid var(--color-primary); /* The vertical line */
+    border-right: 1px solid var(--color-primary);
 }
 
 /* --- Header & Navigation --- */
@@ -82,23 +84,24 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 .header-col {
     display: flex;
-    align-items: center;
+    /* FIX 1: Ensures vertical alignment for logo and navigation */
+    align-items: center; 
     padding: 20px 40px;
 }
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 900;
-}
+
+/* FIX 2: Logo Sizing and Constraining Image Height */
 .logo-image {
-    /* Adjust width as needed for your design. */
     max-width: 180px; 
+    max-height: 40px; /* Constrains the image height to prevent pushing the nav */
     height: auto;
     display: block;
 }
-}
+
+/* FIX 3: Navigation is Pushed to the Right */
 .main-nav {
     display: flex;
     gap: 25px;
+    margin-left: auto; /* CRITICAL: Pushes the navigation links to the far right */
 }
 
 /* --- Hero Section --- */
@@ -114,11 +117,12 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     max-width: 100%;
     height: auto;
     border-radius: 4px;
-    box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.1); /* Subtle design touch */
+    box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.1); 
 }
 .sub-title {
     display: block;
-    font-size: 1.5rem;
+    /* Updated font size for visibility */
+    font-size: 1.1rem; 
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -153,7 +157,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 .funfacts-section {
     padding-top: 0;
     padding-bottom: 40px;
-    border-bottom: 1px solid var(--color-primary); /* New line below stats */
+    border-bottom: 1px solid var(--color-primary); 
 }
 .stat-grid {
     display: grid;
@@ -176,7 +180,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
 /* --- Services & Portfolio Headers --- */
 .section-wrapper h2, .section-wrapper .section-description {
-    padding: 0 40px; /* Align content inside the grid boundaries */
+    padding: 0 40px;
 }
 .section-description {
     font-size: 1.1rem;
@@ -187,7 +191,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 /* --- Accordion Style for Services (using <details> tag) --- */
 
 .service-grid {
-    /* Keeps the services in a neat grid row */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 0; 
@@ -197,13 +200,12 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 
 .service-item-details {
-    border-right: 1px solid var(--color-primary); /* Vertical divider */
-    border-bottom: 1px solid var(--color-primary); /* Horizontal divider */
+    border-right: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
     padding: 0;
     transition: background-color 0.3s ease;
 }
 
-/* Style for the summary (the clickable header) */
 .service-item-details summary {
     display: block;
     cursor: pointer;
@@ -211,10 +213,8 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     outline: none;
     user-select: none;
     position: relative;
-    /* Styles for the visible title area */
 }
 
-/* Hide the default triangle arrow */
 .service-item-details summary::-webkit-details-marker {
     display: none;
 }
@@ -222,9 +222,8 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     content: "";
 }
 
-/* Custom indicator for the click/expand state */
 .service-item-details summary::after {
-    content: '+'; /* Plus sign when closed */
+    content: '+';
     position: absolute;
     right: 30px;
     top: 50%;
@@ -234,30 +233,27 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     transition: transform 0.3s;
 }
 
-/* Change icon when open */
 .service-item-details[open] > summary::after {
-    content: '—'; /* Minus sign when open */
+    content: '—';
     transform: translateY(-50%);
 }
 
 .service-item-details[open] {
-    background-color: #f7f7f7; /* Slight highlight when open */
+    background-color: #f7f7f7;
 }
 
-/* Content Area Styling - Hiding the content initially */
 .service-content-detail {
     padding: 0 30px 30px 30px;
-    border-top: 1px solid #ddd; /* Separator line for content */
+    border-top: 1px solid #ddd;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out, opacity 0.5s ease;
 }
 
-/* Show content when open */
 .service-item-details[open] .service-content-detail {
     opacity: 1;
-    max-height: 1000px; /* Large enough value to accommodate content */
+    max-height: 1000px;
 }
 
 .process-title {
@@ -269,7 +265,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     padding-left: 20px;
 }
 
-/* Ensure numbers and headers look right */
 .service-item-details h3 {
     margin-top: 10px;
 }
@@ -415,11 +410,11 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     
     /* STACKING THE GRID */
     .split-layout {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: 1fr; 
     }
     .split-layout .col-left {
-        border-right: none; /* Remove vertical line when stacked */
-        border-bottom: 1px solid var(--color-primary); /* Add horizontal line to separate stacked elements */
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
     }
     
     .main-nav {
