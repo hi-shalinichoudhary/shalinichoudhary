@@ -13,8 +13,9 @@
 }
 
 * {
-    box-sizing: border-box; /* Ensures width includes padding/border */
-    /* Add this line to prevent margin/padding issues on small screens */
+    /* CRITICAL FIX: Ensures width calculations include padding and border */
+    box-sizing: border-box; 
+    /* NEW: Ensures global clean margin/padding to prevent viewport overflow */
     margin: 0;
     padding: 0;
 }
@@ -26,7 +27,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden;
+    /* Keeps content from scrolling horizontally if an element overflows */
+    overflow-x: hidden; 
 }
 
 a {
@@ -71,7 +73,8 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 
 .split-col {
-    padding: 30px 40px;
+    /* Large desktop padding */
+    padding: 30px 40px; 
     box-sizing: border-box;
 }
 
@@ -84,18 +87,18 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 .main-header {
     padding-top: 0;
     padding-bottom: 0;
-    border-top: none; /* Removed redundant top border */
+    border-top: none; 
 }
 
 /* FIX: New Container for Logo and Nav Alignment */
 .header-row {
     display: flex;
-    justify-content: space-between; /* Pushes logo left, navigation right */
-    align-items: center; /* CRITICAL: Vertically centers all contents on the line */
+    justify-content: space-between; 
+    align-items: center; 
     padding: 20px 40px;
 }
 
-/* Logo Sizing */
+/* FIX: Logo Sizing and Constraining Image Height */
 .logo-image {
     max-width: 180px; 
     max-height: 40px; 
@@ -104,14 +107,13 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     vertical-align: middle; 
 }
 
-/* Navigation Alignment (Simplified) */
+/* FIX: Navigation Alignment */
 .main-nav {
     display: flex;
     gap: 25px;
-    align-items: center; /* Ensures nav links themselves are centered */
+    align-items: center; 
 }
 
-/* NOTE: The .split-layout and .split-col classes remain for the rest of the page (Hero, Experience) */
 /* --- Hero Section --- */
 .hero-layout {
     min-height: 70vh;
@@ -129,7 +131,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 .sub-title {
     display: block;
-    /* Updated font size for visibility */
     font-size: 1.1rem; 
     font-weight: 700;
     text-transform: uppercase;
@@ -199,8 +200,9 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 /* --- Accordion Style for Services (using <details> tag) --- */
 
 .service-grid {
+    /* Removed minmax to rely solely on mobile stacking below 992px */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 0; 
     border-top: 1px solid var(--color-primary);
     border-left: 1px solid var(--color-primary); 
@@ -411,57 +413,16 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 
 
-/* --- Responsive Adjustments --- */
-@media (max-width: 992px) {
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.5rem; }
-    
-    /* STACKING THE GRID */
-    .split-layout {
-        grid-template-columns: 1fr; 
-    }
-    .split-layout .col-left {
-        border-right: none;
-        border-bottom: 1px solid var(--color-primary);
-    }
-    
-    .main-nav {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .header-col {
-        padding: 20px 20px;
-    }
-    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid, .blog-grid {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    /* STACKING STATS */
-    .stat-grid {
-        grid-template-columns: 1fr;
-        border-right: none;
-        border-left: none;
-    }
-    .stat-item {
-        border-right: none;
-        border-bottom: 1px solid var(--color-primary);
-    }
-    .stat-item:last-child {
-        border-bottom: none;
-    }
-}
-
 /* --- HAMBURGER MENU STYLES --- */
 
 /* Base style for the toggle button */
 .menu-toggle {
-    display: none; /* Hide button by default on desktop */
+    display: none; 
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 100; /* Ensure it stays above other content */
+    z-index: 100; 
 }
 
 /* Style the hamburger lines */
@@ -489,23 +450,38 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     transform: translateY(8px);
 }
 
-/* --- Mobile View Overrides (The menu collapse) --- */
-
+/* --- Responsive Adjustments --- */
 @media (max-width: 992px) {
     
-    /* 1. Show the hamburger button and hide the navigation list */
-    .menu-toggle {
-        display: block; /* Show button on mobile */
-        margin-left: auto; /* Push button to the right */
-        /* Align with the main nav links */
-        align-self: center; 
-    }
+    /* 1. FONT SIZE REDUCTION - Prevents H1/H2 overflow on mobile */
+    h1 { font-size: 2.2rem; } /* Reduced from 3.5rem */
+    h2 { font-size: 1.8rem; } /* Reduced from 3rem */
 
+    /* 2. LAYOUT STACKING AND PADDING REDUCTION */
+    .split-col {
+        /* Reduced from 30px 40px */
+        padding: 20px 20px; 
+    }
+    
+    /* STACKING THE MAIN LAYOUTS */
+    .split-layout {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    .split-layout .col-left {
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    
+    .header-row {
+        /* Reduce padding significantly */
+        padding: 15px 20px;
+    }
+    
     .main-nav {
         /* Hide navigation list by default on mobile */
         display: none; 
         position: absolute;
-        top: 80px; /* Position below the fixed header */
+        top: 60px; /* Adjusted to fit reduced header height */
         right: 0;
         width: 100%;
         background-color: var(--color-background);
@@ -516,21 +492,47 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
         border-top: 1px solid var(--color-primary);
         z-index: 99;
     }
+    .main-nav.active {
+        display: flex;
+    }
 
     .main-nav a {
         padding: 10px 20px;
         width: 100%;
         margin-top: 5px;
     }
-    
-    /* 2. Show the navigation list when the 'active' class is toggled by JS */
-    .main-nav.active {
-        display: flex;
+
+    /* 3. SHOW HAMBURGER TOGGLE */
+    .menu-toggle {
+        display: block; /* Show button on mobile */
+        margin-left: auto; /* Push button to the right */
+        align-self: center; 
     }
     
-    /* Ensure the header content is vertically aligned, but without the split column styles */
-    .header-row {
-        /* Remove justify-content spacing when button is present */
-        justify-content: space-between;
+    /* STACKING STATS */
+    .stat-grid {
+        grid-template-columns: 1fr;
+        border-right: none;
+        border-left: none;
+    }
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+    
+    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid, .blog-grid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* Adjust Hero section elements */
+    .hero-image {
+        max-width: 90%; /* Scale image down further */
+    }
+    .sub-title {
+        font-size: 0.9rem;
     }
 }
