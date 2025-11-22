@@ -13,7 +13,10 @@
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures width includes padding/border */
+    /* Add this line to prevent margin/padding issues on small screens */
+    margin: 0;
+    padding: 0;
 }
 
 body {
