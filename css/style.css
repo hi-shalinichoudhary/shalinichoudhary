@@ -181,7 +181,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 .stat-number {
     font-size: 3rem;
     margin-bottom: 5px;
-    /* Removed redundant font-size and margin-bottom from here */
 }
 .stat-number {
     display: flex;
@@ -367,7 +366,8 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
 /* FIX: Added class for the new Swiper container */
 .blog-slider-container { 
-    padding: 20px 40px;
+    /* NEW FIX: Removed padding to allow Swiper to calculate full width space correctly */
+    padding: 0; 
     border-top: 1px solid var(--color-primary);
 }
 
@@ -547,11 +547,23 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
         border-bottom: none;
     }
     
-    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid, .blog-slider-container {
-        padding-left: 20px;
-        padding-right: 20px;
+    /* FIX: Only apply padding to the general section wrapper, NOT the carousel container */
+    .section-wrapper {
+        /* Ensure this retains its padding: 50px 40px on desktop, reduced on mobile */
     }
     
+    .service-grid, .portfolio-grid, .skills-grid {
+        /* These grids still need desktop padding */
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .blog-slider-container {
+        /* CRITICAL FIX: Set to 0 on desktop and mobile. Rely on parent padding. */
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     /* Adjust Hero section elements */
     .hero-image {
         max-width: 90%; /* Scale image down further */
