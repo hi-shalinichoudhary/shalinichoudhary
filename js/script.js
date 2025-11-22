@@ -20,24 +20,38 @@ document.addEventListener('DOMContentLoaded', function() {
         let currentCount = 0;
         const duration = 2000; // 2 seconds animation
         const startTime = performance.now();
+        const plusSign = element.querySelector('.plus-sign');
 
         const updateCount = (timestamp) => {
             const elapsedTime = timestamp - startTime;
-            const progress = Math.min(elapsedTime / duration, 1); // Clamp progress between 0 and 1
+            const progress = Math.min(elapsedTime / duration, 1); 
             currentCount = Math.floor(progress * finalCount);
 
-            // Update the display content
-            // Note: We leave the '+' sign intact if it exists (for 100+ and 15+)
-            element.firstChild.textContent = currentCount.toLocaleString(); 
+            // CRITICAL FIX: Simplified update logic to avoid firstChild errors
+            let displayValue = currentCount.toLocaleString();
+            
+            if (plusSign) {
+                // If plus sign exists, update the text node *before* the plus sign element
+                element.innerHTML = displayValue + '<span class="plus-sign">+</span>';
+            } else {
+                // Otherwise, update the entire text content
+                element.textContent = displayValue;
+            }
 
             if (progress < 1) {
                 requestAnimationFrame(updateCount);
             } else {
                 // Ensure it stops precisely at the final count
-                element.firstChild.textContent = finalCount.toLocaleString();
+                if (plusSign) {
+                    element.innerHTML = finalCount.toLocaleString() + '<span class="plus-sign">+</span>';
+                } else {
+                    element.textContent = finalCount.toLocaleString();
+                }
             }
         };
 
+        // Set an attribute to prevent double animation attempts
+        element.setAttribute('data-animated', 'true');
         requestAnimationFrame(updateCount);
     };
 
@@ -50,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const counterObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            // CRITICAL CHECK: Only animate if intersecting AND hasn't been animated before
+            if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
                 animateCounter(entry.target);
                 // Stop observing once the animation has started
                 observer.unobserve(entry.target);
@@ -62,46 +77,51 @@ document.addEventListener('DOMContentLoaded', function() {
     counterElements.forEach(counter => {
         counterObserver.observe(counter);
     });
-});
-// --- 3. Initialize Blog Swiper Carousel ---
-    new Swiper('.blog-slider-container', {
-        // Required parameters
-        loop: true,
-        spaceBetween: 30, // Spacing between slides
-        slidesPerView: 1, // Default: 1 slide per view on mobile
 
-        // Automatic playback settings
-        autoplay: {
-            delay: 5000, // 5 seconds between slides
-            disableOnInteraction: false, // Continue autoplay after user interaction
-        },
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // Responsive breakpoints (for desktop view)
-        breakpoints: {
-            // When window width is >= 768px
-            768: {
-                slidesPerView: 2,
-                spaceBetween: 30,
-            },
-            // When window width is >= 1200px (Desktop)
-            1200: {
-                slidesPerView: 3, // Shows 3 slides on wide screen
-                spaceBetween: 30,
-            }
-            // NOTE: While you asked for 8, displaying 8 blogs at once is too wide for a clean carousel.
-            // We set it to 3 or 4 max to maintain design integrity in the current layout.
+    // --- 3. Initialize Blog Swiper Carousel ---
+    // The Swiper init is now correctly inside the DOMContentLoaded handler
+    if (document.querySelector('.blog-slider-container')) {
+        // Find the specific container element
+        const swiperContainer = document.querySelector('.blog-slider-container');
+        
+        // CRITICAL CHECK: Swiper initialization requires the 'swiper' class on the container
+        // Ensure the 'swiper' class is present before initializing (as requested in the last fix)
+        if (!swiperContainer.classList.contains('swiper')) {
+            swiperContainer.classList.add('swiper');
         }
-    });
+
+
+        new Swiper('.blog-slider-container', {
+            loop: true,
+            spaceBetween: 30, 
+            slidesPerView: 1, 
+
+            autoplay: {
+                delay: 5000, 
+                disableOnInteraction: false, 
+            },
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1200: {
+                    slidesPerView: 3, 
+                    spaceBetween: 30,
+                }
+            }
+        });
+    }
 });
