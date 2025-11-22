@@ -89,6 +89,13 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     font-size: 1.5rem;
     font-weight: 900;
 }
+.logo-image {
+    /* Adjust width as needed for your design. */
+    max-width: 180px; 
+    height: auto;
+    display: block;
+}
+}
 .main-nav {
     display: flex;
     gap: 25px;
