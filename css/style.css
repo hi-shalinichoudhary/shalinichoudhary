@@ -99,7 +99,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 .main-nav {
     display: flex;
     gap: 25px;
-    margin-left: auto;
 }
 
 /* --- Hero Section --- */
