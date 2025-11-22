@@ -366,14 +366,10 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
 /* FIX: Added class for the new Swiper container */
 .blog-slider-container { 
-    /* NEW FIX: Removed padding to allow Swiper to calculate full width space correctly */
-    padding: 0; 
+    /* NEW: Min-height and padding desktop padding added here */
+    min-height: 400px;
+    padding: 0 40px;
     border-top: 1px solid var(--color-primary);
-}
-
-/* FIX: Ensure the Swiper slide elements are allowed to shrink */
-.blog-slider-container .swiper-slide {
-    width: auto !important; 
 }
 
 /* Old styles kept for individual cards */
@@ -383,7 +379,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     overflow: hidden;
     height: auto; 
 }
-/* ... rest of your blog styles ... */
+/* Removed width: auto !important from .swiper-slide to rely on Swiper's internal JS */
 
 .blog-image {
     width: 100%;
@@ -548,22 +544,16 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     }
     
     /* FIX: Only apply padding to the general section wrapper, NOT the carousel container */
-    .section-wrapper {
-        /* Ensure this retains its padding: 50px 40px on desktop, reduced on mobile */
+    .section-wrapper, .service-grid, .portfolio-grid, .skills-grid {
+        /* This list retains its default desktop padding which is correctly handled outside the media query */
     }
     
-    .service-grid, .portfolio-grid, .skills-grid {
-        /* These grids still need desktop padding */
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
     .blog-slider-container {
-        /* CRITICAL FIX: Set to 0 on desktop and mobile. Rely on parent padding. */
+        /* CRITICAL MOBILE FIX: Set padding to 0 to prevent overflow and rely on Swiper */
         padding-left: 0;
         padding-right: 0;
     }
-
+    
     /* Adjust Hero section elements */
     .hero-image {
         max-width: 90%; /* Scale image down further */
