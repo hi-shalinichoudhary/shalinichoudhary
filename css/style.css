@@ -182,6 +182,20 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     font-size: 3rem;
     margin-bottom: 5px;
 }
+/* Ensure the plus sign is aligned correctly for the counter effect */
+.stat-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Current size is 3rem, keeping it here for reference */
+    font-size: 3rem; 
+    margin-bottom: 5px;
+}
+.stat-number .plus-sign {
+    /* Push the plus sign slightly left to hug the number */
+    margin-left: 2px;
+    font-size: 0.8em; /* Make it slightly smaller than the number */
+}
 .stat-label {
     margin: 0;
     line-height: 1.2;
