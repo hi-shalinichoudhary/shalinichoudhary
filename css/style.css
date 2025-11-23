@@ -207,6 +207,43 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     margin-bottom: 40px;
 }
 
+/* --- Blog Category Index Bar Styles (FIXED) --- */
+.category-index-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 40px;
+    margin-bottom: 40px;
+    /* Keeps the visual divider line */
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc; 
+}
+
+/* Redefine Category Link to look like the secondary button style */
+.category-link {
+    display: inline-block;
+    
+    /* Inherit CTA Button Styling */
+    background-color: var(--color-background); /* White background */
+    color: var(--color-primary); /* Black text */
+    padding: 8px 15px; /* Small button padding */
+    border: 1px solid var(--color-primary); /* Black border */
+    border-radius: 6px;
+    
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap; 
+}
+
+.category-link:hover {
+    /* Reverse colors on hover for a clean visual feedback */
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
 
 /* --- Accordion Style for Services (using <details> tag) --- */
 
@@ -609,5 +646,11 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     }
     .sub-title {
         font-size: 0.9rem;
+    }
+
+    /* Mobile adjustments for the Category Index Bar (Restore correct spacing) */
+    .category-index-bar {
+        padding: 0 20px;
+        gap: 10px;
     }
 }
