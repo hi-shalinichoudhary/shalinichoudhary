@@ -372,20 +372,51 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     border-top: 1px solid var(--color-primary);
 }
 
+/* NEW FIX: Enforce uniform height using Flexbox for blog cards */
+.blog-slider-container .swiper-slide {
+    display: flex; /* Makes the slide a flex container */
+    height: auto; /* Resets any fixed height */
+}
+
 /* Old styles kept for individual cards */
 .blog-card {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
-    height: auto; 
+    height: 100%; /* CRITICAL: Forces card to stretch to match the tallest slide */
+    display: flex; /* NEW: Makes the card itself a column flex container */
+    flex-direction: column; /* Stacks image, content, and footer vertically */
 }
-/* Removed width: auto !important from .swiper-slide to rely on Swiper's internal JS */
+
+.blog-content-area {
+    padding: 20px;
+    flex-grow: 1; /* CRITICAL: Allows this area to fill remaining space */
+    display: flex;
+    flex-direction: column;
+}
 
 .blog-image {
     width: 100%;
     height: 200px;
     object-fit: cover;
 }
+/* ... rest of your blog styles ... */
+
+.blog-content-area h3 {
+    /* Ensures h3 occupies minimal space but is aligned */
+    margin-bottom: 10px;
+}
+
+.blog-content-area h3 a {
+    /* Optional: Limit the number of lines visible for long titles */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Shows max 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
 .blog-content-area {
     padding: 20px;
 }
@@ -545,7 +576,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     
     /* FIX: Only apply padding to the general section wrapper, NOT the carousel container */
     .section-wrapper, .service-grid, .portfolio-grid, .skills-grid {
-        /* This list retains its default desktop padding which is correctly handled outside the media query */
+        /* These grids still need desktop padding */
     }
     
     .blog-slider-container {
