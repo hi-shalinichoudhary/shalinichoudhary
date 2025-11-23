@@ -290,7 +290,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 
 
-/* --- Portfolio Grid Styles --- */
+/* --- Portfolio Grid Styles (FIXED for Uniform Button Alignment) --- */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -303,6 +303,13 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
+    
+    /* FIX 1: Force card to occupy full height of the grid cell */
+    height: 100%; 
+    
+    /* FIX 2: Set up vertical stacking */
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio-image {
@@ -310,15 +317,24 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     height: 250px;
     object-fit: cover;
 }
+
+/* FIX 3: Push the button to the bottom */
 .card-content-area {
     padding: 20px;
+    /* CRITICAL FIX: Allows this area to expand vertically */
+    flex-grow: 1; 
+    /* NEW: Set up vertical stacking within the content area itself */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
 }
+
 .portfolio-link-btn {
-    display: block;
+    /* MODIFIED: Push the link to the bottom */
+    margin-top: auto; 
     text-align: right;
     font-weight: 700;
     font-size: 0.9rem;
-    margin-top: 10px;
 }
 
 
@@ -400,7 +416,6 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     height: 200px;
     object-fit: cover;
 }
-/* ... rest of your blog styles ... */
 
 .blog-content-area h3 {
     /* Ensures h3 occupies minimal space but is aligned */
@@ -417,9 +432,12 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 }
 
 
-.blog-content-area {
-    padding: 20px;
+/* Missing Blog Image Link and Meta Category CSS restored */
+.blog-image-link {
+    display: block;
+    line-height: 0; /* Ensures no weird vertical spacing on images */
 }
+
 .blog-meta-category {
     display: block;
     font-size: 0.8rem;
@@ -576,7 +594,7 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     
     /* FIX: Only apply padding to the general section wrapper, NOT the carousel container */
     .section-wrapper, .service-grid, .portfolio-grid, .skills-grid {
-        /* These grids still need desktop padding */
+        /* This list retains its default desktop padding which is correctly handled outside the media query */
     }
     
     .blog-slider-container {
