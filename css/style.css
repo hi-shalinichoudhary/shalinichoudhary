@@ -46,13 +46,25 @@ h1, h2, h3 {
     font-weight: 700; 
     line-height: 1.1;
     margin-top: 0;
-    margin-bottom: 20px;
+    /* Reduced margin-bottom from 20px to accommodate specific h2/h3 changes below */
+    margin-bottom: 20px; 
 }
 
 /* Adjusted H1 size for better flow and impact */
 h1 { font-size: 3.5rem; } 
-h2 { font-size: 3rem; margin-bottom: 40px; }
-h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
+
+/* FIX: Reduce bottom margin on H2 elements */
+h2 { 
+    font-size: 3rem; 
+    margin-bottom: 20px; /* Reduced from 40px */
+}
+
+/* FIX: Reduce bottom margin on H3 elements */
+h3 { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    margin-bottom: 10px; /* Reduced from 15px */
+}
 
 /* --- Layout and Structure (THE DEFINING GRID) --- */
 
@@ -61,9 +73,9 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    /* FIX: Reduced vertical padding from 50px to 30px globally */
-    padding-top: 30px; 
-    padding-bottom: 30px; 
+    /* FIX: Reduced vertical padding from 30px to 20px globally */
+    padding-top: 20px; 
+    padding-bottom: 20px; 
     border-top: 1px solid var(--color-primary);
 }
 
@@ -201,11 +213,13 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
 
 /* --- Services & Portfolio Headers --- */
 .section-wrapper h2, .section-wrapper .section-description {
-    padding: 0 40px;
+    /* FIX: Reduce internal top/bottom padding */
+    padding: 0 40px 10px 40px; 
 }
 .section-description {
     font-size: 1.1rem;
-    margin-bottom: 40px;
+    /* FIX: Reduce margin below description */
+    margin-bottom: 20px; 
 }
 
 /* --- Blog Category Index Bar Styles (FIXED) --- */
@@ -215,9 +229,9 @@ h3 { font-size: 1.8rem; font-weight: 700; margin-bottom: 15px; }
     justify-content: center;
     gap: 15px;
     padding: 0 40px;
-    margin-bottom: 40px;
-    /* Keeps the visual divider line */
-    padding-bottom: 20px;
+    /* FIX: Reduce margin above/below bar */
+    margin-bottom: 20px; 
+    padding-bottom: 15px; /* Reduced from 20px */
     border-bottom: 1px solid #ccc; 
 }
 
