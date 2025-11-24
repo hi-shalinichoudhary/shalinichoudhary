@@ -425,9 +425,8 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* --- Blog Archive Grid Layout --- */
+/* --- Blog Archive Grid Layout (CRITICAL FIX) --- */
 
-/* FIX 1: Define the archive grid and initial height constraint */
 .blog-archive-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -440,11 +439,6 @@ h3 {
     overflow: hidden; 
     position: relative;
     transition: max-height 0.5s ease;
-}
-
-/* Hide posts beyond the initial view (Managed by JS, but this ensures a starting state) */
-.blog-archive-grid .blog-card:nth-child(n+4) {
-    /* NOTE: JavaScript will manage visibility, but this ensures styling is ready */
 }
 
 /* Blog card uniform height */
@@ -500,24 +494,23 @@ h3 {
 
 /* 1. The Reading Column (Text, TOC, Author Box) */
 .blog-post-content {
-    max-width: 800px; /* Optimal reading width */
-    /* Removed margin: 0 auto as the new wrapper handles main centering */
-    margin: 0;   
-    padding: 0; 
+    max-width: 800px; 
+    margin: 0 auto;   
+    padding: 0 20px;  
     position: relative;
 }
 
-/* FIX: REDUCED SPACING FOR HEADINGS AND PARAGRAPHS INSIDE BLOGS */
+/* FIX: TIGHTENED SPACING FOR HEADINGS AND PARAGRAPHS INSIDE BLOGS */
 .blog-post-content h2,
 .blog-post-content h3,
 .blog-post-content h4 {
     margin-top: 25px; 
-    margin-bottom: 10px; /* Tightened separation */
+    margin-bottom: 10px; 
     line-height: 1.3;
 }
 
 .blog-post-content p {
-    margin-bottom: 10px; /* Tightened separation between paragraphs */
+    margin-bottom: 10px; 
     font-size: 1.05rem; 
 }
 
@@ -591,7 +584,7 @@ h3 {
 .table-of-contents {
     /* FIX: Make the TOC container stick to the viewport */
     position: sticky;
-    top: 20px; 
+    top: 20px; /* Distance from the top of the viewport when scrolling */
     
     background-color: #f8f9fa; 
     border-left: 4px solid var(--color-primary); 
