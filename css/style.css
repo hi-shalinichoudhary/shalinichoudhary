@@ -210,14 +210,24 @@ h3 {
     line-height: 1.2;
 }
 
-/* --- Services & Portfolio Headers --- */
+/* --- Services & Portfolio Headers / Archive Header Fix --- */
 .section-wrapper h2, .section-wrapper .section-description {
-    /* FIX: Reduce internal top/bottom padding */
+    /* FIX: Standard padding for section titles */
     padding: 0 40px 10px 40px; 
 }
+
+/* FIX: Tighter spacing for the Category Page Header */
+.category-header-area h2.category-page-title {
+    padding: 0 40px 10px 40px; /* Aligned with standard h2 padding */
+}
+.category-header-area .section-description {
+    padding: 0 40px 20px 40px; /* Tighter margin before category bar */
+    margin-bottom: 0; 
+}
+
+
 .section-description {
     font-size: 1.1rem;
-    /* FIX: Reduce margin below description */
     margin-bottom: 20px; 
 }
 
@@ -239,10 +249,10 @@ h3 {
     display: inline-block;
     
     /* Inherit CTA Button Styling */
-    background-color: var(--color-background); /* White background */
-    color: var(--color-primary); /* Black text */
-    padding: 8px 15px; /* Small button padding */
-    border: 1px solid var(--color-primary); /* Black border */
+    background-color: var(--color-background); 
+    color: var(--color-primary); 
+    padding: 8px 15px; 
+    border: 1px solid var(--color-primary); 
     border-radius: 6px;
     
     font-weight: 700;
@@ -432,13 +442,16 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px 40px;
-    border-top: 1px solid var(--color-primary);
+    /* ISSUE 3 FIX: Removed border-top here. Rely on section wrapper/archive header. */
     
     /* CRITICAL: Set initial height and hide overflow for "Load More" */
     max-height: 800px; 
     overflow: hidden; 
     position: relative;
     transition: max-height 0.5s ease;
+    
+    /* FIX: Added bottom padding to ensure the final card's bottom border is visible */
+    padding-bottom: 40px;
 }
 
 /* Blog card uniform height */
@@ -494,7 +507,7 @@ h3 {
 
 /* 1. The Reading Column (Text, TOC, Author Box) */
 .blog-post-content {
-    max-width: 800px; 
+    max-width: 800px; /* Optimal reading width */
     margin: 0 auto;   
     padding: 0 20px;  
     position: relative;
@@ -504,13 +517,13 @@ h3 {
 .blog-post-content h2,
 .blog-post-content h3,
 .blog-post-content h4 {
-    margin-top: 25px; 
-    margin-bottom: 10px; 
+    margin-top: 25px; /* Reduced space above headers */
+    margin-bottom: 10px; /* Reduced space below headers */
     line-height: 1.3;
 }
 
 .blog-post-content p {
-    margin-bottom: 10px; 
+    margin-bottom: 10px; /* Tightened separation between paragraphs */
     font-size: 1.05rem; 
 }
 
