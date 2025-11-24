@@ -425,41 +425,41 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* --- Blog Section (FIXED FOR SWIPER) --- */
+/* --- Blog Section (FIXED FOR ARCHIVE GRID) --- */
 
-.blog-archive-section {
-    padding-bottom: 0;
-}
-
-/* FIX: Added class for the new Swiper container */
-.blog-slider-container { 
-    /* NEW: Min-height and padding desktop padding added here */
-    min-height: 400px;
-    padding: 0 40px;
+/* FIX 1: Define the archive grid and initial height constraint */
+.blog-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
     border-top: 1px solid var(--color-primary);
+    
+    /* CRITICAL: Set initial height and hide overflow for "Load More" */
+    max-height: 800px; /* Adjust this height based on desired initial view (e.g., 2 rows) */
+    overflow: hidden; 
+    position: relative;
+    transition: max-height 0.5s ease;
 }
 
-/* NEW FIX: Enforce uniform height using Flexbox for blog cards */
-.blog-slider-container .swiper-slide {
-    display: flex; /* Makes the slide a flex container */
-    height: auto; /* Resets any fixed height */
+/* Hide posts beyond the initial view (Managed by JS, but this ensures a starting state) */
+.blog-archive-grid .blog-card:nth-child(n+4) {
+    /* NOTE: JavaScript will manage visibility, but this ensures styling is ready */
 }
 
-/* Old styles kept for individual cards */
+/* Blog card uniform height */
 .blog-card {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
-    height: 100%; /* CRITICAL: Forces card to stretch to match the tallest slide */
-    display: flex; /* NEW: Makes the card itself a column flex container */
-    flex-direction: column; /* Stacks image, content, and footer vertically */
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
 }
 
-.blog-content-area {
-    padding: 20px;
-    flex-grow: 1; /* CRITICAL: Allows this area to fill remaining space */
-    display: flex;
-    flex-direction: column;
+.blog-image-link {
+    display: block;
+    line-height: 0;
 }
 
 .blog-image {
@@ -468,25 +468,15 @@ h3 {
     object-fit: cover;
 }
 
+.blog-content-area {
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
 .blog-content-area h3 {
-    /* Ensures h3 occupies minimal space but is aligned */
     margin-bottom: 10px;
-}
-
-.blog-content-area h3 a {
-    /* Optional: Limit the number of lines visible for long titles */
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Shows max 2 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-/* Missing Blog Image Link and Meta Category CSS restored */
-.blog-image-link {
-    display: block;
-    line-height: 0; /* Ensures no weird vertical spacing on images */
 }
 
 .blog-meta-category {
@@ -496,6 +486,13 @@ h3 {
     opacity: 0.7;
     margin-bottom: 5px;
 }
+
+/* --- Load More Button Alignment --- */
+.load-more-container {
+    text-align: center;
+    padding: 30px 0;
+}
+
 
 /* ------------------------------------------------------ */
 /* NEW: INDIVIDUAL BLOG POST SPECIFIC STYLES             */
@@ -515,13 +512,13 @@ h3 {
 .blog-post-content h2,
 .blog-post-content h3,
 .blog-post-content h4 {
-    margin-top: 30px; /* Reduced from 40px */
-    margin-bottom: 15px; /* Reduced from 20px */
+    margin-top: 25px; /* Reduced from 30px */
+    margin-bottom: 10px; /* Reduced from 15px */
     line-height: 1.3;
 }
 
 .blog-post-content p {
-    margin-bottom: 15px; /* Reduced from 25px */
+    margin-bottom: 10px; /* Reduced from 25px */
     font-size: 1.05rem; 
 }
 
@@ -642,8 +639,8 @@ h3 {
 
 /* 5. Author Box */
 .author-cta-box {
-    margin-top: 40px; 
-    padding-top: 20px; 
+    margin-top: 40px; /* Reduced from 80px */
+    padding-top: 20px; /* Reduced from 40px */
     border-top: 2px solid #f0f0f0;
 }
 
