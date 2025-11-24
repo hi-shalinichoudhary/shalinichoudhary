@@ -21,7 +21,8 @@
 }
 
 body {
-    font-family: var(--font-body) !important; /* FIX 1: Force Poppins font globally */
+    /* FIX: Force Poppins font globally to override old theme styles */
+    font-family: var(--font-body) !important; 
     color: var(--color-primary);
     background-color: var(--color-background);
     margin: 0;
@@ -99,7 +100,6 @@ h3 {
 .main-header {
     padding-top: 0;
     padding-bottom: 0;
-    /* FIX 3: Ensures the main header wrapper does NOT have a top border */
     border-top: none; 
 }
 
@@ -213,7 +213,7 @@ h3 {
 
 /* --- Services & Portfolio Headers / Archive Header Fix --- */
 .section-wrapper h2, .section-wrapper .section-description {
-    /* FIX: Standard padding for section titles */
+    /* Standard padding for section titles */
     padding: 0 40px 10px 40px; 
 }
 .section-description {
@@ -224,11 +224,18 @@ h3 {
 
 /* FIX: Tighter spacing for the Category Page Header */
 .category-header-area h2.category-page-title {
-    padding: 0 40px 10px 40px; /* Aligned with standard h2 padding */
+    /* ISSUE 2 FIX: Ensure no unnecessary top padding on the page H2 */
+    padding: 0 40px 10px 40px; 
 }
-.category-header-area .section-description {
-    padding: 0 40px 20px 40px; /* Tighter margin before category bar */
+.category-header-area .category-page-description {
+    /* ISSUE 2 FIX: Tighter margin before category bar */
+    padding: 0 40px 20px 40px; 
     margin-bottom: 0; 
+}
+.category-header-area {
+    /* ISSUE 2 & 3 FIX: Removes padding that stacks with borders */
+    padding-bottom: 0; 
+    margin-bottom: 0;
 }
 
 
@@ -239,10 +246,9 @@ h3 {
     justify-content: center;
     gap: 15px;
     padding: 0 40px;
-    /* FIX: Reduce margin above/below bar */
     margin-bottom: 20px; 
     padding-bottom: 15px; 
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid var(--color-primary); /* Use primary color for strong line */
 }
 
 /* Redefine Category Link to look like the secondary button style */
@@ -443,7 +449,7 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     padding: 20px 40px;
-    /* ISSUE 3 FIX: Removed border-top here. Rely on section wrapper/archive header. */
+    border-top: 1px solid var(--color-primary);
     
     /* CRITICAL: Set initial height and hide overflow for "Load More" */
     max-height: 800px; 
@@ -518,13 +524,13 @@ h3 {
 .blog-post-content h2,
 .blog-post-content h3,
 .blog-post-content h4 {
-    margin-top: 25px; 
-    margin-bottom: 10px; 
+    margin-top: 25px; /* Reduced space above headers */
+    margin-bottom: 10px; /* Reduced space below headers */
     line-height: 1.3;
 }
 
 .blog-post-content p {
-    margin-bottom: 10px; 
+    margin-bottom: 10px; /* Reduced space between paragraphs */
     font-size: 1.05rem; 
 }
 
