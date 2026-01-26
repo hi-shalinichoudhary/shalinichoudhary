@@ -372,6 +372,8 @@ h3 {
     border: 1px solid #e0e0e0;
     border-radius: 4px;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
     
     /* FIX 1: Force card to occupy full height of the grid cell */
     height: 100%; 
@@ -379,6 +381,11 @@ h3 {
     /* FIX 2: Set up vertical stacking */
     display: flex;
     flex-direction: column;
+}
+
+.portfolio-card:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
 }
 
 .portfolio-image {
