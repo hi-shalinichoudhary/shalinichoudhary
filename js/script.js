@@ -4,10 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('main-navigation');
 
     if (toggleButton && navMenu) {
-        toggleButton.addEventListener('click', function() {
-            navMenu.classList.toggle('active'); 
-            const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
-            toggleButton.setAttribute('aria-expanded', !isExpanded);
+        const setMenuState = (isOpen) => {
+            navMenu.classList.toggle('active', isOpen);
+            navMenu.setAttribute('aria-hidden', (!isOpen).toString());
+            toggleButton.setAttribute('aria-expanded', isOpen.toString());
+        };
+
+        setMenuState(false);
+
+        toggleButton.addEventListener('click', () => {
+            const isOpen = navMenu.classList.contains('active');
+            setMenuState(!isOpen);
+        });
+
+        navMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setMenuState(false));
         });
     }
 
@@ -81,47 +92,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- 3. Initialize Blog Swiper Carousel ---
     // The Swiper init is now correctly inside the DOMContentLoaded handler
-    if (document.querySelector('.blog-slider-container')) {
-        // Find the specific container element
-        const swiperContainer = document.querySelector('.blog-slider-container');
-        
-        // CRITICAL CHECK: Swiper initialization requires the 'swiper' class on the container
-        // Ensure the 'swiper' class is present before initializing (as requested in the last fix)
-        if (!swiperContainer.classList.contains('swiper')) {
-            swiperContainer.classList.add('swiper');
-        }
+    const swiperContainers = document.querySelectorAll('.blog-slider-container');
 
-
-        new Swiper('.blog-slider-container', {
-            loop: true,
-            spaceBetween: 30, 
-            slidesPerView: 1, 
-
-            autoplay: {
-                delay: 5000, 
-                disableOnInteraction: false, 
-            },
-
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                1200: {
-                    slidesPerView: 3, 
-                    spaceBetween: 30,
-                }
+    if (swiperContainers.length) {
+        swiperContainers.forEach((swiperContainer) => {
+            if (!swiperContainer.classList.contains('swiper')) {
+                swiperContainer.classList.add('swiper');
             }
+
+            const paginationEl = swiperContainer.querySelector('.swiper-pagination');
+            const nextEl = swiperContainer.querySelector('.swiper-button-next');
+            const prevEl = swiperContainer.querySelector('.swiper-button-prev');
+
+            new Swiper(swiperContainer, {
+                loop: true,
+                spaceBetween: 30,
+                slidesPerView: 1,
+
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+
+                pagination: paginationEl
+                    ? {
+                          el: paginationEl,
+                          clickable: true,
+                      }
+                    : undefined,
+
+                navigation: nextEl && prevEl
+                    ? {
+                          nextEl,
+                          prevEl,
+                      }
+                    : undefined,
+
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30,
+                    },
+                    1200: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }
+            });
         });
     }
 
