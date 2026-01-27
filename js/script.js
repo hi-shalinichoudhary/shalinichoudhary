@@ -124,4 +124,59 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // --- 4. Portfolio Lightbox ---
+    const portfolioLinks = document.querySelectorAll('.portfolio-popup');
+    const lightbox = document.getElementById('portfolio-lightbox');
+    const lightboxImage = lightbox ? lightbox.querySelector('.portfolio-lightbox-image') : null;
+    const lightboxClose = lightbox ? lightbox.querySelector('.portfolio-lightbox-close') : null;
+
+    const closeLightbox = () => {
+        if (!lightbox || !lightboxImage) {
+            return;
+        }
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        lightboxImage.alt = '';
+        document.body.classList.remove('lightbox-open');
+    };
+
+    const openLightbox = (imageSrc, imageAlt) => {
+        if (!lightbox || !lightboxImage) {
+            return;
+        }
+        lightboxImage.src = imageSrc;
+        lightboxImage.alt = imageAlt;
+        lightbox.classList.add('is-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+    };
+
+    if (portfolioLinks.length && lightbox && lightboxImage && lightboxClose) {
+        portfolioLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const image = link.querySelector('img');
+                const imageSrc = link.getAttribute('href') || (image ? image.src : '');
+                const imageAlt = image ? image.alt : 'Portfolio image';
+                if (imageSrc) {
+                    openLightbox(imageSrc, imageAlt);
+                }
+            });
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', event => {
+            if (event.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+                closeLightbox();
+            }
+        });
+    }
 });

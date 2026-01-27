@@ -32,6 +32,10 @@ body {
     overflow-x: hidden; 
 }
 
+body.lightbox-open {
+    overflow: hidden;
+}
+
 a {
     color: var(--color-primary);
     text-decoration: none;
@@ -64,6 +68,58 @@ h3 {
     font-size: 1.8rem; 
     font-weight: 700; 
     margin-bottom: 10px; 
+}
+
+.portfolio-lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+    padding: 24px;
+}
+
+.portfolio-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.portfolio-lightbox-image {
+    max-width: min(960px, 90vw);
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    background: #fff;
+    object-fit: contain;
+}
+
+.portfolio-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-lightbox-close:hover {
+    background: #ffffff;
 }
 
 /* --- Layout and Structure (THE DEFINING GRID) --- */
