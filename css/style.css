@@ -160,6 +160,15 @@ h3 {
     border-top: none; 
 }
 
+/* Remove top divider lines for specified sections */
+#works-section {
+    border-top: none;
+}
+
+.tj-footer-area {
+    border-top: none;
+}
+
 /* FIX: New Container for Logo and Nav Alignment */
 .header-row {
     display: flex;
