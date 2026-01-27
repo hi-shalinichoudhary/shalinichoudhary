@@ -1,21 +1,1130 @@
+/*
+    Custom CSS for Shalini Choudhary SEO Portfolio
+    Theme: High-Contrast Minimalist Grid
+    Font: Poppins
+*/
+
+/* --- Base Styling and Typography --- */
+:root {
+    --color-primary: #000;
+    --color-background: #fff;
+    --color-accent: #ff6b6b;
+    --color-muted: #f4f4f4;
+    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.12);
+    --font-heading: 'Poppins', sans-serif; 
+    --font-body: 'Poppins', sans-serif;    
+}
+
+* {
+    /* CRITICAL FIX: Ensures width calculations include padding and border */
+    box-sizing: border-box; 
+    /* NEW: Ensures global clean margin/padding to prevent viewport overflow */
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    /* FIX 1: Force Poppins font globally to override old theme styles */
+    font-family: var(--font-body) !important; 
+    color: var(--color-primary);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    /* Keeps content from scrolling horizontally if an element overflows */
+    overflow-x: hidden; 
 }
 
-.hero {
-  padding: 80px 10%;
-  background: #0f172a;
-  color: #ffffff;
+html {
+    scroll-behavior: smooth;
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 16px;
+body.lightbox-open {
+    overflow: hidden;
 }
 
-.hero p {
-  font-size: 18px;
-  max-width: 700px;
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    /* Set to 700 (Bold) for lighter look */
+    font-weight: 700; 
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 20px; 
+}
+
+/* Adjusted H1 size for better flow and impact */
+h1 { font-size: 3.5rem; } 
+
+/* FIX: Reduce bottom margin on H2 elements */
+h2 { 
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+}
+
+/* FIX: Reduce bottom margin on H3 elements */
+h3 { 
+    font-size: 1.8rem; 
+    font-weight: 700; 
+    margin-bottom: 10px; 
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.portfolio-lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 9999;
+    padding: 24px;
+}
+
+.portfolio-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.portfolio-lightbox-image {
+    max-width: min(960px, 90vw);
+    max-height: 85vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    background: #fff;
+    object-fit: contain;
+}
+
+.portfolio-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    color: #111;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.portfolio-lightbox-close:hover {
+    background: #ffffff;
+}
+
+/* --- Layout and Structure (THE DEFINING GRID) --- */
+
+/* Wrapper applies the main horizontal separator line */
+.section-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    /* FIX: Reduced vertical padding from 30px to 20px globally */
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    border-top: 1px solid var(--color-primary);
+}
+
+/* Base class for creating a vertical 50/50 split */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.split-col {
+    /* Large desktop padding */
+    padding: 30px 40px; 
+    box-sizing: border-box;
+}
+
+/* The vertical divider line is applied to the left column */
+.split-layout .col-left {
+    border-right: 1px solid var(--color-primary);
+}
+
+/* --- Header & Navigation --- */
+.main-header {
+    padding-top: 0;
+    padding-bottom: 0;
+    /* FIX 3: Ensures the main header wrapper does NOT have a top border */
+    border-top: none; 
+    position: relative;
+    z-index: 1000;
+    background-color: var(--color-background);
+}
+
+/* Remove top divider lines for specified sections */
+#works-section {
+    border-top: none;
+}
+
+.tj-footer-area {
+    border-top: none;
+}
+
+/* FIX: New Container for Logo and Nav Alignment */
+.header-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 20px 40px;
+    position: relative;
+}
+
+/* FIX: Logo Sizing and Constraining Image Height */
+.logo-image {
+    max-width: 180px; 
+    max-height: 40px; 
+    height: auto;
+    display: block;
+    vertical-align: middle; 
+}
+
+/* FIX: Navigation Alignment */
+.main-nav {
+    display: flex;
+    gap: 25px;
+    align-items: center; 
+}
+
+.main-nav a {
+    position: relative;
+    font-weight: 600;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero-layout {
+    min-height: 70vh;
+    position: relative;
+}
+.hero-image-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.1); 
+    animation: floatHero 6s ease-in-out infinite;
+}
+.sub-title {
+    display: block;
+    font-size: 1.1rem; 
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.lead-text {
+    font-size: 1.2rem;
+}
+
+@keyframes floatHero {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* --- CTA Button Style --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    background-image: linear-gradient(120deg, #000 0%, #333 100%);
+    color: var(--color-background) !important;
+    padding: 12px 30px;
+    border-radius: 6px;
+    margin-top: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-position 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+}
+
+.cta-button.small-btn {
+    padding: 8px 15px;
+    margin-top: 0;
+}
+
+/* --- Funfacts (Stats) --- */
+.funfacts-section {
+    padding-top: 0;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-primary); 
+}
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-left: 1px solid var(--color-primary);
+}
+.stat-item {
+    border-right: 1px solid var(--color-primary);
+    padding: 30px 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
+}
+.stat-number {
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+.stat-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem; 
+    margin-bottom: 5px;
+}
+.stat-number .plus-sign {
+    margin-left: 2px;
+    font-size: 0.8em; 
+}
+.stat-label {
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* --- Services & Portfolio Headers / Archive Header Fix --- */
+.section-wrapper h2, .section-wrapper .section-description {
+    /* Standard padding for section titles */
+    padding: 0 40px 10px 40px; 
+}
+.section-description {
+    font-size: 1.1rem;
+    /* FIX: Reduce margin below description */
+    margin-bottom: 20px; 
+}
+
+/* FIX: Category Page Header Spacing and Border Conflicts */
+.category-header-area h2.category-page-title {
+    /* ISSUE 2 FIX: Removes top/bottom padding added by section-wrapper h2 rule */
+    padding: 0 40px 10px 40px; 
+}
+.category-header-area .category-page-description {
+    /* ISSUE 2 FIX: Tighter margin before category bar */
+    padding: 0 40px 20px 40px; 
+    margin-bottom: 0; 
+}
+.category-header-area {
+    /* ISSUE 2 & 3 FIX: Removes padding/margin that stacks and causes extra lines */
+    padding-bottom: 0; 
+    margin-bottom: 0;
+}
+
+
+/* --- Blog Category Index Bar Styles (FIXED) --- */
+.category-index-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 40px;
+    margin-bottom: 20px; 
+    padding-bottom: 15px; 
+    border-bottom: 1px solid var(--color-primary); 
+}
+
+/* Redefine Category Link to look like the secondary button style */
+.category-link {
+    display: inline-block;
+    
+    /* Inherit CTA Button Styling */
+    background-color: var(--color-background); 
+    color: var(--color-primary); 
+    padding: 8px 15px; 
+    border: 1px solid var(--color-primary); 
+    border-radius: 6px;
+    
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap; 
+}
+
+.category-link:hover {
+    /* Reverse colors on hover for a clean visual feedback */
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+
+/* --- Accordion Style for Services (using <details> tag) --- */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0; 
+    border-top: 1px solid var(--color-primary);
+    border-left: 1px solid var(--color-primary); 
+    padding: 0; 
+}
+
+.service-item-details {
+    border-right: 1px solid var(--color-primary);
+    border-bottom: 1px solid var(--color-primary);
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+.service-item-details summary {
+    display: block;
+    cursor: pointer;
+    padding: 30px 70px 30px 30px;
+    outline: none;
+    user-select: none;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.service-item-details summary::-webkit-details-marker {
+    display: none;
+}
+.service-item-details summary::marker {
+    content: "";
+}
+
+.service-item-details summary::after {
+    content: '+';
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    transform: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: transform 0.3s;
+}
+
+.service-item-details[open] > summary::after {
+    content: '—';
+    transform: none;
+}
+
+.service-item-details[open] {
+    background-color: var(--color-muted);
+}
+
+.service-item-details summary:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.service-content-detail {
+    padding: 0 70px 30px 30px;
+    border-top: 1px solid #ddd;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease;
+}
+
+.service-item-details[open] .service-content-detail {
+    opacity: 1;
+    max-height: 1000px;
+}
+
+.process-title {
+    margin-top: 20px;
+}
+
+.process-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.service-item-details h3 {
+    margin-top: 10px;
+}
+
+
+/* --- Portfolio Grid Styles (FIXED for Uniform Button Alignment) --- */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+    border-top: 1px solid var(--color-primary);
+}
+
+.portfolio-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    
+    /* FIX 1: Force card to occupy full height of the grid cell */
+    height: 100%; 
+    
+    /* FIX 2: Set up vertical stacking */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-soft);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: #f5f5f5;
+}
+
+/* FIX 3: Push the button to the bottom */
+.card-content-area {
+    padding: 20px;
+    /* CRITICAL FIX: Allows this area to expand vertically */
+    flex-grow: 1; 
+    /* NEW: Set up vertical stacking within the content area itself */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.portfolio-link-btn {
+    /* MODIFIED: Push the link to the bottom */
+    margin-top: auto; 
+    text-align: right;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+
+/* --- Experience Section --- */
+.experience-layout {
+    padding: 0;
+}
+.resume-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+.resume-item:last-child {
+    border-bottom: none;
+}
+.resume-item .time {
+    font-weight: 700;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+.resume-item .institute {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* --- Skills Section --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px 40px;
+    border-top: 1px solid var(--color-primary);
+    text-align: center;
+}
+
+.skill-item {
+    padding: 20px 10px;
+    border-radius: 12px;
+    background: var(--color-muted);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
+}
+.skill-item img {
+    max-width: 60px;
+    margin-bottom: 10px;
+}
+
+/* --- Blog Archive Grid Layout (CRITICAL FIX) --- */
+
+.blog-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 40px;
+    border-top: none; /* ISSUE 3 FIX: Removed redundant top border on the grid */
+    
+    /* CRITICAL: Set initial height and hide overflow for "Load More" */
+    max-height: 800px; 
+    overflow: hidden; 
+    position: relative;
+    transition: max-height 0.5s ease;
+    
+    /* FIX: Added bottom padding to ensure the final card's bottom border is visible */
+    padding-bottom: 40px;
+}
+
+/* Blog card uniformity (Fixes Issue 1 for the last card) */
+.blog-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
+}
+
+.blog-image-link {
+    display: block;
+    line-height: 0;
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content-area {
+    padding: 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-content-area h3 {
+    margin-bottom: 10px;
+}
+
+.blog-meta-category {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 5px;
+}
+
+/* --- Load More Button Alignment --- */
+.load-more-container {
+    text-align: center;
+    padding: 30px 0;
+}
+
+
+/* ------------------------------------------------------ */
+/* NEW: INDIVIDUAL BLOG POST SPECIFIC STYLES             */
+/* ------------------------------------------------------ */
+
+/* 1. The Reading Column (Text, TOC, Author Box) */
+.blog-post-content {
+    max-width: 800px; 
+    margin: 0 auto;   
+    padding: 0 20px;  
+    position: relative;
+}
+
+/* FIX: TIGHTENED SPACING FOR HEADINGS AND PARAGRAPHS INSIDE BLOGS */
+.blog-post-content h2,
+.blog-post-content h3,
+.blog-post-content h4 {
+    margin-top: 25px; 
+    margin-bottom: 10px; 
+    line-height: 1.3;
+}
+
+.blog-post-content p {
+    margin-bottom: 10px; 
+    font-size: 1.05rem; 
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+    margin-bottom: 15px; 
+    padding-left: 20px;
+}
+
+.blog-post-content li {
+    margin-bottom: 8px;
+}
+
+/* 2. The Post Header (Title & Meta) */
+.post-header-text {
+    text-align: center;
+    max-width: 900px; 
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.post-header-text h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.post-meta {
+    font-size: 1rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+/* 3. The Featured Image (WIDE) */
+.post-feature-image-container {
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto 60px auto; 
+    padding: 0 20px;
+}
+
+.post-feature-image {
+    width: 100%;
+    height: 500px; 
+    object-fit: cover;
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+}
+
+/* --- FIX 4: STICKY TOC LAYOUT --- */
+.reading-layout-wrapper {
+    /* FIX: Constrain layout width within main wrapper */
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: grid;
+    /* Define two columns: Left (TOC) is fixed width, Right (Content) is flexible */
+    grid-template-columns: 280px 1fr; 
+    gap: 60px; 
+    padding: 0 40px;
+    /* CRITICAL: Need space above this section for visual flow */
+    margin-top: 20px;
+}
+
+.toc-sidebar-container {
+    position: relative; 
+}
+
+/* 4. Table of Contents (Sticky & Clean) */
+.table-of-contents {
+    /* FIX: Make the TOC container stick to the viewport */
+    position: sticky;
+    top: 20px; /* Distance from the top of the viewport when scrolling */
+    
+    background-color: #f8f9fa; 
+    border-left: 4px solid var(--color-primary); 
+    padding: 20px;
+    margin: 0;
+    border-radius: 0 8px 8px 0;
+    z-index: 5;
+}
+
+.table-of-contents h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.table-of-contents ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.table-of-contents li {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+.table-of-contents li:last-child {
+    border-bottom: none;
+}
+
+.table-of-contents li a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #333;
+    transition: padding-left 0.2s;
+}
+
+.table-of-contents li a:hover {
+    padding-left: 10px; /* Slide effect on hover */
+    color: var(--color-primary);
+}
+
+/* 5. Author Box */
+.author-cta-box {
+    margin-top: 40px; 
+    padding-top: 20px; 
+    border-top: 2px solid #f0f0f0;
+}
+
+/* --- FIX 3: AUTHOR IMAGE PLACEHOLDER (Small Image Alignment) --- */
+.author-box-content {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+}
+
+.author-image-placeholder {
+    width: 100px; /* FIXED small size */
+    height: 100px;
+    background-color: #e0e0e0;
+    border-radius: 50%; 
+    overflow: hidden;
+    flex-shrink: 0; 
+}
+.author-image-placeholder img {
+    /* Ensures the image fills the 60x60 container perfectly */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-content-container {
+    /* Ensure the content column aligns correctly */
+    min-width: 0; 
+}
+
+/* ------------------------------------------------------ */
+/* END BLOG SPECIFIC STYLES                              */
+/* ------------------------------------------------------ */
+
+
+/* --- Contact Section --- */
+.contact-layout {
+    border-bottom: 1px solid var(--color-primary);
+}
+.contact-col-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.contact-detail-item h3 {
+    margin-bottom: 5px;
+}
+.contact-detail-item a, .contact-detail-item p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.contact-detail-item {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--color-muted);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-detail-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* --- Footer --- */
+.tj-footer-area {
+    padding: 30px 40px;
+    text-align: center;
+}
+.footer-nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+.copyright {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-background);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    box-shadow: var(--shadow-soft);
+    z-index: 1000;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
+}
+
+
+/* --- HAMBURGER MENU STYLES --- */
+
+/* Base style for the toggle button */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100; 
+}
+
+/* Style the hamburger lines */
+.hamburger {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--color-primary);
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    transition: all 0.3s ease-in-out;
+}
+.hamburger::before {
+    transform: translateY(-8px);
+}
+.hamburger::after {
+    transform: translateY(8px);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    
+    /* 1. FONT SIZE REDUCTION - Prevents H1/H2 overflow on mobile */
+    h1 { font-size: 2.2rem; } /* Reduced from 3.5rem */
+    h2 { font-size: 1.8rem; } /* Reduced from 3rem */
+
+    /* 2. LAYOUT STACKING AND PADDING REDUCTION */
+    .split-col {
+        padding: 20px 20px; 
+    }
+    
+    /* STACKING THE MAIN LAYOUTS */
+    .split-layout {
+        grid-template-columns: 1fr; 
+    }
+    .split-layout .col-left {
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    
+    .header-row {
+        padding: 15px 20px;
+    }
+    
+    /* NEW FIX: Stack two-column blog layout on mobile */
+    .reading-layout-wrapper {
+        grid-template-columns: 1fr; /* Collapse to a single column */
+        gap: 20px;
+        padding: 0 20px; /* Mobile side padding */
+        margin-top: 10px;
+    }
+    
+    .toc-sidebar-container {
+        position: static; /* Remove sticky property on mobile */
+    }
+
+    .table-of-contents {
+        margin-bottom: 20px;
+    }
+    
+    .main-nav {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: var(--color-background);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        flex-direction: column; 
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid var(--color-primary);
+        z-index: 1001;
+    }
+    .main-nav.active {
+        display: flex;
+    }
+
+    /* 3. SHOW HAMBURGER TOGGLE */
+    .menu-toggle {
+        display: block; 
+        margin-left: auto; 
+        align-self: center; 
+    }
+    
+    /* STACKING STATS */
+    .stat-grid {
+        grid-template-columns: 1fr;
+        border-right: none;
+        border-left: none;
+    }
+    .stat-item {
+        border-right: none;
+        border-bottom: 1px solid var(--color-primary);
+    }
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+    
+    .blog-slider-container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Mobile adjustments for the Category Index Bar (Restore correct spacing) */
+    .category-index-bar {
+        padding: 0 20px;
+        gap: 10px;
+    }
+    
+    /* Adjust Hero section elements */
+    .hero-image {
+        max-width: 90%; 
+    }
+    .sub-title {
+        font-size: 0.9rem;
+    }
+
+    /* Mobile adjustments for Blog Posts */
+    .blog-post-content {
+        padding: 0 20px;
+    }
+    .post-header h1 {
+        font-size: 2.5rem;
+    }
+    .post-feature-image-container {
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
+
+    /* FIX: Author image size on mobile */
+    .author-image-placeholder {
+        width: 70px;
+        height: 70px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
