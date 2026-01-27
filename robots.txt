@@ -1,6 +1,9 @@
 User-Agent: *
 Allow: /
 Disallow: /*.pdf$
+Disallow: /prototype/
+
 
 Sitemap: https://shalinichoudhary.in/sitemap.xml
+
 
