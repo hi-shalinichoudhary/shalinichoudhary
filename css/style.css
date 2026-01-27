@@ -8,6 +8,9 @@
 :root {
     --color-primary: #000;
     --color-background: #fff;
+    --color-accent: #ff6b6b;
+    --color-muted: #f4f4f4;
+    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.12);
     --font-heading: 'Poppins', sans-serif; 
     --font-body: 'Poppins', sans-serif;    
 }
@@ -32,6 +35,10 @@ body {
     overflow-x: hidden; 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body.lightbox-open {
     overflow: hidden;
 }
@@ -43,6 +50,12 @@ a {
 }
 a:hover {
     opacity: 0.7;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
 }
 
 h1, h2, h3 {
@@ -68,6 +81,17 @@ h3 {
     font-size: 1.8rem; 
     font-weight: 700; 
     margin-bottom: 10px; 
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .portfolio-lightbox {
@@ -193,9 +217,31 @@ h3 {
     align-items: center; 
 }
 
+.main-nav a {
+    position: relative;
+    font-weight: 600;
+}
+
+.main-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus-visible::after {
+    width: 100%;
+}
+
 /* --- Hero Section --- */
 .hero-layout {
     min-height: 70vh;
+    position: relative;
 }
 .hero-image-col {
     display: flex;
@@ -207,6 +253,7 @@ h3 {
     height: auto;
     border-radius: 4px;
     box-shadow: 15px 15px 0 0 rgba(0, 0, 0, 0.1); 
+    animation: floatHero 6s ease-in-out infinite;
 }
 .sub-title {
     display: block;
@@ -217,6 +264,16 @@ h3 {
 }
 .lead-text {
     font-size: 1.2rem;
+}
+
+@keyframes floatHero {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 .social-icons a {
     font-size: 1.5rem;
@@ -229,13 +286,23 @@ h3 {
 .cta-button {
     display: inline-block;
     background-color: var(--color-primary);
+    background-image: linear-gradient(120deg, #000 0%, #333 100%);
     color: var(--color-background) !important;
     padding: 12px 30px;
     border-radius: 6px;
     margin-top: 25px;
     font-weight: 700;
     letter-spacing: 0.5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-position 0.2s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
+.cta-button:hover,
+.cta-button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.25);
+}
+
 .cta-button.small-btn {
     padding: 8px 15px;
     margin-top: 0;
@@ -256,6 +323,12 @@ h3 {
     border-right: 1px solid var(--color-primary);
     padding: 30px 20px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
 }
 .stat-number {
     font-size: 3rem;
@@ -367,6 +440,7 @@ h3 {
     outline: none;
     user-select: none;
     position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .service-item-details summary::-webkit-details-marker {
@@ -393,7 +467,11 @@ h3 {
 }
 
 .service-item-details[open] {
-    background-color: #f7f7f7;
+    background-color: var(--color-muted);
+}
+
+.service-item-details summary:hover {
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .service-content-detail {
@@ -446,11 +524,17 @@ h3 {
     /* FIX 2: Set up vertical stacking */
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-card:focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 2px;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-soft);
 }
 
 .portfolio-image {
@@ -487,6 +571,12 @@ h3 {
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
 }
 .resume-item:last-child {
     border-bottom: none;
@@ -509,6 +599,18 @@ h3 {
     padding: 20px 40px;
     border-top: 1px solid var(--color-primary);
     text-align: center;
+}
+
+.skill-item {
+    padding: 20px 10px;
+    border-radius: 12px;
+    background: var(--color-muted);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
 }
 .skill-item img {
     max-width: 60px;
@@ -542,6 +644,12 @@ h3 {
     height: 100%; 
     display: flex; 
     flex-direction: column; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
 }
 
 .blog-image-link {
@@ -779,6 +887,18 @@ h3 {
     opacity: 0.9;
 }
 
+.contact-detail-item {
+    padding: 20px;
+    border-radius: 12px;
+    background: var(--color-muted);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-detail-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-soft);
+}
+
 /* --- Footer --- */
 .tj-footer-area {
     padding: 30px 40px;
@@ -793,6 +913,38 @@ h3 {
     margin-top: 15px;
     font-size: 0.8rem;
     opacity: 0.7;
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-primary);
+    color: var(--color-background);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    box-shadow: var(--shadow-soft);
+    z-index: 1000;
+}
+
+.back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-2px);
 }
 
 
@@ -948,5 +1100,25 @@ h3 {
     .author-image-placeholder {
         width: 70px;
         height: 70px;
+    }
+
+    .back-to-top {
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
