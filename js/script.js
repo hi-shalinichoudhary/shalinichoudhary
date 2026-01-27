@@ -179,4 +179,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // --- 5. Scroll Reveal Animations ---
+    const revealTargets = document.querySelectorAll(
+        '.section-wrapper, .portfolio-card, .service-item-details, .skill-item, .blog-card, .resume-item, .contact-detail-item'
+    );
+
+    if (revealTargets.length) {
+        revealTargets.forEach(target => target.classList.add('reveal-on-scroll'));
+
+        const revealObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        revealTargets.forEach(target => revealObserver.observe(target));
+    }
+
+    // --- 6. Back to Top Button ---
+    const backToTopButton = document.querySelector('.back-to-top');
+
+    if (backToTopButton) {
+        const toggleBackToTop = () => {
+            if (window.scrollY > 400) {
+                backToTopButton.classList.add('is-visible');
+            } else {
+                backToTopButton.classList.remove('is-visible');
+            }
+        };
+
+        toggleBackToTop();
+        window.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
