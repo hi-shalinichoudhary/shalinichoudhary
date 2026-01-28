@@ -364,6 +364,56 @@ h3 {
     margin-top: 0;
 }
 
+/* --- Growth approach cards --- */
+.growth-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 0 40px 10px;
+}
+
+.growth-card {
+    border: 1px solid var(--color-primary);
+    border-radius: 14px;
+    padding: 18px 20px;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 160px;
+}
+
+.growth-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.growth-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.growth-card p {
+    margin: 0;
+    font-size: 0.98rem;
+}
+
+.growth-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-muted);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
 /* --- Funfacts (Stats) --- */
 .funfacts-section {
     padding-top: 0;
@@ -1065,6 +1115,11 @@ h3 {
     
     .header-row {
         padding: 15px 20px;
+    }
+
+    .growth-grid {
+        padding: 0 20px 10px;
+        grid-template-columns: 1fr;
     }
     
     /* NEW FIX: Stack two-column blog layout on mobile */
