@@ -247,6 +247,36 @@ h3 {
     min-height: 70vh;
     position: relative;
 }
+.hero-content-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+.hero-cta-row .cta-button {
+    margin-top: 0;
+}
+.hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.trust-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
 .hero-image-col {
     display: flex;
     align-items: center;
