@@ -252,6 +252,24 @@ h3 {
     flex-direction: column;
     gap: 16px;
 }
+.hero-work {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.01));
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+.hero-work-title {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.65);
+    margin: 0;
+}
 .hero-cta-row {
     display: flex;
     flex-wrap: wrap;
@@ -263,19 +281,23 @@ h3 {
     margin-top: 0;
 }
 .hero-trust {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
 }
 .trust-pill {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    padding: 4px 10px;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 0.9rem;
+    justify-content: center;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    font-size: 0.95rem;
     font-weight: 600;
+    text-align: center;
+    min-height: 52px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 .hero-image-col {
     display: flex;
