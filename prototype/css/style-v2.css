@@ -891,3 +891,52 @@ body.lightbox-open{ overflow: hidden; }
     font-size: 34px;
   }
 }
+
+@media (max-width: 980px){
+  .hero-photo{
+    max-width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px){
+  .hero-photo{
+    max-width: 240px;
+  }
+}
+@media (max-width: 560px){
+  .hero{
+    padding-top: 36px;
+  }
+}
+
+/* LinkedIn icon */
+.contact-icon.linkedin{
+  background: #0a66c2;
+  color: #fff;
+}
+
+/* LinkedIn link behaviour */
+.linkedin-link{
+  color: #0a66c2;
+  font-weight: 600;
+}
+
+.linkedin-link:hover{
+  text-decoration: underline;
+}
+/* Email icon – match site CTA */
+.contact-icon.email{
+  background: linear-gradient(120deg, #000 0%, #333 100%);
+  color: #fff;
+}
+
+/* Email link */
+.email-link{
+  color: var(--text);
+  font-weight: 600;
+}
+
+.email-link:hover{
+  text-decoration: underline;
+}
