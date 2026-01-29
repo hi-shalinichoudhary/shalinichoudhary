@@ -91,7 +91,7 @@ h3{
 
 /* sections */
 .section{
-  padding: 48px 0;
+  padding: 40px 0;
 }
 
 /* GUARDRAIL: container pattern (forces centering even if other CSS leaks in) */
@@ -323,52 +323,36 @@ h3{
   border-radius: calc(var(--radius) + 6px);
   box-shadow: var(--shadow-1);
   overflow: hidden;
-  position: relative;
 }
 .ticker-track{
   display: flex;
   gap: 36px;
   padding: 14px 24px;
   width: max-content;
-  white-space: nowrap;
   animation: ticker-scroll 28s linear infinite;
-  will-change: transform;
-}
-.ticker-segment{
-  display: inline-block;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  white-space: nowrap;
-  flex: 0 0 auto;
 }
 .ticker-item{
-  display: inline-block;
   font-size: 14px;
   color: var(--muted-text);
   white-space: nowrap;
-  margin-right: 36px;
-}
-.ticker-item:last-child{
-  margin-right: 0;
 }
 .ticker-track:hover{
   animation-play-state: paused;
 }
 
 @keyframes ticker-scroll{
-  0%{ transform: translate3d(0, 0, 0); }
-  100%{ transform: translate3d(-50%, 0, 0); }
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-50%); }
 }
 
 @media (prefers-reduced-motion: reduce){
   .ticker-track{
     animation: none;
+    flex-wrap: wrap;
     width: 100%;
-    overflow-x: auto;
   }
-  .ticker-segment{
-    width: max-content;
+  .ticker-item{
+    white-space: normal;
   }
 }
 
@@ -742,7 +726,7 @@ body.lightbox-open{ overflow: hidden; }
 
 @media (max-width: 560px){
   .section + .section{
-    padding-top: 24px;
+    padding-top: 20px;
   }
 }
 
@@ -778,7 +762,7 @@ body.lightbox-open{ overflow: hidden; }
 -------------------------- */
 
 .contact{
-  padding: 56px 0 72px;
+  padding: 40px 0 52px;
 }
 
 /* Header */
@@ -1013,7 +997,7 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 .section + .section{
-  padding-top: 32px;   /* overrides default 48px when stacked */
+  padding-top: 28px;   /* overrides default 48px when stacked */
 }
 
 /* =====================================================
