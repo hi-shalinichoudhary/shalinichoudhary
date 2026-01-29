@@ -942,3 +942,72 @@ body.lightbox-open{ overflow: hidden; }
 .section + .section{
   padding-top: 32px;   /* overrides default 48px when stacked */
 }
+
+/* =====================================================
+   GRID RESTORATION PATCH — STRUCTURE ONLY
+   (No spacing, colour, or typography changes)
+===================================================== */
+
+/* Principles / Thinking tiles */
+.tiles-4{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Selected impact cards */
+.impact-cards{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Growth levers accordion grid */
+.services-acc-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+/* Reading / blogs section */
+.reading-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* Contact section main layout (CRITICAL) */
+.contact-grid{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* =====================================================
+   RESPONSIVE GRID FALLBACKS
+===================================================== */
+
+@media (max-width: 980px){
+  .tiles-4{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .impact-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .reading-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px){
+  .tiles-4{
+    grid-template-columns: 1fr;
+  }
+}
