@@ -35,3 +35,17 @@
 
   revealEls.forEach((el) => io.observe(el));
 })();
+
+(function () {
+  const cards = document.querySelectorAll(".services-accordions .acc-card");
+  if (!cards.length) return;
+
+  cards.forEach((card) => {
+    card.addEventListener("toggle", () => {
+      if (!card.open) return;
+      cards.forEach((other) => {
+        if (other !== card) other.removeAttribute("open");
+      });
+    });
+  });
+})();
