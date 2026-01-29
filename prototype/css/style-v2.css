@@ -703,3 +703,12 @@ body.lightbox-open{ overflow: hidden; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Featured thinking CTA alignment */
+.reading-actions{
+  max-width: 1120px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center; /* premium look */
+}
