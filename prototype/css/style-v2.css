@@ -1020,3 +1020,23 @@ body.lightbox-open{ overflow: hidden; }
     grid-template-columns: 1fr;
   }
 }
+/* -----------------------------------------------------
+   GRID RESTORATION: Let's Talk Growth section
+----------------------------------------------------- */
+
+/* Desktop: restore two-column layout */
+@media (min-width: 901px){
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* Mobile & tablet: stack */
+@media (max-width: 900px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}
