@@ -1439,7 +1439,7 @@ h3 {
 
 /* Increase "HI, I'M SHALINI CHOUDHARY" by ~2px */
 .hero-content-col .sub-title{
-  font-size: 14px; /* if currently 12px, this is +2; adjust to 15px if needed */
+  font-size: 20px; /* if currently 12px, this is +2; adjust to 15px if needed */
   letter-spacing: 1px;
 }
 
