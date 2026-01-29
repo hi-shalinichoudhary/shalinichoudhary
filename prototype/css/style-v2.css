@@ -1539,10 +1539,4 @@ h3 {
   .hero-content-col .hero-accent{ font-size: 20px; }
 }
 
-/* --- Hero eyebrow line --- */
-.hero-content-col .sub-title{
-  font-size: 14px;       /* +1–2px bump */
-  letter-spacing: 1px;
-  margin-bottom: 10px;
-}
 
