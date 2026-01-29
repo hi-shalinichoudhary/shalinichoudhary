@@ -91,7 +91,7 @@ h3{
 
 /* sections */
 .section{
-  padding: 50px 0;
+  padding: 48px 0;
 }
 
 /* GUARDRAIL: container pattern (forces centering even if other CSS leaks in) */
@@ -111,10 +111,11 @@ h3{
 
 /* section heading container */
 .section-head{
-  margin-top: 0;
-  margin-bottom: 18px;
+  max-width: 1120px;
+  margin: 0 auto 14px auto;  /* ↓ from 18px */
   padding: 0 20px;
 }
+
 
 .section-subhead{
   max-width: 860px;
@@ -301,12 +302,14 @@ h3{
 /* -------------------------
    Principles tiles
 -------------------------- */
-.tiles-4{
-  margin-top: 18px;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+
+.tiles-4,
+.impact-cards,
+.services-acc-grid,
+.reading-grid{
+  margin: 10px auto 0;  /* ↓ from 18px */
+}
+
 }
 
 .tile{
@@ -334,13 +337,6 @@ h3{
 /* -------------------------
    Impact cards
 -------------------------- */
-.impact-cards{
-  margin-top: 18px;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
 
 .impact-card{
   background: var(--card-2);
@@ -364,13 +360,6 @@ h3{
 /* -------------------------
    Services accordion grid
 -------------------------- */
-.services-acc-grid{
-  margin-top: 18px;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
 
 .acc-card{
   background: var(--card-2);
@@ -487,13 +476,6 @@ h3{
 /* -------------------------
    Reading cards
 -------------------------- */
-.reading-grid{
-  margin-top: 18px;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
 
 .reading-card{
   display: block;
@@ -687,7 +669,14 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 @media (max-width: 560px){
-  .section{ padding: 44px 0; }
+  .section{
+    padding: 36px 0;
+  }
+
+  .section + .section{
+    padding-top: 28px;
+  }
+}
   .hero-title{ font-size: 28px; }
   .hero-subtitle{ font-size: 20px; }
   .tiles-4{ grid-template-columns: 1fr; }
@@ -926,10 +915,11 @@ body.lightbox-open{ overflow: hidden; }
   text-decoration: underline;
 }
 /* Email icon – match site CTA */
-.contact-icon.email{
-  background: linear-gradient(120deg, #000 0%, #333 100%);
+.contact-icon.email i{
   color: #fff;
+  font-size: 18px;
 }
+
 
 /* Email link */
 .email-link{
@@ -939,4 +929,17 @@ body.lightbox-open{ overflow: hidden; }
 
 .email-link:hover{
   text-decoration: underline;
+}
+
+.contact-label{
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--muted-text);
+  margin-bottom: 4px;
+}
+
+.section + .section{
+  padding-top: 36px;   /* overrides default 48px when stacked */
 }
