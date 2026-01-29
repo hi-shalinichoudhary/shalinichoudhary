@@ -426,86 +426,76 @@
 </section>
 
 
-  <section id="contact" class="section contact">
-  <div class="contact-head">
-    <div class="contact-eyebrow">GET IN TOUCH</div>
-    <h2 class="contact-title">Let’s Talk Growth</h2>
-    <p class="contact-subtitle">
-      Whether you have a project in mind, want to discuss strategy, or just want to connect —
-      I’d love to hear from you.
+<section id="contact-section" class="section contact">
+  <!-- Header -->
+  <div class="contact-header">
+    <span class="contact-eyebrow">GET IN TOUCH</span>
+    <h2>Let’s Talk Growth</h2>
+    <p>
+      Whether you have a project in mind, want to discuss strategy,
+      or just want to connect — I’d love to hear from you.
     </p>
   </div>
 
+  <!-- Two-column layout -->
   <div class="contact-grid">
-    <!-- LEFT: direct contact -->
-    <aside class="contact-left">
-      <h3 class="contact-left-title">Direct Contact</h3>
+    
+    <!-- Left: Direct contact -->
+    <div class="contact-info">
+      <h3>Direct Contact</h3>
 
       <div class="contact-card">
-        <div class="contact-icon" aria-hidden="true">
-          <i class="fa-solid fa-envelope"></i>
-        </div>
-        <div class="contact-card-body">
-          <div class="contact-card-label">Email</div>
-          <a class="contact-card-value" href="mailto:hi.shalinichoudhary@gmail.com">
-            hi.shalinichoudhary@gmail.com
-          </a>
+        <span class="contact-icon">✉️</span>
+        <div>
+          <small>Email</small>
+          <p>hi.shalinichoudhary@gmail.com</p>
         </div>
       </div>
 
       <div class="contact-card">
-        <div class="contact-icon" aria-hidden="true">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </div>
-        <div class="contact-card-body">
-          <div class="contact-card-label">LinkedIn</div>
-          <a class="contact-card-value" href="https://www.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener">
-            /in/shalinichoudhary
-          </a>
+        <span class="contact-icon">in</span>
+        <div>
+          <small>LinkedIn</small>
+          <p>/in/shalinichoudhary</p>
         </div>
       </div>
 
       <div class="contact-note">
-        <p>
-          “I typically respond within 24–48 hours. For urgent inquiries, LinkedIn messages get the fastest response.”
-        </p>
+        “I typically respond within 24–48 hours.  
+        For urgent inquiries, LinkedIn messages get the fastest response.”
       </div>
-    </aside>
+    </div>
 
-    <!-- RIGHT: form -->
+    <!-- Right: Form -->
     <div class="contact-form-card">
-      <form class="contact-form" action="#" method="post">
-        <div class="form-row two">
-          <div class="field">
-            <label for="c-name">Name</label>
-            <input id="c-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
-          </div>
-
-          <div class="field">
-            <label for="c-email">Email</label>
-            <input id="c-email" name="email" type="email" placeholder="you@company.com" autocomplete="email" />
-          </div>
-        </div>
-
+      <form>
         <div class="form-row">
-          <div class="field">
-            <label for="c-company">Company (optional)</label>
-            <input id="c-company" name="company" type="text" placeholder="Your company" autocomplete="organization" />
+          <div class="form-field">
+            <label>Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" placeholder="you@company.com">
           </div>
         </div>
 
-        <div class="form-row">
-          <div class="field">
-            <label for="c-message">Message</label>
-            <textarea id="c-message" name="message" rows="6" placeholder="Tell me about your project or how I can help..."></textarea>
-          </div>
+        <div class="form-field">
+          <label>Company (optional)</label>
+          <input type="text" placeholder="Your company">
         </div>
 
-        <button class="contact-submit" type="submit">
-          SEND MESSAGE <span aria-hidden="true" class="send-icon">↗</span>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Tell me about your growth challenge..."></textarea>
+        </div>
+
+        <button type="submit" class="contact-submit">
+          Send Message →
         </button>
       </form>
     </div>
+
   </div>
 </section>
 
