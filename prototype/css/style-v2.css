@@ -91,7 +91,7 @@ h3{
 
 /* sections */
 .section{
-  padding: 48px 0;
+  padding: 32px 0;
 }
 
 /* GUARDRAIL: container pattern (forces centering even if other CSS leaks in) */
@@ -669,7 +669,7 @@ body.lightbox-open{ overflow: hidden; }
 
 @media (max-width: 560px){
   .section + .section{
-    padding-top: 24px;
+    padding-top: 16px;
   }
 }
 
@@ -940,7 +940,7 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 .section + .section{
-  padding-top: 32px;   /* overrides default 48px when stacked */
+  padding-top: 20px;   /* overrides default 48px when stacked */
 }
 
 /* =====================================================
