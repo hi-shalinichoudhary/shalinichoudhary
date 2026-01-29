@@ -1402,3 +1402,35 @@ h3 {
 @media (max-width: 980px){
   .services-acc-grid{ grid-template-columns: 1fr; }
 }
+
+/* --- Services accordion: stronger resting contrast --- */
+
+.acc-card{
+  /* clearer outline */
+  border: 1px solid rgba(255,255,255,0.22);
+
+  /* slightly different tone than page */
+  background: rgba(255,255,255,0.085);
+
+  /* subtle always-on separation */
+  box-shadow: 0 10px 26px rgba(0,0,0,0.16);
+
+  /* keep your existing radius/overflow/transition */
+}
+
+.acc-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+  border-color: rgba(255,255,255,0.30);
+}
+
+/* divider line slightly clearer */
+.acc-divider{
+  background: rgba(255,255,255,0.18);
+}
+
+/* chevron container pops a touch more */
+.acc-chevron{
+  border: 1px solid rgba(255,255,255,0.24);
+  background: rgba(255,255,255,0.08);
+}
