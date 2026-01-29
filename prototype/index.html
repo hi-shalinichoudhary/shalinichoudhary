@@ -426,17 +426,89 @@
 </section>
 
 
-    <!-- UPDATED: Closing CTA (replace contact block on homepage) -->
-    <section id="contact-section" class="section cta">
-      <div class="cta-box">
-        <h2>Let’s talk about your growth challenge</h2>
-        <p class="muted">
-          If you’re exploring how to scale acquisition sustainably — or reassessing what’s actually driving results —
-          I’d be happy to talk.
-        </p>
-        <a href="contact.html" class="cta-button">Get in touch</a>
+  <section id="contact" class="section contact">
+  <div class="contact-head">
+    <div class="contact-eyebrow">GET IN TOUCH</div>
+    <h2 class="contact-title">Let’s Talk Growth</h2>
+    <p class="contact-subtitle">
+      Whether you have a project in mind, want to discuss strategy, or just want to connect —
+      I’d love to hear from you.
+    </p>
+  </div>
+
+  <div class="contact-grid">
+    <!-- LEFT: direct contact -->
+    <aside class="contact-left">
+      <h3 class="contact-left-title">Direct Contact</h3>
+
+      <div class="contact-card">
+        <div class="contact-icon" aria-hidden="true">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">Email</div>
+          <a class="contact-card-value" href="mailto:hi.shalinichoudhary@gmail.com">
+            hi.shalinichoudhary@gmail.com
+          </a>
+        </div>
       </div>
-    </section>
+
+      <div class="contact-card">
+        <div class="contact-icon" aria-hidden="true">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </div>
+        <div class="contact-card-body">
+          <div class="contact-card-label">LinkedIn</div>
+          <a class="contact-card-value" href="https://www.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener">
+            /in/shalinichoudhary
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-note">
+        <p>
+          “I typically respond within 24–48 hours. For urgent inquiries, LinkedIn messages get the fastest response.”
+        </p>
+      </div>
+    </aside>
+
+    <!-- RIGHT: form -->
+    <div class="contact-form-card">
+      <form class="contact-form" action="#" method="post">
+        <div class="form-row two">
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input id="c-name" name="name" type="text" placeholder="Your name" autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input id="c-email" name="email" type="email" placeholder="you@company.com" autocomplete="email" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="c-company">Company (optional)</label>
+            <input id="c-company" name="company" type="text" placeholder="Your company" autocomplete="organization" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" name="message" rows="6" placeholder="Tell me about your project or how I can help..."></textarea>
+          </div>
+        </div>
+
+        <button class="contact-submit" type="submit">
+          SEND MESSAGE <span aria-hidden="true" class="send-icon">↗</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
   </main>
 
