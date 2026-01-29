@@ -310,7 +310,6 @@ h3{
   margin: 10px auto 0;  /* ↓ from 18px */
 }
 
-}
 
 .tile{
   background: var(--card);
@@ -669,19 +668,18 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 @media (max-width: 560px){
-  .section{
-    padding: 36px 0;
-  }
-
   .section + .section{
-    padding-top: 28px;
+    padding-top: 24px;
   }
 }
+
+
   .hero-title{ font-size: 28px; }
   .hero-subtitle{ font-size: 20px; }
   .tiles-4{ grid-template-columns: 1fr; }
   .back-to-top{ right: 16px; bottom: 16px; }
 }
+
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
@@ -707,7 +705,7 @@ body.lightbox-open{ overflow: hidden; }
 -------------------------- */
 
 .contact{
-  padding: 80px 0 100px;
+  padding: 56px 0 72px;
 }
 
 /* Header */
@@ -916,6 +914,7 @@ body.lightbox-open{ overflow: hidden; }
 }
 /* Email icon – match site CTA */
 .contact-icon.email i{
+  background: #fff4ea;
   color: #fff;
   font-size: 18px;
 }
@@ -941,5 +940,5 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 .section + .section{
-  padding-top: 36px;   /* overrides default 48px when stacked */
+  padding-top: 32px;   /* overrides default 48px when stacked */
 }
