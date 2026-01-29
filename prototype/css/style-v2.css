@@ -1,8 +1,5 @@
 /*
   Prototype CSS (v2) — Premium minimal layout aligned to new homepage structure
-  - Keeps Poppins + black/white + your gradient CTA
-  - Supports: site-header, hero-grid, tiles, impact cards, services accordions, reading cards, CTA section
-  - Preserves: hamburger menu behaviour, back-to-top, lightbox
 */
 
 /* -------------------------
@@ -36,12 +33,20 @@
 
 html{ scroll-behavior: smooth; }
 
+/* GUARDRAIL: prevent “mystery left shift” from width math / scrollbars */
+html, body{
+  width: 100%;
+  max-width: 100%;
+}
+
 body{
   font-family: var(--font-body) !important;
   color: var(--text);
   background: var(--color-background);
   line-height: 1.6;
-  overflow-x: hidden;
+
+  /* GUARDRAIL: if something overflows, it won't visually drag the canvas */
+  overflow-x: clip; /* better than hidden for modern browsers */
 }
 
 a{
@@ -80,15 +85,34 @@ h3{
 -------------------------- */
 .site-content{
   width: 100%;
+  max-width: 100%;
+  display: block;
 }
 
+/* sections */
 .section{
   padding: 72px 0;
 }
 
-.section-head{
+/* GUARDRAIL: container pattern (forces centering even if other CSS leaks in) */
+.section-head,
+.hero-grid,
+.tiles-4,
+.impact-cards,
+.services-acc-grid,
+.reading-grid,
+.cta-box,
+.site-header-inner{
+  width: 100%;
   max-width: 1120px;
-  margin: 0 auto 18px auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* section heading container */
+.section-head{
+  margin-top: 0;
+  margin-bottom: 18px;
   padding: 0 20px;
 }
 
@@ -110,13 +134,14 @@ h3{
 }
 
 .site-header-inner{
-  max-width: 1120px;
-  margin: 0 auto;
   padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
+
+  /* GUARDRAIL: ensures absolute dropdown nav positions relative to header */
+  position: relative;
 }
 
 .brand .logo-image{
@@ -144,7 +169,7 @@ h3{
   text-underline-offset: 5px;
 }
 
-/* Hamburger base (kept from your original) */
+/* Hamburger */
 .menu-toggle{
   display: none;
   background: none;
@@ -174,7 +199,7 @@ h3{
 .hamburger::after{ transform: translateY(8px); }
 
 /* -------------------------
-   CTA button (your existing)
+   CTA button
 -------------------------- */
 .cta-button{
   display: inline-block;
@@ -182,7 +207,7 @@ h3{
   background-image: linear-gradient(120deg, #000 0%, #333 100%);
   color: var(--color-background) !important;
   padding: 12px 30px;
-  border-radius: 10px; /* slightly more premium than 6px */
+  border-radius: 10px;
   margin-top: 0;
   font-weight: 700;
   letter-spacing: 0.3px;
@@ -200,15 +225,13 @@ h3{
 }
 
 /* -------------------------
-   Hero (new)
+   Hero
 -------------------------- */
 .hero{
   padding-top: 54px;
 }
 
 .hero-grid{
-  max-width: 1120px;
-  margin: 0 auto;
   padding: 0 20px;
   display: grid;
   grid-template-columns: 360px 1fr;
@@ -230,7 +253,7 @@ h3{
 }
 
 .eyebrow{
-  font-size: 14px; /* +1–2pt vs older */
+  font-size: 14px;
   letter-spacing: 1px;
   font-weight: 700;
   color: var(--muted-text);
@@ -239,14 +262,14 @@ h3{
 }
 
 .hero-title{
-  font-size: 34px; /* reduced */
+  font-size: 34px;
   line-height: 1.12;
   font-weight: 800;
   margin: 0 0 12px 0;
 }
 .hero-subtitle{
   display: block;
-  font-size: 23px; /* clearly secondary */
+  font-size: 23px;
   font-weight: 600;
   opacity: 0.75;
   margin-top: 8px;
@@ -260,9 +283,7 @@ h3{
   font-size: 16px;
 }
 
-.hero-actions{
-  margin-top: 18px;
-}
+.hero-actions{ margin-top: 18px; }
 
 .hero-personal{
   margin-top: 14px;
@@ -270,9 +291,7 @@ h3{
   color: var(--muted-text);
 }
 
-.social-icons{
-  margin-top: 14px;
-}
+.social-icons{ margin-top: 14px; }
 .social-icons a{
   font-size: 1.3rem;
   margin-right: 14px;
@@ -280,11 +299,10 @@ h3{
 }
 
 /* -------------------------
-   Principles tiles (new)
+   Principles tiles
 -------------------------- */
 .tiles-4{
-  max-width: 1120px;
-  margin: 18px auto 0;
+  margin-top: 18px;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -314,11 +332,10 @@ h3{
 }
 
 /* -------------------------
-   Impact cards (new)
+   Impact cards
 -------------------------- */
 .impact-cards{
-  max-width: 1120px;
-  margin: 18px auto 0;
+  margin-top: 18px;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -342,23 +359,19 @@ h3{
   line-height: 1.35;
   margin: 0 0 10px 0;
 }
-.impact-card p{
-  font-size: 14px;
-}
+.impact-card p{ font-size: 14px; }
 
 /* -------------------------
-   Services accordion grid (new)
+   Services accordion grid
 -------------------------- */
 .services-acc-grid{
-  max-width: 1120px;
-  margin: 18px auto 0;
+  margin-top: 18px;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
-/* Accordion card — WHITE theme */
 .acc-card{
   background: var(--card-2);
   border: 1px solid var(--border);
@@ -422,19 +435,14 @@ h3{
   background: #f3f4f6;
 }
 
-.acc-body{
-  padding: 0 20px 20px 20px;
-}
+.acc-body{ padding: 0 20px 20px 20px; }
 .acc-divider{
   height: 1px;
   background: var(--border);
   margin: 10px 0 16px 0;
 }
 
-.acc-meta{
-  display: grid;
-  gap: 14px;
-}
+.acc-meta{ display: grid; gap: 14px; }
 .acc-row{
   display: grid;
   grid-template-columns: 28px 1fr;
@@ -473,18 +481,14 @@ h3{
   opacity: 0.9;
 }
 
-.acc-list{
-  margin: 0;
-  padding-left: 18px;
-}
+.acc-list{ margin: 0; padding-left: 18px; }
 .acc-list li{ margin-bottom: 6px; }
 
 /* -------------------------
-   Reading cards (new)
+   Reading cards
 -------------------------- */
 .reading-grid{
-  max-width: 1120px;
-  margin: 18px auto 0;
+  margin-top: 18px;
   padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -498,7 +502,6 @@ h3{
   border-radius: var(--radius);
   padding: 18px;
   box-shadow: var(--shadow-1);
-  text-decoration: none;
   color: var(--text);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
@@ -515,13 +518,11 @@ h3{
   color: var(--muted-text);
   margin-bottom: 10px;
 }
-
 .reading-card h3{
   margin: 0 0 10px 0;
   font-size: 15px;
   line-height: 1.35;
 }
-
 .reading-link{
   display: inline-block;
   margin-top: 10px;
@@ -529,15 +530,13 @@ h3{
 }
 
 /* -------------------------
-   CTA section (new)
+   CTA section
 -------------------------- */
 .cta{
   padding-top: 60px;
   padding-bottom: 90px;
 }
 .cta-box{
-  max-width: 1120px;
-  margin: 0 auto;
   padding: 26px 20px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -552,7 +551,7 @@ h3{
 }
 
 /* -------------------------
-   Footer (keep simple)
+   Footer
 -------------------------- */
 .tj-footer-area{
   padding: 30px 20px;
@@ -572,7 +571,7 @@ h3{
 }
 
 /* -------------------------
-   Back to top (kept)
+   Back to top
 -------------------------- */
 .back-to-top{
   position: fixed;
@@ -604,7 +603,7 @@ h3{
 }
 
 /* -------------------------
-   Lightbox (kept)
+   Lightbox
 -------------------------- */
 body.lightbox-open{ overflow: hidden; }
 
@@ -655,7 +654,7 @@ body.lightbox-open{ overflow: hidden; }
 .portfolio-lightbox-close:hover{ background: #fff; }
 
 /* -------------------------
-   Responsive (mobile nav + grids)
+   Responsive
 -------------------------- */
 @media (max-width: 980px){
   .hero-grid{ grid-template-columns: 1fr; gap: 20px; }
@@ -666,10 +665,8 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 @media (max-width: 992px){
-  /* show hamburger */
   .menu-toggle{ display: block; }
 
-  /* convert nav to dropdown (matches your existing JS that toggles .active) */
   .site-nav{
     display: none;
     position: absolute;
@@ -686,7 +683,6 @@ body.lightbox-open{ overflow: hidden; }
     z-index: 1001;
   }
   .site-nav.active{ display: flex; }
-
   .site-nav a{ padding: 10px 0; }
 }
 
