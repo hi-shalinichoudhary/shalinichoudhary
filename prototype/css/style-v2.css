@@ -1472,3 +1472,77 @@ h3 {
 
 .acc-card{ backdrop-filter: blur(6px); }
 
+/* --- Services accordion: white background tuning --- */
+
+.acc-card{
+  background: #f9fafb;              /* soft off-white card */
+  border: 1px solid #e5e7eb;         /* light but visible outline */
+  border-radius: 18px;
+
+  /* subtle elevation even at rest */
+  box-shadow:
+    0 1px 2px rgba(0,0,0,0.04),
+    0 8px 20px rgba(0,0,0,0.06);
+
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.acc-card:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 6px rgba(0,0,0,0.06),
+    0 14px 32px rgba(0,0,0,0.10);
+  border-color: #d1d5db;
+}
+
+/* Divider line clearer on white */
+.acc-divider{
+  background: #e5e7eb;
+}
+
+/* Chevron container: visible even at rest */
+.acc-chevron{
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+/* --- Hero H1 hierarchy refinement --- */
+
+.hero-content-col h1{
+  font-size: 36px;        /* reduced from earlier 40–44 */
+  line-height: 1.15;
+  font-weight: 800;      /* strong but not blocky */
+  letter-spacing: -0.25px;
+  max-width: 720px;
+  margin-bottom: 14px;
+}
+
+/* Second line: clearly subordinate */
+.hero-content-col .hero-accent{
+  display: block;
+  margin-top: 6px;
+
+  font-size: 26px;       /* noticeably smaller than main line */
+  font-weight: 600;      /* lighter weight */
+  line-height: 1.25;
+  opacity: 0.75;         /* visual hierarchy without looking disabled */
+}
+
+/* Responsive tuning */
+@media (max-width: 980px){
+  .hero-content-col h1{ font-size: 30px; }
+  .hero-content-col .hero-accent{ font-size: 22px; }
+}
+
+@media (max-width: 560px){
+  .hero-content-col h1{ font-size: 26px; }
+  .hero-content-col .hero-accent{ font-size: 20px; }
+}
+
+/* --- Hero eyebrow line --- */
+.hero-content-col .sub-title{
+  font-size: 14px;       /* +1–2px bump */
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
