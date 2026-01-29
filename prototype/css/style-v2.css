@@ -1020,23 +1020,24 @@ body.lightbox-open{ overflow: hidden; }
     grid-template-columns: 1fr;
   }
 }
-/* -----------------------------------------------------
-   GRID RESTORATION: Let's Talk Growth section
------------------------------------------------------ */
+/* =====================================================
+   GRID RESTORATION: Growth levers I lead (accordion grid)
+   ===================================================== */
 
-/* Desktop: restore two-column layout */
-@media (min-width: 901px){
-  .contact-grid{
+/* Desktop: 2-column layout */
+@media (min-width: 981px){
+  .services-acc-grid{
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: start;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
 }
 
-/* Mobile & tablet: stack */
-@media (max-width: 900px){
-  .contact-grid{
+/* Tablet & mobile: stack */
+@media (max-width: 980px){
+  .services-acc-grid{
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
