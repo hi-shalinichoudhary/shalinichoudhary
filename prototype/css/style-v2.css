@@ -1235,3 +1235,170 @@ h3 {
         scroll-behavior: auto !important;
     }
 }
+
+/* ---------- Services: 2-column Lovable-style accordions (theme-aligned) ---------- */
+
+.services-accordions{
+  margin-top: 10px;
+}
+
+.services-acc-header{
+  max-width: 980px;
+}
+
+.services-acc-grid{
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Card */
+.acc-card{
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06); /* keeps your dark/modern theme feel */
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.acc-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 34px rgba(0,0,0,0.22);
+  border-color: rgba(255,255,255,0.22);
+}
+
+/* Remove marker */
+.acc-card summary{ list-style: none; }
+.acc-card summary::-webkit-details-marker{ display: none; }
+
+/* Summary */
+.acc-summary{
+  cursor: pointer;
+  padding: 22px 22px 16px 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.acc-title h3{
+  margin: 0 0 10px 0;
+  font-size: 22px;         /* big but not serif; aligned to your theme */
+  line-height: 1.15;
+  letter-spacing: -0.2px;
+}
+
+.acc-title p{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+  max-width: 620px;
+}
+
+/* Chevron */
+.acc-chevron{
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  transition: transform 200ms ease, background 200ms ease;
+  margin-top: 2px;
+}
+
+.acc-chevron svg{
+  width: 22px;
+  height: 22px;
+  opacity: 0.9;
+}
+
+.acc-card[open] .acc-chevron{
+  transform: rotate(180deg);
+  background: rgba(255,255,255,0.09);
+}
+
+/* Body */
+.acc-body{
+  padding: 0 22px 22px 22px;
+}
+
+.acc-divider{
+  height: 1px;
+  background: rgba(255,255,255,0.14);
+  margin: 10px 0 16px 0;
+}
+
+/* Meta */
+.acc-meta{
+  display: grid;
+  gap: 14px;
+}
+
+.acc-row{
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Icon pills (text icons for simplicity; keeps theme consistent) */
+.acc-icon{
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 14px;
+  margin-top: 2px;
+  border: 1px solid rgba(255,255,255,0.20);
+}
+
+.acc-icon-accent{
+  background: rgba(255,255,255,0.08);
+  opacity: 0.95;
+}
+
+.acc-icon-muted{
+  background: rgba(255,255,255,0.05);
+  opacity: 0.75;
+}
+
+.acc-label{
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  opacity: 0.70;
+  margin-bottom: 6px;
+}
+
+.acc-text{
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+.acc-list{
+  margin: 0;
+  padding-left: 18px;
+}
+
+.acc-list li{
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.88;
+  margin-bottom: 6px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .services-acc-grid{ grid-template-columns: 1fr; }
+}
