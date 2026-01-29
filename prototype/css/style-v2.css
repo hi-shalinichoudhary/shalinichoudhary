@@ -91,7 +91,7 @@ h3{
 
 /* sections */
 .section{
-  padding: 72px 0;
+  padding: 56px 0;
 }
 
 /* GUARDRAIL: container pattern (forces centering even if other CSS leaks in) */
@@ -687,7 +687,7 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 @media (max-width: 560px){
-  .section{ padding: 54px 0; }
+  .section{ padding: 44px 0; }
   .hero-title{ font-size: 28px; }
   .hero-subtitle{ font-size: 20px; }
   .tiles-4{ grid-template-columns: 1fr; }
