@@ -380,6 +380,31 @@ h3{
   .ticker-item{
     white-space: normal;
   }
+  .ticker-heading{
+    white-space: normal;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px){
+  .ticker-track{
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .ticker-item{
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+  .ticker-source{
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+  .ticker-heading{
+    white-space: normal;
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 8px 12px;
+  }
 }
 
 /* -------------------------
