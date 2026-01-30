@@ -254,17 +254,9 @@ h3{
 }
 
 @media (min-width: 981px){
-  .hero-photo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .hero-photo img{
     max-height: 420px;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+    object-fit: cover;
   }
 }
 
