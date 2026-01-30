@@ -318,23 +318,49 @@ h3{
   padding: 0 0 18px;
 }
 .ticker-inner{
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(10,102,194,0.06), rgba(248,250,252,0.9));
+  border: 1px solid rgba(10,102,194,0.2);
   border-radius: calc(var(--radius) + 6px);
   box-shadow: var(--shadow-1);
   overflow: hidden;
 }
 .ticker-track{
   display: flex;
-  gap: 36px;
-  padding: 14px 24px;
+  gap: 18px;
+  padding: 14px 18px;
   width: max-content;
   animation: ticker-scroll 28s linear infinite;
 }
 .ticker-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 14px;
   color: var(--muted-text);
   white-space: nowrap;
+}
+.ticker-source{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(10,102,194,0.12);
+  color: #0a66c2;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+.ticker-heading{
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-2);
+  color: var(--text);
+  box-shadow: 0 1px 1px rgba(15,23,42,0.04);
 }
 .ticker-track:hover{
   animation-play-state: paused;
