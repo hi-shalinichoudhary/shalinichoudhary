@@ -122,6 +122,56 @@ h3{
   color: var(--muted-text);
 }
 
+/* Trust section */
+.trust-section{
+  padding-top: 32px;
+  padding-bottom: 48px;
+}
+
+.trust-copy,
+.trust-logos{
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.trust-copy{
+  margin-top: 8px;
+}
+
+.trust-copy p{
+  margin: 0;
+  padding: 18px 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #f7f7f7;
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+.trust-logos{
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.trust-logos img{
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+@media (max-width: 720px){
+  .trust-logos{
+    justify-content: center;
+  }
+}
+
 /* -------------------------
    Header (new)
 -------------------------- */
