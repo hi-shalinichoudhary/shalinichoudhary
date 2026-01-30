@@ -14,46 +14,6 @@
     });
   });
 
-  const siteNav = document.querySelector(".site-nav");
-  if (siteNav) {
-    const navLinks = Array.from(
-      siteNav.querySelectorAll('a[href^="#"]')
-    );
-    const sectionLinks = navLinks
-      .map((link) => {
-        const href = link.getAttribute("href");
-        const section = href ? document.querySelector(href) : null;
-        return section ? { link, section } : null;
-      })
-      .filter(Boolean);
-
-    if (sectionLinks.length) {
-      const setActive = (activeLink) => {
-        navLinks.forEach((link) => {
-          link.classList.toggle("is-active", link === activeLink);
-        });
-      };
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-            const match = sectionLinks.find(
-              (item) => item.section === entry.target
-            );
-            if (match) setActive(match.link);
-          });
-        },
-        {
-          threshold: 0.1,
-          rootMargin: "-35% 0px -55% 0px",
-        }
-      );
-
-      sectionLinks.forEach((item) => observer.observe(item.section));
-    }
-  }
-
   // Reveal-on-scroll (subtle)
   const revealEls = document.querySelectorAll(
     ".growth-card, .portfolio-card, .service-item-details, .resume-item, .skill-item, .blog-card"
