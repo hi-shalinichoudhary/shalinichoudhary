@@ -140,35 +140,36 @@ h3{
   margin-top: 8px;
 }
 
-.trust-copy p{
+.trust-box{
   margin: 0;
   padding: 18px 22px;
   border-radius: 14px;
-  border: 1px solid var(--border);
-  background: #f7f7f7;
+  border: 1px solid #d8dde3;
+  background: #f2f4f7;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
   color: var(--body-text);
   line-height: 1.6;
 }
 
 .trust-logos{
-  margin-top: 18px;
-  display: flex;
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(140px, 1fr));
   align-items: center;
-  justify-content: space-between;
+  justify-items: center;
   gap: 24px;
-  flex-wrap: wrap;
 }
 
 .trust-logos img{
-  height: 48px;
-  width: auto;
-  max-width: 220px;
+  height: 56px;
+  width: 100%;
+  max-width: 200px;
   object-fit: contain;
 }
 
 @media (max-width: 720px){
   .trust-logos{
-    justify-content: center;
+    grid-template-columns: repeat(2, minmax(140px, 1fr));
   }
 }
 
