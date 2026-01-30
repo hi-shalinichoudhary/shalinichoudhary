@@ -254,14 +254,9 @@ h3{
 }
 
 @media (min-width: 981px){
-  .hero-photo{
-    aspect-ratio: 4 / 5;
-    max-height: 420px;
-  }
   .hero-photo img{
-    height: 100%;
-    object-fit: contain;
-    object-position: top;
+    max-height: 420px;
+    object-fit: cover;
   }
 }
 
