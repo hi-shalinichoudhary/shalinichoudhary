@@ -253,6 +253,13 @@ h3{
   height: auto;
 }
 
+@media (min-width: 981px){
+  .hero-photo img{
+    max-height: 420px;
+    object-fit: cover;
+  }
+}
+
 .eyebrow{
   font-size: 14px;
   letter-spacing: 1px;
