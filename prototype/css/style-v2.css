@@ -94,6 +94,10 @@ h3{
   padding: 40px 0;
 }
 
+.section-alt{
+  background: var(--card);
+}
+
 /* GUARDRAIL: container pattern (forces centering even if other CSS leaks in) */
 .section-head,
 .hero-grid,
