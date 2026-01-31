@@ -480,6 +480,11 @@ h3{
   margin: 10px auto 0;  /* ↓ from 18px */
 }
 
+.tiles-4{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
 
 .tile{
   background: var(--card);
@@ -507,6 +512,12 @@ h3{
    Impact cards
 -------------------------- */
 
+.impact-cards{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
 .impact-card{
   background: var(--card-2);
   border: 1px solid var(--border);
@@ -529,6 +540,12 @@ h3{
 /* -------------------------
    Services accordion grid
 -------------------------- */
+
+.services-acc-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
 
 .acc-card{
   background: var(--card-2);
@@ -645,6 +662,12 @@ h3{
 /* -------------------------
    Reading cards
 -------------------------- */
+
+.reading-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
 
 .reading-card{
   display: block;
@@ -811,7 +834,7 @@ body.lightbox-open{ overflow: hidden; }
   .hero-grid{ grid-template-columns: 1fr; gap: 20px; }
   .tiles-4{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .impact-cards{ grid-template-columns: 1fr; }
-  .services-acc-grid{ grid-template-columns: 1fr; }
+  .services-acc-grid{ grid-template-columns: 1fr; gap: 16px; }
   .reading-grid{ grid-template-columns: 1fr; }
 }
 
@@ -1050,6 +1073,12 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 @media (max-width: 980px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px){
   .hero-photo{
     max-width: 280px;
     margin: 0 auto;
@@ -1111,103 +1140,4 @@ body.lightbox-open{ overflow: hidden; }
 
 .section + .section{
   padding-top: 28px;   /* overrides default 48px when stacked */
-}
-
-/* =====================================================
-   GRID RESTORATION PATCH — STRUCTURE ONLY
-   (No spacing, colour, or typography changes)
-===================================================== */
-
-/* Principles / Thinking tiles */
-.tiles-4{
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
-}
-
-/* Selected impact cards */
-.impact-cards{
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-}
-
-/* -----------------------------------------------------
-   FIX: Growth levers I lead — restore 2-column layout
------------------------------------------------------ */
-
-.services-acc-grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-
-@media (max-width: 980px){
-  .services-acc-grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Reading / blogs section */
-.reading-grid{
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-}
-
-/* Contact section main layout (CRITICAL) */
-.contact-grid{
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: start;
-}
-
-/* =====================================================
-   RESPONSIVE GRID FALLBACKS
-===================================================== */
-
-@media (max-width: 980px){
-  .tiles-4{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .impact-cards{
-    grid-template-columns: 1fr;
-  }
-
-  .reading-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 560px){
-  .tiles-4{
-    grid-template-columns: 1fr;
-  }
-}
-/* =====================================================
-   GRID RESTORATION: Growth levers I lead (accordion grid)
-   ===================================================== */
-
-/* Desktop: 2-column layout */
-@media (min-width: 981px){
-  .services-acc-grid{
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-  }
-}
-
-/* Tablet & mobile: stack */
-@media (max-width: 980px){
-  .services-acc-grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
 }
