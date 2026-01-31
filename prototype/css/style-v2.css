@@ -143,10 +143,10 @@ h3{
 .trust-box{
   margin: 0;
   padding: 18px 22px;
-  border-radius: 14px;
-  border: 1px solid #d8dde3;
-  background: #f2f4f7;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow-1);
   color: var(--body-text);
   line-height: 1.6;
 }
