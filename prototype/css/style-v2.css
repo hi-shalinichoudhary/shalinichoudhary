@@ -312,7 +312,6 @@ h3{
 @media (min-width: 981px){
   .hero-photo img{
     max-height: 420px;
-    object-fit: cover;
   }
 }
 
@@ -326,14 +325,14 @@ h3{
 }
 
 .hero-title{
-  font-size: 34px;
+  font-size: 32px;
   line-height: 1.12;
   font-weight: 800;
   margin: 0 0 12px 0;
 }
 .hero-subtitle{
   display: block;
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 600;
   opacity: 0.75;
   margin-top: 8px;
@@ -845,8 +844,8 @@ body.lightbox-open{ overflow: hidden; }
 }
 
 
-  .hero-title{ font-size: 28px; }
-  .hero-subtitle{ font-size: 20px; }
+  .hero-title{ font-size: 26px; }
+  .hero-subtitle{ font-size: 18px; }
   .tiles-4{ grid-template-columns: 1fr; }
   .back-to-top{ right: 16px; bottom: 16px; }
 }
