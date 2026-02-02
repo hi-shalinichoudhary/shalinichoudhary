@@ -419,9 +419,34 @@ h3 {
     gap: 24px;
 }
 
+.blog-page main .section-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.blog-page main .section-wrapper > h2,
+.blog-page main .section-wrapper > .section-description {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.blog-page h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+.blog-page h2 {
+    font-size: 1.9rem;
+    font-weight: 500;
+}
+
+.blog-page h3 {
+    font-weight: 400;
+}
+
 .blog-hero-content {
     max-width: 720px;
-    padding: 0 40px;
+    padding: 0;
 }
 
 .blog-hero .section-description {
@@ -431,10 +456,11 @@ h3 {
 }
 
 .blog-hero-highlight {
-    padding: 20px 40px;
+    padding: 18px 24px;
     border-radius: 16px;
     background: var(--color-muted);
     max-width: 560px;
+    justify-self: start;
 }
 
 .hero-microcopy {
@@ -451,7 +477,7 @@ h3 {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
     align-items: center;
-    padding: 0 40px 20px 40px;
+    padding: 0 0 20px 0;
 }
 
 .featured-copy h2 {
@@ -499,7 +525,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    padding: 0 40px 10px 40px;
+    padding: 0 0 10px 0;
 }
 
 .category-pill {
@@ -521,11 +547,12 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
-    padding: 0 40px 10px 40px;
+    padding: 0 0 10px 0;
 }
 
 .blog-latest-grid h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 .linkedin-longform .section-description {
@@ -533,14 +560,14 @@ h3 {
 }
 
 .linkedin-header {
-    padding: 0 40px;
+    padding: 0;
 }
 
 .linkedin-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
-    padding: 0 40px 20px 40px;
+    padding: 0 0 20px 0;
 }
 
 .linkedin-card {
@@ -561,7 +588,8 @@ h3 {
 }
 
 .linkedin-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 400;
     margin-bottom: 0;
 }
 
@@ -582,7 +610,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
-    padding: 0 40px 20px 40px;
+    padding: 0 0 20px 0;
 }
 
 .impact-mini-card {
@@ -596,13 +624,17 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
-    padding: 0 40px 20px 40px;
+    padding: 0 0 20px 0;
 }
 
 .reading-card {
     padding: 20px;
     border-radius: 16px;
     background: var(--color-muted);
+}
+
+.reading-card a {
+    display: inline-block;
 }
 
 .reading-card ul,
@@ -618,7 +650,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    padding: 0 40px 20px 40px;
+    padding: 0 0 20px 0;
 }
 
 .category-card {
@@ -631,29 +663,36 @@ h3 {
 .author-card {
     display: grid;
     gap: 20px;
-    padding: 0 40px 20px 40px;
+    padding: 20px;
     border-radius: 16px;
     background: var(--color-muted);
 }
 
 .author-card ul {
     margin: 0;
-    padding-left: 20px;
+    padding-left: 0;
+    list-style-position: inside;
 }
 
 .footer-cta-content {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    padding: 0 40px 10px 40px;
+    gap: 12px;
+    padding: 0 0 10px 0;
     text-align: center;
 }
 
 .footer-cta-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .footer-cta-content {
+        flex-wrap: wrap;
+    }
 }
 .section-description {
     font-size: 1.1rem;
