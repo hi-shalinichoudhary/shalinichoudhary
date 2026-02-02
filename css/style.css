@@ -80,18 +80,19 @@ h1, h2, h3 {
 }
 
 /* Adjusted H1 size for better flow and impact */
-h1 { font-size: 3.5rem; } 
+h1 { font-size: 3rem; } 
 
 /* FIX: Reduce bottom margin on H2 elements */
 h2 { 
-    font-size: 3rem; 
-    margin-bottom: 20px; 
+    font-size: 2.1rem; 
+    font-weight: 600;
+    margin-bottom: 18px; 
 }
 
 /* FIX: Reduce bottom margin on H3 elements */
 h3 { 
-    font-size: 1.8rem; 
-    font-weight: 700; 
+    font-size: 1.4rem; 
+    font-weight: 600; 
     margin-bottom: 10px; 
 }
 
@@ -385,7 +386,6 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    padding: 0 40px;
 }
 
 .hero-actions .cta-button,
@@ -426,6 +426,8 @@ h3 {
 
 .blog-hero .section-description {
     padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .blog-hero-highlight {
@@ -523,7 +525,7 @@ h3 {
 }
 
 .blog-latest-grid h3 {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
 }
 
 .linkedin-longform .section-description {
@@ -559,7 +561,7 @@ h3 {
 }
 
 .linkedin-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     margin-bottom: 0;
 }
 
@@ -639,45 +641,19 @@ h3 {
     padding-left: 20px;
 }
 
-.newsletter-strip {
-    background: #111;
-    color: #fff;
-    border-top: none;
-}
-
-.newsletter-strip h2,
-.newsletter-strip .section-description {
-    color: #fff;
-}
-
-.newsletter-content {
-    display: grid;
-    gap: 20px;
-    align-items: center;
-    padding: 20px 40px 30px 40px;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.newsletter-form input {
-    flex: 1;
-    min-width: 220px;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: none;
-}
-
 .footer-cta-content {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 16px;
     padding: 0 40px 10px 40px;
+    text-align: center;
+}
+
+.footer-cta-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 .section-description {
     font-size: 1.1rem;
