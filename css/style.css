@@ -521,6 +521,20 @@ h3 {
     padding-bottom: 30px;
 }
 
+.category-narrative {
+    display: grid;
+    gap: 8px;
+    padding: 20px 24px;
+    border-radius: 16px;
+    background: var(--color-muted);
+}
+
+.category-narrative-text {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
 .category-pill-group {
     display: flex;
     flex-wrap: wrap;
@@ -658,6 +672,12 @@ h3 {
     border-radius: 16px;
     border: 1px solid #e0e0e0;
     background: #fff;
+}
+
+.category-subcopy {
+    margin: 4px 0 12px;
+    font-size: 0.95rem;
+    opacity: 0.75;
 }
 
 .author-card {
