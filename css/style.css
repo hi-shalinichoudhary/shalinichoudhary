@@ -421,6 +421,7 @@ h3 {
 
 .blog-hero-content {
     max-width: 720px;
+    padding: 0 40px;
 }
 
 .blog-hero .section-description {
@@ -521,19 +522,51 @@ h3 {
     padding: 0 40px 10px 40px;
 }
 
-.blog-ticker .ticker-track {
+.blog-latest-grid h3 {
+    font-size: 1.35rem;
+}
+
+.linkedin-longform .section-description {
+    padding-bottom: 0;
+}
+
+.linkedin-header {
+    padding: 0 40px;
+}
+
+.linkedin-grid {
     display: grid;
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
     padding: 0 40px 20px 40px;
 }
 
-.blog-ticker .ticker-item {
+.linkedin-card {
     border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 16px 18px;
+    border-radius: 16px;
+    padding: 18px 20px;
     background: #fff;
     display: grid;
-    gap: 6px;
+    gap: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedin-card:hover,
+.linkedin-card:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-soft);
+    opacity: 1;
+}
+
+.linkedin-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+
+.linkedin-card p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 0.95rem;
 }
 
 .ticker-source {
