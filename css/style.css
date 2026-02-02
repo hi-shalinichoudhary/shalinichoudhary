@@ -370,7 +370,7 @@ h3 {
 /* --- Services & Portfolio Headers / Archive Header Fix --- */
 .section-wrapper h2, .section-wrapper .section-description {
     /* Standard padding for section titles */
-    padding: 0 40px 10px 40px; 
+    padding: 0 0px 10px 0px; 
 }
 
 .eyebrow {
