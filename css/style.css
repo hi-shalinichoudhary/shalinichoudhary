@@ -555,6 +555,34 @@ h3 {
     font-weight: 400;
 }
 
+.blog-library {
+    padding-top: 10px;
+}
+
+.blog-filter-group {
+    margin-bottom: 24px;
+}
+
+.blog-card-grid {
+    --blog-card-height: 340px;
+    --blog-grid-gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--blog-grid-gap);
+    max-height: 9999px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.blog-card-grid.is-collapsed {
+    max-height: calc((var(--blog-card-height) * 3) + (var(--blog-grid-gap) * 2));
+}
+
+.blog-library-actions {
+    text-align: center;
+    padding-top: 24px;
+}
+
 .linkedin-longform .section-description {
     padding-bottom: 0;
 }
