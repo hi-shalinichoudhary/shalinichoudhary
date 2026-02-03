@@ -1027,13 +1027,18 @@ h3 {
     border-top: none; /* ISSUE 3 FIX: Removed redundant top border on the grid */
     
     /* CRITICAL: Set initial height and hide overflow for "Load More" */
-    max-height: 800px; 
+    max-height: calc((320px * 3) + (30px * 2));
     overflow: hidden; 
     position: relative;
     transition: max-height 0.5s ease;
     
     /* FIX: Added bottom padding to ensure the final card's bottom border is visible */
     padding-bottom: 40px;
+}
+
+.blog-archive-grid.is-expanded {
+    max-height: none;
+    overflow: visible;
 }
 
 /* Blog card uniformity (Fixes Issue 1 for the last card) */
