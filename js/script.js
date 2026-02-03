@@ -220,7 +220,26 @@ document.addEventListener('DOMContentLoaded', function() {
         revealTargets.forEach(target => revealObserver.observe(target));
     }
 
-    // --- 6. Back to Top Button ---
+    // --- 6. Blog Library Toggle ---
+    const blogToggleButton = document.querySelector('[data-blog-toggle]');
+    const blogCardGrid = document.getElementById('blog-library-grid');
+
+    if (blogToggleButton && blogCardGrid) {
+        const updateBlogToggle = () => {
+            const isCollapsed = blogCardGrid.classList.contains('is-collapsed');
+            blogToggleButton.textContent = isCollapsed ? 'View all blogs' : 'Show fewer blogs';
+            blogToggleButton.setAttribute('aria-expanded', (!isCollapsed).toString());
+        };
+
+        updateBlogToggle();
+
+        blogToggleButton.addEventListener('click', () => {
+            blogCardGrid.classList.toggle('is-collapsed');
+            updateBlogToggle();
+        });
+    }
+
+    // --- 7. Back to Top Button ---
     const backToTopButton = document.querySelector('.back-to-top');
 
     if (backToTopButton) {
