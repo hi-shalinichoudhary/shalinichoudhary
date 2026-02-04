@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style-v2.css">
     <link rel="stylesheet" href="css/style.css">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
@@ -48,42 +49,85 @@
     </header>
     <main class="site-content">
         
-        <section class="section-wrapper">
-            <h2 style="padding: 0 40px 20px 40px;">Get in Touch</h2>
-            
-            <div class="split-layout contact-layout">
-                
-                <div class="split-col col-left contact-col-info">
-                    <h3>Let's Collaborate</h3>
-                    <p>I'm eager to discuss your SEO strategy, digital goals, or social impact project ideas. Fill out the form below or connect via email.</p>
-                    
-                    <form action="[Your Form Submission URL]" method="POST" class="contact-form" style="margin-top: 30px;">
-                        <p><input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></p>
-                        <p><input type="email" name="_replyto" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></p>
-                        <p><textarea name="message" placeholder="Your Message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 25px; border: 1px solid #ccc;"></textarea></p>
-                        <button type="submit" class="cta-button">Send Message</button>
-                    </form>
-                    
-                </div>
-                
-                <div class="split-col col-right contact-col-details">
-                    
-                    <h3>Direct Contact Info</h3>
-                    
-                    <div class="contact-detail-item">
-                        <h4>Email</h4>
-                        <a href="mailto:hi.shalinichoudhary@gmail.com">hi.shalinichoudhary@gmail.com</a>
-                    </div>
-                    
-                    <div class="contact-detail-item">
-                        <h4>Base Location (India)</h4>
-                        <p>DLF Phase 1, Gurugram, Haryana, India</p>
+        <section id="contact-section" class="section contact">
+            <div class="contact-header">
+                <span class="contact-eyebrow">GET IN TOUCH</span>
+                <h2>Let’s Talk Growth</h2>
+                <p>
+                    Whether you have a project in mind, want to discuss strategy,
+                    or just want to connect - I’d love to hear from you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Direct Contact</h3>
+
+                    <div class="contact-card">
+                        <span class="contact-icon">✉️</span>
+                        <div class="contact-text">
+                            <div class="contact-label">Email</div>
+                            <a
+                                href="mailto:hi.shalinichoudhary@gmail.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="contact-link"
+                            >
+                                hi.shalinichoudhary@gmail.com
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="contact-detail-item">
-                        <h4>Current Study Location (UK)</h4>
-                        <p>Leeds, West Yorkshire,<br>United Kingdom</p>
+                    <div class="contact-card">
+                        <span class="contact-icon linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </span>
+                        <div>
+                            <div class="contact-label">LinkedIn</div>
+                            <a 
+                                href="http://www.linkedin.com/in/shalini-choudhary"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="contact-link linkedin-link"
+                            >
+                                linkedin.com/in/shalini-choudhary
+                            </a>
+                        </div>
                     </div>
+
+                    <div class="contact-note">
+                        “I typically respond within 24–48 hours.  
+                        For urgent inquiries, LinkedIn messages get the fastest response.”
+                    </div>
+                </div>
+
+                <div class="contact-form-card">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Name</label>
+                                <input type="text" placeholder="Your name">
+                            </div>
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" placeholder="you@company.com">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Company (optional)</label>
+                            <input type="text" placeholder="Your company">
+                        </div>
+
+                        <div class="form-field">
+                            <label>Message</label>
+                            <textarea placeholder="Tell me about your growth challenge..."></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit">
+                            Send Message →
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
