@@ -14,8 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/style-v2.css">
-<link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
     <script>
@@ -24,29 +23,31 @@
       gtag('js', new Date());
       gtag('config', 'G-FFJDP43DXE');
     </script>
+  <link rel="stylesheet" href="../../css/footer.css">
 </head>
 
 <body>
 
-    <header class="site-header">
-  <div class="site-header-inner">
-    <a href="/" class="brand" aria-label="Go to homepage">
-      <img src="../../images/logo-image.png" alt="Shalini Choudhary Logo" class="logo-image">
-    </a>
-
-    <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
-
-    <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-      <a href="/#services-section">Growth levers</a>
-      <a href="/#impact-section">Impact</a>
-      <a href="/#thinking-section">Thinking</a>
-      <a href="/blogs.html">Blog</a>
-      <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
-    </nav>
-  </div>
-</header>
+    <header class="main-header section-wrapper">
+        <div class="header-row">
+            <a href="../../index.html">
+                <img src="../../images/logo-image.png" alt="Shalini Choudhary Logo" class="logo-image">
+            </a>
+            
+            <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <nav class="main-nav" id="main-navigation">
+                <a href="../../index.html#services-section">Services</a>
+                <a href="../../index.html#works-section">Works</a>
+                <a href="../../index.html#resume-section">Experience</a>
+                <a href="../../index.html#skills-section">Skills</a>
+                <a href="../../blogs.html">Blog</a>
+                <a href="../../contact.html" class="cta-button small-btn">Hire me!</a>
+            </nav>
+        </div>
+    </header>
     <main class="site-content">
         <article class="section-wrapper" style="border-top: none; padding-top: 40px;">
             
@@ -249,17 +250,54 @@
     </main>
 
     <footer class="tj-footer-area section-wrapper">
-        <div class="footer-content">
-            <nav class="footer-nav">
-                <a href="../../index.html#services-section">Services</a> | 
-                <a href="../../index.html#works-section">Recent Works</a> | 
-                <a href="../../index.html#resume-section">Experience</a> | 
-                <a href="../../blogs.html">Blogs</a> | 
-                <a href="../../contact.html">Contact</a>
-            </nav>
-            <p class="copyright">© 2024 All rights reserved by Shalini Choudhary</p>
-        </div>
-    </footer>
+  <div class="footer-content footer-grid">
+    <div class="footer-brand">
+      <span class="footer-kicker">Let’s build momentum</span>
+      <h2>Turn strategy into compounding growth.</h2>
+      <p>Partner with a growth marketer who blends insight, storytelling, and measurable impact.</p>
+      <a class="cta-button footer-cta-button" href="../../contact.html">Book a strategy call</a>
+    </div>
+
+    <div class="footer-links">
+      <h3 class="footer-heading">Explore</h3>
+      <nav class="footer-nav footer-nav--stacked">
+        <a href="../../index.html#services-section">Growth levers</a>
+        <a href="../../index.html#impact-section">Impact</a>
+        <a href="../../index.html#thinking-section">Thinking</a>
+        <a href="../../blogs.html">Blog</a>
+        <a href="../../contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="footer-contact">
+      <h3 class="footer-heading">Connect</h3>
+      <ul class="footer-contact-list">
+        <li><a href="mailto:hi.shalinichoudhary@gmail.com">hi.shalinichoudhary@gmail.com</a></li>
+        <li>Leeds · London · Remote</li>
+      </ul>
+      <div class="footer-social">
+        <a href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer">Twitter</a>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <h3 class="footer-heading">Newsletter</h3>
+      <p class="footer-small">Monthly growth notes, frameworks, and experiments.</p>
+      <form class="footer-newsletter-form">
+        <label class="sr-only" for="footer-email">Email address</label>
+        <input id="footer-email" name="footer-email" type="email" placeholder="you@company.com" required>
+        <button class="cta-button" type="submit">Subscribe</button>
+      </form>
+      <span class="footer-caption">No spam. Unsubscribe anytime.</span>
+    </div>
+  </div>
+
+  <div class="footer-meta">
+    <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
+    <p class="footer-note">Available for select consulting engagements in 2026.</p>
+  </div>
+</footer>
     <script src="../../js/script.js"></script>
 </body>
 </html>
