@@ -58,11 +58,29 @@
                     <h3>Let's Collaborate</h3>
                     <p>I'm eager to discuss your SEO strategy, digital goals, or social impact project ideas. Fill out the form below or connect via email.</p>
                     
-                    <form action="[Your Form Submission URL]" method="POST" class="contact-form" style="margin-top: 30px;">
-                        <p><input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></p>
-                        <p><input type="email" name="_replyto" placeholder="Your Email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></p>
-                        <p><textarea name="message" placeholder="Your Message" rows="5" required style="width: 100%; padding: 10px; margin-bottom: 25px; border: 1px solid #ccc;"></textarea></p>
-                        <button type="submit" class="cta-button">Send Message</button>
+                    <form method="POST" class="contact-form" style="margin-top: 30px;">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Name</label>
+                                <input type="text" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-field">
+                                <label>Email</label>
+                                <input type="email" name="_replyto" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Company (optional)</label>
+                            <input type="text" name="company" placeholder="Your company">
+                        </div>
+
+                        <div class="form-field">
+                            <label>Message</label>
+                            <textarea name="message" placeholder="Tell me about your growth challenge..." rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="contact-submit">Send Message →</button>
                     </form>
                     
                 </div>
