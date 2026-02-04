@@ -1498,8 +1498,7 @@ h3 {
 
 /* --- Footer --- */
 .tj-footer-area {
-    padding: 30px 40px;
-    text-align: center;
+    padding: 36px 40px;
 }
 .footer-nav {
     display: flex;
@@ -1510,6 +1509,23 @@ h3 {
 }
 .footer-nav a {
     font-size: 0.9rem;
+}
+.footer-nav a {
+    color: inherit;
+    transition: color 0.2s ease;
+}
+.footer-nav a:hover,
+.footer-nav a:focus-visible {
+    color: var(--color-primary);
+}
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+.footer-heading {
+    font-size: 0.85rem;
     text-transform: uppercase;
     padding: 0;
     border-radius: 0;
@@ -1553,9 +1569,20 @@ h3 {
     padding: 4px 0;
 }
 .copyright {
-    margin-top: 15px;
+    margin-top: 4px;
     font-size: 0.8rem;
     opacity: 0.7;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footer-social {
+        align-items: flex-start;
+    }
 }
 
 /* --- Back to Top Button --- */
