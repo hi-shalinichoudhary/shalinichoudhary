@@ -493,7 +493,7 @@ h3{
 
 .tiles-4{
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -504,6 +504,37 @@ h3{
   padding: 18px;
   box-shadow: var(--shadow-1);
   transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.tile-icon{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  background: linear-gradient(135deg, rgba(110, 120, 255, 0.18), rgba(110, 225, 255, 0.12));
+  border: 1px solid rgba(110, 120, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+.tile-icon::after{
+  content: "";
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 12px;
+}
+.tile-icon-strategy{
+  background: linear-gradient(135deg, rgba(140, 110, 255, 0.22), rgba(120, 205, 255, 0.12));
+}
+.tile-icon-system{
+  background: linear-gradient(135deg, rgba(96, 210, 170, 0.2), rgba(120, 140, 255, 0.12));
+}
+.tile-icon-measurement{
+  background: linear-gradient(135deg, rgba(255, 170, 90, 0.2), rgba(120, 160, 255, 0.12));
+}
+.tile-icon-learning{
+  background: linear-gradient(135deg, rgba(255, 130, 180, 0.2), rgba(120, 200, 255, 0.12));
 }
 .tile:hover{
   transform: translateY(-2px);
