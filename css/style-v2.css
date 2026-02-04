@@ -297,6 +297,9 @@ h3{
 }
 
 .hero-photo{
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
   border-radius: var(--radius);
   background: var(--card);
   border: 1px solid var(--border);
@@ -306,12 +309,13 @@ h3{
 .hero-photo img{
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (min-width: 981px){
   .hero-photo img{
-    max-height: 420px;
+    max-height: none;
   }
 }
 
