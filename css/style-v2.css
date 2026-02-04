@@ -955,6 +955,13 @@ body.lightbox-open{ overflow: hidden; }
   padding: 40px 0 52px;
 }
 
+.contact-followup ul{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+  list-style-position: inside;
+}
+
 /* Header */
 .contact-header{
   max-width: 720px;
