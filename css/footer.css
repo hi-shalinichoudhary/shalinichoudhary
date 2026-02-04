@@ -11,7 +11,7 @@
 }
 .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
 }
 .footer-brand h2 {
@@ -99,49 +99,9 @@
     background: var(--color-primary, #111111);
     color: var(--color-background, #ffffff);
 }
-.footer-newsletter-form {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 10px;
-    margin: 12px 0 6px;
-}
-.footer-newsletter-form input {
-    padding: 12px 14px;
-    border-radius: 12px;
-    border: 1px solid var(--color-primary, #111111);
-    background: var(--color-muted, #f4f4f4);
-    color: inherit;
-}
-.footer-newsletter-form button {
-    justify-content: center;
-}
 .footer-small {
     font-size: 0.9rem;
     opacity: 0.8;
-}
-.footer-caption {
-    font-size: 0.75rem;
-    opacity: 0.65;
-}
-.footer-meta {
-    margin-top: 24px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    border-top: 1px solid var(--color-primary, #111111);
-    padding-top: 16px;
-}
-.footer-note {
-    font-size: 0.85rem;
-    opacity: 0.7;
-    text-align: right;
-}
-.copyright {
-    margin-top: 4px;
-    font-size: 0.8rem;
-    opacity: 0.7;
-    text-align: left;
 }
 .tj-footer-area .cta-button {
     display: inline-flex;
@@ -166,12 +126,5 @@
 @media (max-width: 768px) {
     .footer-grid {
         grid-template-columns: 1fr;
-    }
-    .footer-meta {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .footer-note {
-        text-align: left;
     }
 }
