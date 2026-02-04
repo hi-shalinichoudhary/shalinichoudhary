@@ -1,4 +1,4 @@
-/* --- Footer (Shared) --- */
+/* --- Footer (Homepage Preview) --- */
 .tj-footer-area {
     padding: 36px 40px;
     background: var(--color-background, #ffffff);
@@ -135,15 +135,13 @@
 .footer-note {
     font-size: 0.85rem;
     opacity: 0.7;
+    text-align: right;
 }
 .copyright {
     margin-top: 4px;
     font-size: 0.8rem;
     opacity: 0.7;
     text-align: left;
-}
-.footer-note {
-    text-align: right;
 }
 .tj-footer-area .cta-button {
     display: inline-flex;
