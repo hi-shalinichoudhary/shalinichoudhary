@@ -1500,23 +1500,14 @@ h3 {
 .tj-footer-area {
     padding: 36px 40px;
 }
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-.footer-grid {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-}
 .footer-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px 20px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+.footer-nav a {
     font-size: 0.9rem;
 }
 .footer-nav a {
@@ -1536,32 +1527,46 @@ h3 {
 .footer-heading {
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    opacity: 0.7;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: 1px solid transparent;
 }
-.footer-social-links {
-    display: flex;
-    gap: 12px;
+.footer-nav--inline {
+    gap: 0;
 }
-.footer-social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    display: grid;
-    place-items: center;
-    color: inherit;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+.footer-nav--inline a {
+    padding: 0 12px;
+    position: relative;
 }
-.footer-social-links a i {
-    font-size: 1rem;
+.footer-nav--inline a + a::before {
+    content: "|";
+    position: absolute;
+    left: 0;
+    transform: translateX(-50%);
+    color: var(--color-primary);
+    opacity: 0.5;
 }
-.footer-social-links a:hover,
-.footer-social-links a:focus-visible {
-    background: var(--color-primary);
+.footer-nav--pills {
+    gap: 10px;
+}
+.footer-nav--pills a {
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--color-muted);
     border-color: var(--color-primary);
+}
+.footer-nav--pills a:hover {
+    background: var(--color-primary);
     color: var(--color-background);
-    transform: translateY(-2px);
+    opacity: 1;
+}
+.footer-nav--stacked {
+    flex-direction: column;
+    gap: 8px;
+}
+.footer-nav--stacked a {
+    padding: 4px 0;
 }
 .copyright {
     margin-top: 4px;
