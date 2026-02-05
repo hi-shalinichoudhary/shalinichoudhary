@@ -16,9 +16,10 @@
 }
 .footer-brand h2 {
     margin: 12px 0;
-    font-size: clamp(1.8rem, 2.2vw, 2.5rem);
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
     line-height: 1.15;
     max-width: 14ch;
+    text-align: center;
 }
 .footer-kicker {
     text-transform: uppercase;
@@ -31,6 +32,9 @@
     align-items: center;
     gap: 6px;
     margin-top: 14px;
+}
+.footer-brand {
+    text-align: center;
 }
 .footer-nav {
     display: flex;
@@ -95,6 +99,7 @@
     flex-direction: row;
     gap: 12px;
     align-items: center;
+    justify-content: center;
 }
 .footer-social-link {
     width: 36px;
