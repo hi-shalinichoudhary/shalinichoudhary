@@ -18,7 +18,7 @@
     margin: 12px 0;
     font-size: clamp(1.6rem, 2vw, 2.2rem);
     line-height: 1.15;
-    max-width: 14ch;
+    max-width: 24ch;
     text-align: center;
 }
 .footer-kicker {
