@@ -76,6 +76,20 @@
 .footer-contact-list a {
     color: inherit;
 }
+.footer-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.footer-email i {
+    font-size: 1rem;
+}
+.footer-heading--spaced {
+    margin-top: 16px;
+}
 .footer-social {
     display: flex;
     flex-direction: row;
