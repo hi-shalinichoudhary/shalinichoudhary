@@ -445,9 +445,9 @@ h3 {
 
 .blog-hero {
     border-top: none;
-    padding-top: 120px;
+    padding-top: 0px;
     padding-bottom: 120px;
-    min-height: 80vh;
+    min-height: 60vh;
     display: grid;
     gap: 24px;
     text-align: center;
