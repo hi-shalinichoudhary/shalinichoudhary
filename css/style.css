@@ -402,6 +402,7 @@ h3 {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
+    justify-content: center;
 }
 
 .hero-actions .cta-button,
@@ -429,10 +430,13 @@ h3 {
 
 .blog-hero {
     border-top: none;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 64px;
+    padding-bottom: 64px;
     display: grid;
     gap: 24px;
+    text-align: center;
+    justify-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .blog-page main .section-wrapper {
@@ -463,6 +467,7 @@ h3 {
 .blog-hero-content {
     max-width: 720px;
     padding: 0;
+    text-align: center;
 }
 
 .blog-hero .section-description {
@@ -1320,7 +1325,7 @@ h3 {
     }
 
     .blog-hero {
-        grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+        grid-template-columns: minmax(0, 1fr);
         align-items: center;
     }
 }
