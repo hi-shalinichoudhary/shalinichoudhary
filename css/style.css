@@ -512,14 +512,54 @@ h3 {
 
 .featured-card {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-    align-items: center;
-    padding: 0 0 20px 0;
+    grid-template-columns: minmax(240px, 1fr) minmax(320px, 1.2fr);
+    gap: 28px;
+    align-items: stretch;
+    padding: 28px;
+    border-radius: 24px;
+    background: #f8f5f1;
+}
+
+.featured-image-panel {
+    display: flex;
+    align-items: stretch;
 }
 
 .featured-copy h2 {
     margin-bottom: 15px;
+}
+
+.featured-copy {
+    display: grid;
+    gap: 14px;
+}
+
+.featured-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    opacity: 0.7;
+}
+
+.featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-pill {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #efe8e1;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
 }
 
 .featured-why {
@@ -577,16 +617,74 @@ h3 {
 
 .featured-image-link {
     display: block;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
+    height: 100%;
 }
 
 .featured-image {
     width: 100%;
     height: 100%;
-    min-height: 260px;
+    min-height: 300px;
     object-fit: cover;
     display: block;
+}
+
+.featured-author-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.featured-author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.featured-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.icon-button svg {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-button:hover,
+.icon-button:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-soft);
+}
+
+.read-link {
+    font-weight: 700;
 }
 
 .blog-categories {
