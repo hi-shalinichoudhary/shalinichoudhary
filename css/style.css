@@ -339,7 +339,7 @@ h3 {
     padding: 12px 30px;
     border-radius: 999px;
     margin-top: 25px;
-    font-weight: 700;
+    font-weight: 0;
     letter-spacing: 0.5px;
     transition: transform 0.2s ease, box-shadow 0.2s ease, background-position 0.2s ease;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -433,7 +433,7 @@ h3 {
     border-radius: 999px;
     border: 1px solid #e0e0e0;
     color: #111;
-    font-weight: 700;
+    font-weight: 0;
     letter-spacing: 0.4px;
     background: #ffffff;
 }
