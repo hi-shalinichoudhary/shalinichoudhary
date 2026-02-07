@@ -905,17 +905,53 @@ h3 {
     white-space: nowrap;
 }
 
+.category-pill.is-active {
+    background: var(--color-primary);
+    color: #fff;
+}
+
 .category-pill:hover,
 .category-pill:focus-visible {
     background: var(--color-accent);
     color: #fff;
 }
 
+.section-eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+    margin-bottom: 12px;
+}
+
+.latest-posts-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px 32px;
+    align-items: flex-end;
+    margin-bottom: 10px;
+}
+
 .blog-latest-grid {
+    --blog-card-height: 520px;
+    --blog-grid-gap: 24px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
     padding: 0 0 10px 0;
+    max-height: 9999px;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.blog-latest-grid.is-collapsed {
+    max-height: calc((var(--blog-card-height) * 2) + var(--blog-grid-gap));
+}
+
+.blog-card.is-hidden {
+    display: none;
 }
 
 .blog-latest-grid h3 {

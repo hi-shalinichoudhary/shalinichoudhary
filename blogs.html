@@ -235,21 +235,23 @@
         </div>
     </section>
 
-    <section class="section-wrapper blog-categories">
-        <p class="section-description">Browse by category</p>
-        <div class="category-pill-group">
-            <a href="#strategy-reads" class="category-pill">Strategy</a>
-            <a href="#industry-reads" class="category-pill">Industry</a>
-            <a href="#analytics-reads" class="category-pill">Analytics</a>
-            <a href="#tips-reads" class="category-pill">Tips</a>
-        </div>
-    </section>
-
     <section id="latest-posts" class="section-wrapper">
-        <h2>Latest posts</h2>
-        <p class="section-description">Fresh thinking across content strategy, industry shifts, analytics, and technical SEO.</p>
-        <div class="blog-latest-grid">
-            <article class="blog-card">
+        <div class="latest-posts-header">
+            <div>
+                <span class="section-eyebrow">GROWTH PLAYBOOK LIBRARY</span>
+                <h2>Latest posts</h2>
+                <p class="section-description">Fresh thinking across content strategy, industry shifts, analytics, and technical SEO.</p>
+            </div>
+            <div class="category-pill-group blog-filter-group" aria-label="Blog categories">
+                <button class="category-pill is-active" type="button" data-blog-filter="all">All</button>
+                <button class="category-pill" type="button" data-blog-filter="strategy">Strategy</button>
+                <button class="category-pill" type="button" data-blog-filter="seo-industry">SEO Industry</button>
+                <button class="category-pill" type="button" data-blog-filter="analytics">Analytics</button>
+                <button class="category-pill" type="button" data-blog-filter="seo-tips">SEO Tips</button>
+            </div>
+        </div>
+        <div id="latest-posts-grid" class="blog-latest-grid is-collapsed" data-latest-grid>
+            <article class="blog-card" data-category="seo-industry">
                 <a href="blogs/seo-industry/top-5-seo-trends-2024.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/si-top-5-seo-trends-2024-0.webp" alt="Top 5 SEO Trends 2024" class="blog-image">
                     <div class="blog-image-badges">
@@ -278,7 +280,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="strategy">
                 <a href="blogs/strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/str-content-strategy-powerhouse-0.webp" alt="content strategy" class="blog-image">
                     <div class="blog-image-badges">
@@ -307,7 +309,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="analytics">
                 <a href="blogs/google-analytics/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/ga-advanced-techniques-ga4-0.webp" alt="advanced techniques for mastering ga4" class="blog-image">
                     <div class="blog-image-badges">
@@ -336,7 +338,7 @@
                 </div>
             </article>
 
-            <article class="blog-card">
+            <article class="blog-card" data-category="seo-tips">
                 <a href="blogs/seo-tips/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/st-technical-seo-quick-wins-0.webp" alt="technical seo quick wins" class="blog-image">
                     <div class="blog-image-badges">
@@ -364,6 +366,67 @@
                     </div>
                 </div>
             </article>
+
+            <article class="blog-card" data-category="strategy">
+                <a href="blogs/strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html" class="blog-image-link">
+                    <img src="images/blog-images/blog-homepage/what-is-aeo-0.webp" alt="Answer Engine Optimization Tips" class="blog-image">
+                    <div class="blog-image-badges">
+                        <span class="blog-image-badge">Strategy</span>
+                        <span class="blog-image-badge is-readtime">6 min read</span>
+                    </div>
+                </a>
+                <div class="blog-content-area">
+                    <div class="blog-card-meta">
+                        <span class="blog-meta-category">STRATEGY | Mar, 2025</span>
+                        <span class="blog-meta-reading">6 min read</span>
+                    </div>
+                    <h3><a href="blogs/strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html">AEO and AI: How Answer Engines Are Redefining SEO in 2025</a></h3>
+                    <p class="blog-excerpt">Why answer engines compress discovery and how to defend demand capture with systems.</p>
+                    <div class="blog-card-foot">
+                        <span class="blog-card-signal">Focus: AI search shift</span>
+                        <span class="blog-card-signal">Outcome: resilient visibility</span>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-author">
+                            <img src="images/Shalini.webp" alt="Shalini Choudhary" class="blog-author-avatar">
+                            <span class="blog-author-name">Shalini Choudhary</span>
+                        </div>
+                        <a href="blogs/strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html" class="blog-card-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card" data-category="seo-industry">
+                <a href="blogs/seo-industry/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html" class="blog-image-link">
+                    <img src="images/blog-images/blog-homepage/si-demystifying-eat-content-0.webp" alt="Demystifying E-A-T" class="blog-image">
+                    <div class="blog-image-badges">
+                        <span class="blog-image-badge">SEO Industry</span>
+                        <span class="blog-image-badge is-readtime">5 min read</span>
+                    </div>
+                </a>
+                <div class="blog-content-area">
+                    <div class="blog-card-meta">
+                        <span class="blog-meta-category">SEO INDUSTRY | May, 2024</span>
+                        <span class="blog-meta-reading">5 min read</span>
+                    </div>
+                    <h3><a href="blogs/seo-industry/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html">Demystifying E-A-T: Expertise, Authority &amp; Trust</a></h3>
+                    <p class="blog-excerpt">Make credibility a growth lever by translating E-A-T into content signals.</p>
+                    <div class="blog-card-foot">
+                        <span class="blog-card-signal">Focus: trust systems</span>
+                        <span class="blog-card-signal">Outcome: stronger rankings</span>
+                    </div>
+                    <div class="blog-card-footer">
+                        <div class="blog-author">
+                            <img src="images/Shalini.webp" alt="Shalini Choudhary" class="blog-author-avatar">
+                            <span class="blog-author-name">Shalini Choudhary</span>
+                        </div>
+                        <a href="blogs/seo-industry/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html" class="blog-card-read">Read <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="blog-library-actions">
+            <button class="cta-button" type="button" data-blog-toggle aria-expanded="false" aria-controls="latest-posts-grid">View all blogs</button>
         </div>
     </section>
 
@@ -386,299 +449,6 @@
                 <h3>Content system redesign</h3>
                 <p>Strategy and measurement rebuilt to scale quality and conversion.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="section-wrapper blog-library">
-        <div class="blog-library-header">
-            <h2>Growth playbook library</h2>
-            <p class="section-description">Curated insights on growth systems, SEO, and measurement to help you move from idea to execution.</p>
-            <p class="library-hint">Recommended based on what you read.</p>
-        </div>
-        <div class="category-pill-group blog-filter-group" aria-label="Blog categories">
-            <button class="category-pill" type="button">SEO</button>
-            <button class="category-pill" type="button">Growth</button>
-            <button class="category-pill" type="button">Content</button>
-            <button class="category-pill" type="button">Analytics</button>
-            <button class="category-pill" type="button">CRO</button>
-            <button class="category-pill" type="button">All</button>
-        </div>
-        <div id="blog-library-grid" class="blog-card-grid is-collapsed">
-            <article class="blog-card">
-                <a href="blogs/strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/what-is-aeo-0.webp" alt="Answer Engine Optimization Tips" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">STRATEGY | Mar, 2025</span>
-                        <span class="blog-meta-reading">6 min read</span>
-                    </div>
-                    <h3><a href="blogs/strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html">AEO and AI: How Answer Engines Are Redefining SEO in 2025</a></h3>
-                    <p class="blog-excerpt">Why answer engines compress discovery and how to defend demand capture with systems.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: AI search shift</span>
-                        <span class="blog-card-signal">Outcome: resilient visibility</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-industry/top-5-seo-trends-2024.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/si-top-5-seo-trends-2024-0.webp" alt="Top 5 SEO Trends 2024" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO INDUSTRY | Jul, 2024</span>
-                        <span class="blog-meta-reading">5 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-industry/top-5-seo-trends-2024.html">Top 5 SEO Trends Shaping 2024</a></h3>
-                    <p class="blog-excerpt">The shifts that change how you prioritize discovery, visibility, and intent capture.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: demand signals</span>
-                        <span class="blog-card-signal">Outcome: sharper positioning</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/str-content-strategy-powerhouse-0.webp" alt="Content strategy powerhouse" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">STRATEGY | May, 2024</span>
-                        <span class="blog-meta-reading">7 min read</span>
-                    </div>
-                    <h3><a href="blogs/strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html">Content Strategy Powerhouse: Aligning Content with SEO and Business Goals</a></h3>
-                    <p class="blog-excerpt">Align editorial, SEO, and revenue into one narrative that compounds across the funnel.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: content system</span>
-                        <span class="blog-card-signal">Outcome: aligned growth bets</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/google-analytics/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/ga-advanced-techniques-ga4-0.webp" alt="Advanced techniques for mastering GA4" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">GOOGLE ANALYTICS | May, 2024</span>
-                        <span class="blog-meta-reading">6 min read</span>
-                    </div>
-                    <h3><a href="blogs/google-analytics/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html">Advanced Techniques for Mastering Google Analytics 4</a></h3>
-                    <p class="blog-excerpt">Turn GA4 into a decision engine with advanced analysis and growth-ready tracking.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: measurement depth</span>
-                        <span class="blog-card-signal">Outcome: clearer attribution</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-tips/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/st-technical-seo-quick-wins-0.webp" alt="Technical SEO quick wins" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO TIPS | May, 2024</span>
-                        <span class="blog-meta-reading">4 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-tips/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html">Technical SEO Quick Wins: 7 Easy Fixes to Boost Your Website's Health</a></h3>
-                    <p class="blog-excerpt">A fast checklist to clear bottlenecks and restore momentum in technical performance.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: site health</span>
-                        <span class="blog-card-signal">Outcome: faster crawl wins</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-industry/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/si-demystifying-eat-content-0.webp" alt="Demystifying E-A-T" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO INDUSTRY | May, 2024</span>
-                        <span class="blog-meta-reading">5 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-industry/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html">Demystifying E-A-T: Expertise, Authority &amp; Trust</a></h3>
-                    <p class="blog-excerpt">Make credibility a growth lever by translating E-A-T into content signals.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: trust systems</span>
-                        <span class="blog-card-signal">Outcome: stronger rankings</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/strategy/the-seo-roadmap-a-strategic-guide-to-planning-and-execution.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/str-seo-roadmap-0.webp" alt="The SEO roadmap" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">STRATEGY | Apr, 2024</span>
-                        <span class="blog-meta-reading">6 min read</span>
-                    </div>
-                    <h3><a href="blogs/strategy/the-seo-roadmap-a-strategic-guide-to-planning-and-execution.html">The SEO Roadmap: A Strategic Guide to Planning and Execution</a></h3>
-                    <p class="blog-excerpt">A systemized roadmap for planning, sequencing, and measuring SEO work.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: execution plans</span>
-                        <span class="blog-card-signal">Outcome: aligned milestones</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/google-analytics/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/ga-integrations-ga4-capabilities-0.webp" alt="GA4 integrations" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">GOOGLE ANALYTICS | Apr, 2024</span>
-                        <span class="blog-meta-reading">5 min read</span>
-                    </div>
-                    <h3><a href="blogs/google-analytics/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html">Unleashing the Power of Integrations: Expanding Your GA4 Capabilities</a></h3>
-                    <p class="blog-excerpt">Connect your stack so attribution and insights keep pace with growth bets.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: data integrations</span>
-                        <span class="blog-card-signal">Outcome: fuller funnel view</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-tips/5-tips-to-craft-content-that-ranks-and-engages.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/st-5-tips-content-crafting-0.webp" alt="Content optimization tips" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO TIPS | Apr, 2024</span>
-                        <span class="blog-meta-reading">4 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-tips/5-tips-to-craft-content-that-ranks-and-engages.html">Content Optimization Powerhouse: 5 Tips to Craft Content That Ranks</a></h3>
-                    <p class="blog-excerpt">A practical checklist for creating content that ranks and keeps readers engaged.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: on-page craft</span>
-                        <span class="blog-card-signal">Outcome: better retention</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-industry/the-rise-of-voice-search-optimizing-for-how-we-speak-not-type.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/si-rise-of-voice-search-0.webp" alt="The rise of voice search" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO INDUSTRY | Apr, 2024</span>
-                        <span class="blog-meta-reading">5 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-industry/the-rise-of-voice-search-optimizing-for-how-we-speak-not-type.html">The Rise of Voice Search: Optimizing for How We Speak</a></h3>
-                    <p class="blog-excerpt">Voice intent is shaping query design—here’s how to adapt your content model.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: conversational SEO</span>
-                        <span class="blog-card-signal">Outcome: broader intent capture</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/google-analytics/google-analytics-4-vs-universal-analytics-a-head-to-head-comparison-for-beginners.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/ga4-vs-ua-comparison-0.webp" alt="GA4 versus Universal Analytics" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">GOOGLE ANALYTICS | Mar, 2024</span>
-                        <span class="blog-meta-reading">5 min read</span>
-                    </div>
-                    <h3><a href="blogs/google-analytics/google-analytics-4-vs-universal-analytics-a-head-to-head-comparison-for-beginners.html">GA4 vs. Universal Analytics: A Head-to-Head Comparison</a></h3>
-                    <p class="blog-excerpt">A clear comparison to decide what to keep, migrate, and measure next.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: platform choice</span>
-                        <span class="blog-card-signal">Outcome: cleaner tracking</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/strategy/technical-seo-foundations-building-a-strong-house-for-your-content.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/str-technical-seo-foundations-0.webp" alt="Technical SEO foundations" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">STRATEGY | Mar, 2024</span>
-                        <span class="blog-meta-reading">6 min read</span>
-                    </div>
-                    <h3><a href="blogs/strategy/technical-seo-foundations-building-a-strong-house-for-your-content.html">Technical SEO Foundations: Building a Strong House for Your Content</a></h3>
-                    <p class="blog-excerpt">Build a technical base that keeps future content fast, indexable, and durable.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: SEO foundations</span>
-                        <span class="blog-card-signal">Outcome: stable growth</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/google-analytics/unveiling-the-power-of-google-analytics-4-a-comprehensive-guide.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/ga-ga4-guide-0.webp" alt="Unveiling GA4" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">GOOGLE ANALYTICS | Feb, 2024</span>
-                        <span class="blog-meta-reading">6 min read</span>
-                    </div>
-                    <h3><a href="blogs/google-analytics/unveiling-the-power-of-google-analytics-4-a-comprehensive-guide.html">Unveiling the Power of Google Analytics 4</a></h3>
-                    <p class="blog-excerpt">The essentials for setting up GA4 so every growth experiment is measurable.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: GA4 setup</span>
-                        <span class="blog-card-signal">Outcome: reliable insights</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/strategy/off-page-optimization-strategy-building-authority-beyond-your-website.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/str-off-page-strategy-0.webp" alt="Off-page optimization strategy" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">STRATEGY | Feb, 2024</span>
-                        <span class="blog-meta-reading">6 min read</span>
-                    </div>
-                    <h3><a href="blogs/strategy/off-page-optimization-strategy-building-authority-beyond-your-website.html">Off-Page Optimization Strategy: Building Authority Beyond Your Website</a></h3>
-                    <p class="blog-excerpt">Build authority beyond your site with signals that compound over time.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: authority growth</span>
-                        <span class="blog-card-signal">Outcome: stronger trust</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-industry/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/si-beyond-backlinks-0.webp" alt="Beyond backlinks" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO INDUSTRY | Feb, 2024</span>
-                        <span class="blog-meta-reading">5 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-industry/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html">Beyond Backlinks: The Expanding Landscape of SEO Factors in 2024</a></h3>
-                    <p class="blog-excerpt">The new ranking factors that shape trust, engagement, and visibility in 2024.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: ranking signals</span>
-                        <span class="blog-card-signal">Outcome: broader moats</span>
-                    </div>
-                </div>
-            </article>
-            <article class="blog-card">
-                <a href="blogs/seo-tips/backlink-building-basics-4-strategies-to-earn-valuable-links-and-boost-authority.html" class="blog-image-link">
-                    <img src="images/blog-images/blog-homepage/st-backlink%20building-0.webp" alt="Backlink building basics" class="blog-image">
-                </a>
-                <div class="blog-content-area">
-                    <div class="blog-card-meta">
-                        <span class="blog-meta-category">SEO TIPS | Feb, 2024</span>
-                        <span class="blog-meta-reading">4 min read</span>
-                    </div>
-                    <h3><a href="blogs/seo-tips/backlink-building-basics-4-strategies-to-earn-valuable-links-and-boost-authority.html">Backlink Building Basics: 4 Strategies to Earn Valuable Links</a></h3>
-                    <p class="blog-excerpt">A practical playbook for earning authority-building links without spam.</p>
-                    <div class="blog-card-foot">
-                        <span class="blog-card-signal">Focus: link equity</span>
-                        <span class="blog-card-signal">Outcome: authority lift</span>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <div class="blog-library-actions">
-            <button class="cta-button" type="button" data-blog-toggle aria-expanded="false" aria-controls="blog-library-grid">View all blogs</button>
         </div>
     </section>
 
