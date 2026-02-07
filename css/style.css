@@ -2305,3 +2305,12 @@ h3 {
     .card-number { font-size: 2.5rem; }
     .impact-dashboard-section { padding: 60px 20px; }
 }
+
+/* FIX: Center the Marquee Title */
+.tech-stack-section .eyebrow {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0 auto 30px auto; /* Centers the block itself and adds bottom spacing */
+    padding: 0 20px; /* Prevents text touching edges on mobile */
+}
