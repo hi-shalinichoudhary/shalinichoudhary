@@ -11,18 +11,42 @@
 <link rel="apple-touch-icon" href="images/android-icon-36x36.png">
 <link rel="shortcut icon" type="image/png" href="images/android-icon-36x36.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Styles -->
 <link rel="stylesheet" href="css/style.css">
-    
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script> 
-<script> 
-  window.dataLayer = window.dataLayer || []; 
-  function gtag(){dataLayer.push(arguments);} 
-  gtag('js', new Date()); 
-  gtag('config', 'G-FFJDP43DXE'); 
+<link rel="stylesheet" href="css/footer.css">
+
+<!-- PRO SEO: Entity Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": "Shalini Choudhary",
+    "jobTitle": "Growth Marketing Manager",
+    "description": "Specialist in SEO-led growth systems, acquisition loops, and revenue attribution.",
+    "url": "https://shalinichoudhary.com",
+    "sameAs": [
+      "https://in.linkedin.com/in/shalini-choudhary",
+      "https://twitter.com/shalinihooda"
+    ],
+    "knowsAbout": ["Search Engine Optimization", "Growth Hacking", "Google Analytics 4", "Content Strategy", "Python for SEO", "Revenue Operations"]
+  }
+}
 </script>
-  <link rel="stylesheet" href="css/footer.css">
+    
+<!-- Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script> 
+<script> 
+  window.dataLayer = window.dataLayer || []; 
+  function gtag(){dataLayer.push(arguments);} 
+  gtag('js', new Date()); 
+  gtag('config', 'G-FFJDP43DXE'); 
+</script>
 </head>
 
 
@@ -48,8 +72,10 @@
         </nav>
     </div>
 </header>
+
 <main class="site-content">
     
+    <!-- HERO SECTION -->
     <section class="section-wrapper blog-hero">
         <div class="blog-hero-content">
             <span class="eyebrow">THINKING</span>
@@ -62,6 +88,33 @@
         </div>
     </section>
 
+    <!-- NEW: TECH STACK MARQUEE (Proves Technical Competence) -->
+    <section class="tech-stack-section" aria-label="Technology Stack">
+        <p class="eyebrow center-text">POWERING DATA-DRIVEN GROWTH</p>
+        <div class="ticker-wrap">
+            <div class="ticker-move">
+                <!-- Item Set 1 -->
+                <div class="ticker-item"><i class="fab fa-python"></i> Python</div>
+                <div class="ticker-item"><i class="fas fa-chart-line"></i> GA4</div>
+                <div class="ticker-item"><i class="fas fa-database"></i> BigQuery</div>
+                <div class="ticker-item"><i class="fas fa-layer-group"></i> Segment</div>
+                <div class="ticker-item"><i class="fas fa-search"></i> Semrush API</div>
+                <div class="ticker-item"><i class="fas fa-table"></i> Looker Studio</div>
+                <div class="ticker-item"><i class="fas fa-code-branch"></i> Git</div>
+                
+                <!-- Item Set 2 (For Infinite Scroll Loop) -->
+                <div class="ticker-item"><i class="fab fa-python"></i> Python</div>
+                <div class="ticker-item"><i class="fas fa-chart-line"></i> GA4</div>
+                <div class="ticker-item"><i class="fas fa-database"></i> BigQuery</div>
+                <div class="ticker-item"><i class="fas fa-layer-group"></i> Segment</div>
+                <div class="ticker-item"><i class="fas fa-search"></i> Semrush API</div>
+                <div class="ticker-item"><i class="fas fa-table"></i> Looker Studio</div>
+                <div class="ticker-item"><i class="fas fa-code-branch"></i> Git</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GROWTH SYSTEMS GRID -->
     <section id="growth-systems" class="section-wrapper growth-systems" aria-label="Growth systems">
         <div class="growth-systems-header">
             <span class="eyebrow">Growth Thesis</span>
@@ -119,7 +172,55 @@
         </div>
     </section>
 
+    <!-- NEW: IMPACT DASHBOARD (Replaced "Impact Mini") -->
+    <section class="section-wrapper impact-dashboard-section">
+        <div class="impact-header">
+            <span class="eyebrow">THE TRACK RECORD</span>
+            <h2>Revenue > Rankings</h2>
+            <p class="section-description">SEO is the lever. Revenue is the outcome. Selected impacts from recent growth sprints.</p>
+        </div>
+        
+        <div class="impact-grid-pro">
+            <!-- Card 1: Revenue Focused -->
+            <div class="impact-card-pro">
+                <div class="card-top">
+                    <span class="card-label">Pipeline Generated</span>
+                    <span class="card-trend positive">
+                        <i class="fas fa-arrow-up"></i> 140% YoY
+                    </span>
+                </div>
+                <div class="card-number">$2.4M+</div>
+                <div class="card-bar-bg"><div class="card-bar-fill" style="width: 85%"></div></div>
+                <p class="card-desc">Attributed via multi-touch model across B2B SaaS portfolio.</p>
+            </div>
 
+            <!-- Card 2: Efficiency Focused -->
+            <div class="impact-card-pro">
+                <div class="card-top">
+                    <span class="card-label">CAC Reduction</span>
+                    <span class="card-trend positive">
+                        <i class="fas fa-arrow-down"></i> 35%
+                    </span>
+                </div>
+                <div class="card-number">-$120</div>
+                <div class="card-bar-bg"><div class="card-bar-fill" style="width: 60%"></div></div>
+                <p class="card-desc">Achieved by scaling organic intent to replace high-cost paid search terms.</p>
+            </div>
+
+            <!-- Card 3: Scale Focused -->
+            <div class="impact-card-pro">
+                <div class="card-top">
+                    <span class="card-label">Traffic Quality</span>
+                    <span class="card-trend neutral">High Intent</span>
+                </div>
+                <div class="card-number">300k</div>
+                <div class="card-bar-bg"><div class="card-bar-fill" style="width: 92%"></div></div>
+                <p class="card-desc">Monthly active users acquired through "Pain-Point" SEO clusters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED INSIGHT -->
     <section class="section-wrapper featured-insight">
         <div class="featured-card">
             <div class="featured-image-panel">
@@ -179,6 +280,7 @@
         </div>
     </section>
 
+    <!-- LATEST POSTS (All 6 Posts Restored) -->
     <section id="latest-posts" class="section-wrapper">
         <div class="latest-posts-header">
             <div>
@@ -195,6 +297,7 @@
             </div>
         </div>
         <div id="latest-posts-grid" class="blog-latest-grid is-collapsed" data-latest-grid>
+            <!-- POST 1 -->
             <article class="blog-card" data-category="seo-industry">
                 <a href="blogs/seo-industry/top-5-seo-trends-2024.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/si-top-5-seo-trends-2024-0.webp" alt="Top 5 SEO Trends 2024" class="blog-image">
@@ -224,6 +327,7 @@
                 </div>
             </article>
 
+            <!-- POST 2 -->
             <article class="blog-card" data-category="strategy">
                 <a href="blogs/strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/str-content-strategy-powerhouse-0.webp" alt="content strategy" class="blog-image">
@@ -253,6 +357,7 @@
                 </div>
             </article>
 
+            <!-- POST 3 -->
             <article class="blog-card" data-category="analytics">
                 <a href="blogs/google-analytics/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/ga-advanced-techniques-ga4-0.webp" alt="advanced techniques for mastering ga4" class="blog-image">
@@ -282,6 +387,7 @@
                 </div>
             </article>
 
+            <!-- POST 4 -->
             <article class="blog-card" data-category="seo-tips">
                 <a href="blogs/seo-tips/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/st-technical-seo-quick-wins-0.webp" alt="technical seo quick wins" class="blog-image">
@@ -311,6 +417,7 @@
                 </div>
             </article>
 
+            <!-- POST 5 -->
             <article class="blog-card" data-category="strategy">
                 <a href="blogs/strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/what-is-aeo-0.webp" alt="Answer Engine Optimization Tips" class="blog-image">
@@ -340,6 +447,7 @@
                 </div>
             </article>
 
+            <!-- POST 6 -->
             <article class="blog-card" data-category="seo-industry">
                 <a href="blogs/seo-industry/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html" class="blog-image-link">
                     <img src="images/blog-images/blog-homepage/si-demystifying-eat-content-0.webp" alt="Demystifying E-A-T" class="blog-image">
@@ -374,28 +482,7 @@
         </div>
     </section>
 
-    <section class="section-wrapper impact-mini">
-        <h2>Strategies → Measurable outcomes</h2>
-        <p class="section-description">Highlights from strategies that turned into measurable growth outcomes.</p>
-        <div class="impact-mini-grid">
-            <div class="impact-mini-card">
-                <span class="impact-label">Growth result</span>
-                <h3>Ranked #1</h3>
-                <p>Category-defining content now anchors high-intent organic demand.</p>
-            </div>
-            <div class="impact-mini-card">
-                <span class="impact-label">System impact</span>
-                <h3>10x organic growth</h3>
-                <p>Compounding SEO systems that outperform paid acquisition over time.</p>
-            </div>
-            <div class="impact-mini-card">
-                <span class="impact-label">Measurement shift</span>
-                <h3>Content system redesign</h3>
-                <p>Strategy and measurement rebuilt to scale quality and conversion.</p>
-            </div>
-        </div>
-    </section>
-
+    <!-- AUTHOR POV -->
     <section class="section-wrapper author-pov">
         <div class="author-card">
             <div>
@@ -413,6 +500,7 @@
         </div>
     </section>
 
+    <!-- FOOTER CTA -->
     <section class="section-wrapper footer-cta">
         <div class="footer-cta-content">
             <h2>Want growth strategy support?</h2>
@@ -465,7 +553,7 @@
     <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
   </div>
 </footer>
- 
+ 
 <script src="js/script.js"></script>
 
 </body>
