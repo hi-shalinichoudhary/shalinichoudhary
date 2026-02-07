@@ -2141,3 +2141,167 @@ h3 {
         scroll-behavior: auto !important;
     }
 }
+
+
+/* ==========================================================================
+   PRO LEVEL UPGRADES: Growth Engineer Elements (Added for Redesign)
+   ========================================================================== */
+
+/* --- 1. Tech Stack Marquee (The "Pro" Signal) --- */
+.tech-stack-section {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.ticker-wrap::before, .ticker-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.ticker-wrap::before { left: 0; background: linear-gradient(to right, #fff, transparent); }
+.ticker-wrap::after { right: 0; background: linear-gradient(to left, #fff, transparent); }
+
+.ticker-move {
+    display: inline-block;
+    animation: ticker-scroll 35s linear infinite;
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2.5rem;
+    font-size: 1.05rem;
+    color: #64748b; /* Slate-500 equivalent */
+    font-weight: 600;
+    opacity: 0.8;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticker-item i { font-size: 1.2rem; color: #0f172a; }
+.ticker-item:hover { opacity: 1; color: #000; }
+
+@keyframes ticker-scroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+/* --- 2. Impact Dashboard (The "Revenue" Signal) --- */
+.impact-dashboard-section {
+    padding: 80px 40px;
+    background: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.impact-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 50px;
+}
+
+.impact-grid-pro {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.impact-card-pro {
+    background: #f8fafc; /* Slate-50 */
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 32px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.impact-card-pro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+    border-color: #cbd5e1;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #64748b;
+    font-weight: 700;
+}
+
+.card-trend {
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+}
+
+.card-trend.positive { color: #16a34a; }
+.card-trend.neutral { color: #475569; }
+
+.card-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.card-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.card-bar-fill {
+    height: 100%;
+    background: #0f172a;
+    border-radius: 3px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Responsive Tweaks for Pro Elements */
+@media (max-width: 768px) {
+    .ticker-item { padding: 0 1rem; font-size: 0.9rem; }
+    .card-number { font-size: 2.5rem; }
+    .impact-dashboard-section { padding: 60px 20px; }
+}
