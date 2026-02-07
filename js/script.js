@@ -220,22 +220,46 @@ document.addEventListener('DOMContentLoaded', function() {
         revealTargets.forEach(target => revealObserver.observe(target));
     }
 
-    // --- 6. Blog Library Toggle ---
+    // --- 6. Latest Posts Filter + Toggle ---
     const blogToggleButton = document.querySelector('[data-blog-toggle]');
-    const blogCardGrid = document.getElementById('blog-library-grid');
+    const latestGrid = document.querySelector('[data-latest-grid]');
+    const blogFilterButtons = document.querySelectorAll('[data-blog-filter]');
 
-    if (blogToggleButton && blogCardGrid) {
+    if (latestGrid) {
+        const latestCards = Array.from(latestGrid.querySelectorAll('.blog-card'));
+
         const updateBlogToggle = () => {
-            const isCollapsed = blogCardGrid.classList.contains('is-collapsed');
+            if (!blogToggleButton) {
+                return;
+            }
+            const isCollapsed = latestGrid.classList.contains('is-collapsed');
             blogToggleButton.textContent = isCollapsed ? 'View all blogs' : 'Show fewer blogs';
             blogToggleButton.setAttribute('aria-expanded', (!isCollapsed).toString());
         };
 
+        const applyFilter = category => {
+            latestCards.forEach(card => {
+                const cardCategory = card.dataset.category || '';
+                const shouldShow = category === 'all' || cardCategory === category;
+                card.classList.toggle('is-hidden', !shouldShow);
+            });
+        };
+
         updateBlogToggle();
 
-        blogToggleButton.addEventListener('click', () => {
-            blogCardGrid.classList.toggle('is-collapsed');
-            updateBlogToggle();
+        if (blogToggleButton) {
+            blogToggleButton.addEventListener('click', () => {
+                latestGrid.classList.toggle('is-collapsed');
+                updateBlogToggle();
+            });
+        }
+
+        blogFilterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                blogFilterButtons.forEach(item => item.classList.remove('is-active'));
+                button.classList.add('is-active');
+                applyFilter(button.dataset.blogFilter);
+            });
         });
     }
 
