@@ -2150,7 +2150,7 @@ h3 {
 /* --- 1. Tech Stack Marquee (The "Pro" Signal) --- */
 .tech-stack-section {
     padding-top: 10px;
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     overflow: hidden;
     background: #fff;
     border-bottom: 1px solid #f0f0f0;
