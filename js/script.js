@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // --- 1. Hamburger Menu Toggle Logic ---
     const toggleButton = document.querySelector('.menu-toggle');
     const navMenu = document.getElementById('main-navigation');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // --- 2. Rolling Counter Animation Logic ---
     const counterElements = document.querySelectorAll('.stat-number');
-    
+
     // Function to run the counting animation on a single element
     const animateCounter = (element) => {
         const finalCount = parseInt(element.getAttribute('data-count'), 10);
@@ -35,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const updateCount = (timestamp) => {
             const elapsedTime = timestamp - startTime;
-            const progress = Math.min(elapsedTime / duration, 1); 
+            const progress = Math.min(elapsedTime / duration, 1);
             currentCount = Math.floor(progress * finalCount);
 
             // CRITICAL FIX: Simplified update logic to avoid firstChild errors
             let displayValue = currentCount.toLocaleString();
-            
+
             if (plusSign) {
                 // If plus sign exists, update the text node *before* the plus sign element
                 element.innerHTML = displayValue + '<span class="plus-sign">+</span>';
@@ -116,16 +116,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 pagination: paginationEl
                     ? {
-                          el: paginationEl,
-                          clickable: true,
-                      }
+                        el: paginationEl,
+                        clickable: true,
+                    }
                     : undefined,
 
                 navigation: nextEl && prevEl
                     ? {
-                          nextEl,
-                          prevEl,
-                      }
+                        nextEl,
+                        prevEl,
+                    }
                     : undefined,
 
                 breakpoints: {
@@ -197,7 +197,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 5. Scroll Reveal Animations ---
+    // --- 5. Scroll Reveal Animations (MOVED TO js/scroll-reveal.js) ---
+    /*
     const revealTargets = document.querySelectorAll(
         '.section-wrapper, .portfolio-card, .service-item-details, .skill-item, .blog-card, .resume-item, .contact-detail-item'
     );
@@ -219,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         revealTargets.forEach(target => revealObserver.observe(target));
     }
+    */
 
     // --- 6. Latest Posts Filter + Toggle ---
     const blogToggleButton = document.querySelector('[data-blog-toggle]');
@@ -227,30 +229,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (latestGrid) {
         const latestCards = Array.from(latestGrid.querySelectorAll('.blog-card'));
+        const INITIAL_SHOW_COUNT = 6;
 
-        const updateBlogToggle = () => {
-            if (!blogToggleButton) {
-                return;
-            }
+        const updateVisibility = () => {
             const isCollapsed = latestGrid.classList.contains('is-collapsed');
-            blogToggleButton.textContent = isCollapsed ? 'View all blogs' : 'Show fewer blogs';
-            blogToggleButton.setAttribute('aria-expanded', (!isCollapsed).toString());
-        };
+            // If collapsed, show only first 6. If expanded, show all.
+            // BUT we must also respect the current category filter.
 
-        const applyFilter = category => {
+            const activeFilterBtn = document.querySelector('[data-blog-filter].is-active');
+            const activeCategory = activeFilterBtn ? activeFilterBtn.dataset.blogFilter : 'all';
+
+            let visibleCount = 0;
+
             latestCards.forEach(card => {
                 const cardCategory = card.dataset.category || '';
-                const shouldShow = category === 'all' || cardCategory === category;
-                card.classList.toggle('is-hidden', !shouldShow);
+                const matchesFilter = activeCategory === 'all' || cardCategory === activeCategory;
+
+                if (matchesFilter) {
+                    // FIX logic: if collapsed, limit to 6. If NOT collapsed, show ALL.
+                    if (isCollapsed && visibleCount >= INITIAL_SHOW_COUNT) {
+                        card.classList.add('is-hidden');
+                    } else {
+                        card.classList.remove('is-hidden');
+                        visibleCount++;
+                    }
+                } else {
+                    card.classList.add('is-hidden');
+                }
             });
+
+            // Update toggle button text
+            if (blogToggleButton) {
+                if (activeCategory !== 'all') {
+                    blogToggleButton.style.display = 'none'; // Hide "View All" when filtering
+                } else {
+                    blogToggleButton.style.display = 'inline-block';
+                    blogToggleButton.textContent = isCollapsed ? 'View all blogs' : 'Show fewer blogs';
+                    blogToggleButton.setAttribute('aria-expanded', (!isCollapsed).toString());
+                }
+            }
         };
 
-        updateBlogToggle();
+        // Initial State
+        latestGrid.classList.add('is-collapsed');
+        updateVisibility();
 
         if (blogToggleButton) {
             blogToggleButton.addEventListener('click', () => {
                 latestGrid.classList.toggle('is-collapsed');
-                updateBlogToggle();
+                updateVisibility();
             });
         }
 
@@ -258,7 +285,11 @@ document.addEventListener('DOMContentLoaded', function() {
             button.addEventListener('click', () => {
                 blogFilterButtons.forEach(item => item.classList.remove('is-active'));
                 button.classList.add('is-active');
-                applyFilter(button.dataset.blogFilter);
+                // When filtering, we usually want to show all results for that category, 
+                // or reset to collapsed. User said "All blog pages card should appear if user is on the all filter tab"
+                // Let's keep existing collapse state but re-run visibility logic.
+                // Actually, often filters reset "View All". Let's keep it simple.
+                updateVisibility();
             });
         });
     }
