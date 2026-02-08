@@ -203,20 +203,36 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.82);
+  /* Slightly more transparent initial */
   backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  /* Hidden initially for cleaner look */
+  transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  padding-top: 0px;
   border-bottom: 1px solid var(--border);
 }
 
 .site-header-inner {
-  padding: 14px 20px;
+  padding: 18px 20px;
+  /* Slightly taller initially */
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-
-  /* GUARDRAIL: ensures absolute dropdown nav positions relative to header */
   position: relative;
+  transition: padding 0.3s ease;
+}
+
+.site-header.scrolled .site-header-inner {
+  padding: 12px 20px;
+  /* Shrink on scroll */
 }
 
 .brand .logo-image {
@@ -233,15 +249,31 @@ h3 {
 
 .site-nav a {
   font-weight: 600;
-  opacity: 0.92;
+  opacity: 0.8;
   position: relative;
+  transition: opacity 0.2s ease;
+  padding: 4px 0;
+}
+
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-primary);
+  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .site-nav a:hover {
   opacity: 1;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 5px;
+  text-decoration: none;
+  /* Remove default underline */
+}
+
+.site-nav a:hover::after {
+  width: 100%;
 }
 
 /* Hamburger */
@@ -1059,25 +1091,24 @@ body.lightbox-open {
   .section+.section {
     padding-top: 20px;
   }
-}
 
 
-.hero-title {
-  font-size: 24px;
-}
+  .hero-title {
+    font-size: 24px;
+  }
 
-.hero-subtitle {
-  font-size: 18px;
-}
+  .hero-subtitle {
+    font-size: 18px;
+  }
 
-.tiles-4 {
-  grid-template-columns: 1fr;
-}
+  .tiles-4 {
+    grid-template-columns: 1fr;
+  }
 
-.back-to-top {
-  right: 16px;
-  bottom: 16px;
-}
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
 }
 
 

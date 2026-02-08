@@ -1,10 +1,8 @@
 /**
- * Antigravity Effect (Particles)
+ * Antigravity Effect (Cursor Swarm)
  * 
- * Creates a canvas overlay on the hero section with interactive particles
- * that follow/react to the mouse cursor.
- * 
- * Optimized for mobile and responsiveness.
+ * Creates a "bubble-like" swarm of particles that follows the cursor
+ * and 'breathes' (expands/contracts) when static.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,13 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.createElement('canvas');
     canvas.id = 'hero-particles';
 
-    // Style
     canvas.style.position = 'absolute';
     canvas.style.top = '0';
     canvas.style.left = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
-    canvas.style.pointerEvents = 'none'; // Critical for clicking links
+    canvas.style.pointerEvents = 'none';
     canvas.style.zIndex = '0';
 
     if (getComputedStyle(heroSection).position === 'static') {
@@ -32,111 +29,108 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const ctx = canvas.getContext('2d');
     let width, height;
-    let particles = [];
+
+    // Mouse State
+    let mouse = { x: -1000, y: -1000 };
+    let isMouseActive = false;
 
     // Configuration
-    let config = {
-        particleCount: 80,
-        connectionDist: 100,
-        baseSpeed: 0.5
+    const config = {
+        particleCount: 200,        // Significantly more dots
+        baseRadius: 250,           // Much wider (covers more width)
+        breathingSpeed: 0.002,     // Slower pulse for large size
+        breathingRange: 30,        // Larger pulse range
+        color: 'rgba(60, 60, 60, 0.8)' // Dark Grey
     };
 
-    // 2. Resize Handler & Responsive Config
+    let particles = [];
+    let time = 0;
+
+    // 2. Resize Handler
     function resize() {
         width = canvas.width = heroSection.offsetWidth;
         height = canvas.height = heroSection.offsetHeight;
 
-        // Responsive adjustments
+        // Center mouse initially if not active
+        if (!isMouseActive) {
+            mouse.x = width / 2;
+            mouse.y = height / 2;
+        }
+
+        // Adjust config for mobile if needed
         if (width < 768) {
-            // Mobile
-            config.particleCount = 40; // Fewer particles
-            config.connectionDist = 80; // Shorter connection range
+            config.particleCount = 100;
+            config.baseRadius = 150;
         } else {
-            // Desktop
-            config.particleCount = 80;
-            config.connectionDist = 120;
+            config.particleCount = 200;
+            config.baseRadius = 250;
         }
 
         initParticles();
     }
     window.addEventListener('resize', resize);
 
-    // 3. Mouse/Touch State
-    const mouse = { x: -1000, y: -1000 };
-
-    function updateMouse(e) {
+    // 3. Mouse Handlers
+    function updateMouse(x, y) {
         const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
+        mouse.x = x - rect.left;
+        mouse.y = y - rect.top;
+        isMouseActive = true;
     }
 
-    document.addEventListener('mousemove', updateMouse);
+    document.addEventListener('mousemove', e => updateMouse(e.clientX, e.clientY));
 
-    // Touch support - ensure smooth interaction without blocking scroll
-    // We only track the position; pointer-events:none allows scroll to pass through to underlying elements
-    function handleTouch(e) {
+    document.addEventListener('touchmove', e => {
         if (e.touches.length > 0) {
-            updateMouse(e.touches[0]);
+            updateMouse(e.touches[0].clientX, e.touches[0].clientY);
         }
-    }
+    });
 
-    document.addEventListener('touchmove', handleTouch);
-    document.addEventListener('touchstart', handleTouch);
-
-
-    // 4. Particle System
+    // 4. Particle Class
     class Particle {
         constructor() {
-            this.x = Math.random() * width;
-            this.y = Math.random() * height;
-            this.vx = (Math.random() - 0.5) * config.baseSpeed;
-            this.vy = (Math.random() - 0.5) * config.baseSpeed;
-            this.size = Math.random() * 2 + 1;
-            this.color = `rgba(0, 0, 0, ${Math.random() * 0.2 + 0.1})`;
+            // Random angle and radius offset for "bubble" shape
+            this.angle = Math.random() * Math.PI * 2;
+            // Square root distribution for uniform circle fill? 
+            // Or simple linear for dense center? Let's use simple for now.
+            this.radiusOffset = Math.random();
+            this.speed = 0.01 + Math.random() * 0.02; // Slower orbit for large swarm
+            this.size = Math.random() * 3 + 2;
+
+            // Current position (starts at mouse)
+            this.x = mouse.x;
+            this.y = mouse.y;
+
+            // For smooth following
+            this.vx = 0;
+            this.vy = 0;
+            this.friction = 0.92;
+            this.ease = 0.04 + Math.random() * 0.04; // Slightly looser follow
+        }
+
+        update(breathingOffset) {
+            // 1. Calculate Target Position based on Mouse + Orbit/Swarm
+            // The "Bubble" is defined by dynamic radius
+            const currentRadius = (config.baseRadius + breathingOffset) * this.radiusOffset;
+
+            // Rotate the particle slightly for "alive" feel
+            this.angle += this.speed;
+
+            // WIDER THAN TALL (Ellipse) to cover width better?
+            // Let's multiply X by 1.5 to make it an ellipse.
+            const targetX = mouse.x + (Math.cos(this.angle) * currentRadius * 1.5);
+            const targetY = mouse.y + (Math.sin(this.angle) * currentRadius);
+
+            // 2. Move towards target (Easing)
+            this.x += (targetX - this.x) * this.ease;
+            this.y += (targetY - this.y) * this.ease;
         }
 
         draw() {
-            ctx.fillStyle = this.color;
+            ctx.fillStyle = config.color;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
-        }
-
-        update() {
-            // Mouse Interaction
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-
-            const maxDistance = 150;
-
-            if (distance < maxDistance) {
-                const forceDirectionX = dx / distance;
-                const forceDirectionY = dy / distance;
-                const force = (maxDistance - distance) / maxDistance;
-                const attractionStrength = 2; // Strength
-
-                this.vx += forceDirectionX * force * attractionStrength * 0.1;
-                this.vy += forceDirectionY * force * attractionStrength * 0.1;
-            }
-
-            // Damping
-            this.vx *= 0.95;
-            this.vy *= 0.95;
-
-            // Velocity limits to prevent getting stuck
-            // Add a tiny bit of random movement if stopped
-            if (Math.abs(this.vx) < 0.01) this.vx += (Math.random() - 0.5) * 0.1;
-            if (Math.abs(this.vy) < 0.01) this.vy += (Math.random() - 0.5) * 0.1;
-
-            this.x += this.vx;
-            this.y += this.vy;
-
-            // Wrap around
-            if (this.x < 0) this.x = width;
-            if (this.x > width) this.x = 0;
-            if (this.y < 0) this.y = height;
-            if (this.y > height) this.y = 0;
         }
     }
 
@@ -150,44 +144,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Animation Loop
     function animate() {
         ctx.clearRect(0, 0, width, height);
+        time += 1;
 
-        // Update and draw particles
-        for (let i = 0; i < particles.length; i++) {
-            particles[i].update();
-            particles[i].draw();
-        }
+        // Breathing Calculation
+        // Sine wave between -1 and 1, scaled by range
+        const breathingOffset = Math.sin(time * config.breathingSpeed * 10) * config.breathingRange;
 
-        // Draw connections
-        connectParticles();
+        particles.forEach(p => {
+            p.update(breathingOffset);
+            p.draw();
+        });
 
         requestAnimationFrame(animate);
     }
 
-    function connectParticles() {
-        // Optimization: Use squared distance to avoid Math.sqrt in loop
-        const maxDistSq = config.connectionDist * config.connectionDist;
-
-        ctx.lineWidth = 1;
-
-        for (let a = 0; a < particles.length; a++) {
-            for (let b = a + 1; b < particles.length; b++) {
-                const dx = particles[a].x - particles[b].x;
-                const dy = particles[a].y - particles[b].y;
-                const distSq = dx * dx + dy * dy;
-
-                if (distSq < maxDistSq) {
-                    const opacityValue = 1 - (distSq / maxDistSq);
-                    ctx.strokeStyle = `rgba(0, 0, 0, ${opacityValue * 0.08})`; // Slight increase in visibility
-                    ctx.beginPath();
-                    ctx.moveTo(particles[a].x, particles[a].y);
-                    ctx.lineTo(particles[b].x, particles[b].y);
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    // Initialize
+    // Start
     resize();
     animate();
 });

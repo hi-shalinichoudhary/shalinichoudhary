@@ -313,4 +313,19 @@ document.addEventListener('DOMContentLoaded', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    // --- 8. Navbar Scroll Effect ---
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                siteHeader.classList.add('scrolled');
+            } else {
+                siteHeader.classList.remove('scrolled');
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll(); // Initial check
+    }
 });
