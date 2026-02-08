@@ -95,26 +95,27 @@
                 </div>
 
                 <div class="contact-form-card">
-                    <form>
+                    <form action="https://formspree.io/f/meeloqor" method="POST">
                         <div class="form-row">
                             <div class="form-field">
                                 <label>Name</label>
-                                <input type="text" placeholder="Your name">
+                                <input type="text" name="name" placeholder="Your name" required>
                             </div>
                             <div class="form-field">
                                 <label>Email</label>
-                                <input type="email" placeholder="you@company.com">
+                                <input type="email" name="email" placeholder="you@company.com" required>
                             </div>
                         </div>
 
                         <div class="form-field">
                             <label>Company (optional)</label>
-                            <input type="text" placeholder="Your company">
+                            <input type="text" name="company" placeholder="Your company">
                         </div>
 
                         <div class="form-field">
                             <label>Message</label>
-                            <textarea placeholder="Tell me about your growth challenge..."></textarea>
+                            <textarea name="message" placeholder="Tell me about your growth challenge..."
+                                required></textarea>
                         </div>
 
                         <button type="submit" class="contact-submit">
@@ -144,7 +145,8 @@
                 <span class="footer-kicker">Let’s build momentum</span>
                 <h2>Turn strategy into compounding growth.</h2>
                 <p class="footer-small">Strategy, storytelling, and measurable impact.</p>
-                <a class="cta-button footer-cta-button" href="contact.html">Book a strategy call</a>
+                <a class="cta-button footer-cta-button" href="https://cal.com/shalini-choudhary/30min"
+                    target="_blank">Book a strategy call</a>
             </div>
 
             <div class="footer-links">
