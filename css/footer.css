@@ -101,12 +101,15 @@
 }
 
 .footer-nav a {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    /* Reduced from 1rem */
     color: #e2e8f0;
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
     display: inline-block;
     width: fit-content;
+    white-space: nowrap;
+    /* FIX: Prevent text wrapping (e.g. Growth Levers) */
 }
 
 .footer-nav a:hover {
@@ -125,7 +128,8 @@
     gap: 10px;
     color: #ffffff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    /* Reduced for consistency */
     font-weight: 500;
     margin-bottom: 20px;
     transition: opacity 0.2s ease;

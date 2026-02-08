@@ -14,7 +14,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
+        <link rel="stylesheet" href="../../css/bundle.min.css">
+
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
     <script>
@@ -23,31 +24,28 @@
       gtag('js', new Date());
       gtag('config', 'G-FFJDP43DXE');
     </script>
-  <link rel="stylesheet" href="../../css/footer.css">
+  
 </head>
 
 <body>
 
-    <header class="main-header section-wrapper">
-        <div class="header-row">
-            <a href="../../index.html">
-                <img src="../../images/logo-image.png" alt="Shalini Choudhary Logo" class="logo-image">
-            </a>
-            
-            <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            
-            <nav class="main-nav" id="main-navigation">
-                <a href="../../index.html#services-section">Services</a>
-                <a href="../../index.html#works-section">Works</a>
-                <a href="../../index.html#resume-section">Experience</a>
-                <a href="../../index.html#skills-section">Skills</a>
-                <a href="../../blogs.html">Blog</a>
-                <a href="../../contact.html" class="cta-button small-btn">Hire me!</a>
-            </nav>
-        </div>
-    </header>
+    <header class="site-header">
+    <div class="site-header-inner">
+        <a href="../../index.html" class="brand" aria-label="Go to homepage">
+            <img src="../../images/logo-image.png" alt="Shalini Choudhary Logo" class="logo-image">
+        </a>
+        <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
+            <a href="../../index.html#services-section">Growth levers</a>
+            <a href="../../index.html#impact-section">Impact</a>
+            <a href="../../index.html#thinking-section">Thinking</a>
+            <a href="../../blogs.html">Blog</a>
+            <a href="../../contact.html" class="cta-button small-btn">Get in touch</a>
+        </nav>
+    </div>
+</header>
     <main class="site-content">
         <article class="section-wrapper" style="border-top: none; padding-top: 40px;">
             
@@ -62,6 +60,29 @@
 
             <div class="reading-layout-wrapper">
                 
+                
+                <!-- NEW: Social & Interaction Sidebar -->
+                <aside class="blog-interactions">
+                    <div class="interaction-bar">
+                        <button class="interaction-btn" aria-label="Like this post">
+                            <i class="far fa-heart"></i>
+                        </button>
+                        <button class="interaction-btn" aria-label="Bookmark this post">
+                            <i class="far fa-bookmark"></i>
+                        </button>
+                        <div class="interaction-divider"></div>
+                        <a href="#" class="interaction-btn" aria-label="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="interaction-btn" aria-label="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <button class="interaction-btn" aria-label="Copy Link">
+                            <i class="fas fa-link"></i>
+                        </button>
+                    </div>
+                </aside>
+
                 <div class="toc-sidebar-container">
                     <div class="table-of-contents">
                         <h3>Table of Contents</h3>
@@ -112,19 +133,27 @@
                         <p>By focusing on E-A-T, you create content that Google deems valuable and trustworthy. This not only improves your search rankings but also fosters audience trust and loyalty.</p>
 
                     </div>
-                    <div class="author-cta-box" style="padding: 0;">
-                        <div class="author-box-content" style="background: #f9f9f9; padding: 30px; border-radius: 6px; border: 1px solid #eee;">
-                            
+                    <div class="author-cta-box">
+                        <div class="author-box-content">
                             <div class="author-image-placeholder">
-                                <img src="../../images/author-me.png" alt="Author Shalini Choudhary">
+                                <img src="../../images/author-me.webp" alt="Author Shalini Choudhary">
                             </div>
 
-                            <div>
-                                <h4 style="margin-top:0;">About the Author</h4>
-                                <p style="margin-bottom: 15px;">
-                                    Shalini Choudhary is a Senior SEO Manager specializing in performance-led digital growth. She decodes search complexities to drive meaningful organic results.
+                            <div class="author-details">
+                                <div class="author-header">
+                                    <h4 style="margin:0;">Shalini Choudhary</h4>
+                                    <span class="author-badge">Strategy Expert</span>
+                                </div>
+                                <p class="author-bio">
+                                    Senior SEO Manager specializing in performance-led digital growth. Decoding search complexities to drive meaningful organic results for global brands.
                                 </p>
-                                <p><strong>Ready to master E-A-T on your own site?</strong> <a href="../../contact.html" style="text-decoration: underline; font-weight: 700;">Get in touch for content authority strategy.</a></p>
+                                <div class="author-actions">
+                                    <a href="../../contact.html" class="cta-button small-btn">Work with me</a>
+                                    <div class="author-socials">
+                                        <a href="https://twitter.com/shalinihooda" target="_blank"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://in.linkedin.com/in/shalini-choudhary" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -133,7 +162,7 @@
             </article>
     </main>
 
-    <footer class="tj-footer-area section-wrapper">
+    <footer class="tj-footer-area">
   <div class="footer-content footer-grid">
     <div class="footer-brand">
       <span class="footer-kicker">Let’s build momentum</span>
@@ -141,7 +170,6 @@
       <p class="footer-small">Strategy, storytelling, and measurable impact.</p>
       <a class="cta-button footer-cta-button" href="../../contact.html">Book a strategy call</a>
     </div>
-
     <div class="footer-links">
       <h3 class="footer-heading">Explore</h3>
       <nav class="footer-nav footer-nav--stacked">
@@ -152,7 +180,6 @@
         <a href="../../contact.html">Contact</a>
       </nav>
     </div>
-
     <div class="footer-contact">
       <h3 class="footer-heading">Connect</h3>
       <div class="footer-social" aria-label="Social links">
@@ -169,9 +196,7 @@
         hi.shalinichoudhary@gmail.com
       </a>
     </div>
-
   </div>
-
   <div class="footer-meta">
     <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
   </div>
