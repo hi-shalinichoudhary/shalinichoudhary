@@ -328,4 +328,110 @@ document.addEventListener('DOMContentLoaded', function () {
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll(); // Initial check
     }
+    // --- 9. Social Sidebar Interactions ---
+    const interactionButtons = document.querySelectorAll('.interaction-btn');
+
+    if (interactionButtons.length) {
+        // Helper: Get unique ID for this post (slug)
+        const getPostSlug = () => {
+            const path = window.location.pathname;
+            return path.split('/').pop().replace('.html', '');
+        };
+        const postSlug = getPostSlug();
+
+        interactionButtons.forEach(btn => {
+            // Load types
+            const label = btn.getAttribute('aria-label');
+
+            // 1. LIKE BUTTON
+            if (label === 'Like this post') {
+                const storageKey = `blog_like_${postSlug}`;
+                const isLiked = localStorage.getItem(storageKey) === 'true';
+
+                if (isLiked) {
+                    btn.classList.add('active');
+                    btn.querySelector('i').classList.replace('far', 'fas'); // Solid icon
+                }
+
+                btn.addEventListener('click', () => {
+                    const currentlyLiked = btn.classList.contains('active');
+                    if (currentlyLiked) {
+                        btn.classList.remove('active');
+                        btn.querySelector('i').classList.replace('fas', 'far');
+                        localStorage.removeItem(storageKey);
+                    } else {
+                        btn.classList.add('active');
+                        btn.querySelector('i').classList.replace('far', 'fas');
+                        localStorage.setItem(storageKey, 'true');
+
+                        // Optional: Add a subtle pop animation
+                        btn.style.transform = 'scale(1.2)';
+                        setTimeout(() => btn.style.transform = '', 200);
+                    }
+                });
+            }
+
+            // 2. BOOKMARK BUTTON
+            else if (label === 'Bookmark this post') {
+                const storageKey = `blog_bookmark_${postSlug}`;
+                const isBookmarked = localStorage.getItem(storageKey) === 'true';
+
+                if (isBookmarked) {
+                    btn.classList.add('active');
+                    btn.querySelector('i').classList.replace('far', 'fas');
+                }
+
+                btn.addEventListener('click', () => {
+                    const currentlyBookmarked = btn.classList.contains('active');
+                    if (currentlyBookmarked) {
+                        btn.classList.remove('active');
+                        btn.querySelector('i').classList.replace('fas', 'far');
+                        localStorage.removeItem(storageKey);
+                    } else {
+                        btn.classList.add('active');
+                        btn.querySelector('i').classList.replace('far', 'fas');
+                        localStorage.setItem(storageKey, 'true');
+                    }
+                });
+            }
+
+            // 3. COPY LINK
+            else if (label === 'Copy Link') {
+                btn.addEventListener('click', () => {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        // visuals
+                        const originalIcon = btn.innerHTML;
+                        btn.innerHTML = '<i class="fas fa-check"></i>';
+                        btn.classList.add('active');
+
+                        setTimeout(() => {
+                            btn.innerHTML = originalIcon;
+                            btn.classList.remove('active');
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy: ', err);
+                    });
+                });
+            }
+
+            // 4. TWITTER SHARE
+            else if (label === 'Share on Twitter') {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = encodeURIComponent(window.location.href);
+                    const text = encodeURIComponent(document.title);
+                    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank', 'width=600,height=400');
+                });
+            }
+
+            // 5. LINKEDIN SHARE
+            else if (label === 'Share on LinkedIn') {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = encodeURIComponent(window.location.href);
+                    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+                });
+            }
+        });
+    }
 });
