@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Configuration
     const config = {
-        particleCount: 200,        // Significantly more dots
-        baseRadius: 250,           // Much wider (covers more width)
-        breathingSpeed: 0.002,     // Slower pulse for large size
-        breathingRange: 30,        // Larger pulse range
-        color: 'rgba(60, 60, 60, 0.8)' // Dark Grey
+        particleCount: 80,         // Reduced density (lighter)
+        baseRadius: 600,           // 600px spread (very wide)
+        breathingSpeed: 0.002,
+        breathingRange: 30,
+        color: 'rgba(60, 60, 60, 0.4)' // Reduced opacity
     };
 
     let particles = [];
@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Adjust config for mobile if needed
         if (width < 768) {
-            config.particleCount = 100;
-            config.baseRadius = 150;
+            config.particleCount = 40; // Very light on mobile
+            config.baseRadius = 300;   // Wide mobile spread
         } else {
-            config.particleCount = 200;
-            config.baseRadius = 250;
+            config.particleCount = 80; // Mild density on desktop
+            config.baseRadius = 600;   // Wide desktop spread
         }
 
         initParticles();
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Or simple linear for dense center? Let's use simple for now.
             this.radiusOffset = Math.random();
             this.speed = 0.01 + Math.random() * 0.02; // Slower orbit for large swarm
-            this.size = Math.random() * 3 + 2;
+            this.size = Math.random() * 1.5 + 0.5; // Very thin small dots (0.5px - 2px)
 
             // Current position (starts at mouse)
             this.x = mouse.x;
