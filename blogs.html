@@ -20,6 +20,20 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/bundle.min.css">
+    <style>
+        /* Fix for featured image chopping */
+        .featured-insight .featured-image {
+            object-fit: contain;
+            height: auto;
+            min-height: 0;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .featured-insight .featured-image-link {
+            height: auto;
+        }
+    </style>
 
     <!-- PRO SEO: Entity Schema -->
     <script type="application/ld+json">
