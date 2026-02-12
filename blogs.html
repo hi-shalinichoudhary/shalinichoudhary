@@ -21,16 +21,27 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/bundle.min.css">
     <style>
-        /* Fix for featured image chopping */
+        /* Fix for featured image chopping & spacing */
+        .featured-card {
+            align-items: center;
+            /* Prevents stretching height, removes empty space */
+        }
+
         .featured-insight .featured-image {
-            object-fit: contain;
+            width: 100%;
             height: auto;
             min-height: 0;
-            width: 100%;
+            object-fit: cover;
             border-radius: 20px;
         }
 
         .featured-insight .featured-image-link {
+            height: auto;
+            width: 100%;
+        }
+
+        /* Ensure panel doesn't stretch if it has flex */
+        .featured-image-panel {
             height: auto;
         }
     </style>
