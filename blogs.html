@@ -44,6 +44,118 @@
         .featured-image-panel {
             height: auto;
         }
+
+        /* Blog Categories Carousel */
+        .blog-categories-section {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        .categories-header {
+            margin-bottom: 3rem;
+        }
+        .categories-carousel-container {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            padding: 0 1rem;
+        }
+        @media (min-width: 1024px) {
+            .categories-carousel-container {
+                width: 100%;
+                position: static;
+                left: auto;
+                right: auto;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0;
+            }
+        }
+        .categories-carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 2rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+        }
+        .categories-carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+        .categories-carousel::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .categories-carousel::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        
+        .category-carousel-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            background: linear-gradient(145deg, rgba(35, 35, 40, 0.6), rgba(20, 20, 25, 0.8));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .category-carousel-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        .category-carousel-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+        .category-carousel-card:hover::before {
+            transform: translateX(100%);
+        }
+        .category-card-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: background 0.3s ease;
+        }
+        .category-carousel-card:hover .category-card-icon {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .category-card-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        .category-card-content p {
+            font-size: 0.95rem;
+            color: #a1a1aa;
+            line-height: 1.5;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        
     </style>
 
     <!-- PRO SEO: Entity Schema -->
@@ -995,6 +1107,56 @@
             <div class="blog-library-actions">
                 <button class="cta-button" type="button" data-blog-toggle aria-expanded="false"
                     aria-controls="latest-posts-grid">View all blogs</button>
+            </div>
+        </section>
+
+        <!-- BLOG CATEGORIES CAROUSEL -->
+        <section class="section-wrapper blog-categories-section">
+            <div class="categories-header">
+                <span class="eyebrow">EXPLORE BY TOPIC</span>
+                <h2>Find what you need</h2>
+                <p class="section-description">Browse my library of insights across strategy, analytics, and tactical execution.</p>
+            </div>
+            
+            <div class="categories-carousel-container">
+                <div class="categories-carousel">
+                    <!-- Cards -->
+                    <a href="blogs/strategy.html" class="category-carousel-card">
+                        <div class="category-card-icon"><i class="fas fa-chess-knight"></i></div>
+                        <div class="category-card-content">
+                            <h3>Strategy</h3>
+                            <p>High-level frameworks and compounding growth models.</p>
+                        </div>
+                    </a>
+                    <a href="blogs/seo-industry.html" class="category-carousel-card">
+                        <div class="category-card-icon"><i class="fas fa-globe"></i></div>
+                        <div class="category-card-content">
+                            <h3>SEO Industry</h3>
+                            <p>Updates, algorithm changes, and macro search trends.</p>
+                        </div>
+                    </a>
+                    <a href="blogs/google-analytics.html" class="category-carousel-card">
+                        <div class="category-card-icon"><i class="fas fa-chart-line"></i></div>
+                        <div class="category-card-content">
+                            <h3>Analytics</h3>
+                            <p>Measurement, attribution, and data-driven clarity.</p>
+                        </div>
+                    </a>
+                    <a href="blogs/seo-tips.html" class="category-carousel-card">
+                        <div class="category-card-icon"><i class="fas fa-lightbulb"></i></div>
+                        <div class="category-card-content">
+                            <h3>SEO Tips</h3>
+                            <p>Actionable advice to improve rankings and UX.</p>
+                        </div>
+                    </a>
+                    <a href="blogs/social-impact.html" class="category-carousel-card">
+                        <div class="category-card-icon"><i class="fas fa-hands-helping"></i></div>
+                        <div class="category-card-content">
+                            <h3>Social Impact</h3>
+                            <p>Tech and growth strategies for positive change.</p>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
 
