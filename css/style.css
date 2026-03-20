@@ -457,6 +457,10 @@ h3 {
     justify-content: center;
 }
 
+.hero-copy .hero-actions {
+    justify-content: flex-start;
+}
+
 .hero-actions .cta-button,
 .hero-actions .secondary-button {
     margin-top: 0;
