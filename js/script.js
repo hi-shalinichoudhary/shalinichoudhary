@@ -285,12 +285,36 @@ document.addEventListener('DOMContentLoaded', function () {
             button.addEventListener('click', () => {
                 blogFilterButtons.forEach(item => item.classList.remove('is-active'));
                 button.classList.add('is-active');
-                // When filtering, we usually want to show all results for that category, 
-                // or reset to collapsed. User said "All blog pages card should appear if user is on the all filter tab"
-                // Let's keep existing collapse state but re-run visibility logic.
-                // Actually, often filters reset "View All". Let's keep it simple.
                 updateVisibility();
             });
+        });
+    }
+
+    // --- 6.5 Category Pages "Load More" Logic ---
+    const archiveGrid = document.querySelector('.blog-archive-grid');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    
+    if (archiveGrid && loadMoreBtn) {
+        const archiveCards = Array.from(archiveGrid.querySelectorAll('.blog-card'));
+        const ARCHIVE_SHOW_COUNT = 3; 
+
+        // Initial setup: hide excess cards
+        let hiddenCardsExist = false;
+        archiveCards.forEach((card, index) => {
+            if (index >= ARCHIVE_SHOW_COUNT) {
+                card.classList.add('is-hidden');
+                hiddenCardsExist = true;
+            }
+        });
+
+        // Hide button if no cards to load
+        if (!hiddenCardsExist) {
+            loadMoreBtn.style.display = 'none';
+        }
+
+        loadMoreBtn.addEventListener('click', () => {
+            archiveCards.forEach(card => card.classList.remove('is-hidden'));
+            loadMoreBtn.style.display = 'none';
         });
     }
 

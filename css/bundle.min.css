@@ -3250,13 +3250,7 @@ h3 {
     gap: 24px;
     padding: 20px 40px;
     border-top: none;
-    /* ISSUE 3 FIX: Removed redundant top border on the grid */
-
-    /* CRITICAL: Set initial height and hide overflow for "Load More" */
-    max-height: 800px;
-    overflow: hidden;
-    position: relative;
-    transition: max-height 0.5s ease;
+    /* FIX: Removed max-height constraints here to handle via JS .is-hidden instead */
 
     /* FIX: Added bottom padding to ensure the final card's bottom border is visible */
     padding-bottom: 40px;
