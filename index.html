@@ -94,6 +94,7 @@
   }
   </script>
 
+  <link rel="preload" as="image" href="images/test_shalini.jpg">
 </head>
 
 <body>
@@ -843,7 +844,7 @@
   <div id="portfolio-lightbox" class="portfolio-lightbox" aria-hidden="true" role="dialog"
     aria-label="Portfolio image preview">
     <button class="portfolio-lightbox-close" type="button" aria-label="Close image preview">&times;</button>
-    <img class="portfolio-lightbox-image" src="" alt="">
+    <img class="portfolio-lightbox-image" src="" alt="" loading="lazy">
   </div>
 
   <!-- UPDATED: Homepage footer preview -->
@@ -899,10 +900,10 @@
 
 
   <!-- Root script + homepage script -->
-  <script src="js/script.js"></script>
-  <script src="js/prototype.js"></script>
-  <script src="js/antigravity.js"></script>
-  <script src="js/scroll-reveal.js"></script>
+  <script  src="js/script.js" defer></script>
+  <script  src="js/prototype.js" defer></script>
+  <script  src="js/antigravity.js" defer></script>
+  <script  src="js/scroll-reveal.js" defer></script>
 
 </body>
 
