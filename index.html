@@ -962,8 +962,8 @@
               
               setTimeout(() => {
                 const newCards = container.querySelectorAll('.reveal');
-                // Ensure they show up by adding the 'active' class commonly used in custom scroll reveals
-                newCards.forEach(card => card.classList.add('active'));
+                // Ensure they show up by adding the 'is-visible' class used in custom scroll reveals
+                newCards.forEach(card => card.classList.add('is-visible'));
               }, 100);
 
             } else {
