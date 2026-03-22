@@ -749,6 +749,22 @@
       </div>
     </section>
 
+    <!-- NEW: Medium RSS Feed Section -->
+    <section id="medium-articles" class="section">
+      <div class="section-head reveal">
+        <h2>Published on Medium</h2>
+        <p class="section-subhead">Latest articles and thoughts shared on Medium.</p>
+      </div>
+
+      <div id="medium-feed-container" class="reading-grid">
+        <!-- JS will inject .reading-card items here -->
+        <p class="muted" style="grid-column: 1 / -1; text-align: center;">Loading latest articles...</p>
+      </div>
+
+      <div class="reading-actions reveal delay-300">
+        <a href="https://medium.com/@hi.shalinichoudhary" target="_blank" rel="noopener noreferrer" class="cta-button">Follow on Medium</a>
+      </div>
+    </section>
 
     <section id="contact-section" class="section contact">
       <!-- Header -->
@@ -904,6 +920,63 @@
   <script src="js/prototype.js"></script>
   <script src="js/antigravity.js"></script>
   <script src="js/scroll-reveal.js"></script>
+
+  <!-- Fetch Medium RSS feed dynamically -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const mediumUsername = "@hi.shalinichoudhary";
+      const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${mediumUsername}`;
+      const container = document.getElementById("medium-feed-container");
+
+      if (container) {
+        fetch(feedUrl)
+          .then(response => response.json())
+          .then(data => {
+            if (data.status === 'ok' && data.items.length > 0) {
+              container.innerHTML = ""; // Clear "Loading..." text
+              
+              const postsToDisplay = data.items.slice(0, 3);
+              
+              postsToDisplay.forEach((item, index) => {
+                const pubDate = new Date(item.pubDate);
+                const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                
+                const delayClass = `delay-${(index + 1) * 100}`;
+                
+                // create a temporary div to strip HTML tags from the description
+                const tempDiv = document.createElement("div");
+                tempDiv.innerHTML = item.description || item.content || "";
+                let textContent = tempDiv.textContent || tempDiv.innerText || "";
+                textContent = textContent.trim().substring(0, 90) + "...";
+                
+                const cardHtml = `
+                  <a class="reading-card reveal ${delayClass}" href="${item.link}" target="_blank" rel="noopener noreferrer">
+                    <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium \u2022 ${formattedDate}</div>
+                    <h3>${item.title}</h3>
+                    <p class="muted">${textContent}</p>
+                    <span class="reading-link">Read on Medium \u2192</span>
+                  </a>
+                `;
+                container.insertAdjacentHTML('beforeend', cardHtml);
+              });
+              
+              setTimeout(() => {
+                const newCards = container.querySelectorAll('.reveal');
+                // Ensure they show up by adding the 'active' class commonly used in custom scroll reveals
+                newCards.forEach(card => card.classList.add('active'));
+              }, 100);
+
+            } else {
+              container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">No articles found. Check back later!</p>';
+            }
+          })
+          .catch(error => {
+            console.error("Error fetching Medium articles:", error);
+            container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">Unable to load articles at this time.</p>';
+          });
+      }
+    });
+  </script>
 
 </body>
 
