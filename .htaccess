@@ -1,6 +1,3 @@
-RewriteEngine On
-
-# Redirect index.html to the root / (301 Permanent Redirect)
-# The RewriteCond checks the actual requested URI to avoid infinite loops
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ https://%{HTTP_HOST}/ [R=301,L]
+# Your website is hosted on GitHub Pages.
+# GitHub Pages does NOT support .htaccess files.
+# The 301 redirect logic for duplicate URLs has been added to index.html using JavaScript instead.
