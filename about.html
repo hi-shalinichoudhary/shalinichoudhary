@@ -25,30 +25,165 @@
     </script>
     
     <style>
-        .about-page-content {
-            max-width: 800px;
+        .about-page-wrapper {
+            background-color: var(--bg-color, #ffffff);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Abstract soft background gradient */
+        .about-page-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 70%;
+            height: 70%;
+            background: radial-gradient(circle, rgba(230,235,245,0.8) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .about-container {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 4rem 1rem;
+            padding: 6rem 1.5rem 8rem 1.5rem;
+            position: relative;
+            z-index: 1;
         }
-        .about-page-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 700;
+
+        .about-header {
+            margin-bottom: 3.5rem;
+            text-align: left;
         }
-        .about-page-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
+
+        .about-header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            color: var(--heading-color, #111827);
+            letter-spacing: -0.02em;
             margin-bottom: 1.5rem;
-            color: var(--text-color, #334155);
+            position: relative;
         }
+
+        .about-header h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color, #2563eb);
+            margin-top: 1.5rem;
+            border-radius: 2px;
+        }
+
+        .about-lead-text {
+            font-size: clamp(1.2rem, 2.5vw, 1.4rem);
+            line-height: 1.6;
+            color: var(--text-color, #374151);
+            font-weight: 500;
+        }
+
+        /* Video wrapper styling for premium look */
+        .about-video-wrapper {
+            width: 100%;
+            margin: 3.5rem 0;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.05);
+            background: #f1f5f9;
+            position: relative;
+            transform: translateZ(0); /* Hardware acceleration */
+        }
+        
+        .about-video-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+        }
+
+        .about-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .about-video-wrapper:hover .about-video {
+            transform: scale(1.02);
+        }
+
+        .about-body-text {
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: var(--text-color, #475569);
+        }
+
+        .about-body-text p {
+            margin-bottom: 2rem;
+        }
+
+        .about-body-text p:last-child {
+            margin-bottom: 0;
+        }
+
         .about-actions {
-            margin-top: 3rem;
+            margin-top: 4rem;
             display: flex;
-            gap: 1.5rem;
             align-items: center;
+            gap: 2rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0,0,0,0.08);
         }
-        .about-actions .separator {
-            color: #ccc;
+
+        .secondary-link {
+            font-weight: 600;
+            color: var(--heading-color, #111827);
+            text-decoration: none;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .secondary-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .secondary-link:hover {
+            color: var(--accent-color, #2563eb);
+        }
+
+        .secondary-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 4rem 1.25rem 6rem;
+            }
+            .about-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -76,25 +211,47 @@
     </header>
 
     <main class="site-content">
-        <section class="section">
-            <div class="about-page-content reveal">
-                <h1>The longer version.</h1>
+        <div class="about-page-wrapper">
+            <section class="about-container">
                 
-                <p>I'm Shalini — a marketing professional with eight years of experience across agencies, global brands, and fast-moving in-house teams. I've worked across strategy, organic growth, performance, and measurement — always with the same underlying question: what actually moves the business forward?</p>
-
-                <p>My career has taken me through some of the most respected names in the industry. At Neo@Ogilvy I learned how to think about brands with rigour and creative discipline. At GroupM I understood media at scale — how attention is bought, directed, and wasted. At GUS Global I got close to the commercial realities of demand generation for an international education business. Across all of it, SEO was a tool I used well — not a specialism I hid behind.</p>
-
-                <p>I'm currently based in the UK, completing my MSc in Marketing Management with Advertising at the University of Leeds. The degree is doing something useful: it's giving me the academic vocabulary to describe things I already knew intuitively, and introducing frameworks that challenge how I think about strategy, consumer behaviour, and brand. It's making me a sharper marketer.</p>
-
-                <p>I'm building toward senior marketing roles in the UK — places where strategy, commercial thinking, and genuine curiosity about how markets work are what's valued. If that sounds like your team, I'd like to hear from you.</p>
-
-                <div class="about-actions reveal delay-100">
-                    <a href="contact.html" class="cta-button">Let's talk</a>
-                    <span class="separator">|</span>
-                    <a href="blogs.html" class="text-link" style="font-weight: 600; text-decoration: underline;">See my thinking</a>
+                <div class="about-header reveal">
+                    <h1>The longer version.</h1>
+                    <p class="about-lead-text">
+                        I'm Shalini — a marketing professional with eight years of experience across agencies, global brands, and fast-moving in-house teams. I've worked across strategy, organic growth, performance, and measurement — always with the same underlying question: what actually moves the business forward?
+                    </p>
                 </div>
-            </div>
-        </section>
+
+                <!-- Video Asset loaded asynchronously -->
+                <div class="about-video-wrapper reveal delay-100">
+                    <video 
+                        class="about-video" 
+                        src="images/shalini team meet.mp4" 
+                        poster="images/test_shalini.jpg"
+                        preload="metadata" 
+                        autoplay 
+                        muted 
+                        loop 
+                        playsinline 
+                        aria-label="Shalini in a team meeting">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="about-body-text reveal delay-200">
+                    <p>My career has taken me through some of the most respected names in the industry. At Neo@Ogilvy I learned how to think about brands with rigour and creative discipline. At GroupM I understood media at scale — how attention is bought, directed, and wasted. At GUS Global I got close to the commercial realities of demand generation for an international education business. Across all of it, SEO was a tool I used well — not a specialism I hid behind.</p>
+
+                    <p>I'm currently based in the UK, completing my MSc in Marketing Management with Advertising at the University of Leeds. The degree is doing something useful: it's giving me the academic vocabulary to describe things I already knew intuitively, and introducing frameworks that challenge how I think about strategy, consumer behaviour, and brand. It's making me a sharper marketer.</p>
+
+                    <p>I'm building toward senior marketing roles in the UK — places where strategy, commercial thinking, and genuine curiosity about how markets work are what's valued. If that sounds like your team, I'd like to hear from you.</p>
+                </div>
+
+                <div class="about-actions reveal delay-300">
+                    <a href="contact.html" class="cta-button">Let's talk</a>
+                    <a href="blogs.html" class="secondary-link">See my thinking <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+
+            </section>
+        </div>
     </main>
 
     <footer class="tj-footer-area">
