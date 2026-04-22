@@ -1,0 +1,126 @@
+import codecs
+import re
+
+old_file = "/Users/shalini/Documents/shalinichoudhary/blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html"
+new_file = "/Users/shalini/Documents/shalinichoudhary/blogs/growth-strategy/why-the-channel-is-never-the-strategy.html"
+
+with codecs.open(old_file, "r", "utf-8") as f:
+    content = f.read()
+
+# Replace Meta
+content = content.replace(
+    "What Eight Years in Marketing Actually Taught Me About Strategy | Shalini Choudhary",
+    "Why the Channel Is Never the Strategy | Shalini Choudhary"
+)
+content = content.replace(
+    'name="description" content="Not a career retrospective; a series of hard-won lessons from agency life at Ogilvy, GroupM and beyond. What experience actually teaches you, and what it can\'t."',
+    'name="description" content="The marketing industry\'s habit of organising around channels; SEO team, paid team, social team is a structural problem that produces fragmented results. Here\'s why, and what to do instead."'
+)
+
+# Title
+content = content.replace(
+    "<h1>What Eight Years in Marketing Actually Taught Me About Strategy</h1>",
+    "<h1>Why the Channel Is Never the Strategy</h1>"
+)
+
+# Image
+content = content.replace(
+    "../../images/blog-images/strategy/Blog_image_marketing_202604211718.jpeg",
+    "../../images/blog-images/strategy/Why%20the%20Channel%20Is%20Never%20the%20Strategy.jpeg"
+)
+
+# TOC
+old_toc = '''                        <h3>Table of Contents</h3>
+                        <ul>
+                            <li><a href="#lesson-one">Lesson One: Strategy is a decision</a></li>
+                            <li><a href="#lesson-two">Lesson Two: Channel is a hypothesis</a></li>
+                            <li><a href="#lesson-three">Lesson Three: What the brief means</a></li>
+                            <li><a href="#lesson-four">Lesson Four: Data doesn't tell you why</a></li>
+                            <li><a href="#lesson-five">Lesson Five: Naming things I knew</a></li>
+                            <li><a href="#conclusion">What Experience Prepares You For</a></li>
+                        </ul>'''
+
+new_toc = '''                        <h3>Table of Contents</h3>
+                        <ul>
+                            <li><a href="#how-problem-happens">How the Channel-First Problem Happens</a></li>
+                            <li><a href="#strategy-before-channel">What Strategy Looks Like Before Channel</a></li>
+                            <li><a href="#integrated-thinking">The Practical Case for Integrated Thinking</a></li>
+                            <li><a href="#note-on-seo">A Note on SEO Specifically</a></li>
+                            <li><a href="#the-brief">The Brief That Started This</a></li>
+                        </ul>'''
+
+content = content.replace(old_toc, new_toc)
+
+# Article Text
+new_text = """
+                        <p class="lead-text" style="margin-bottom: 30px;">
+                            The brief said 'we need more SEO.'
+                        </p>
+                        
+                        <p>It almost always means something else.</p>
+                        
+                        <p>In this case, what it meant after about forty minutes of the kind of questioning that can feel impolite until it produces something useful was that a competitor had started ranking for terms the client had historically owned. Inbound lead quality had declined, and the sales team had flagged that prospects were arriving less informed than they used to be. The actual problem was a positioning gap, a content architecture that hadn't kept pace with how the market was searching, and a disconnect between what the brand was saying about itself and what buyers were looking for.</p>
+                        
+                        <p>SEO was part of the solution. It was not the strategy. And starting with it as the strategy would have produced a competent but ultimately unsatisfying set of outputs; better rankings for terms that weren't quite right, more traffic from audiences that weren't quite ready, and a quarterly review that would have generated another brief asking for more SEO.</p>
+
+                        <h3 id="how-problem-happens">How the Channel-First Problem Happens</h3>
+                        
+                        <p>It's worth being precise about where this pattern comes from, because it's not the result of laziness or incompetence. It's a structural outcome of how marketing teams and agencies are typically organised.</p>
+                        
+                        <p>Most marketing functions are built around channels. There's an SEO team, a paid team, a social team, a content team. Each team has targets tied to the performance of their channel. Each team, reasonably enough, advocates for investment in that channel. When a business problem appears, the channel that gets the brief is often the channel that's most available, most vocal, or most recently successful, not necessarily the channel most suited to the problem.</p>
+                        
+                        <p>Agency relationships compound this. Agencies are retained for specific capabilities. An SEO agency is going to recommend SEO. A paid media agency is going to recommend paid media. This isn't cynical, it's the natural consequence of how expertise and commercial incentives are structured. But it means that channel selection often happens before strategy, rather than as a result of it.</p>
+
+                        <div style="background-color: #f8fafc; padding: 24px; border-left: 4px solid #333; font-weight: 600; margin: 30px 0; font-size: 1.1rem;">
+                            Channel selection often happens before strategy, rather than as a result of it. That order of operations is where most marketing spend goes wrong.
+                        </div>
+
+                        <h3 id="strategy-before-channel">What Strategy Actually Looks Like Before Channel</h3>
+                        
+                        <p>Strategic thinking before channel selection asks a different set of questions from the ones that usually open a marketing conversation.</p>
+                        
+                        <p>Not 'how do we improve our SEO?' but 'why is inbound lead quality declining, and what does that tell us about how we're positioned in the market?'</p>
+                        
+                        <p>Not 'how do we improve our social engagement?' but 'who are we trying to reach, where are they in the decision process when they engage with us, and what do they need to hear at that moment?'</p>
+                        
+                        <p>Not 'how do we spend this campaign budget?' but 'what's the specific commercial outcome we're trying to produce, and which combination of channels and messages is most likely to produce it?'</p>
+                        
+                        <p>These questions take longer to answer. They produce more friction in the planning process. They sometimes lead to conclusions that are uncomfortable: like the problem isn't a marketing execution problem, it's a product problem, or a pricing problem, or a positioning problem that marketing can't solve by itself.</p>
+                        
+                        <p>But they produce better outcomes, because they anchor channel selection to something real.</p>
+                        
+                        <h3 id="integrated-thinking">The Practical Case for Integrated Thinking</h3>
+                        
+                        <p>The most effective marketing I've been involved in at Ogilvy, at GroupM, in-house at GUS Global shared a common characteristic: the people running it thought about channels as a system, not as separate disciplines.</p>
+                        
+                        <p>Organic search and paid media inform each other when they're run by people who talk to each other. The keywords that convert best in paid tell you something important about which organic content to prioritise. The content that earns organic traffic and engagement tells you something about the messaging that paid campaigns should test. The customer journey data from analytics tells you where each channel is actually contributing versus where it's being credited by a flawed attribution model.</p>
+                        
+                        <p>This integration doesn't require a single team or a single budget. It requires a shared understanding of the commercial objective, a willingness to let channel performance data inform strategy rather than just justify spend, and someone in the room who is willing to ask the uncomfortable question when the channel is getting the credit that belongs to the strategy.</p>
+                        
+                        <h3 id="note-on-seo">A Note on SEO Specifically</h3>
+                        
+                        <p>I want to be clear about something, because the argument above can be misread as a dismissal of SEO as a discipline. It isn't.</p>
+                        
+                        <p>Organic search is one of the most powerful demand channels available to most businesses. The compounding nature of well-executed content strategy means that the investment made today continues to produce returns for years. The intelligence that search data provides about how markets think, what buyers are actually looking for, how competitive positioning is understood by real customers is irreplaceable.</p>
+                        
+                        <p>But SEO is powerful when it's deployed in service of a clear strategic goal, when it's integrated with the other channels and functions it touches, and when its success is measured against business outcomes rather than channel metrics.</p>
+
+                        <p>When it's deployed as the answer to a question that hasn't been properly asked, it produces work that is technically good and strategically irrelevant. I've seen this happen enough times to find it genuinely frustrating.</p>
+
+                        <h3 id="the-brief">The Brief That Started This</h3>
+                        
+                        <p>Back to the client who needed more SEO.</p>
+                        
+                        <p>The work we ended up doing included a significant SEO component: content architecture, technical foundations, intent mapping across the funnel. But it also included a positioning review, a messaging overhaul for the consideration-stage content, and a set of recommendations about how the sales team was receiving inbound leads that had nothing to do with search at all.</p>
+                        
+                        <p>The brief changed shape. The outcome was more useful than what the original brief would have produced. And the SEO work was better for being anchored to something real, rather than optimising in a strategic vacuum.</p>
+                        
+                        <p>The channel is never the strategy. But it can be an excellent answer, once you've asked the right question.</p>
+"""
+
+content = re.sub(r'(<div class="blog-post-content" style="padding: 0;">).*?(<div class="related-services-links")', r'\1\n' + new_text + r'\n                        \2', content, flags=re.DOTALL)
+
+with codecs.open(new_file, "w", "utf-8") as f:
+    f.write(content)
+
+print("Created " + new_file)
