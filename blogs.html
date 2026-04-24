@@ -14,11 +14,22 @@
     <link rel="shortcut icon" type="image/png" href="images/android-icon-36x36.png">
 
     <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 
     <!-- Styles -->
+    <link rel="preload" href="css/bundle.min.css" as="style">
     <link rel="stylesheet" href="css/bundle.min.css">
     <style>
         /* Fix for featured image chopping & spacing */
@@ -586,7 +597,7 @@
                 <!-- POST 0.5 (ai-search) -->
                 <article class="blog-card" data-category="ai-search">
                     <a href="blogs/ai-search/aeo-vs-seo-what-changes-and-what-stays.html" class="blog-image-link">
-                        <img src="images/blog-images/strategy/aeo%20vs%20geo%20blog%20image.jpeg"
+                        <img src="images/blog-images/strategy/aeo%20vs%20geo%20blog%20image.webp"
                             alt="AEO vs SEO: What Changes and What Stays" class="blog-image">
                     </a>
                     <div class="blog-content-area">
