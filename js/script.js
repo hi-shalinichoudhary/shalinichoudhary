@@ -458,4 +458,75 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // --- 10. LinkedIn Testimonials Slider Logic ---
+    const testimonialsSlider = document.getElementById('testimonialsSlider');
+    const sliderPrevBtn = document.getElementById('sliderPrev');
+    const sliderNextBtn = document.getElementById('sliderNext');
+    const sliderDots = document.querySelectorAll('#sliderDots .dot');
+
+    if (testimonialsSlider && sliderPrevBtn && sliderNextBtn) {
+        const getSlideWidth = () => {
+            const slide = testimonialsSlider.querySelector('.testimonial-slide');
+            return slide ? slide.getBoundingClientRect().width : testimonialsSlider.offsetWidth;
+        };
+
+        const updateDots = () => {
+            const slideWidth = getSlideWidth();
+            const scrollPosition = testimonialsSlider.scrollLeft;
+            const activeIndex = Math.round(scrollPosition / slideWidth);
+            
+            sliderDots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === activeIndex);
+            });
+        };
+
+        // Scroll event to sync dots when swiped/scrolled
+        let scrollTimeout;
+        testimonialsSlider.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(updateDots, 100);
+        }, { passive: true });
+
+        // Prev & Next Buttons
+        sliderPrevBtn.addEventListener('click', () => {
+            const slideWidth = getSlideWidth();
+            testimonialsSlider.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+        });
+
+        sliderNextBtn.addEventListener('click', () => {
+            const slideWidth = getSlideWidth();
+            testimonialsSlider.scrollBy({ left: slideWidth, behavior: 'smooth' });
+        });
+
+        // Clickable dots
+        sliderDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const slideWidth = getSlideWidth();
+                testimonialsSlider.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+                // Instantly update active dot class
+                sliderDots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+
+        // Optional: keyboard navigation when slider has focus
+        testimonialsSlider.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                sliderPrevBtn.click();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                sliderNextBtn.click();
+            }
+        });
+
+        // Sync visibility animation with scroll reveal
+        setTimeout(() => {
+            const revealTestimonials = testimonialsSlider.closest('.reveal');
+            if (revealTestimonials) {
+                revealTestimonials.classList.add('is-visible');
+            }
+        }, 300);
+    }
 });
