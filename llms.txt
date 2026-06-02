@@ -26,6 +26,7 @@ Based in the UK (completing an MSc in Marketing Management at the University of 
 ## Blog Categories & Resources
 
 - **[AI & Modern Search](https://shalinichoudhary.in/blogs/ai-search.html)**: Discovering search evolution, Generative Engine Optimization (GEO), and Answer Engine Optimization (AEO).
+  - **[The Invisible Layer: Building a Website That AI Actually Wants to Crawl](https://shalinichoudhary.in/blogs/ai-search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.html)**: Surgical firewall whitelisting, Markdown data structuring, and llms.txt implementation for LLM retrieval.
 - **[SEO Growth Strategy](https://shalinichoudhary.in/blogs/seo-strategy.html)**: Guides on link building, local SEO, content writing, and technical quick wins.
 - **[Analytics & Measurement](https://shalinichoudhary.in/blogs/analytics-measurement.html)**: Strategic GA4 setup, user journey visualization, and dashboard tracking.
 - **[Growth Strategy Insights](https://shalinichoudhary.in/blogs/growth-strategy.html)**: Frameworks, market trust, and high-level marketing decision making.
