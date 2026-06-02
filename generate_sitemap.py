@@ -8,8 +8,8 @@ BASE_URL = 'https://shalinichoudhary.in/'
 OUTPUT_FILE = os.path.join(BASE_DIR, 'sitemap.xml')
 
 # Files or directories to ignore
-IGNORE_FILES = {'temp_cards.html', 'generated_cards.html', '404.html'}
-IGNORE_DIRS = {'.git', '.github', 'unused_assets', 'css', 'js', 'images'}
+IGNORE_FILES = {'temp_cards.html', 'generated_cards.html', '404.html', 'seo-tips.html'}
+IGNORE_DIRS = {'.git', '.github', 'unused_assets', 'css', 'js', 'images', 'google-analytics', 'strategy'}
 
 def get_priority(rel_path):
     # Root index gets highest priority
