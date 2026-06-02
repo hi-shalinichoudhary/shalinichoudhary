@@ -46,6 +46,13 @@ def generate_sitemap():
             # Use forward slashes for URLs
             rel_url_path = rel_path.replace(os.sep, '/')
             
+            # Exclude specific redirect paths
+            if rel_url_path in {
+                'blogs/analytics-measurement/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html',
+                'blogs/conversion-performance/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html'
+            }:
+                continue
+            
             # Avoid placing 'index.html' explicitly in the loc
             if rel_url_path == 'index.html':
                 loc = BASE_URL
