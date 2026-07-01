@@ -306,6 +306,70 @@
                 margin: 0 auto !important;
             }
         }
+
+        /* ── Category Pills Green Override ── */
+        .category-pill:hover,
+        .category-pill:focus-visible {
+            background: #57c021 !important;
+            border-color: #57c021 !important;
+            color: #ffffff !important;
+        }
+        .category-pill.is-active {
+            background: #57c021 !important;
+            border-color: #57c021 !important;
+            color: #ffffff !important;
+        }
+
+        /* ── Blog Card Hover Spotlight Glow ── */
+        .blog-card {
+            position: relative;
+        }
+        .blog-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 22px;
+            padding: 1.5px;
+            background: linear-gradient(135deg, rgba(87, 192, 33, 0.45), transparent 60%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 5;
+        }
+        .blog-card:hover::after {
+            opacity: 1;
+        }
+
+        /* ── Mobile Blog Card Rendering & Spacing Override ── */
+        @media (max-width: 600px) {
+            .blog-latest-grid {
+                grid-template-columns: 1fr !important;
+                gap: 24px !important;
+            }
+            .blog-card {
+                height: auto !important;
+                min-height: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .blog-image-link {
+                height: 180px !important;
+            }
+            .blog-image {
+                position: relative !important;
+                height: 180px !important;
+            }
+            .blog-content-area {
+                padding: 16px !important;
+            }
+            .blog-page main .section-wrapper {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+            }
+        }
     </style>
 
     <!-- PRO SEO: Entity Schema -->
@@ -1626,10 +1690,14 @@
             </div>
         </section>
         <!-- NEW: Medium RSS Feed Section -->
-        <section id="medium-articles" class="section-wrapper" style="padding: 4rem 1.5rem; background: var(--card);">
-            <div class="section-head reveal" style="max-width: 900px; margin: 0 auto 2.5rem auto; text-align: left;">
-                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; color: var(--heading-color, #111827); line-height: 1.1; margin-bottom: 0.75rem;">Published on Medium</h2>
-                <p class="section-subhead" style="color: var(--text-color, #475569); font-size: 1.15rem; margin-top: 0; line-height: 1.6;">Latest articles and thoughts shared on Medium.</p>
+        <section id="medium-articles" class="section-wrapper" style="padding: 1.5rem 1.5rem; background: var(--card);">
+            <div style="max-width: 900px; margin: 0 auto 2rem auto; text-align: center;">
+                <div style="width: 36px; height: 36px; margin: 0 auto 12px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.08); color: rgba(0, 0, 0, 0.6); font-size: 0.9rem;">
+                    <i class="fab fa-medium-m"></i>
+                </div>
+                <span class="eyebrow" style="margin-bottom: 12px; display: inline-block; letter-spacing: 2px;">PUBLISHED ON MEDIUM</span>
+                <h2 style="font-size: 1.9rem; font-weight: 700; color: var(--heading-color, #111827); margin-bottom: 0.5rem; text-align: center;">Latest articles</h2>
+                <p style="color: var(--text-color, #475569); font-size: 1rem; margin-top: 0; line-height: 1.5; text-align: center;">Additional insights and case thoughts shared on Medium.</p>
             </div>
 
             <div style="max-width: 900px; margin: 0 auto; padding: 0;">
@@ -1639,7 +1707,7 @@
                 </div>
             </div>
 
-            <div class="reading-actions reveal delay-300" style="text-align: center; margin-top: 3rem;">
+            <div class="reading-actions reveal delay-300" style="text-align: center; margin-top: 2rem;">
                 <a href="https://medium.com/@hi.shalinichoudhary" target="_blank" rel="noopener noreferrer" class="cta-button">Follow on Medium</a>
             </div>
         </section>
