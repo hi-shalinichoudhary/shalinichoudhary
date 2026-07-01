@@ -229,11 +229,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (latestGrid) {
         const latestCards = Array.from(latestGrid.querySelectorAll('.blog-card'));
-        const INITIAL_SHOW_COUNT = 6;
+        
+        const getInitialShowCount = () => {
+            return window.innerWidth <= 600 ? 4 : 6;
+        };
 
         const updateVisibility = () => {
             const isCollapsed = latestGrid.classList.contains('is-collapsed');
-            // If collapsed, show only first 6. If expanded, show all.
+            const initialShowCount = getInitialShowCount();
+            // If collapsed, show only first initialShowCount. If expanded, show all.
             // BUT we must also respect the current category filter.
 
             const activeFilterBtn = document.querySelector('[data-blog-filter].is-active');
@@ -246,8 +250,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const matchesFilter = activeCategory === 'all' || cardCategory === activeCategory;
 
                 if (matchesFilter) {
-                    // FIX logic: if collapsed, limit to 6. If NOT collapsed, show ALL.
-                    if (isCollapsed && visibleCount >= INITIAL_SHOW_COUNT) {
+                    // FIX logic: if collapsed, limit to initialShowCount. If NOT collapsed, show ALL.
+                    if (isCollapsed && visibleCount >= initialShowCount) {
                         card.classList.add('is-hidden');
                     } else {
                         card.classList.remove('is-hidden');
@@ -280,6 +284,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateVisibility();
             });
         }
+
+        // Re-evaluate on window resize (e.g., rotating tablet/mobile)
+        window.addEventListener('resize', updateVisibility);
 
         blogFilterButtons.forEach(button => {
             button.addEventListener('click', () => {

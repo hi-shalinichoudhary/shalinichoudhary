@@ -370,6 +370,23 @@
                 padding-right: 16px !important;
             }
         }
+
+        /* ── Enforce Block Stacking (Anti-Overlapping) ── */
+        .blog-page main,
+        .blog-page main > section,
+        .blog-page main > div,
+        #medium-articles,
+        .footer-cta,
+        .tj-footer-area {
+            display: block !important;
+            position: relative !important;
+            clear: both !important;
+            float: none !important;
+            height: auto !important;
+            min-height: 0 !important;
+            overflow: visible !important;
+            margin-top: 0 !important;
+        }
     </style>
 
     <!-- PRO SEO: Entity Schema -->
