@@ -428,15 +428,13 @@
       .result-card:hover::after {
         opacity: 1;
       }
-      /* Image strip — full height to avoid chopping landscape case study images */
+      /* Image strip — auto height to show the full case study slides without cropping or skewing */
       .result-card-img {
         width: 100%;
-        height: 260px;
-        object-fit: cover;
-        object-position: top;
+        height: auto;
         display: block;
-        opacity: 0.9;
-        filter: grayscale(10%) contrast(1.05);
+        opacity: 0.95;
+        filter: contrast(1.02);
         transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
       }
       .result-card:hover .result-card-img {
