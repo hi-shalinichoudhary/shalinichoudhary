@@ -43,37 +43,6 @@
     gtag('config', 'G-FFJDP43DXE');
   </script>
 
-  <!-- PRO SEO: FAQ Schema -->
-  <!-- TODO: Revisit FAQPage schema after restructure (section moves to dedicated page) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [{
-      "@type": "Question",
-      "name": "Do you handle both B2B SaaS and e-commerce SEO?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. While the underlying principles of organic growth remain the same, the execution differs. For B2B SaaS, the focus is often on pipeline contribution and lead generation, while e-commerce requires deep technical SEO and category architecture."
-      }
-    }, {
-      "@type": "Question",
-      "name": "What is the difference between an SEO consultant and a growth marketing partner?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "An SEO consultant often entirely focuses on organic rankings. A growth marketing partner connects those rankings to your wider business goals—focusing on conversion rate optimisation, performance marketing, and actual revenue outcomes rather than just traffic."
-      }
-    }, {
-      "@type": "Question",
-      "name": "How long does it take to see ROI from a content-led growth strategy?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most content and SEO systems take 3 to 6 months to start compounding. However, by running parallel performance marketing and conversion experiments, we can often drive quicker wins while the organic foundation builds."
-      }
-    }]
-  }
-  </script>
-
   <!-- PRO SEO: ProfilePage Schema (wrapping Person) -->
   <script type="application/ld+json">
   {
@@ -137,6 +106,15 @@
   }
   </script>
 
+  <style>
+    @media (min-width: 769px) {
+      .impact-cards-2col {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+    }
+  </style>
   <link rel="preload" as="image" href="images/test_shalini.jpg">
 </head>
 
@@ -154,7 +132,7 @@
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-        <a href="#work-gateway">Work</a>
+        <a href="work.html">Work</a>
         <a href="/about.html">About</a>
         <a href="#thinking-section">Insights</a>
         <a href="blogs.html">Blog</a>
@@ -185,7 +163,7 @@
           </h1>
 
           <div class="hero-actions">
-            <a href="#work-gateway" class="cta-button">View my work</a>
+            <a href="work.html" class="cta-button">View my work</a>
             <a href="contact.html" class="secondary-button">Get in touch</a>
           </div>
 
@@ -207,44 +185,10 @@
 
 
 
-    <!-- UPDATED: Impact (new, minimal proof section) -->
-    <section id="impact-section" class="section">
-      <div class="section-head reveal">
-        <h2>Selected impact</h2>
-      </div>
-
-      <div class="impact-cards">
-        <article class="impact-card reveal delay-100">
-          <h3>Built an acquisition system that scaled inbound demand</h3>
-          <p>→ Six-figure annual organic lead pipeline</p>
-          <p>→ Scaled inbound growth through content strategy and demand architecture across multiple markets.</p>
-        </article>
-
-        <article class="impact-card reveal delay-200">
-          <h3>Grew qualified demand in competitive markets</h3>
-          <p>→ Improved organic traffic, keyword rankings, and lead quality</p>
-          <p>→ Focused on intent mapping, content architecture, and commercial alignment.</p>
-        </article>
-
-        <article class="impact-card reveal delay-300">
-          <h3>Enabled better decisions through analytics</h3>
-          <p>→ Clear reporting for stakeholders and teams</p>
-          <p>→ GA4, attribution modelling, and performance dashboards aligned to growth goals.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="trust-section" class="section trust-section section-alt">
-      <div class="section-head reveal">
-        <h2>Trusted through experience, not hype</h2>
-        <p class="section-subhead">Eight years. Four global organisations. One consistent focus: marketing that drives real commercial outcomes.</p>
-      </div>
-
-      <div class="trust-copy reveal delay-100">
-        <p class="trust-box">
-          I’ve worked across global organisations, agencies, and fast-moving teams, partnering closely with designers,
-          engineers, and leaders to turn strategy into outcomes.
-        </p>
+    <!-- TRUST LOGOS STRIP -->
+    <section id="trust-section" class="section trust-section section-alt" style="padding: 3rem 0;">
+      <div class="section-head reveal" style="margin-bottom: 24px; text-align: center;">
+        <h2 style="font-size: 0.9rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0.5; margin-bottom: 0;">Trusted through experience, not hype</h2>
       </div>
 
       <div class="trust-logos" aria-label="Brands worked with">
@@ -253,6 +197,47 @@
           width="500" height="211">
         <img src="images/test_logo6.png" alt="JLL" class="reveal delay-300" loading="lazy" width="500" height="281">
         <img src="images/test_logo5.png" alt="Ogilvy" class="reveal delay-400" loading="lazy" width="500" height="333">
+      </div>
+    </section>
+
+    <!-- UPDATED: Impact (2 specific cards with metrics) -->
+    <section id="impact-section" class="section" style="padding: 6rem 0;">
+      <div class="section-head reveal" style="text-align: center; margin-bottom: 3rem;">
+        <h2>Selected impact</h2>
+      </div>
+
+      <div class="impact-cards impact-cards-2col">
+        <article class="impact-card reveal delay-100" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent); font-weight: 700; margin-bottom: 8px;">Platform Migration</div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; line-height: 1.25; margin-bottom: 12px; color: var(--heading-color);">GUS — Platform Migration</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-color); margin-bottom: 20px;">End-to-end Drupal CMS migration across a multi-brand, multi-market site.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 8px;">
+              <li style="font-size: 0.95rem; color: var(--text-color); font-weight: 600; display: flex; align-items: center; gap: 8px;"><span style="color: var(--color-accent);">→</span> Zero ranking loss post-launch</li>
+              <li style="font-size: 0.95rem; color: var(--text-color); font-weight: 600; display: flex; align-items: center; gap: 8px;"><span style="color: var(--color-accent);">→</span> &lt;5% traffic variance</li>
+              <li style="font-size: 0.95rem; color: var(--text-color); font-weight: 600; display: flex; align-items: center; gap: 8px;"><span style="color: var(--color-accent);">→</span> Full organic recovery within one month</li>
+            </ul>
+          </div>
+          <div style="font-size: 12px; color: var(--muted-text); font-weight: 500; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; letter-spacing: 0.3px;">
+            Technical SEO &middot; Site Migration &middot; hreflang &middot; Crawl Diagnostics
+          </div>
+        </article>
+
+        <article class="impact-card reveal delay-200" style="padding: 32px; display: flex; flex-direction: column; justify-content: space-between; min-height: 380px;">
+          <div>
+            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent); font-weight: 700; margin-bottom: 8px;">Organic Growth & Lead Pipeline</div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; line-height: 1.25; margin-bottom: 12px; color: var(--heading-color);">GUS — Organic Growth & Lead Pipeline</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-color); margin-bottom: 20px;">Content architecture and SEO strategy aligned to commercial enrolment targets across EMEA and APAC.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 8px;">
+              <li style="font-size: 0.95rem; color: var(--text-color); font-weight: 600; display: flex; align-items: center; gap: 8px;"><span style="color: var(--color-accent);">→</span> 65% YoY increase in organic traffic</li>
+              <li style="font-size: 0.95rem; color: var(--text-color); font-weight: 600; display: flex; align-items: center; gap: 8px;"><span style="color: var(--color-accent);">→</span> 20% YoY growth in qualified leads</li>
+              <li style="font-size: 0.95rem; color: var(--text-color); font-weight: 600; display: flex; align-items: center; gap: 8px;"><span style="color: var(--color-accent);">→</span> 50–60K annual inbound leads managed</li>
+            </ul>
+          </div>
+          <div style="font-size: 12px; color: var(--muted-text); font-weight: 500; border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; letter-spacing: 0.3px;">
+            SEO Strategy &middot; Content Architecture &middot; GA4 &middot; Lead Pipeline
+          </div>
+        </article>
       </div>
     </section>
 
@@ -319,56 +304,6 @@
             </div>
           </div>
 
-          <!-- Testimonial 3 -->
-          <div class="testimonial-slide">
-            <div class="testimonial-card">
-              <div class="testimonial-quote-icon" aria-hidden="true">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <p class="testimonial-text">
-                "I had the pleasure of working with Shalini for more than two years as her manager at GroupM. During that time, I was consistently impressed by her work ethic, dedication, and positive attitude. She is a skilled and experienced SEO manager, and in addition to this she is also an excellent communicator and team player. She is always eager to take on new tasks and responsibilities, and try to find new ways to improve her skills and knowledge. Shalini is a valuable asset to any team."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-img-wrapper">
-                  <img src="images/Mayur.jpeg" alt="Mayur Sharma" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
-                  <div class="author-initials">MS</div>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Mayur Sharma</h4>
-                  <p class="author-title">Head of SEO, IndiaDotcom Digital (Formerly Zee Digital)</p>
-                </div>
-                <a href="https://www.linkedin.com/in/mayursharma81/" target="_blank" rel="noopener noreferrer" class="linkedin-verify" aria-label="Verify Mayur Sharma on LinkedIn">
-                  <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 4 -->
-          <div class="testimonial-slide">
-            <div class="testimonial-card">
-              <div class="testimonial-quote-icon" aria-hidden="true">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <p class="testimonial-text">
-                "Shalini is a true inspiration – a brilliant professional who excels in her field while also prioritizing personal growth. It was an honor to have her participate in a recent training I facilitated. Not only is she incredibly competent and insightful, but she also brings a contagious positive energy and growth mindset to everything she does. Shalini's dedication to continuous learning and her commitment to personal development truly set her apart."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-img-wrapper">
-                  <img src="images/Juhi.jpeg" alt="Dr. Juuhi Rai" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
-                  <div class="author-initials">JR</div>
-                </div>
-                <div class="author-info">
-                  <h4 class="author-name">Dr. Juuhi Rai</h4>
-                  <p class="author-title">TEDx Speaker, Rex Karmveer Awardee | Disruptive Human Development Expert</p>
-                </div>
-                <a href="https://www.linkedin.com/in/juuhiraai/" target="_blank" rel="noopener noreferrer" class="linkedin-verify" aria-label="Verify Dr. Juuhi Rai on LinkedIn">
-                  <i class="fab fa-linkedin" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         <button class="slider-btn prev-btn" id="sliderPrev" aria-label="Previous testimonial">
@@ -381,385 +316,79 @@
         <div class="slider-dots" id="sliderDots">
           <span class="dot active" data-index="0" role="button" aria-label="Go to slide 1"></span>
           <span class="dot" data-index="1" role="button" aria-label="Go to slide 2"></span>
-          <span class="dot" data-index="2" role="button" aria-label="Go to slide 3"></span>
-          <span class="dot" data-index="3" role="button" aria-label="Go to slide 4"></span>
         </div>
       </div>
     </section>
 
     <!-- UPDATED: Services (keep your 2-column accordions, but lighter intro) -->
-    <section id="services-section" class="section">
-      <div class="section-head reveal">
-        <h2>Growth levers I lead</h2>
-        <p class="section-subhead">
-          SEO is one lever in a broader growth marketing system. I work across strategy, organic acquisition (SEO), performance marketing, and analytics to drive measurable pipeline and revenue impact.
-        </p>
+    <!-- NEW: Skills At A Glance Section -->
+    <section id="skills-glance" class="section section-alt" style="padding: 6rem 0;">
+      <div class="section-head reveal" style="max-width: 900px; margin: 0 auto 3rem auto; text-align: center;">
+        <h2>Skills at a glance</h2>
+        <p class="section-subhead">Core execution areas across technical discovery and commercial growth loops.</p>
       </div>
 
-      <div class="services-acc-grid">
-
-        <!-- Card 1 -->
-        <details class="acc-card reveal delay-100" open>
-          <summary class="acc-summary">
-            <div class="acc-title">
-              <h3>Growth Strategy & Prioritisation</h3>
-              <p>Defines the role of SEO, paid media, and lifecycle marketing within a unified growth strategy.</p>
-            </div>
-
-            <span class="acc-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </summary>
-
-          <div class="acc-body">
-            <div class="acc-divider"></div>
-
-            <div class="acc-meta">
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◎</span>
-                <div>
-                  <div class="acc-label">Best for</div>
-                  <ul class="acc-list">
-                    <li>Teams with scattered initiatives and unclear ROI</li>
-                    <li>Businesses entering new markets or repositioning</li>
-                    <li>Leaders who want an outcome-led roadmap</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
-                <div>
-                  <div class="acc-label">Engagement</div>
-                  <div class="acc-text">2–4 weeks, project-based (audit → sizing → roadmap)</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">✓</span>
-                <div>
-                  <div class="acc-label">Outcome</div>
-                  <div class="acc-text">A prioritised growth plan with owners, timelines and measurement.</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-muted" aria-hidden="true">✕</span>
-                <div>
-                  <div class="acc-label">Not a fit if</div>
-                  <div class="acc-text">You want a checklist deliverable without implementation intent.</div>
-                </div>
-              </div>
-            </div>
+      <div style="max-width: 900px; margin: 0 auto; padding: 0 1.5rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+          
+          <!-- Column 1: Technical SEO -->
+          <div class="reveal delay-100" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-1);">
+            <h3 style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 24px; color: var(--heading-color); display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--color-accent); font-size: 1.4rem;">⚙️</span> TECHNICAL SEO
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> Site migrations & crawl QA
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> International SEO & hreflang
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> Structured data & schema
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> GEO & AI Overviews
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; padding-bottom: 0;">
+                <span style="color: var(--color-accent);">→</span> Programmatic SEO
+              </li>
+            </ul>
           </div>
-        </details>
 
-        <!-- Card 2 -->
-        <details class="acc-card reveal delay-200">
-          <summary class="acc-summary">
-            <div class="acc-title">
-              <h3>Organic Acquisition System (SEO Strategy & Content Marketing)</h3>
-              <p>Build compounding organic growth through technical SEO, content strategy, and high-intent search optimisation.</p>
-            </div>
-
-            <span class="acc-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </summary>
-
-          <div class="acc-body">
-            <div class="acc-divider"></div>
-
-            <div class="acc-meta">
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◎</span>
-                <div>
-                  <div class="acc-label">Best for</div>
-                  <ul class="acc-list">
-                    <li>B2B/B2C brands needing scalable inbound demand</li>
-                    <li>High-intent journeys that underperform commercially</li>
-                    <li>Teams seeking better lead quality (not just traffic)</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
-                <div>
-                  <div class="acc-label">Engagement</div>
-                  <div class="acc-text">4–8 weeks project, or ongoing roadmap + execution + iteration.</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">✓</span>
-                <div>
-                  <div class="acc-label">Outcome</div>
-                  <div class="acc-text">Durable discoverability for high-intent searches and measurable pipeline
-                    contribution.</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-muted" aria-hidden="true">✕</span>
-                <div>
-                  <div class="acc-label">Not a fit if</div>
-                  <div class="acc-text">You want “rankings only” delivery without business alignment.</div>
-                </div>
-              </div>
-            </div>
+          <!-- Column 2: Growth & Commercial -->
+          <div class="reveal delay-200" style="background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-1);">
+            <h3 style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 24px; color: var(--heading-color); display: flex; align-items: center; gap: 10px;">
+              <span style="color: var(--color-accent); font-size: 1.4rem;">📈</span> GROWTH & COMMERCIAL
+            </h3>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> Demand generation & lead pipeline
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> CRO & conversion experimentation
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> GA4, attribution & C-suite reporting
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 12px;">
+                <span style="color: var(--color-accent);">→</span> Multi-brand content strategy
+              </li>
+              <li style="font-size: 0.95rem; color: var(--text-color); display: flex; align-items: center; gap: 10px; padding-bottom: 0;">
+                <span style="color: var(--color-accent);">→</span> EMEA & APAC market expansion
+              </li>
+            </ul>
           </div>
-        </details>
 
-        <!-- Card 3 -->
-        <details class="acc-card reveal delay-300">
-          <summary class="acc-summary">
-            <div class="acc-title">
-              <h3>Measurement & Performance Reporting (GA4)</h3>
-              <p>Turn analytics into decision infrastructure — tracking clarity, attribution signals, and leader-ready
-                reporting. GA4 setup, marketing analytics, and performance reporting for SEO and paid channels.</p>
-            </div>
-
-            <span class="acc-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </summary>
-
-          <div class="acc-body">
-            <div class="acc-divider"></div>
-
-            <div class="acc-meta">
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◎</span>
-                <div>
-                  <div class="acc-label">Best for</div>
-                  <ul class="acc-list">
-                    <li>Teams with dashboards but slow decision-making</li>
-                    <li>Messy tracking and unclear attribution signals</li>
-                    <li>Stakeholders who need “so what / now what” insights</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
-                <div>
-                  <div class="acc-label">Engagement</div>
-                  <div class="acc-text">2–6 weeks, project-based (setup → reporting → insight loop).</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">✓</span>
-                <div>
-                  <div class="acc-label">Outcome</div>
-                  <div class="acc-text">A clean performance narrative that enables faster decisions and sharper
-                    prioritisation.</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-muted" aria-hidden="true">✕</span>
-                <div>
-                  <div class="acc-label">Not a fit if</div>
-                  <div class="acc-text">You need custom product instrumentation beyond marketing analytics.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </details>
-
-        <!-- Card 4 -->
-        <details class="acc-card reveal delay-400">
-          <summary class="acc-summary">
-            <div class="acc-title">
-              <h3>Experimentation & Conversion Optimisation (CRO)</h3>
-              <p>Improve efficiency through structured testing across journeys, messaging, UX and lead capture. Conversion rate optimisation across landing pages, funnels, and organic traffic journeys.</p>
-            </div>
-
-            <span class="acc-chevron" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </span>
-          </summary>
-
-          <div class="acc-body">
-            <div class="acc-divider"></div>
-
-            <div class="acc-meta">
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◎</span>
-                <div>
-                  <div class="acc-label">Best for</div>
-                  <ul class="acc-list">
-                    <li>Brands with traffic but weak conversion or lead quality</li>
-                    <li>Funnels with drop-offs and unclear friction points</li>
-                    <li>Teams ready for hypothesis-led testing discipline</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
-                <div>
-                  <div class="acc-label">Engagement</div>
-                  <div class="acc-text">4–8 weeks (diagnosis → backlog → tests → learnings).</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-accent" aria-hidden="true">✓</span>
-                <div>
-                  <div class="acc-label">Outcome</div>
-                  <div class="acc-text">Better conversion efficiency and a repeatable learning system for growth.</div>
-                </div>
-              </div>
-
-              <div class="acc-row">
-                <span class="acc-icon acc-icon-muted" aria-hidden="true">✕</span>
-                <div>
-                  <div class="acc-label">Not a fit if</div>
-                  <div class="acc-text">You want “quick hacks” rather than structured experimentation.</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </details>
-
-      </div>
-    </section>
-
-    <!-- NEW: Service Gateway Section -->
-    <section id="work-gateway" class="section section-alt">
-      <div class="section-head reveal">
-        <h2>Explore how I drive growth</h2>
-      </div>
-
-      <div class="reading-grid">
-        <a class="reading-card reveal delay-100" href="/seo-strategy-consultant.html">
-          <div class="reading-meta">Organic</div>
-          <h3>SEO Strategy</h3>
-          <p class="muted">Build scalable organic acquisition systems</p>
-          <span class="reading-link">Explore →</span>
-        </a>
-
-        <a class="reading-card reveal delay-200" href="/growth-marketing-strategy.html">
-          <div class="reading-meta">Growth Strategy</div>
-          <h3>Growth Strategy</h3>
-          <p class="muted">Define priorities, not just channels</p>
-          <span class="reading-link">Explore →</span>
-        </a>
-
-        <a class="reading-card reveal delay-300" href="/marketing-analytics-ga4-consultant.html">
-          <div class="reading-meta">Measurement</div>
-          <h3>Analytics & Measurement</h3>
-          <p class="muted">Turn data into decision clarity</p>
-          <span class="reading-link">Explore →</span>
-        </a>
-
-        <a class="reading-card reveal delay-400" href="/conversion-optimisation-strategy.html">
-          <div class="reading-meta">Performance</div>
-          <h3>Conversion Optimisation</h3>
-          <p class="muted">Improve efficiency across funnels</p>
-          <span class="reading-link">Explore →</span>
-        </a>
-      </div>
-    </section>
-
-    <!-- NEW: SEO & Growth Marketing Expertise + FAQ Block -->
-    <section id="seo-expertise-section" class="section">
-      <div class="section-head reveal" style="margin-bottom: 32px;">
-        <span class="eyebrow" style="margin-bottom: 20px;">HOW I WORK</span>
-        <h2>Marketing Expertise. Strategy to Execution.</h2>
-        <p class="section-subhead">
-          I work with brands and teams that need more than a specialist; they need someone who can hold the strategy and the detail at the same time. My background spans brand positioning, demand generation, organic growth, performance marketing, and measurement. I've worked within global agencies, in-house teams, and fast-moving growth environments, which means I understand how marketing decisions are actually made and what gets in the way.
-        </p>
-        <p class="section-subhead" style="margin-top: 16px;">
-          Whether the brief is to build a demand pipeline, improve how a brand shows up in search, align the marketing mix around a growth goal, or make sense of messy performance data; the approach is the same: start with what the business actually needs, then build the system to deliver it.
-        </p>
-      </div>
-
-      <!-- FAQ Accordion right underneath the text -->
-      <div class="services-acc-grid delay-100" style="grid-template-columns: 1fr; gap: 16px;">
-        
-        <!-- FAQ 1 -->
-        <details class="acc-card" style="box-shadow: none; border: 1px solid #e0e0e0; background: #fff;" open>
-          <summary class="acc-summary" style="padding: 18px 20px 14px 20px;">
-            <div class="acc-title">
-              <h3 style="font-size: 1.05rem; margin: 0; padding: 0;">Do you work across both B2B and B2C, and does industry matter?</h3>
-            </div>
-            <span class="acc-chevron" aria-hidden="true" style="margin-top: -4px;">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
-          </summary>
-          <div class="acc-body" style="padding: 0 20px 20px 20px;">
-            <div class="acc-divider" style="margin: 4px 0 12px 0;"></div>
-            <p style="font-size: 0.95rem; color: #475569; margin: 0; line-height: 1.6;">The fundamentals of good marketing don't change by sector: understanding the buyer, building the right message, reaching them through the right channels, and measuring what matters. I've worked across education, real estate, professional services, and international markets. The context shapes the execution; the discipline stays the same.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 2 -->
-        <details class="acc-card" style="box-shadow: none; border: 1px solid #e0e0e0; background: #fff;">
-          <summary class="acc-summary" style="padding: 18px 20px 14px 20px;">
-            <div class="acc-title">
-              <h3 style="font-size: 1.05rem; margin: 0; padding: 0;">What does working with you look like in practice?</h3>
-            </div>
-            <span class="acc-chevron" aria-hidden="true" style="margin-top: -4px;">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
-          </summary>
-          <div class="acc-body" style="padding: 0 20px 20px 20px;">
-            <div class="acc-divider" style="margin: 4px 0 12px 0;"></div>
-            <p style="font-size: 0.95rem; color: #475569; margin: 0; line-height: 1.6;">It starts with understanding the commercial objective, not the marketing brief. From there I map what's working, what's creating drag, and where the highest-leverage opportunities are. That might lead to a repositioning conversation, a channel strategy, a content system, an analytics overhaul, or all of the above. I don't come in with a fixed playbook. I come in with a framework for thinking and the experience to know what tends to work.</p>
-          </div>
-        </details>
-
-        <!-- FAQ 3 -->
-        <details class="acc-card" style="box-shadow: none; border: 1px solid #e0e0e0; background: #fff;">
-          <summary class="acc-summary" style="padding: 18px 20px 14px 20px;">
-            <div class="acc-title">
-              <h3 style="font-size: 1.05rem; margin: 0; padding: 0;">How do organic and paid marketing work together in your approach?</h3>
-            </div>
-            <span class="acc-chevron" aria-hidden="true" style="margin-top: -4px;">
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg>
-            </span>
-          </summary>
-          <div class="acc-body" style="padding: 0 20px 20px 20px;">
-            <div class="acc-divider" style="margin: 4px 0 12px 0;"></div>
-            <p style="font-size: 0.95rem; color: #475569; margin: 0; line-height: 1.6;">I don't treat them as separate disciplines competing for budget. Organic search builds long-term demand and reveals what your audience is actually thinking about. Paid media accelerates reach and tests messages quickly. The best results come from running them in parallel: using organic intelligence to sharpen paid targeting, and using paid data to inform content and positioning decisions. That integration is where most marketing teams leave value on the table.</p>
-          </div>
-        </details>
-
+        </div>
       </div>
     </section>
 
     <!-- UPDATED: Featured thinking (replace slider with 2 clean cards) -->
     <section id="thinking-section" class="section section-alt">
       <div class="section-head reveal">
-        <h2>How I think about growth</h2>
-        <p class="section-subhead">A few pieces on modern search, performance, and decision-making.</p>
-        <p class="section-subhead">I write about growth where strategy meets execution; from modern search and AI to
-          performance measurement and decision-making.</p>
-
+        <h2>Latest writing</h2>
+        <p class="section-subhead">I write about growth where strategy meets execution; from modern search and AI to performance measurement and decision-making.</p>
       </div>
-
 
       <div class="reading-grid">
         <a class="reading-card reveal delay-100"
@@ -784,31 +413,14 @@
       </div>
     </section>
 
-    <!-- NEW: Medium RSS Feed Section -->
-    <section id="medium-articles" class="section">
-      <div class="section-head reveal">
-        <h2>Published on Medium</h2>
-        <p class="section-subhead">Latest articles and thoughts shared on Medium.</p>
-      </div>
-
-      <div id="medium-feed-container" class="reading-grid">
-        <!-- JS will inject .reading-card items here -->
-        <p class="muted" style="grid-column: 1 / -1; text-align: center;">Loading latest articles...</p>
-      </div>
-
-      <div class="reading-actions reveal delay-300">
-        <a href="https://medium.com/@hi.shalinichoudhary" target="_blank" rel="noopener noreferrer" class="cta-button">Follow on Medium</a>
-      </div>
-    </section>
-
     <section id="contact-section" class="section contact">
       <!-- Header -->
       <div class="contact-header reveal">
         <span class="contact-eyebrow">GET IN TOUCH</span>
-        <h2>Let’s Talk Growth</h2>
+        <h2>Let's talk</h2>
         <p>
-          Whether you have a project in mind, want to discuss strategy,
-          or just want to connect - I’d love to hear from you.
+          Whether you have a project in mind, want to discuss strategy, 
+          are looking to hire, or just want to connect — I’d love to hear from you.
         </p>
       </div>
 
@@ -903,16 +515,15 @@
     <div class="footer-content footer-grid">
       <div class="footer-brand">
         <span class="footer-kicker">Let’s build momentum</span>
-        <h2>Marketing strategy rooted in evidence. </h2>
+        <h2>SEO and growth marketing rooted in evidence.</h2>
         <p class="footer-small">Built for outcomes that last.</p>
-        <a class="cta-button footer-cta-button" href="https://cal.com/shalini-choudhary/30min" target="_blank">Book a
-          strategy call</a>
+        <a class="cta-button footer-cta-button" href="https://cal.com/shalini-choudhary/30min" target="_blank">Get in touch</a>
       </div>
 
       <div class="footer-links">
         <h3 class="footer-heading">Explore</h3>
         <nav class="footer-nav footer-nav--stacked">
-          <a href="#work-gateway">Work</a>
+          <a href="work.html">Work</a>
           <a href="/about.html">About</a>
           <a href="#thinking-section">Insights</a>
           <a href="blogs.html">Blog</a>
@@ -946,73 +557,11 @@
     </div>
   </footer>
 
-  <!-- Swiper no longer needed on homepage, but safe to keep if script.js expects it.
-       We'll remove in JS step if unused. -->
-
-
   <!-- Root script + homepage script -->
   <script src="js/script.js"></script>
   <script src="js/prototype.js"></script>
   <script src="js/antigravity.js"></script>
   <script src="js/scroll-reveal.js"></script>
 
-  <!-- Fetch Medium RSS feed dynamically -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const mediumUsername = "@hi.shalinichoudhary";
-      const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${mediumUsername}`;
-      const container = document.getElementById("medium-feed-container");
-
-      if (container) {
-        fetch(feedUrl)
-          .then(response => response.json())
-          .then(data => {
-            if (data.status === 'ok' && data.items.length > 0) {
-              container.innerHTML = ""; // Clear "Loading..." text
-              
-              const postsToDisplay = data.items.slice(0, 3);
-              
-              postsToDisplay.forEach((item, index) => {
-                const pubDate = new Date(item.pubDate);
-                const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-                
-                const delayClass = `delay-${(index + 1) * 100}`;
-                
-                // create a temporary div to strip HTML tags from the description
-                const tempDiv = document.createElement("div");
-                tempDiv.innerHTML = item.description || item.content || "";
-                let textContent = tempDiv.textContent || tempDiv.innerText || "";
-                textContent = textContent.trim().substring(0, 90) + "...";
-                
-                const cardHtml = `
-                  <a class="reading-card reveal ${delayClass}" href="${item.link}" target="_blank" rel="noopener noreferrer">
-                    <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium \u2022 ${formattedDate}</div>
-                    <h3>${item.title}</h3>
-                    <p class="muted">${textContent}</p>
-                    <span class="reading-link">Read on Medium \u2192</span>
-                  </a>
-                `;
-                container.insertAdjacentHTML('beforeend', cardHtml);
-              });
-              
-              setTimeout(() => {
-                const newCards = container.querySelectorAll('.reveal');
-                // Ensure they show up by adding the 'is-visible' class used in custom scroll reveals
-                newCards.forEach(card => card.classList.add('is-visible'));
-              }, 100);
-
-            } else {
-              container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">No articles found. Check back later!</p>';
-            }
-          })
-          .catch(error => {
-            console.error("Error fetching Medium articles:", error);
-            container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">Unable to load articles at this time.</p>';
-          });
-      }
-    });
-  </script>
-
 </body>
-
 </html>

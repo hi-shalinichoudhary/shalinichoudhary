@@ -269,7 +269,7 @@
             </button>
 
             <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-                <a href="/#work-gateway">Work</a>
+                <a href="work.html">Work</a>
                 <a href="/about.html">About</a>
                 <a href="/#thinking-section">Insights</a>
                 <a href="blogs.html">Blog</a>
@@ -1502,6 +1502,23 @@
                     <li>How to build measurement systems that enable faster, smarter marketing decisions.</li>
                 </ul>
             </div>
+        <!-- NEW: Medium RSS Feed Section -->
+        <section id="medium-articles" class="section-wrapper" style="padding: 4rem 1.5rem; background: var(--card);">
+            <div class="section-head reveal" style="max-width: 900px; margin: 0 auto 2.5rem auto; text-align: left;">
+                <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; color: var(--heading-color, #111827); line-height: 1.1; margin-bottom: 0.75rem;">Published on Medium</h2>
+                <p class="section-subhead" style="color: var(--text-color, #475569); font-size: 1.15rem; margin-top: 0; line-height: 1.6;">Latest articles and thoughts shared on Medium.</p>
+            </div>
+
+            <div style="max-width: 900px; margin: 0 auto; padding: 0;">
+                <div id="medium-feed-container" class="reading-grid">
+                    <!-- JS will inject .reading-card items here -->
+                    <p class="muted" style="grid-column: 1 / -1; text-align: center;">Loading latest articles...</p>
+                </div>
+            </div>
+
+            <div class="reading-actions reveal delay-300" style="text-align: center; margin-top: 3rem;">
+                <a href="https://medium.com/@hi.shalinichoudhary" target="_blank" rel="noopener noreferrer" class="cta-button">Follow on Medium</a>
+            </div>
         </section>
 
         <!-- FOOTER CTA -->
@@ -1527,7 +1544,7 @@
             <div class="footer-links">
                 <h3 class="footer-heading">Explore</h3>
                 <nav class="footer-nav footer-nav--stacked">
-                    <a href="/#work-gateway">Work</a>
+                    <a href="work.html">Work</a>
                     <a href="/about.html">About</a>
                     <a href="/#thinking-section">Insights</a>
                     <a href="blogs.html">Blog</a>
@@ -1563,6 +1580,62 @@
 
     <script src="js/script.js?v=3"></script>
 
-</body>
+    <!-- Fetch Medium RSS feed dynamically -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const mediumUsername = "@hi.shalinichoudhary";
+            const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${mediumUsername}`;
+            const container = document.getElementById("medium-feed-container");
 
+            if (container) {
+                fetch(feedUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'ok' && data.items.length > 0) {
+                            container.innerHTML = ""; // Clear "Loading..." text
+                            
+                            const postsToDisplay = data.items.slice(0, 3);
+                            
+                            postsToDisplay.forEach((item, index) => {
+                                const pubDate = new Date(item.pubDate);
+                                const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                                
+                                const delayClass = `delay-${(index + 1) * 100}`;
+                                
+                                // create a temporary div to strip HTML tags from the description
+                                const tempDiv = document.createElement("div");
+                                tempDiv.innerHTML = item.description || item.content || "";
+                                let textContent = tempDiv.textContent || tempDiv.innerText || "";
+                                textContent = textContent.trim().substring(0, 90) + "...";
+                                
+                                const cardHtml = `
+                                    <a class="reading-card reveal ${delayClass}" href="${item.link}" target="_blank" rel="noopener noreferrer">
+                                        <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium \u2022 ${formattedDate}</div>
+                                        <h3>${item.title}</h3>
+                                        <p class="muted">${textContent}</p>
+                                        <span class="reading-link">Read on Medium \u2192</span>
+                                    </a>
+                                `;
+                                container.insertAdjacentHTML('beforeend', cardHtml);
+                            });
+                            
+                            setTimeout(() => {
+                                const newCards = container.querySelectorAll('.reveal');
+                                // Ensure they show up by adding the 'is-visible' class used in custom scroll reveals
+                                newCards.forEach(card => card.classList.add('is-visible'));
+                            }, 100);
+
+                        } else {
+                            container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">No articles found. Check back later!</p>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching Medium articles:", error);
+                        container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">Unable to load articles at this time.</p>';
+                    });
+            }
+        });
+    </script>
+
+</body>
 </html>
