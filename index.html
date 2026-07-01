@@ -137,7 +137,7 @@
     .stat-item + .stat-item {
       border-left: 1px solid rgba(255,255,255,0.12);
     }
-    .stat-number {
+    .stat-figure {
       font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 900;
       font-family: 'Poppins', sans-serif;
@@ -213,16 +213,17 @@
     }
     .metric-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 14px;
     }
     .metric-num {
-      font-size: clamp(2.2rem, 4vw, 2.8rem);
+      font-size: clamp(1.6rem, 3vw, 2rem);
       font-weight: 900;
       font-family: 'Poppins', sans-serif;
       color: #ff6b6b;
       line-height: 1;
-      min-width: 5ch;
+      min-width: 4.5ch;
+      flex-shrink: 0;
     }
     .metric-caption {
       font-size: 0.88rem;
@@ -350,15 +351,15 @@
     <div class="stat-bar" aria-label="Key career metrics">
       <div class="stat-bar-inner">
         <div class="stat-item">
-          <div class="stat-number">8+</div>
+          <div class="stat-figure">8+</div>
           <div class="stat-label">Years in SEO &amp; Growth</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">65%</div>
+          <div class="stat-figure">65%</div>
           <div class="stat-label">YoY Organic Traffic Growth</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">50–60K</div>
+          <div class="stat-figure">50–60K</div>
           <div class="stat-label">Annual Inbound Leads Managed</div>
         </div>
       </div>
