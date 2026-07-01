@@ -368,6 +368,49 @@
     .reading-card:hover h3 {
       color: #57c021 !important;
     }
+
+    /* ── Mobile Footer Alignment Fix ── */
+    @media (max-width: 768px) {
+      .tj-footer-area .footer-content {
+        gap: 30px !important;
+      }
+      .tj-footer-area .footer-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 40px !important;
+      }
+      .tj-footer-area .footer-brand,
+      .tj-footer-area .footer-links,
+      .tj-footer-area .footer-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+      .tj-footer-area .footer-brand h2 {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+      .tj-footer-area .footer-nav {
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .tj-footer-area .footer-social {
+        justify-content: center !important;
+      }
+      .tj-footer-area .footer-email {
+        justify-content: center !important;
+        margin-bottom: 10px !important;
+      }
+      .tj-footer-area .footer-cta-button {
+        margin: 0 auto !important;
+      }
+    }
   </style>
   <link rel="preload" as="image" href="images/test_shalini.jpg">
 </head>

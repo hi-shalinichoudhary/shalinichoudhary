@@ -184,6 +184,128 @@
             margin: 0;
             font-family: 'Poppins', sans-serif;
         }
+
+        /* ── Hero Spacing Fix ── */
+        .blog-hero {
+            padding-bottom: 2rem !important;
+            min-height: 40vh !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            margin-bottom: 0 !important;
+        }
+        .tech-stack-section {
+            padding-top: 2rem !important;
+            padding-bottom: 3rem !important;
+        }
+
+        /* ── Interactivity & Color Scheme ── */
+        .category-carousel-card {
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        }
+        .category-carousel-card:hover {
+            transform: translateY(-6px) !important;
+            border-color: #57c021 !important;
+            box-shadow: 0 15px 30px rgba(87, 192, 33, 0.15) !important;
+        }
+        .category-carousel-card:hover .category-card-icon {
+            border-color: #57c021 !important;
+            color: #57c021 !important;
+            background: rgba(87, 192, 33, 0.08) !important;
+        }
+        .category-carousel-card h3 {
+            transition: color 0.3s ease !important;
+        }
+        .category-carousel-card:hover h3 {
+            color: #57c021 !important;
+        }
+
+        .blog-card {
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+            position: relative;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px) !important;
+            border-color: #57c021 !important;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+        }
+        .blog-card:hover .blog-card-read {
+            color: #57c021 !important;
+        }
+        .blog-card-read i {
+            transition: transform 0.3s ease !important;
+        }
+        .blog-card:hover .blog-card-read i {
+            transform: translateX(4px) !important;
+        }
+
+        .featured-card {
+            transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        }
+        .featured-card:hover {
+            transform: translateY(-4px) !important;
+            border-color: #57c021 !important;
+        }
+
+        /* ── Let's Talk CTA Alignment Fix ── */
+        .footer-cta-content {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 20px !important;
+            padding: 2rem 0 !important;
+            text-align: center !important;
+        }
+        .footer-cta-content h2 {
+            margin: 0 !important;
+            line-height: 1.2 !important;
+            font-size: clamp(1.4rem, 3vw, 1.8rem) !important;
+        }
+
+        /* ── Mobile Footer Alignment Fix ── */
+        @media (max-width: 768px) {
+            .tj-footer-area .footer-content {
+                gap: 30px !important;
+            }
+            .tj-footer-area .footer-grid {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                gap: 40px !important;
+            }
+            .tj-footer-area .footer-brand,
+            .tj-footer-area .footer-links,
+            .tj-footer-area .footer-contact {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .tj-footer-area .footer-brand h2 {
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            .tj-footer-area .footer-nav {
+                align-items: center !important;
+                text-align: center !important;
+            }
+            .tj-footer-area .footer-social {
+                justify-content: center !important;
+            }
+            .tj-footer-area .footer-email {
+                justify-content: center !important;
+                margin-bottom: 10px !important;
+            }
+            .tj-footer-area .footer-cta-button {
+                margin: 0 auto !important;
+            }
+        }
     </style>
 
     <!-- PRO SEO: Entity Schema -->
@@ -1502,6 +1624,7 @@
                     <li>How to build measurement systems that enable faster, smarter marketing decisions.</li>
                 </ul>
             </div>
+        </section>
         <!-- NEW: Medium RSS Feed Section -->
         <section id="medium-articles" class="section-wrapper" style="padding: 4rem 1.5rem; background: var(--card);">
             <div class="section-head reveal" style="max-width: 900px; margin: 0 auto 2.5rem auto; text-align: left;">
@@ -1535,10 +1658,10 @@
         <div class="footer-content footer-grid">
             <div class="footer-brand">
                 <span class="footer-kicker">Let’s build momentum</span>
-                <h2>Turn strategy into compounding growth.</h2>
-                <p class="footer-small">Strategy, storytelling, and measurable impact.</p>
+                <h2>SEO and growth marketing rooted in evidence.</h2>
+                <p class="footer-small">Built for outcomes that last.</p>
                 <a class="cta-button footer-cta-button" href="https://cal.com/shalini-choudhary/30min"
-                    target="_blank">Book a strategy call</a>
+                    target="_blank">Get in touch</a>
             </div>
 
             <div class="footer-links">
