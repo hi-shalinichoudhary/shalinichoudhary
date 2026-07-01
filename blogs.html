@@ -352,7 +352,7 @@
             .blog-card {
                 height: auto !important;
                 min-height: 0 !important;
-                display: flex !important;
+                display: flex; /* Remove !important to allow is-hidden display:none to take effect */
                 flex-direction: column !important;
             }
             .blog-image-link {
@@ -373,6 +373,11 @@
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
             }
+        }
+
+        /* ── Absolute Hiding Rule to prevent override conflicts ── */
+        .blog-card.is-hidden {
+            display: none !important;
         }
 
         /* ── Enforce Block Stacking (Anti-Overlapping) ── */
