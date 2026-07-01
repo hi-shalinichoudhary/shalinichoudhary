@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const latestCards = Array.from(latestGrid.querySelectorAll('.blog-card'));
         
         const getInitialShowCount = () => {
-            return window.innerWidth <= 600 ? 4 : 6;
+            return window.innerWidth <= 768 ? 4 : 6;
         };
 
         const updateVisibility = () => {

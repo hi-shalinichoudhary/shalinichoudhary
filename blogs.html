@@ -344,7 +344,7 @@
         }
 
         /* ── Mobile Blog Card Rendering & Spacing Override ── */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .blog-latest-grid {
                 grid-template-columns: 1fr !important;
                 gap: 24px !important;
@@ -368,6 +368,10 @@
             .blog-page main .section-wrapper {
                 padding-left: 16px !important;
                 padding-right: 16px !important;
+            }
+            .reading-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
             }
         }
 
@@ -1786,7 +1790,7 @@
         </div>
     </footer>
 
-    <script src="js/script.js?v=3"></script>
+    <script src="js/script.js?v=4"></script>
 
     <!-- Fetch Medium RSS feed dynamically -->
     <script>
