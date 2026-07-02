@@ -396,6 +396,11 @@
             overflow: visible !important;
             margin-top: 0 !important;
         }
+
+        /* ── Slow down ticker animation speed for better readability ── */
+        .ticker-track {
+            animation: ticker-scroll 65s linear infinite !important;
+        }
     </style>
 
     <!-- PRO SEO: Entity Schema -->
@@ -505,51 +510,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- LINKEDIN TICKER (Dynamic — reads from data/linkedin-posts.json) -->
-        <section class="section linkedin-ticker-section" aria-label="LinkedIn Posts" style="padding-top: 1rem; padding-bottom: 2rem;">
-            <div style="max-width: 900px; margin: 0 auto 1.5rem auto; padding: 0 1.5rem;">
-                <div class="section-head" style="text-align: left; margin-bottom: 0;">
-                    <h2 style="font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; color: var(--heading-color, #111827); line-height: 1.1; margin-bottom: 0.5rem;">On LinkedIn</h2>
-                    <p style="color: var(--text-color, #475569); font-size: 1rem; margin-top: 0; line-height: 1.5;">What I'm writing and thinking about.</p>
-                </div>
-            </div>
-
-            <div class="ticker" aria-label="Latest LinkedIn posts">
-                <div class="ticker-inner">
-                    <h3 class="sr-only">Latest LinkedIn posts</h3>
-                    <div class="ticker-track" id="linkedin-ticker-track" role="list">
-                        <!-- JS populates this from data/linkedin-posts.json -->
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <script>
-        (function() {
-            fetch('data/linkedin-posts.json')
-                .then(function(res) { return res.json(); })
-                .then(function(posts) {
-                    var track = document.getElementById('linkedin-ticker-track');
-                    if (!track || !posts.length) return;
-
-                    var html = '';
-                    posts.forEach(function(post) {
-                        html += '<div class="ticker-item" role="listitem">'
-                            + '<span class="ticker-source"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn Post</span>'
-                            + '<a class="ticker-heading" href="' + post.url + '" target="_blank" rel="noopener noreferrer">'
-                            + post.title + '</a>'
-                            + '</div>';
-                    });
-
-                    // Duplicate the set so the infinite scroll animation loops seamlessly
-                    track.innerHTML = html + html;
-                })
-                .catch(function(err) {
-                    console.warn('LinkedIn ticker: Could not load posts.', err);
-                });
-        })();
-        </script>
 
         <!-- NEW: TECH STACK MARQUEE (Proves Technical Competence) -->
         <section class="tech-stack-section" aria-label="Technology Stack">
@@ -696,6 +656,52 @@
                 </div>
             </div>
         </section>
+
+        <!-- LINKEDIN TICKER (Dynamic — reads from data/linkedin-posts.json) -->
+        <section class="section-wrapper linkedin-ticker-section" aria-label="LinkedIn Posts" style="padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="latest-posts-header" style="margin-bottom: 2rem;">
+                <div>
+                    <span class="section-eyebrow">ON LINKEDIN</span>
+                    <h2 style="margin-bottom: 6px;">On LinkedIn</h2>
+                    <p class="section-description">What I’m writing and thinking about on LinkedIn.</p>
+                </div>
+            </div>
+
+            <div class="ticker" aria-label="Latest LinkedIn posts">
+                <div class="ticker-inner">
+                    <h3 class="sr-only">Latest LinkedIn posts</h3>
+                    <div class="ticker-track" id="linkedin-ticker-track" role="list">
+                        <!-- JS populates this from data/linkedin-posts.json -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+        (function() {
+            fetch('data/linkedin-posts.json')
+                .then(function(res) { return res.json(); })
+                .then(function(posts) {
+                    var track = document.getElementById('linkedin-ticker-track');
+                    if (!track || !posts.length) return;
+
+                    var html = '';
+                    posts.forEach(function(post) {
+                        html += '<div class="ticker-item" role="listitem">'
+                            + '<span class="ticker-source"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn Post</span>'
+                            + '<a class="ticker-heading" href="' + post.url + '" target="_blank" rel="noopener noreferrer">'
+                            + post.title + '</a>'
+                            + '</div>';
+                    });
+
+                    // Duplicate the set so the infinite scroll animation loops seamlessly
+                    track.innerHTML = html + html;
+                })
+                .catch(function(err) {
+                    console.warn('LinkedIn ticker: Could not load posts.', err);
+                });
+        })();
+        </script>
 
         <!-- FEATURED INSIGHT -->
         <section class="section-wrapper featured-insight">
