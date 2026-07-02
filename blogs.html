@@ -1921,51 +1921,84 @@
             const feedUrl = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/${mediumUsername}`;
             const container = document.getElementById("medium-feed-container");
 
+            const pinnedArticles = [
+                {
+                    title: "Synthetic Authenticity: The Trust Problem AI Content Hasn't Solved",
+                    link: "https://medium.com/@hi.shalinichoudhary/synthetic-authenticity-the-trust-problem-ai-content-hasnt-solved-e0a915dfbde6",
+                    pubDate: "2026-07-02 10:00:00",
+                    description: "AI-generated content is flood-filling the web, but it's missing the one component that actually converts readers: real, hard-earned human perspective."
+                }
+            ];
+
+            function renderArticles(articlesList) {
+                if (!container) return;
+                container.innerHTML = "";
+                
+                // Take top 3
+                const postsToDisplay = articlesList.slice(0, 3);
+                postsToDisplay.forEach((item, index) => {
+                    const pubDate = new Date(item.pubDate);
+                    const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+                    const delayClass = `delay-${(index + 1) * 100}`;
+                    
+                    let textContent = "";
+                    if (item.description && (item.description.includes("<") || item.content)) {
+                        const tempDiv = document.createElement("div");
+                        tempDiv.innerHTML = item.description || item.content || "";
+                        textContent = tempDiv.textContent || tempDiv.innerText || "";
+                    } else {
+                        textContent = item.description || "";
+                    }
+                    textContent = textContent.trim().substring(0, 95);
+                    if (textContent.length >= 95) {
+                        textContent += "...";
+                    }
+
+                    const cardHtml = `
+                        <a class="reading-card reveal ${delayClass}" href="${item.link}" target="_blank" rel="noopener noreferrer">
+                            <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium \u2022 ${formattedDate}</div>
+                            <h3>${item.title}</h3>
+                            <p class="muted">${textContent}</p>
+                            <span class="reading-link">Read on Medium \u2192</span>
+                        </a>
+                    `;
+                    container.insertAdjacentHTML('beforeend', cardHtml);
+                });
+
+                setTimeout(() => {
+                    const newCards = container.querySelectorAll('.reveal');
+                    newCards.forEach(card => card.classList.add('is-visible'));
+                }, 100);
+            }
+
             if (container) {
                 fetch(feedUrl)
                     .then(response => response.json())
                     .then(data => {
-                        if (data.status === 'ok' && data.items.length > 0) {
-                            container.innerHTML = ""; // Clear "Loading..." text
-                            
-                            const postsToDisplay = data.items.slice(0, 3);
-                            
-                            postsToDisplay.forEach((item, index) => {
-                                const pubDate = new Date(item.pubDate);
-                                const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
-                                
-                                const delayClass = `delay-${(index + 1) * 100}`;
-                                
-                                // create a temporary div to strip HTML tags from the description
-                                const tempDiv = document.createElement("div");
-                                tempDiv.innerHTML = item.description || item.content || "";
-                                let textContent = tempDiv.textContent || tempDiv.innerText || "";
-                                textContent = textContent.trim().substring(0, 90) + "...";
-                                
-                                const cardHtml = `
-                                    <a class="reading-card reveal ${delayClass}" href="${item.link}" target="_blank" rel="noopener noreferrer">
-                                        <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium \u2022 ${formattedDate}</div>
-                                        <h3>${item.title}</h3>
-                                        <p class="muted">${textContent}</p>
-                                        <span class="reading-link">Read on Medium \u2192</span>
-                                    </a>
-                                `;
-                                container.insertAdjacentHTML('beforeend', cardHtml);
-                            });
-                            
-                            setTimeout(() => {
-                                const newCards = container.querySelectorAll('.reveal');
-                                // Ensure they show up by adding the 'is-visible' class used in custom scroll reveals
-                                newCards.forEach(card => card.classList.add('is-visible'));
-                            }, 100);
-
-                        } else {
-                            container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">No articles found. Check back later!</p>';
+                        let fetchedItems = [];
+                        if (data.status === 'ok' && data.items) {
+                            fetchedItems = data.items;
                         }
+
+                        // Merge
+                        const mergedList = [...pinnedArticles];
+                        fetchedItems.forEach(item => {
+                            const exists = mergedList.some(pinned => 
+                                pinned.link.split('?')[0] === item.link.split('?')[0]
+                            );
+                            if (!exists) {
+                                mergedList.push(item);
+                            }
+                        });
+
+                        // Sort by date
+                        mergedList.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                        renderArticles(mergedList);
                     })
                     .catch(error => {
                         console.error("Error fetching Medium articles:", error);
-                        container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">Unable to load articles at this time.</p>';
+                        // Fallback to only pinned articles
+                        renderArticles(pinnedArticles);
                     });
             }
         });
