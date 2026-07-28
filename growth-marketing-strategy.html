@@ -22,6 +22,33 @@
   </noscript>
 
   <link rel="stylesheet" href="css/bundle.min.css">
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://shalinichoudhary.in"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://shalinichoudhary.in/work.html#services-section"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Growth Marketing Strategy",
+            "item": "https://shalinichoudhary.in/growth-marketing-strategy.html"
+        }
+    ]
+}
+    </script>
 </head>
 <body>
 
@@ -36,9 +63,10 @@
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-        <a href="work.html">Work</a>
+        <a href="/work.html">Work</a>
+        <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+        <a href="/growth-marketing-strategy.html">Growth Strategy</a>
         <a href="/about.html">About</a>
-        <a href="index.html#thinking-section">Insights</a>
         <a href="blogs.html">Blog</a>
         <a href="contact.html" class="cta-button small-btn">Get in touch</a>
       </nav>
@@ -46,6 +74,12 @@
   </header>
 
   <main class="site-content">
+
+      <nav aria-label="Breadcrumb" style="max-width: 1100px; margin: 0 auto; padding: 20px 20px 0 20px; font-size: 0.85rem; color: var(--muted-text, #64748b);">
+        <a href="/" style="color: inherit; text-decoration: none;">Home</a> &nbsp;/&nbsp;
+        <a href="/work.html" style="color: inherit; text-decoration: none;">Services</a> &nbsp;/&nbsp;
+        <span style="color: var(--text-color, #1e293b); font-weight: 500;">Growth Marketing Strategy</span>
+      </nav>
     <article>
         
         <section class="section hero">
@@ -199,11 +233,19 @@
       </div>
 
       <div class="footer-links">
+        <h3 class="footer-heading">Services</h3>
+        <nav class="footer-nav footer-nav--stacked">
+          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
+          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
+          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
+        </nav>
+      </div>
+      <div class="footer-links">
         <h3 class="footer-heading">Explore</h3>
         <nav class="footer-nav footer-nav--stacked">
-          <a href="work.html">Work</a>
+          <a href="/work.html">Work</a>
           <a href="/about.html">About</a>
-          <a href="index.html#thinking-section">Insights</a>
           <a href="blogs.html">Blog</a>
           <a href="contact.html">Contact</a>
         </nav>

@@ -1,33 +1,58 @@
-# Shalini Choudhary
+# Shalini Choudhary — Senior SEO Manager & Growth Marketer
 
-> Marketing Strategist & Growth Specialist focusing on organic search systems, B2B demand generation, and marketing analytics (GA4).
+Senior SEO and growth marketing professional with 8+ years across GroupM, Ogilvy, JLL, and Global University Systems. Core expertise in technical SEO, international SEO (hreflang), GEO/AI Overviews, demand generation, and marketing analytics (GA4). Currently based in the UK, completing an MSc in Marketing Management at the University of Leeds.
 
-Based in the UK (completing an MSc in Marketing Management at the University of Leeds) with 8+ years of agency and in-house experience across Ogilvy, GroupM, and GUS Global. 
+## Key Pages
 
----
+- [About](https://shalinichoudhary.in/about.html): Professional background, career experience across agencies and in-house, education at University of Leeds, and working approach.
+- [Work / Capabilities](https://shalinichoudhary.in/work.html): Functional expertise in growth strategy, SEO, performance marketing, analytics, and conversion optimisation.
+- [Blog Hub](https://shalinichoudhary.in/blogs.html): Collection of strategic insights on search, AI, measurement, and growth.
+- [Contact](https://shalinichoudhary.in/contact.html): Email and booking details.
 
-## Core Services
+## Service Pages
 
-- **[SEO Strategy Consultant](https://shalinichoudhary.in/seo-strategy-consultant.html)**: Frictionless technical SEO, intent mapping, and content architecture targeting scalable pipeline growth rather than vanity traffic.
-- **[Growth Marketing Strategy](https://shalinichoudhary.in/growth-marketing-strategy.html)**: Aligning acquisition, product, and channels into cohesive compounding growth frameworks.
-- **[Marketing Analytics (GA4)](https://shalinichoudhary.in/marketing-analytics-ga4-consultant.html)**: Setting up event-based tracking (GA4), tag management, and clean reporting systems focused on commercial outcomes.
-- **[Conversion Optimisation Strategy](https://shalinichoudhary.in/conversion-optimisation-strategy.html)**: Improving landing page performance and aligning user experience (UX) to increase lead-to-pipeline conversion rates.
+- [SEO Strategy Consultant](https://shalinichoudhary.in/seo-strategy-consultant.html): Technical SEO, intent mapping, and content architecture for pipeline growth.
+- [Growth Marketing Strategy](https://shalinichoudhary.in/growth-marketing-strategy.html): Aligning acquisition, product, and channels into compounding growth frameworks.
+- [Marketing Analytics (GA4)](https://shalinichoudhary.in/marketing-analytics-ga4-consultant.html): Event-based tracking, tag management, and reporting focused on commercial outcomes.
+- [Conversion Optimisation](https://shalinichoudhary.in/conversion-optimisation-strategy.html): Landing page performance and UX alignment to increase lead-to-pipeline conversion.
 
----
+## Blog Posts — AI & Modern Search
 
-## Key Site Sections
+- [How to Get Cited in AI Overviews in 2026](https://shalinichoudhary.in/blogs/ai-search/how-to-get-cited-in-ai-overviews-in-2026.html): What's actually working for AI Overview citations based on observation, not theory.
+- [AEO vs SEO: What Changes and What Stays](https://shalinichoudhary.in/blogs/ai-search/aeo-vs-seo-what-changes-and-what-stays.html): Strategic differences between Answer Engine Optimization and traditional SEO.
+- [GEO vs SEO: Why Losing Clicks Is Fine](https://shalinichoudhary.in/blogs/ai-search/geo-vs-seo.html): The shift to Generative Engine Optimization and turning entity authority into revenue.
+- [The Invisible Layer: Building a Website AI Wants to Crawl](https://shalinichoudhary.in/blogs/ai-search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.html): Firewall whitelisting, Markdown data structuring, and llms.txt for LLM retrieval.
+- [Demystifying E-A-T in 2024](https://shalinichoudhary.in/blogs/ai-search/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html): Expertise, Authoritativeness, and Trustworthiness explained.
+- [Beyond Backlinks: SEO Factors in 2024](https://shalinichoudhary.in/blogs/ai-search/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html): The expanding landscape of ranking factors beyond traditional link building.
+- [The Rise of Voice Search](https://shalinichoudhary.in/blogs/ai-search/the-rise-of-voice-search-optimizing-for-how-we-speak-not-type.html): Optimising for conversational, spoken queries.
+- [Top 5 SEO Trends 2024](https://shalinichoudhary.in/blogs/ai-search/top-5-seo-trends-2024.html): Key search trends shaping strategy.
 
-- **[About Shalini](https://shalinichoudhary.in/about.html)**: Details on Shalini's background, professional credentials, education, and career experience.
-- **[Insights / Blog Hub](https://shalinichoudhary.in/blogs.html)**: A collection of deep-dives and strategic insights on search, conversion, and measurement.
-- **[Get in Touch](https://shalinichoudhary.in/contact.html)**: Contact options and booking details for growth strategy consults.
+## Blog Posts — Growth Strategy
 
----
+- [What UK Companies Are Hiring Senior SEO Managers For in 2026](https://shalinichoudhary.in/blogs/growth-strategy/what-uk-companies-are-actually-hiring-senior-seo-managers-for-in-2026.html): First-person analysis of UK hiring patterns for senior SEO roles.
+- [What Eight Years in Marketing Taught Me About Strategy](https://shalinichoudhary.in/blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html): Lessons from agency life at Ogilvy, GroupM, and beyond.
+- [Why the Channel Is Never the Strategy](https://shalinichoudhary.in/blogs/growth-strategy/why-the-channel-is-never-the-strategy.html): Why organising around channels produces fragmented results.
+- [What the UK Market Reveals About Brand Trust](https://shalinichoudhary.in/blogs/growth-strategy/what-the-uk-market-reveals-about-brand-trust.html): Brand trust dynamics in the UK market.
+- [AEO and AI: How Answer Engines Are Redefining SEO](https://shalinichoudhary.in/blogs/growth-strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html): Answer engines reshaping SEO strategy.
+- [Content Strategy Powerhouse](https://shalinichoudhary.in/blogs/growth-strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html): Aligning content with SEO and business goals.
+- [Off-Page Optimisation Strategy](https://shalinichoudhary.in/blogs/growth-strategy/off-page-optimization-strategy-building-authority-beyond-your-website.html): Building authority beyond your website.
+- [Technical SEO Foundations](https://shalinichoudhary.in/blogs/growth-strategy/technical-seo-foundations-building-a-strong-house-for-your-content.html): Building strong technical foundations for content.
+- [The SEO Roadmap](https://shalinichoudhary.in/blogs/growth-strategy/the-seo-roadmap-a-strategic-guide-to-planning-and-execution.html): Strategic guide to planning and execution.
 
-## Blog Categories & Resources
+## Blog Posts — SEO Strategy
 
-- **[AI & Modern Search](https://shalinichoudhary.in/blogs/ai-search.html)**: Discovering search evolution, Generative Engine Optimization (GEO), and Answer Engine Optimization (AEO).
-  - **[The Invisible Layer: Building a Website That AI Actually Wants to Crawl](https://shalinichoudhary.in/blogs/ai-search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.html)**: Surgical firewall whitelisting, Markdown data structuring, and llms.txt implementation for LLM retrieval.
-- **[SEO Growth Strategy](https://shalinichoudhary.in/blogs/seo-strategy.html)**: Guides on link building, local SEO, content writing, and technical quick wins.
-- **[Analytics & Measurement](https://shalinichoudhary.in/blogs/analytics-measurement.html)**: Strategic GA4 setup, user journey visualization, and dashboard tracking.
-- **[Growth Strategy Insights](https://shalinichoudhary.in/blogs/growth-strategy.html)**: Frameworks, market trust, and high-level marketing decision making.
-- **[Conversion Performance](https://shalinichoudhary.in/blogs/conversion-performance.html)**: Structured testing and optimization workflows.
+- [What Is SEO Strategy](https://shalinichoudhary.in/blogs/seo-strategy/what-is-seo-strategy.html): Comprehensive guide to SEO strategy.
+- [5 Tips to Craft Content That Ranks](https://shalinichoudhary.in/blogs/seo-strategy/5-tips-to-craft-content-that-ranks-and-engages.html): Content creation for ranking and engagement.
+- [Backlink Building Basics](https://shalinichoudhary.in/blogs/seo-strategy/backlink-building-basics-4-strategies-to-earn-valuable-links-and-boost-authority.html): Strategies to earn valuable links.
+- [Local SEO Domination](https://shalinichoudhary.in/blogs/seo-strategy/local-seo-domination-6-steps-to-optimize-your-website-for-local-searches.html): Steps to optimise for local searches.
+- [Technical SEO Quick Wins](https://shalinichoudhary.in/blogs/seo-strategy/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html): Easy fixes to boost website health.
+
+## Blog Posts — Analytics & Measurement
+
+- [GA4 vs Universal Analytics Comparison](https://shalinichoudhary.in/blogs/analytics-measurement/google-analytics-4-vs-universal-analytics-a-head-to-head-comparison-for-beginners.html): Head-to-head comparison for beginners.
+- [Unveiling the Power of GA4](https://shalinichoudhary.in/blogs/analytics-measurement/unveiling-the-power-of-google-analytics-4-a-comprehensive-guide.html): Comprehensive guide to Google Analytics 4.
+- [Expanding GA4 Capabilities with Integrations](https://shalinichoudhary.in/blogs/analytics-measurement/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html): Extending GA4 with integrations.
+
+## Blog Posts — Conversion Performance
+
+- [Advanced GA4 Techniques](https://shalinichoudhary.in/blogs/conversion-performance/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html): Advanced techniques for mastering Google Analytics 4.
