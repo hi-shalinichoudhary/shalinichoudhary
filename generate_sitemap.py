@@ -8,8 +8,8 @@ BASE_URL = 'https://shalinichoudhary.in/'
 OUTPUT_FILE = os.path.join(BASE_DIR, 'sitemap.xml')
 
 # Files or directories to ignore
-IGNORE_FILES = {'temp_cards.html', 'generated_cards.html', '404.html', 'seo-tips.html'}
-IGNORE_DIRS = {'.git', '.github', 'unused_assets', 'css', 'js', 'images', 'google-analytics', 'strategy'}
+IGNORE_FILES = {'temp_cards.html', 'generated_cards.html', '404.html', 'seo-tips.html', 'google-analytics.html', 'strategy.html', 'seo-industry.html'}
+IGNORE_DIRS = {'.git', '.github', 'unused_assets', 'css', 'js', 'images', 'google-analytics', 'strategy', 'seo-industry', 'seo-tips'}
 
 def get_priority(rel_path):
     # Root index gets highest priority
@@ -20,10 +20,10 @@ def get_priority(rel_path):
     # Top level pages (blogs.html, contact.html)
     if len(parts) == 1:
         return '0.80'
-    # Level 1 inside blogs (e.g. blogs/strategy.html)
+    # Level 1 inside blogs (e.g. blogs/growth-strategy.html)
     elif len(parts) == 2 and parts[0] == 'blogs':
         return '0.80'
-    # Deeper level posts (e.g. blogs/strategy/post.html)
+    # Deeper level posts (e.g. blogs/growth-strategy/post.html)
     else:
         return '0.64'
 
@@ -43,10 +43,16 @@ def generate_sitemap():
             full_path = os.path.join(root, file)
             rel_path = os.path.relpath(full_path, BASE_DIR)
             
+            # Check content for redirect stubs
+            with open(full_path, 'r', encoding='utf-8', errors='ignore') as f_check:
+                content_check = f_check.read()
+            if 'http-equiv="refresh"' in content_check or 'noindex' in content_check:
+                continue
+
             # Use forward slashes for URLs
             rel_url_path = rel_path.replace(os.sep, '/')
             
-            # Exclude specific redirect paths
+            # Exclude specific duplicate redirect paths
             if rel_url_path in {
                 'blogs/analytics-measurement/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html',
                 'blogs/conversion-performance/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html'

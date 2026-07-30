@@ -1,6 +1,8 @@
 User-Agent: *
 Allow: /
 Disallow: /*.pdf$
+Disallow: /temp_cards.html
+Disallow: /generated_cards.html
 
 Sitemap: https://shalinichoudhary.in/sitemap.xml
 
