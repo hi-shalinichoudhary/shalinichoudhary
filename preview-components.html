@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Component Preview — Shalini Choudhary (internal)</title>
+  <meta name="description" content="Internal preview of reusable design components. Not indexed." />
+
+  <!-- Fonts (same as site) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </noscript>
+
+  <!-- Existing bundle (all base styles) -->
+  <link rel="stylesheet" href="css/bundle.min.css">
+
+  <!-- New component stylesheet -->
+  <link rel="stylesheet" href="css/sc-components.css">
+
+  <style>
+    /* ── Preview-page chrome only ──────────────────── */
+    :root {
+      --text: #0b1220;
+      --muted-text: #475569;
+      --border: #e5e7eb;
+      --card: #f8fafc;
+      --card-2: #ffffff;
+      --shadow-1: 0 1px 2px rgba(0,0,0,.04), 0 10px 24px rgba(0,0,0,.08);
+      --shadow-2: 0 4px 8px rgba(0,0,0,.08), 0 18px 40px rgba(0,0,0,.12);
+      --radius: 18px;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8fafc;
+      color: #0b1220;
+      margin: 0;
+    }
+    .preview-page-header {
+      background: #0b1220;
+      color: #fff;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .preview-page-header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .preview-page-header p {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      margin: 0;
+    }
+    .preview-toc {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .preview-toc a {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #475569;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .preview-toc a:hover { color: #57c021; }
+    .preview-wrap { max-width: 1120px; margin: 0 auto; }
+
+    /* Abstract placeholder for case card with no image */
+    .abstract-dots {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #0b1220 0%, #1a2b40 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .abstract-dots::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(87,192,33,0.18) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    .abstract-dots__label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Page chrome -->
+  <header class="preview-page-header">
+    <h1>Component Preview</h1>
+    <p>Internal use only. Not indexed. All numbers are from <code>/data/proof-points.md</code>.</p>
+  </header>
+
+  <nav class="preview-toc" aria-label="Component quick links">
+    <a href="#c0">00 Section labels</a>
+    <a href="#c1">01 Stat strip</a>
+    <a href="#c2">02 Skill ticker</a>
+    <a href="#c3">03 Case cards</a>
+    <a href="#c4">04 Capability grid</a>
+    <a href="#c5">05 Tag rows</a>
+  </nav>
+
+  <main>
+
+    <!-- ────────────────────────────────────────────────
+         COMPONENT 0: NUMBERED SECTION LABELS
+    ─────────────────────────────────────────────────── -->
+    <section id="c0" class="preview-section" style="background:#fff;">
+      <div class="preview-wrap">
+        <p class="preview-label">Component 00  Numbered section label</p>
+
+        <!-- Light variant -->
+        <div style="margin-bottom:1.5rem;">
+          <p class="section-number-label">01 The record</p>
+          <h2 style="font-size:2rem;font-weight:800;margin:0;">Section heading follows here</h2>
+        </div>
+
+        <!-- Dark variant -->
+        <div class="dark-canvas" style="padding:2rem;border-radius:18px;">
+          <p class="section-number-label">02 Work that moved the needle</p>
+          <h2 style="margin:0;font-size:2rem;font-weight:800;color:#fff;">
+            Section heading on dark background
+          </h2>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ────────────────────────────────────────────────
+         COMPONENT 1: STAT STRIP
+    ─────────────────────────────────────────────────── -->
+    <section
+      id="c1"
+      class="stat-strip dark-canvas"
+      aria-label="Career record stats"
+    >
+      <div class="preview-wrap">
+        <p class="section-number-label" style="text-align:center;margin-bottom:1.5rem;">01 The record</p>
+      </div>
+
+      <div class="stat-strip__inner">
+
+        <div class="stat-strip__item">
+          <span
+            class="stat-strip__num"
+            data-target="65"
+            data-suffix="%"
+          >65%</span>
+          <span class="stat-strip__label">YoY organic traffic growth</span>
+          <span class="stat-strip__source">Global University Systems</span>
+        </div>
+
+        <div class="stat-strip__item">
+          <span
+            class="stat-strip__num"
+            data-target="20"
+            data-suffix="%"
+          >20%</span>
+          <span class="stat-strip__label">YoY growth in qualified leads</span>
+          <span class="stat-strip__source">Global University Systems</span>
+        </div>
+
+        <div class="stat-strip__item">
+          <span
+            class="stat-strip__num"
+            data-prefix="0"
+            data-target="0"
+            data-suffix=""
+          >0</span>
+          <span class="stat-strip__label">Ranking positions lost in platform migration</span>
+          <span class="stat-strip__source">Global University Systems</span>
+        </div>
+
+        <div class="stat-strip__item">
+          <span
+            class="stat-strip__num"
+            data-target="40"
+            data-suffix="%"
+          >40%</span>
+          <span class="stat-strip__label">Reduction in content production time</span>
+          <span class="stat-strip__source">AI-enabled workflows, GUS</span>
+        </div>
+
+        <div class="stat-strip__item">
+          <span
+            class="stat-strip__num"
+            data-target="20"
+            data-suffix="%"
+          >20%</span>
+          <span class="stat-strip__label">Non-branded organic growth at zero budget</span>
+          <span class="stat-strip__source">GroupM</span>
+        </div>
+
+        <div class="stat-strip__item">
+          <span
+            class="stat-strip__num"
+            data-prefix=""
+            data-target="13"
+            data-suffix=""
+          >13</span>
+          <span class="stat-strip__label">Top 13 UK teams, CIM x IBM The Pitch 2026</span>
+          <span class="stat-strip__source">Shortlisted</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ────────────────────────────────────────────────
+         COMPONENT 2: SKILL TICKER
+    ─────────────────────────────────────────────────── -->
+    <section id="c2" class="preview-section" style="background:#fff;">
+      <div class="preview-wrap">
+        <p class="preview-label">Component 02  Skill ticker</p>
+        <p style="font-size:0.8rem;color:#475569;margin-bottom:1.5rem;">
+          Hover to pause. Respects prefers-reduced-motion.
+        </p>
+      </div>
+
+      <div
+        class="skill-ticker"
+        role="marquee"
+        aria-label="Areas of expertise"
+      >
+        <div class="skill-ticker__track" aria-hidden="true">
+          <!-- Set 1 -->
+          <span class="skill-ticker__item">Technical SEO</span>
+          <span class="skill-ticker__item">GEO</span>
+          <span class="skill-ticker__item">AEO</span>
+          <span class="skill-ticker__item">International SEO</span>
+          <span class="skill-ticker__item">Site Migrations</span>
+          <span class="skill-ticker__item">hreflang</span>
+          <span class="skill-ticker__item">Structured Data</span>
+          <span class="skill-ticker__item">Crawl Diagnostics</span>
+          <span class="skill-ticker__item">Demand Generation</span>
+          <span class="skill-ticker__item">Lead Pipeline</span>
+          <span class="skill-ticker__item">Content Architecture</span>
+          <span class="skill-ticker__item">GA4</span>
+          <span class="skill-ticker__item">Looker Studio</span>
+          <span class="skill-ticker__item">CRO</span>
+          <span class="skill-ticker__item">AI Overviews</span>
+          <span class="skill-ticker__item">Hub and Spoke</span>
+          <span class="skill-ticker__item">Salesforce Tracking</span>
+          <span class="skill-ticker__item">Programmatic SEO</span>
+          <!-- Set 2 — duplicate for seamless loop -->
+          <span class="skill-ticker__item">Technical SEO</span>
+          <span class="skill-ticker__item">GEO</span>
+          <span class="skill-ticker__item">AEO</span>
+          <span class="skill-ticker__item">International SEO</span>
+          <span class="skill-ticker__item">Site Migrations</span>
+          <span class="skill-ticker__item">hreflang</span>
+          <span class="skill-ticker__item">Structured Data</span>
+          <span class="skill-ticker__item">Crawl Diagnostics</span>
+          <span class="skill-ticker__item">Demand Generation</span>
+          <span class="skill-ticker__item">Lead Pipeline</span>
+          <span class="skill-ticker__item">Content Architecture</span>
+          <span class="skill-ticker__item">GA4</span>
+          <span class="skill-ticker__item">Looker Studio</span>
+          <span class="skill-ticker__item">CRO</span>
+          <span class="skill-ticker__item">AI Overviews</span>
+          <span class="skill-ticker__item">Hub and Spoke</span>
+          <span class="skill-ticker__item">Salesforce Tracking</span>
+          <span class="skill-ticker__item">Programmatic SEO</span>
+        </div>
+
+        <!-- Accessible static list for screen readers -->
+        <ul class="sr-only" aria-label="Areas of expertise">
+          <li>Technical SEO</li>
+          <li>GEO (Generative Engine Optimisation)</li>
+          <li>AEO (Answer Engine Optimisation)</li>
+          <li>International SEO</li>
+          <li>Site Migrations</li>
+          <li>hreflang</li>
+          <li>Structured Data and Schema</li>
+          <li>Crawl Diagnostics</li>
+          <li>Demand Generation</li>
+          <li>Lead Pipeline Management</li>
+          <li>Content Architecture</li>
+          <li>GA4 Analytics</li>
+          <li>Looker Studio</li>
+          <li>Conversion Rate Optimisation</li>
+          <li>AI Overviews</li>
+          <li>Hub and Spoke Content Model</li>
+          <li>Salesforce Lead Tracking</li>
+          <li>Programmatic SEO</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ────────────────────────────────────────────────
+         COMPONENT 3: CASE CARDS
+    ─────────────────────────────────────────────────── -->
+    <section id="c3" class="preview-section" style="background:#f8fafc;">
+      <div class="preview-wrap">
+        <p class="preview-label">Component 03  Case card</p>
+
+        <div style="margin-bottom:2.5rem;max-width:1080px;margin-left:auto;margin-right:auto;padding:0 1.25rem;">
+          <p class="section-number-label">02 Work that moved the needle</p>
+          <h2 style="font-size:1.9rem;font-weight:800;margin:0 0 0.5rem;">
+            Problem-framed case studies
+          </h2>
+          <p style="font-size:0.95rem;color:#475569;margin:0;">
+            Real engagements. Specific outcomes. No puffery.
+          </p>
+        </div>
+
+        <div class="case-cards-grid">
+
+          <!-- Card A: GUS migration (image) -->
+          <article class="case-card">
+            <div class="case-card__media">
+              <img
+                src="images/3.webp"
+                alt="Abstract grid representing a CMS migration project"
+                width="800"
+                height="480"
+                loading="lazy"
+              >
+            </div>
+            <div class="case-card__body">
+              <p class="case-card__label">Global University Systems · Education</p>
+              <h3 class="case-card__title">
+                How do you replatform two live education sites without losing a single ranking?
+              </h3>
+              <ul class="case-card__metrics">
+                <li>
+                  <span class="case-card__metric-num">0</span>
+                  <span class="case-card__metric-cap">ranking positions lost post-launch</span>
+                </li>
+                <li>
+                  <span class="case-card__metric-num">&lt;5%</span>
+                  <span class="case-card__metric-cap">traffic variance at launch</span>
+                </li>
+                <li>
+                  <span class="case-card__metric-num">1 mo</span>
+                  <span class="case-card__metric-cap">to full organic recovery</span>
+                </li>
+              </ul>
+              <a class="case-card__link" href="/work.html">
+                Read the case <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card B: GUS organic growth (abstract) -->
+          <article class="case-card">
+            <div class="case-card__media case-card__media--abstract">
+              <div class="abstract-dots">
+                <span class="abstract-dots__label">Organic Growth</span>
+              </div>
+            </div>
+            <div class="case-card__body">
+              <p class="case-card__label">Global University Systems · Education, EMEA and APAC</p>
+              <h3 class="case-card__title">
+                From low AI visibility to citation growth: building an entity authority model from scratch
+              </h3>
+              <ul class="case-card__metrics">
+                <li>
+                  <span class="case-card__metric-num">65%</span>
+                  <span class="case-card__metric-cap">YoY organic traffic growth, no paid amplification</span>
+                </li>
+                <li>
+                  <span class="case-card__metric-num">+15–20%</span>
+                  <span class="case-card__metric-cap">citations on restructured deep content pages</span>
+                </li>
+                <li>
+                  <span class="case-card__metric-num">+20%</span>
+                  <span class="case-card__metric-cap">YoY growth in qualified leads</span>
+                </li>
+              </ul>
+              <a class="case-card__link" href="/work.html">
+                Read the case <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card C: GroupM Ford pitch -->
+          <article class="case-card">
+            <div class="case-card__media">
+              <img
+                src="images/1.webp"
+                alt="Data visualisation representing agency SEO strategy work"
+                width="800"
+                height="480"
+                loading="lazy"
+              >
+            </div>
+            <div class="case-card__body">
+              <p class="case-card__label">GroupM, WPP Group · Automotive, FMCG</p>
+              <h3 class="case-card__title">
+                How do you outperform paid campaigns on the same queries without a paid budget?
+              </h3>
+              <ul class="case-card__metrics">
+                <li>
+                  <span class="case-card__metric-num">+20%</span>
+                  <span class="case-card__metric-cap">non-branded organic traffic at zero budget</span>
+                </li>
+                <li>
+                  <span class="case-card__metric-num">Ford</span>
+                  <span class="case-card__metric-cap">pitch won, leading website technical and competitor analysis</span>
+                </li>
+              </ul>
+              <a class="case-card__link" href="/work.html">
+                Read the case <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ────────────────────────────────────────────────
+         COMPONENT 4: NUMBERED CAPABILITY GRID
+    ─────────────────────────────────────────────────── -->
+    <section id="c4" class="preview-section" style="background:#fff;">
+      <div class="preview-wrap">
+        <p class="preview-label">Component 04  Numbered capability grid (01-06)</p>
+
+        <div style="margin-bottom:2.5rem;max-width:1080px;margin-left:auto;margin-right:auto;padding:0 1.25rem;">
+          <p class="section-number-label">03 How I work</p>
+          <h2 style="font-size:1.9rem;font-weight:800;margin:0;">
+            Six execution areas
+          </h2>
+        </div>
+
+        <div class="cap-grid">
+
+          <article class="cap-card">
+            <span class="cap-card__num" aria-hidden="true">01</span>
+            <h3 class="cap-card__title">Technical SEO and Site Migrations</h3>
+            <p class="cap-card__desc">
+              Zero-loss platform migrations, crawl architecture, hreflang, schema and structured data at scale across multi-brand, multi-market properties.
+            </p>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__num" aria-hidden="true">02</span>
+            <h3 class="cap-card__title">GEO and AEO: AI Visibility</h3>
+            <p class="cap-card__desc">
+              Building entity authority and citation presence for AI Overviews and generative search. Measuring brand mention rate, AI share of voice and AI referral traffic.
+            </p>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__num" aria-hidden="true">03</span>
+            <h3 class="cap-card__title">International SEO</h3>
+            <p class="cap-card__desc">
+              Multi-market organic strategy across EMEA, APAC, Americas and MENA. hreflang at scale on globally indexed domains and regional sites.
+            </p>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__num" aria-hidden="true">04</span>
+            <h3 class="cap-card__title">Demand Generation and Lead Pipeline</h3>
+            <p class="cap-card__desc">
+              Search-led pipelines traced from organic landing pages through Salesforce to applications. 50,000 to 60,000 annual inbound leads managed at GUS.
+            </p>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__num" aria-hidden="true">05</span>
+            <h3 class="cap-card__title">Analytics and Executive Reporting</h3>
+            <p class="cap-card__desc">
+              GA4, Looker Studio dashboards and C-suite briefings. Defending organic investment by connecting search data to commercial pipeline evidence.
+            </p>
+          </article>
+
+          <article class="cap-card">
+            <span class="cap-card__num" aria-hidden="true">06</span>
+            <h3 class="cap-card__title">Team and Operating Model</h3>
+            <p class="cap-card__desc">
+              Led teams of 7 to 10 across SEO, content and analytics. Built cross-functional models with development, brand and commercial leads.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ────────────────────────────────────────────────
+         COMPONENT 5: LABELLED TAG ROWS
+    ─────────────────────────────────────────────────── -->
+    <section id="c5" class="preview-section" style="background:#f8fafc;">
+      <div class="preview-wrap">
+        <p class="preview-label">Component 05  Labelled tag rows</p>
+
+        <div style="margin-bottom:2.5rem;max-width:860px;margin-left:auto;margin-right:auto;padding:0 1.25rem;">
+          <p class="section-number-label">04 The toolkit</p>
+          <h2 style="font-size:1.9rem;font-weight:800;margin:0;">
+            Platforms, measurement and technical
+          </h2>
+        </div>
+
+        <dl class="tag-rows">
+
+          <div class="tag-row">
+            <dt class="tag-row__label">Platforms</dt>
+            <dd class="tag-row__tags">
+              <span class="tag">Drupal</span>
+              <span class="tag">WordPress</span>
+              <span class="tag">Salesforce</span>
+              <span class="tag">Google Search Console</span>
+              <span class="tag">Ahrefs</span>
+              <span class="tag">SEMrush</span>
+            </dd>
+          </div>
+
+          <div class="tag-row">
+            <dt class="tag-row__label">Measurement</dt>
+            <dd class="tag-row__tags">
+              <span class="tag">GA4</span>
+              <span class="tag">Looker Studio</span>
+              <span class="tag">Google Tag Manager</span>
+              <span class="tag">Attribution modelling</span>
+              <span class="tag">Lead-to-pipeline tracking</span>
+            </dd>
+          </div>
+
+          <div class="tag-row">
+            <dt class="tag-row__label">Technical</dt>
+            <dd class="tag-row__tags">
+              <span class="tag">hreflang</span>
+              <span class="tag">Schema.org</span>
+              <span class="tag">Structured data</span>
+              <span class="tag">Crawl diagnostics</span>
+              <span class="tag">Core Web Vitals</span>
+              <span class="tag">Programmatic SEO</span>
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+  </main><!-- /main -->
+
+
+  <!-- ──────────────────────────────────────────────────────────
+       STAT STRIP COUNTER SCRIPT
+       Animates .stat-strip__num from zero to data-target on scroll.
+       Respects prefers-reduced-motion (shows final value instantly).
+  ─────────────────────────────────────────────────────────────-->
+  <script>
+    (function () {
+      'use strict';
+
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var nums = document.querySelectorAll('.stat-strip__num[data-target]');
+      if (!nums.length) return;
+
+      /* Helper: format a number preserving any suffix / prefix */
+      function display(el, val) {
+        var suffix = el.getAttribute('data-suffix') || '';
+        el.textContent = val + suffix;
+      }
+
+      /* Animate a single element from 0 to target */
+      function animate(el) {
+        if (el.getAttribute('data-animated') === 'true') return;
+        el.setAttribute('data-animated', 'true');
+
+        var target = parseFloat(el.getAttribute('data-target'));
+        if (isNaN(target) || target === 0) { display(el, 0); return; }
+
+        var duration = 1600;
+        var start = null;
+
+        function step(ts) {
+          if (!start) start = ts;
+          var progress = Math.min((ts - start) / duration, 1);
+          /* Ease-out cubic */
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          display(el, current);
+          if (progress < 1) requestAnimationFrame(step);
+          else display(el, target);
+        }
+
+        requestAnimationFrame(step);
+      }
+
+      /* If reduced motion, show final values and stop */
+      if (prefersReduced) {
+        nums.forEach(function (el) {
+          var target = parseFloat(el.getAttribute('data-target'));
+          display(el, isNaN(target) ? 0 : target);
+          el.setAttribute('data-animated', 'true');
+        });
+        return;
+      }
+
+      /* Otherwise use IntersectionObserver */
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animate(entry.target);
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      nums.forEach(function (el) { io.observe(el); });
+    }());
+  </script>
+
+</body>
+</html>

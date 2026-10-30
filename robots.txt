@@ -3,6 +3,7 @@ Allow: /
 Disallow: /*.pdf$
 Disallow: /temp_cards.html
 Disallow: /generated_cards.html
+Disallow: /preview-components.html
 
 Sitemap: https://shalinichoudhary.in/sitemap.xml
 
