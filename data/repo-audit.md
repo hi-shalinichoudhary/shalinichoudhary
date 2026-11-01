@@ -1,6 +1,6 @@
 # Repo Audit: shalinichoudhary.in
 
-_Audit date: 2026-10-30. Read-only. No files were modified._
+_Audit date: 2026-11-01. Read-only inspection. Supersedes the 2026-10-30 version (which pre-dated the homepage enhancements commit and had several count errors, corrected below)._
 
 ---
 
@@ -8,10 +8,11 @@ _Audit date: 2026-10-30. Read-only. No files were modified._
 
 | Item | Detail |
 |---|---|
-| Platform | GitHub Pages (static, no server-side processing) |
-| Deployment | `.github/workflows/static.yml` pushes to `main` trigger `actions/deploy-pages@v4`; entire repo root is uploaded as the artifact |
-| Custom domain | `shalinichoudhary.in` (inferred from canonicals and sitemap) |
-| `.htaccess` | Present but inert: file contains a comment acknowledging GitHub Pages does not support `.htaccess`; the 301 de-duplicate logic for `index.html` is handled via inline `<script>` in `index.html` |
+| Platform | GitHub Pages, static, no server-side processing |
+| Deployment | `.github/workflows/static.yml`: push to `main` runs `actions/deploy-pages@v4`; the entire repo root is uploaded, so scratch files, Python scripts and `data/` are all publicly reachable |
+| Domain | `shalinichoudhary.in` (from canonicals and sitemap) |
+| `.htaccess` | Inert on GitHub Pages. The `index.html` de-duplication is an inline `history.replaceState` script in the homepage `<head>` |
+| Build tooling | None. No `package.json`, bundler, Sass or PostCSS. Do not add any |
 
 ---
 
@@ -19,73 +20,49 @@ _Audit date: 2026-10-30. Read-only. No files were modified._
 
 ```
 /
-+-- index.html                          Homepage
-+-- about.html                          About page
-+-- blogs.html                          Blog hub (123 KB, card-heavy)
-+-- work.html                           Capabilities / results page
-+-- contact.html                        Contact page
-+-- seo-strategy-consultant.html        Service page
-+-- growth-marketing-strategy.html      Service page
-+-- marketing-analytics-ga4-consultant.html  Service page
-+-- conversion-optimisation-strategy.html    Service page
-|
++-- index.html, about.html, work.html, contact.html, blogs.html
++-- seo-strategy-consultant.html, growth-marketing-strategy.html,
+|   marketing-analytics-ga4-consultant.html, conversion-optimisation-strategy.html
++-- preview-components.html          Scratch (disallowed in robots.txt, no canonical)
++-- generated_cards.html, temp_cards.html   Scratch (disallowed, no canonical)
 +-- blogs/
-|   +-- ai-search/          (8 blog posts as .html files)
-|   +-- analytics-measurement/  (3 blog posts)
-|   +-- conversion-performance/ (1 blog post)
-|   +-- growth-strategy/    (10 blog posts)
-|   +-- seo-strategy/       (5 blog posts)
-|   +-- [stub .html files at category level]
-|
-+-- css/
-|   +-- bundle.min.css      Primary stylesheet loaded by every page (91 KB)
-|   +-- style.css           Source stylesheet (57 KB, not loaded directly)
-|   +-- style-v2.css        Secondary source stylesheet (25 KB, not loaded directly)
-|   +-- footer.css          Footer styles (4.5 KB, bundled into bundle.min.css)
-|
-+-- js/
-|   +-- script.js           Main JS: hamburger nav, counter, lightbox, testimonial slider, dark mode, back-to-top
-|   +-- antigravity.js      Canvas particle swarm on hero section
-|   +-- scroll-reveal.js    IntersectionObserver reveal for .reveal elements
-|   +-- prototype.js        Smooth scroll for anchors; secondary reveal pass; accordion one-open logic
-|   +-- backToTop.js        Back-to-top button (possible overlap with script.js)
-|   +-- gsap.min.js         GSAP library (71 KB, vendored; usage unconfirmed)
-|   +-- js.svg              SVG icon stored inside js/ directory
-|
-+-- images/                 102 files + 1 subdirectory (blog-images/)
-+-- data/
-|   +-- linkedin-posts.json  LinkedIn post data (used by blogs.html)
-|
-+-- robots.txt
-+-- sitemap.xml
-+-- llms.txt                LLM-readable site summary
-|
-+-- [Python helper scripts, not deployed]
-|   generate_blog2.py, generate_blog3.py, generate_cards.py,
-|   generate_sitemap.py, inject_cards.py, fix_links.py,
-|   debug_regex.py, replace_featured.py, resize_images.py,
-|   update_blogs.py, update_nav.py
-|
-+-- generated_cards.html    Scratch output (disallowed in robots.txt)
-+-- temp_cards.html         Scratch output (disallowed in robots.txt)
-+-- unused_assets/          Superseded assets
-+-- README.md               One-line placeholder
+|   +-- 9 category hubs: ai-search.html, analytics-measurement.html,
+|   |   conversion-performance.html, google-analytics.html, growth-strategy.html,
+|   |   seo-industry.html, seo-strategy.html, seo-tips.html, strategy.html
+|   +-- 9 category folders holding 50 posts:
+|       ai-search 8, analytics-measurement 4, conversion-performance 2,
+|       google-analytics 3, growth-strategy 10, seo-industry 4,
+|       seo-strategy 6, seo-tips 5, strategy 8
++-- css/   bundle.min.css, style.css, style-v2.css, footer.css,
+|          sc-components.css, home-enhancements.css
++-- js/    script.js, antigravity.js, scroll-reveal.js, prototype.js,
+|          backToTop.js, gsap.min.js, home-enhancements.js, js.svg
++-- images/  103 entries (102 files + blog-images/ subfolder)
++-- data/    linkedin-posts.json, proof-points.md, repo-audit.md
++-- robots.txt, sitemap.xml, llms.txt, README.md, .htaccess
++-- unused_assets/   14 legacy JS libraries (jQuery, Bootstrap, Owl etc.)
++-- Python helpers (not site code): generate_blog2.py, generate_blog3.py,
+    generate_cards.py, generate_sitemap.py, inject_cards.py, fix_links.py,
+    debug_regex.py, replace_featured.py, resize_images.py, update_blogs.py,
+    update_nav.py
 ```
+
+Total HTML: 12 root-level files, 59 under `blogs/` (9 hubs + 50 posts).
 
 ---
 
 ## 3. CSS organisation
 
-| File | Role | Loaded by pages? |
+| File | Role | Linked by pages? |
 |---|---|---|
-| `css/bundle.min.css` | Single production stylesheet. All pages load this via `<link rel="stylesheet" href="css/bundle.min.css">` | Yes, every page |
-| `css/style.css` | Human-readable source (Poppins, high-contrast minimalist grid). `:root` tokens, base, nav, hero, sections, modals, dark mode, testimonials, contact, footer | Not directly (bundled) |
-| `css/style-v2.css` | Secondary source stylesheet (v2 design-system tokens and utilities) | Not directly (bundled) |
-| `css/footer.css` | Footer-specific styles (`tj-footer-area`, `footer-grid`, `footer-brand`, `footer-nav`) | Not directly (bundled) |
+| `css/bundle.min.css` | The production stylesheet. Hand-assembled, not minified in practice (it starts with a readable "Prototype CSS (v2)" comment and `:root` tokens) | Every real page, with relative paths: `css/`, `../css/` (hubs), `../../css/` (posts) |
+| `css/style.css`, `css/style-v2.css`, `css/footer.css` | Source files that were manually merged into the bundle | No |
+| `css/sc-components.css` | Reusable component CSS from an earlier step | Only `preview-components.html` |
+| `css/home-enhancements.css` | Homepage hero, ticker and stat bar enhancements (added in the last commit) | Only `index.html` |
 
-Inline `<style>` blocks are used on individual pages for page-specific overrides: stat bar, impact cards, positioning block, mobile footer fixes on `index.html`; the entire results section and reading-card hover styles on `work.html`. This is the current pattern for page-level CSS.
+Existing tokens (in the bundle): `--text #0b1220`, `--muted-text #475569`, `--border #e5e7eb`, `--card #f8fafc`, `--radius 18px`, `--font-heading` and `--font-body` both Poppins. Brand green `#57c021` is hard-coded in many places rather than tokenised. **This palette is the opposite of the target identity** (ivory, charcoal, stone, terracotta), so the bundle's tokens and many hard-coded colours will need replacing.
 
-No CSS preprocessor or build tool is present. No Webpack, Vite, Sass, or PostCSS config. The bundle appears to have been assembled manually.
+Page-level CSS lives in inline `<style>` blocks (homepage stat bar, impact cards, skills cards, mobile footer overrides; the results section on `work.html`) and in many inline `style=""` attributes (the homepage skills cards are almost entirely inline).
 
 ---
 
@@ -93,58 +70,37 @@ No CSS preprocessor or build tool is present. No Webpack, Vite, Sass, or PostCSS
 
 | File | Purpose |
 |---|---|
-| `script.js` | Core: hamburger nav toggle, counter animation (`.stat-number`), portfolio lightbox, testimonial slider (`#testimonialsSlider`), dark-mode toggle, back-to-top, portfolio filter |
-| `antigravity.js` | Canvas-based particle swarm that follows the cursor on `.hero` sections |
-| `scroll-reveal.js` | IntersectionObserver: adds `.is-visible` to `.reveal` elements as they enter the viewport; 500 ms fallback |
-| `prototype.js` | Smooth anchor scroll; secondary reveal pass for legacy card selectors; accordion one-open-at-a-time |
-| `backToTop.js` | Standalone back-to-top handler (may overlap with `script.js`) |
-| `gsap.min.js` | GSAP animation library, vendored locally; no confirmed usage in current HTML |
+| `script.js` | Hamburger nav, `.stat-number` counters, portfolio lightbox and filter, testimonial slider, dark mode, back-to-top |
+| `antigravity.js` | Canvas particle swarm on `.hero` |
+| `scroll-reveal.js` | IntersectionObserver adding `.is-visible` to `.reveal` |
+| `prototype.js` | Smooth anchor scroll, secondary reveal pass, accordion |
+| `backToTop.js` | Possible overlap with `script.js` |
+| `gsap.min.js` | Vendored, no HTML page references it (dead weight) |
+| `home-enhancements.js` | Count-up for `.stat-figure` (homepage only) |
 
-Load order on `index.html` (end of body, no defer/async): `script.js` then `prototype.js` then `antigravity.js` then `scroll-reveal.js`.
-
-Load order on `work.html` (end of body): `scroll-reveal.js` then `script.js` then an inline filter script.
-
-No module bundler. No `package.json`. Pure vanilla JS.
+Homepage load order (end of body, no defer): `script.js`, `prototype.js`, `antigravity.js`, `scroll-reveal.js`, `home-enhancements.js`. Plain vanilla JS, no modules. Swiper (jsDelivr CDN CSS) is referenced on one page.
 
 ---
 
 ## 5. Images and fonts
 
-### Fonts
+**Fonts.** Poppins from Google Fonts CDN on every page, with three different weight sets: `400;700;900` (30 pages), `400;600;700;800;900` (7), `400;500;600;700;800;900` (2). No self-hosted fonts, no `/fonts` folder. `preconnect` is missing on `about.html`, `contact.html`, the scratch pages and many posts. Font Awesome comes from cdnjs, version 6.0.0 on 44 references and 6.4.0 on 7. The homepage and `work.html` lazy-load it (`media="print" onload`), other pages load it synchronously.
 
-- Poppins (Google Fonts CDN) is loaded on every page via `<link href="https://fonts.googleapis.com/css2?family=Poppins:...">`.
-- `index.html` and `work.html` use `<link rel="preconnect">` to `fonts.googleapis.com` and `fonts.gstatic.com` before the font link. `about.html` omits the preconnect.
-- Font Awesome 6.0.0 (cdnjs CDN) is used for icons. `index.html` and `work.html` use the print-media lazy-load pattern (`media="print" onload="this.media='all'"`) with a `<noscript>` fallback. `about.html` loads Font Awesome synchronously without the lazy-load pattern.
-
-### Images
-
-- Stored in `/images/` (102 files) and `/images/blog-images/`.
-- Format strategy: `.webp` files exist alongside `.jpg` and `.png` originals. Pages reference `.webp` where available (logo strips, hero, portfolio cards).
-- Hero image on homepage: `images/test_shalini.jpg` (LCP candidate) is preloaded via `<link rel="preload" as="image">` in `index.html`.
-- Logo: `images/logo-image.webp` used in nav across all pages.
-- Favicon: `images/android-icon-36x36.png` (apple-touch-icon and shortcut icon).
-- Below-fold images use `loading="lazy"`.
-- Testimonial author images: `images/Leighann.png`, `images/Krys.jpeg`, `images/Mayur.jpeg`, `images/Juhi.jpeg`.
-- A video file (`images/shalini team meet.mp4`) is present and used on `about.html`.
-- CV PDF: `images/Shalinicv.pdf` (disallowed in `robots.txt`).
+**Images.** `/images/` holds webp alongside jpg/png originals, plus `blog-images/`. Homepage hero portrait is `images/test_shalini.jpg` (preloaded as the LCP image). Logo is `images/logo-image.webp`; favicon is `images/android-icon-36x36.png`. Logo strip uses `logo1.webp` and `test_logo2/5/6.png`. Below-fold images use `loading="lazy"`. `images/shalini team meet.mp4` (2.4 MB) exists. **CV: `images/Shalinicv.pdf`** (blocked for crawlers by `robots.txt`; the homepage "Download CV" link points here and must keep that path).
 
 ---
 
-## 6. JSON-LD structured data
+## 6. JSON-LD
 
-### index.html
-
-- **ProfilePage** wrapping a **Person** entity (`@id: https://shalinichoudhary.in/#person`) with `name`, `url`, `jobTitle`, `description`, `image`, `email`, `sameAs` (LinkedIn, Twitter, Medium, Crunchbase, Wikidata), `alumniOf` (Leeds, HJU), `worksFor` (GUS Global), `knowsAbout` (20 topics), and an inline `review` array (Leighann Follis, Krzysztof Saganski).
-- **WebSite** entity with `name`, `url`, `description`, `author` referencing `#person`.
-
-### about.html
-
-- **ProfilePage** wrapping **Person** (same `@id`): same fields but a slightly different `description`; different `review` authors (Mayur Sharma, Dr. Juuhi Rai).
-
-### Other pages
-
-- `work.html` has no JSON-LD in the inspected markup.
-- Service pages and blog posts were not individually inspected for schema.
+| Page | Blocks | Types |
+|---|---|---|
+| `index.html` | 2 | ProfilePage > Person (`@id #person`, `worksFor` GUS Global, `alumniOf`, `knowsAbout`, `review` x2), WebSite |
+| `about.html` | 2 | ProfilePage > Person, FAQPage (Question/Answer), Organization, Review |
+| `blogs.html` | 1 | ProfilePage > Person |
+| Four service pages | 1 each | BreadcrumbList only |
+| `work.html`, `contact.html` | 0 | none |
+| Blog posts | 28 of 50 | BlogPosting, WebPage, SpeakableSpecification, Person, Organization, ImageObject, BreadcrumbList |
+| Other 22 posts | 0 | none (also have no nav or footer, see section 9) |
 
 ---
 
@@ -156,118 +112,62 @@ Allow: /
 Disallow: /*.pdf$
 Disallow: /temp_cards.html
 Disallow: /generated_cards.html
+Disallow: /preview-components.html
 
 Sitemap: https://shalinichoudhary.in/sitemap.xml
 ```
-
-All canonical HTML pages are crawlable. PDFs are blocked (covers `images/Shalinicv.pdf`). Two scratch HTML files are blocked.
 
 ---
 
 ## 8. sitemap.xml
 
-49 URLs total: 14 top-level pages (priority 1.00 or 0.80) and 35 blog-post URLs (priority 0.64).
+**41 URLs** (the earlier audit said 49, which was wrong): 9 top-level pages plus 32 blog URLs. It is generated by `generate_sitemap.py` (comment in the file says "dynamically generated"). lastmod values are all between 2026-07-28 and 2026-07-29, so they pre-date recent edits.
 
-Top-level pages included:
+Top-level: `/`, `/about.html`, `/blogs.html`, `/contact.html`, `/work.html`, and the four service pages.
 
-- `/` (priority 1.00)
-- `/about.html`, `/blogs.html`, `/contact.html`, `/work.html` (0.80)
-- `/blogs/ai-search.html`, `/blogs/analytics-measurement.html`, `/blogs/conversion-performance.html`, `/blogs/growth-strategy.html`, `/blogs/seo-strategy.html` (0.80)
-- `/conversion-optimisation-strategy.html`, `/growth-marketing-strategy.html`, `/marketing-analytics-ga4-consultant.html`, `/seo-strategy-consultant.html` (0.80)
+**Not in the sitemap but live on disk (27 files):** 4 category hubs (`blogs/google-analytics.html`, `blogs/seo-industry.html`, `blogs/seo-tips.html`, `blogs/strategy.html`) and 23 posts, concentrated in `google-analytics/`, `seo-industry/`, `seo-tips/` and `strategy/`. Several are among the 22 posts with no nav or footer. These URLs must be preserved as they are; this is flagged only. Nothing in the sitemap points to a missing file.
 
-Last-modified dates range from `2026-07-28` to `2026-07-30`. All URLs use `https://shalinichoudhary.in/` as the base.
+Canonicals: every real page has a self-referencing `https://shalinichoudhary.in/...` canonical. Only the three scratch pages lack one.
 
 ---
 
-## 9. Nav markup (hand-duplicated across pages)
+## 9. Nav and footer markup
 
-Nav is duplicated in every HTML file. No templating engine or server-side includes. Structure is identical across all pages:
+**Nav.** One identical block (`<header class="site-header">` > `.site-header-inner` > logo, `.menu-toggle`, `<nav class="site-nav" id="main-navigation">` with Work, SEO Strategy, Growth Strategy, About, Blog, and a "Get in touch" `.cta-button.small-btn`). Verified byte-identical across all 9 top-level pages. Inconsistency: `blogs.html` and `contact.html` links have no leading slash, the rest do. 28 blog posts share a second variant. **22 blog posts have no `site-nav` and no `tj-footer-area` at all.**
 
-```html
-<header class="site-header">
-  <div class="site-header-inner">
-    <a href="/" class="brand" aria-label="Go to homepage">
-      <img src="images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
-    </a>
-    <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
-      <span class="hamburger"></span>
-    </button>
-    <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-      <a href="/work.html">Work</a>
-      <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-      <a href="/growth-marketing-strategy.html">Growth Strategy</a>
-      <a href="/about.html">About</a>
-      <a href="blogs.html">Blog</a>
-      <a href="contact.html" class="cta-button small-btn">Get in touch</a>
-    </nav>
-  </div>
-</header>
-```
-
-Note: `blogs.html` and `contact.html` links use relative paths (no leading `/`), while other nav links use root-relative paths (with leading `/`). This is an existing inconsistency.
+**Footer.** `<footer class="tj-footer-area">` with `.footer-grid` (brand/kicker/h2/CTA, one or two `.footer-links` columns, `.footer-contact` with LinkedIn, Twitter and email) and `.footer-meta` copyright. The kicker and headline copy varies by page. Hand-duplicated everywhere; `update_nav.py` is the existing pattern for bulk edits.
 
 ---
 
-## 10. Footer markup (hand-duplicated across pages)
+## 10. llms.txt
 
-Footer is also duplicated in every HTML file. The tagline copy varies slightly page to page. Core structure:
-
-```html
-<footer class="tj-footer-area">
-  <div class="footer-content footer-grid">
-    <div class="footer-brand">
-      <span class="footer-kicker">...</span>
-      <h2>...</h2>
-      <p class="footer-small">...</p>
-      <a class="cta-button footer-cta-button" href="...">Get in touch</a>
-    </div>
-    <div class="footer-links"> <!-- Services or Explore nav --> </div>
-    <div class="footer-links"> <!-- Explore nav (homepage only) --> </div>
-    <div class="footer-contact">
-      <!-- Social: LinkedIn, Twitter -->
-      <!-- Email link -->
-    </div>
-  </div>
-  <div class="footer-meta">
-    <p class="copyright">2026 All rights reserved by Shalini Choudhary</p>
-  </div>
-</footer>
-```
-
-`index.html` footer has two `footer-links` columns (Services and Explore). `work.html` footer has one (Explore only). Footer is styled by `footer.css` (bundled) plus page-level `<style>` blocks for mobile alignment overrides.
+Present at `/llms.txt`, not blocked. It contains the identity summary and absolute URLs. It repeats "8+" and MSc wording that the proof-points file corrects.
 
 ---
 
-## 11. llms.txt
+## 11. Copy that conflicts with `proof-points.md` (found, not yet changed)
 
-Present at `/llms.txt`. Contains a structured plain-text summary of the site for LLM consumption: identity, key pages, service pages, and all blog posts with absolute URLs. Not disallowed by robots.txt.
-
----
-
-## 12. Python helper scripts (not deployed)
-
-| Script | Purpose |
+| Issue | Where |
 |---|---|
-| `generate_blog2.py`, `generate_blog3.py` | Blog HTML generation |
-| `generate_sitemap.py` | Sitemap generation |
-| `generate_cards.py`, `inject_cards.py` | Blog card HTML generation |
-| `update_blogs.py` | Blog content update utility |
-| `update_nav.py` | Nav update utility |
-| `fix_links.py` | Link correction utility |
-| `debug_regex.py` | Regex debugging helper |
-| `replace_featured.py` | Featured content replacement |
-| `resize_images.py` | Image resize utility |
+| "Senior SEO Manager · GUS" (present tense) | `index.html` line 486, the portrait chip **I added in the previous step. This was my error and needs fixing** |
+| "8+" years | `index.html` title/meta/JSON-LD/stat bar, `blogs.html`, `llms.txt`, and "8+ years" in 28 blog posts |
+| "eight years" | `index.html`, `about.html`, 2 blog posts (one is the post URL `what-eight-years-in-marketing-actually-taught-me-about-strategy.html`, so its slug must be kept) |
+| Present-tense job claims | `worksFor: GUS Global` in JSON-LD on `index`, `about`, `blogs`; "Senior SEO Manager" as `jobTitle`, title tag and H1-adjacent copy (employment ended Sep 2025) |
+| Em dashes in copy | `index`, `about`, `work`, `blogs`, `seo-strategy-consultant`, `growth-marketing-strategy`, `llms.txt`, and 11 blog posts |
+| MSc status wording | `about.html`, `blogs.html`, `llms.txt` mention the MSc; each needs a read to confirm it is not framed as in progress |
+| Hero line | Currently "Fluent in search &amp; growth. Native to revenue." Matches the required line |
+| Homepage stat figures | 65% and 50-60K match the file; "8+" does not |
 
 ---
 
-## 13. Key observations for the revamp
+## 12. Observations and risks for the revamp
 
-1. **No build tool.** CSS is bundled manually; JS is loaded as separate end-of-body scripts. No `package.json`.
-2. **Nav and footer are hand-duplicated** across every HTML file. Changes must be applied to all files individually or via the `update_nav.py` script pattern.
-3. **Inline `<style>` blocks** on individual pages carry significant page-specific CSS; rationalising these into the bundle will be needed if the design system is standardised.
-4. **`gsap.min.js`** is present but usage is unconfirmed in current templates; may be a legacy inclusion.
-5. **Font Awesome loading is inconsistent**: lazy-loaded on `index.html` and `work.html`, synchronous on `about.html`.
-6. **`worksFor` in JSON-LD** still points to `GUS Global`. This should be reviewed given the Sep 2025 end date from the proof-points file.
-7. **Stat bar on homepage** shows "8+" years. The proof-points file uses "Since 2016" rather than a years figure; these will need aligning in a later revamp step.
-8. **`work.html` has no JSON-LD** — a structured data gap on a high-value page.
-9. **Blog category stub files** (`blogs/ai-search.html` etc.) are 687-747 bytes each, likely thin redirect or placeholder pages.
+1. **No build step.** All changes are hand-edited HTML/CSS/JS, deployed as-is. Nav and footer edits need a scripted bulk replace across 59+12 files.
+2. **Palette change is large.** Green `#57c021` and navy `#0b1220` are hard-coded widely; moving to ivory, charcoal and terracotta means a token layer plus sweeping the bundle and inline styles.
+3. **Contrast.** Terracotta `#A65F43` on ivory is about 4.3:1, so small text must use `#8F4F36`, per the file.
+4. **Sitemap gap.** About 27 live files are absent from the sitemap, and lastmod dates are stale. Adding entries changes the sitemap, so only do it if you approve.
+5. **22 posts without nav, footer or JSON-LD** are likely older or orphaned pages; a standardising pass would need your sign-off.
+6. **Dead code:** `gsap.min.js`, `unused_assets/`, scratch HTML files and Python helpers are all publicly deployed.
+7. **Relative asset paths** differ by depth (`css/`, `../css/`, `../../css/`); any new shared asset must be linked with the right prefix per level.
+8. **`worksFor` and `jobTitle` JSON-LD** are out of date relative to the Sep 2025 end date.
+9. The scroll `.reveal` animation depends on JS; content is hidden if `scroll-reveal.js` fails (it has a 500 ms fallback).
