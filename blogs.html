@@ -97,7 +97,7 @@
             padding-bottom: 2rem;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+            scrollbar-color: color-mix(in srgb, var(--surface) 20%, transparent) transparent;
         }
 
         .categories-carousel::-webkit-scrollbar {
@@ -109,15 +109,15 @@
         }
 
         .categories-carousel::-webkit-scrollbar-thumb {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: color-mix(in srgb, var(--surface) 20%, transparent);
             border-radius: 10px;
         }
 
         .category-carousel-card {
             flex: 0 0 280px;
             scroll-snap-align: start;
-            background: linear-gradient(145deg, rgba(35, 35, 40, 0.6), rgba(20, 20, 25, 0.8));
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: linear-gradient(145deg, color-mix(in srgb, var(--charcoal) 60%, transparent), color-mix(in srgb, var(--charcoal) 80%, transparent));
+            border: 1px solid color-mix(in srgb, var(--hairline) 5%, transparent);
             border-radius: 20px;
             padding: 2.5rem 2rem;
             display: flex;
@@ -136,15 +136,15 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            background: linear-gradient(45deg, transparent, color-mix(in srgb, var(--surface) 3%, transparent), transparent);
             transform: translateX(-100%);
             transition: transform 0.6s ease;
         }
 
         .category-carousel-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--charcoal) 30%, transparent);
+            border-color: color-mix(in srgb, var(--hairline) 15%, transparent);
         }
 
         .category-carousel-card:hover::before {
@@ -155,31 +155,31 @@
             width: 54px;
             height: 54px;
             border-radius: 14px;
-            background: rgba(255, 255, 255, 0.04);
+            background: color-mix(in srgb, var(--surface) 4%, transparent);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--ivory);
+            border: 1px solid color-mix(in srgb, var(--hairline) 8%, transparent);
             transition: background 0.3s ease;
         }
 
         .category-carousel-card:hover .category-card-icon {
-            background: rgba(255, 255, 255, 0.08);
+            background: color-mix(in srgb, var(--surface) 8%, transparent);
         }
 
         .category-card-content h3 {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #fff;
+            color: var(--ivory);
             margin-bottom: 0.5rem;
             line-height: 1.2;
         }
 
         .category-card-content p {
             font-size: 0.95rem;
-            color: #a1a1aa;
+            color: var(--stone);
             line-height: 1.5;
             margin: 0;
             font-family: 'Poppins', sans-serif;
@@ -206,19 +206,19 @@
         }
         .category-carousel-card:hover {
             transform: translateY(-6px) !important;
-            border-color: #57c021 !important;
-            box-shadow: 0 15px 30px rgba(87, 192, 33, 0.15) !important;
+            border-color: var(--terracotta) !important;
+            box-shadow: 0 15px 30px color-mix(in srgb, var(--terracotta) 15%, transparent) !important;
         }
         .category-carousel-card:hover .category-card-icon {
-            border-color: #57c021 !important;
-            color: #57c021 !important;
-            background: rgba(87, 192, 33, 0.08) !important;
+            border-color: var(--terracotta) !important;
+            color: var(--terracotta-deep) !important;
+            background: color-mix(in srgb, var(--terracotta) 8%, transparent) !important;
         }
         .category-carousel-card h3 {
             transition: color 0.3s ease !important;
         }
         .category-carousel-card:hover h3 {
-            color: #57c021 !important;
+            color: var(--terracotta-deep) !important;
         }
 
         .blog-card {
@@ -227,11 +227,11 @@
         }
         .blog-card:hover {
             transform: translateY(-5px) !important;
-            border-color: #57c021 !important;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+            border-color: var(--terracotta) !important;
+            box-shadow: 0 10px 25px color-mix(in srgb, var(--charcoal) 15%, transparent) !important;
         }
         .blog-card:hover .blog-card-read {
-            color: #57c021 !important;
+            color: var(--terracotta-deep) !important;
         }
         .blog-card-read i {
             transition: transform 0.3s ease !important;
@@ -245,7 +245,7 @@
         }
         .featured-card:hover {
             transform: translateY(-4px) !important;
-            border-color: #57c021 !important;
+            border-color: var(--terracotta) !important;
         }
 
         /* ── Let's Talk CTA Alignment Fix ── */
@@ -310,14 +310,14 @@
         /* ── Category Pills Green Override ── */
         .category-pill:hover,
         .category-pill:focus-visible {
-            background: #57c021 !important;
-            border-color: #57c021 !important;
-            color: #ffffff !important;
+            background: var(--terracotta) !important;
+            border-color: var(--terracotta) !important;
+            color: var(--ivory) !important;
         }
         .category-pill.is-active {
-            background: #57c021 !important;
-            border-color: #57c021 !important;
-            color: #ffffff !important;
+            background: var(--terracotta) !important;
+            border-color: var(--terracotta) !important;
+            color: var(--ivory) !important;
         }
 
         /* ── Blog Card Hover Spotlight Glow ── */
@@ -330,8 +330,8 @@
             inset: 0;
             border-radius: 22px;
             padding: 1.5px;
-            background: linear-gradient(135deg, rgba(87, 192, 33, 0.45), transparent 60%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            background: linear-gradient(135deg, color-mix(in srgb, var(--terracotta) 45%, transparent), transparent 60%);
+            -webkit-mask: linear-gradient(var(--surface) 0 0) content-box, linear-gradient(var(--surface) 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             opacity: 0;
@@ -1902,12 +1902,12 @@
         <!-- NEW: Medium RSS Feed Section -->
         <section id="medium-articles" class="section-wrapper" style="padding: 1.5rem 1.5rem; background: var(--card);">
             <div style="max-width: 900px; margin: 0 auto 2rem auto; text-align: center;">
-                <div style="width: 36px; height: 36px; margin: 0 auto 12px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.08); color: rgba(0, 0, 0, 0.6); font-size: 0.9rem;">
+                <div style="width: 36px; height: 36px; margin: 0 auto 12px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--charcoal) 8%, transparent); color: color-mix(in srgb, var(--charcoal) 60%, transparent); font-size: 0.9rem;">
                     <i class="fab fa-medium-m"></i>
                 </div>
                 <span class="eyebrow" style="margin-bottom: 12px; display: inline-block; letter-spacing: 2px;">PUBLISHED ON MEDIUM</span>
-                <h2 style="font-size: 1.9rem; font-weight: 700; color: var(--heading-color, #111827); margin-bottom: 0.5rem; text-align: center;">Latest articles</h2>
-                <p style="color: var(--text-color, #475569); font-size: 1rem; margin-top: 0; line-height: 1.5; text-align: center;">Additional insights and case thoughts shared on Medium.</p>
+                <h2 style="font-size: 1.9rem; font-weight: 700; color: var(--heading-color, var(--charcoal)); margin-bottom: 0.5rem; text-align: center;">Latest articles</h2>
+                <p style="color: var(--text-color, var(--ink-soft)); font-size: 1rem; margin-top: 0; line-height: 1.5; text-align: center;">Additional insights and case thoughts shared on Medium.</p>
             </div>
 
             <div style="max-width: 900px; margin: 0 auto; padding: 0;">

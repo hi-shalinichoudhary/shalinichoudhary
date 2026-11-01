@@ -27,12 +27,12 @@
             text-align: left;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            border: 1px solid #eaeaea;
+            box-shadow: 0 4px 15px color-mix(in srgb, var(--charcoal) 5%, transparent);
+            border: 1px solid var(--hairline);
         }
         .comparison-table th {
-            background-color: #1e293b;
-            color: #ffffff;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             font-weight: 600;
             padding: 14px 18px;
             text-transform: uppercase;
@@ -41,18 +41,18 @@
         }
         .comparison-table td {
             padding: 14px 18px;
-            border-bottom: 1px solid #f1f5f9;
-            color: #334155;
+            border-bottom: 1px solid var(--hairline);
+            color: var(--ink-soft);
             line-height: 1.5;
         }
         .comparison-table tr:last-child td {
             border-bottom: none;
         }
         .comparison-table tr:nth-child(even) {
-            background-color: #f8fafc;
+            background-color: var(--surface);
         }
         .comparison-table td strong {
-            color: #0f172a;
+            color: var(--charcoal);
         }
     </style>
 
@@ -162,11 +162,11 @@
 </header>
     <main class="site-content">
 
-            <nav aria-label="Breadcrumb" style="max-width: 1100px; margin: 0 auto; padding: 15px 20px 0 20px; font-size: 0.85rem; color: var(--muted-text, #64748b);">
+            <nav aria-label="Breadcrumb" style="max-width: 1100px; margin: 0 auto; padding: 15px 20px 0 20px; font-size: 0.85rem; color: var(--muted-text, var(--ink-soft));">
                 <a href="/" style="color: inherit; text-decoration: none;">Home</a> &nbsp;/&nbsp;
                 <a href="../../blogs.html" style="color: inherit; text-decoration: none;">Blog</a> &nbsp;/&nbsp;
                 <a href="/blogs/ai-search.html" style="color: inherit; text-decoration: none;">AI Search</a> &nbsp;/&nbsp;
-                <span style="color: var(--text-color, #1e293b); font-weight: 500;">The Invisible Layer: Building a Website That AI Actually Wants to Crawl</span>
+                <span style="color: var(--text-color, var(--charcoal)); font-weight: 500;">The Invisible Layer: Building a Website That AI Actually Wants to Crawl</span>
             </nav>
         <article class="section-wrapper" style="border-top: none; padding-top: 40px;">
             <div class="post-header-text">
@@ -217,7 +217,7 @@
 
                         <p>We've moved past optimising for human browsers and standard search indexers. There's a third layer now, the raw access points that feed real-time LLM answers. If your site makes an AI engine work too hard to extract a basic fact, it doesn't complain or retry. It just pulls from a competitor who made it easy.</p>
 
-                        <div style="background-color: #f8fafc; padding: 24px; border-left: 4px solid #333; font-weight: 600; margin: 30px 0; font-size: 1.1rem; border-radius: 0 4px 4px 0;">
+                        <div style="background-color: var(--surface); padding: 24px; border-left: 4px solid var(--charcoal); font-weight: 600; margin: 30px 0; font-size: 1.1rem; border-radius: 0 4px 4px 0;">
                             Enterprise websites optimise for AI crawlers by enabling clean text accessibility and deploying an llms.txt file at the root directory. This means selectively whitelisting real-time retrieval agents like OAI-SearchBot and Claude-Web in security firewalls, structuring data in markdown-friendly table layouts, and using clear JSON-LD schema to reduce the risk of LLM hallucination during live search queries.
                         </div>
 
@@ -287,33 +287,33 @@
 
                         <p>The sites that figure this out early aren't going to look clever in hindsight. They're just going to have a head start that quietly compounds.</p>
 
-                        <div class="related-services-links" style="margin-top: 40px; padding: 24px; background: #f8fafc; border-left: 4px solid #333; border-radius: 4px;">
+                        <div class="related-services-links" style="margin-top: 40px; padding: 24px; background: var(--surface); border-left: 4px solid var(--charcoal); border-radius: 4px;">
                             <h4 style="margin-top: 0; font-size: 1.1rem;">Explore how I drive growth:</h4>
-                            <p style="margin-bottom: 0; color: #475569;">Learn more about my <a href="/seo-strategy-consultant.html" style="font-weight: 600; text-decoration: underline;">SEO Strategy</a> and <a href="/growth-marketing-strategy.html" style="font-weight: 600; text-decoration: underline;">Growth Marketing Strategy</a> services.</p>
+                            <p style="margin-bottom: 0; color: var(--ink-soft);">Learn more about my <a href="/seo-strategy-consultant.html" style="font-weight: 600; text-decoration: underline;">SEO Strategy</a> and <a href="/growth-marketing-strategy.html" style="font-weight: 600; text-decoration: underline;">Growth Marketing Strategy</a> services.</p>
                         </div>
 
                     </div>
                     
-                        <div class="related-posts-block" style="margin-top: 50px; padding: 28px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;">
-                            <h3 style="margin-top: 0; font-size: 1.2rem; font-weight: 700; color: #0f172a; margin-bottom: 16px;">Related Reading in AI Search</h3>
+                        <div class="related-posts-block" style="margin-top: 50px; padding: 28px; background: var(--surface); border: 1px solid var(--hairline); border-radius: 8px;">
+                            <h3 style="margin-top: 0; font-size: 1.2rem; font-weight: 700; color: var(--charcoal); margin-bottom: 16px;">Related Reading in AI Search</h3>
                             <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px;">
                                 <li>
-                                    <a href="../ai-search/aeo-vs-seo-what-changes-and-what-stays.html" style="font-size: 0.95rem; font-weight: 600; color: #2563eb; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                                    <a href="../ai-search/aeo-vs-seo-what-changes-and-what-stays.html" style="font-size: 0.95rem; font-weight: 600; color: var(--terracotta-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                                         <span>→</span> AEO vs SEO: What Changes and What Stays
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../ai-search/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html" style="font-size: 0.95rem; font-weight: 600; color: #2563eb; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                                    <a href="../ai-search/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html" style="font-size: 0.95rem; font-weight: 600; color: var(--terracotta-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                                         <span>→</span> Beyond Backlinks: The Expanding Landscape of SEO Factors in 2026
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="../ai-search/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html" style="font-size: 0.95rem; font-weight: 600; color: #2563eb; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                                    <a href="../ai-search/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html" style="font-size: 0.95rem; font-weight: 600; color: var(--terracotta-deep); text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
                                         <span>→</span> Demystifying E-A-T: Expertise, Authoritativeness, and Trustworthiness in 2026
                                     </a>
                                 </li>
-                                <li style="border-top: 1px solid #e2e8f0; padding-top: 12px; margin-top: 4px;">
-                                    <a href="/seo-strategy-consultant.html" style="font-size: 0.9rem; font-weight: 700; color: #0f172a; text-decoration: underline;">
+                                <li style="border-top: 1px solid var(--hairline); padding-top: 12px; margin-top: 4px;">
+                                    <a href="/seo-strategy-consultant.html" style="font-size: 0.9rem; font-weight: 700; color: var(--charcoal); text-decoration: underline;">
                                         Explore Service: SEO Strategy →
                                     </a>
                                 </li>

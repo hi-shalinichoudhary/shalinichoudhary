@@ -12,7 +12,7 @@
   inset: -20% -10% auto auto;
   width: 640px;
   height: 640px;
-  background: radial-gradient(circle at center, rgba(87, 192, 33, 0.18), transparent 65%);
+  background: radial-gradient(circle at center, color-mix(in srgb, var(--terracotta) 18%, transparent), transparent 65%);
   filter: blur(20px);
   z-index: -1;
   pointer-events: none;
@@ -24,7 +24,7 @@
   inset: auto auto -25% -10%;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.12), transparent 65%);
+  background: radial-gradient(circle at center, color-mix(in srgb, var(--terracotta) 12%, transparent), transparent 65%);
   filter: blur(24px);
   z-index: -1;
   pointer-events: none;
@@ -45,8 +45,8 @@
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  border: 1px solid rgba(87, 192, 33, 0.35);
-  background: rgba(87, 192, 33, 0.08);
+  border: 1px solid color-mix(in srgb, var(--terracotta) 35%, transparent);
+  background: color-mix(in srgb, var(--terracotta) 8%, transparent);
   border-radius: 999px;
 }
 .status-dot {
@@ -54,14 +54,14 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #57c021;
+  background: var(--terracotta);
 }
 .status-dot::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background: #57c021;
+  background: var(--terracotta);
   animation: statusPulse 2s ease-out infinite;
 }
 @keyframes statusPulse {
@@ -71,18 +71,18 @@
 
 /* ── Accent headline words ───────────────────── */
 .hero-title .accent {
-  background: linear-gradient(100deg, #57c021 0%, #2f9e44 45%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-synthesis: none;
+  color: var(--terracotta);
 }
 
 /* ── Portrait card ───────────────────────────── */
 .hero-photo {
   position: relative;
   border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(11, 18, 32, 0.22), 0 0 0 1px rgba(11, 18, 32, 0.06);
+  box-shadow: 0 30px 60px color-mix(in srgb, var(--charcoal) 22%, transparent), 0 0 0 1px color-mix(in srgb, var(--charcoal) 6%, transparent);
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
 }
 .hero-photo::before {
@@ -91,15 +91,15 @@
   inset: -2px;
   border-radius: 26px;
   padding: 2px;
-  background: linear-gradient(145deg, rgba(87, 192, 33, 0.7), transparent 55%, rgba(59, 130, 246, 0.5));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--terracotta) 70%, transparent), transparent 55%, color-mix(in srgb, var(--terracotta) 50%, transparent));
+  -webkit-mask: linear-gradient(var(--surface) 0 0) content-box, linear-gradient(var(--surface) 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
 }
 .hero-photo:hover {
   transform: translateY(-6px) rotate(-0.6deg);
-  box-shadow: 0 40px 80px rgba(11, 18, 32, 0.28), 0 0 0 1px rgba(87, 192, 33, 0.3);
+  box-shadow: 0 40px 80px color-mix(in srgb, var(--charcoal) 28%, transparent), 0 0 0 1px color-mix(in srgb, var(--terracotta) 30%, transparent);
 }
 .hero-photo img {
   border-radius: 24px;
@@ -115,14 +115,14 @@
   gap: 2px;
   padding: 10px 14px;
   border-radius: 14px;
-  background: rgba(11, 18, 32, 0.62);
+  background: color-mix(in srgb, var(--charcoal) 80%, transparent);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #fff;
+  border: 1px solid color-mix(in srgb, var(--stone) 40%, transparent);
+  color: var(--ivory);
 }
 .portrait-chip strong { font-size: 0.85rem; font-weight: 700; }
-.portrait-chip small  { font-size: 0.72rem; color: rgba(255, 255, 255, 0.7); }
+.portrait-chip small  { font-size: 0.72rem; color: color-mix(in srgb, var(--ivory) 70%, transparent); }
 
 /* ── Download CV button ──────────────────────── */
 .button-download {
@@ -135,12 +135,12 @@
   text-decoration: none;
   color: inherit;
   border-radius: 999px;
-  border: 1px dashed rgba(87, 192, 33, 0.7);
+  border: 1px dashed color-mix(in srgb, var(--terracotta) 70%, transparent);
   transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
 }
 .button-download span { transition: transform 0.3s ease; }
 .button-download:hover {
-  background: rgba(87, 192, 33, 0.12);
+  background: color-mix(in srgb, var(--terracotta) 12%, transparent);
   transform: translateY(-2px);
 }
 .button-download:hover span { transform: translateY(3px); }
@@ -149,11 +149,11 @@
 .ticker {
   overflow: hidden;
   padding: 16px 0;
-  background: #060b16;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  background: var(--charcoal);
+  border-top: 1px solid color-mix(in srgb, var(--stone) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--stone) 30%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, var(--charcoal) 8%, var(--charcoal) 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, var(--charcoal) 8%, var(--charcoal) 92%, transparent);
 }
 .ticker-track {
   display: flex;
@@ -167,12 +167,12 @@
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: color-mix(in srgb, var(--ivory) 70%, transparent);
   white-space: nowrap;
 }
 .ticker-group i {
   font-style: normal;
-  color: #57c021;
+  color: var(--terracotta);
   margin: 0 28px;
 }
 @keyframes tickerScroll {
@@ -183,18 +183,18 @@
 .stat-bar {
   position: relative;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(87, 192, 33, 0.12), transparent 60%),
-    #0b1220;
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--terracotta) 12%, transparent), transparent 60%),
+    var(--charcoal);
 }
 .stat-figure {
   font-variant-numeric: tabular-nums;
-  background: linear-gradient(180deg, #fff 30%, rgba(255, 255, 255, 0.65));
+  background: linear-gradient(180deg, var(--surface) 30%, color-mix(in srgb, var(--surface) 65%, transparent));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .stat-item:hover .stat-figure {
-  -webkit-text-fill-color: #57c021;
+  -webkit-text-fill-color: var(--terracotta);
 }
 
 /* ── Motion preferences ──────────────────────── */
