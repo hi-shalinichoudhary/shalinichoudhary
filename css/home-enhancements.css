@@ -1,0 +1,207 @@
+/* Homepage visual enhancements (hero, stats, ticker). Font: Poppins (unchanged). */
+
+/* ── Hero atmosphere ─────────────────────────── */
+#intro.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+#intro.hero::before {
+  content: '';
+  position: absolute;
+  inset: -20% -10% auto auto;
+  width: 640px;
+  height: 640px;
+  background: radial-gradient(circle at center, rgba(87, 192, 33, 0.18), transparent 65%);
+  filter: blur(20px);
+  z-index: -1;
+  pointer-events: none;
+  animation: heroGlow 9s ease-in-out infinite alternate;
+}
+#intro.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto auto -25% -10%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.12), transparent 65%);
+  filter: blur(24px);
+  z-index: -1;
+  pointer-events: none;
+  animation: heroGlow 11s ease-in-out infinite alternate-reverse;
+}
+@keyframes heroGlow {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-30px, 24px) scale(1.12); }
+}
+
+/* ── Status pill ─────────────────────────────── */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 14px;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(87, 192, 33, 0.35);
+  background: rgba(87, 192, 33, 0.08);
+  border-radius: 999px;
+}
+.status-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #57c021;
+}
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #57c021;
+  animation: statusPulse 2s ease-out infinite;
+}
+@keyframes statusPulse {
+  0%   { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+
+/* ── Accent headline words ───────────────────── */
+.hero-title .accent {
+  background: linear-gradient(100deg, #57c021 0%, #2f9e44 45%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ── Portrait card ───────────────────────────── */
+.hero-photo {
+  position: relative;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(11, 18, 32, 0.22), 0 0 0 1px rgba(11, 18, 32, 0.06);
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.5s ease;
+}
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  padding: 2px;
+  background: linear-gradient(145deg, rgba(87, 192, 33, 0.7), transparent 55%, rgba(59, 130, 246, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.hero-photo:hover {
+  transform: translateY(-6px) rotate(-0.6deg);
+  box-shadow: 0 40px 80px rgba(11, 18, 32, 0.28), 0 0 0 1px rgba(87, 192, 33, 0.3);
+}
+.hero-photo img {
+  border-radius: 24px;
+  display: block;
+}
+.portrait-chip {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(11, 18, 32, 0.62);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+.portrait-chip strong { font-size: 0.85rem; font-weight: 700; }
+.portrait-chip small  { font-size: 0.72rem; color: rgba(255, 255, 255, 0.7); }
+
+/* ── Download CV button ──────────────────────── */
+.button-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 999px;
+  border: 1px dashed rgba(87, 192, 33, 0.7);
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+.button-download span { transition: transform 0.3s ease; }
+.button-download:hover {
+  background: rgba(87, 192, 33, 0.12);
+  transform: translateY(-2px);
+}
+.button-download:hover span { transform: translateY(3px); }
+
+/* ── Ticker ──────────────────────────────────── */
+.ticker {
+  overflow: hidden;
+  padding: 16px 0;
+  background: #060b16;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerScroll 38s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-group { display: flex; align-items: center; flex-shrink: 0; }
+.ticker-group span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+.ticker-group i {
+  font-style: normal;
+  color: #57c021;
+  margin: 0 28px;
+}
+@keyframes tickerScroll {
+  to { transform: translateX(-50%); }
+}
+
+/* ── Stats bar upgrade ───────────────────────── */
+.stat-bar {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(87, 192, 33, 0.12), transparent 60%),
+    #0b1220;
+}
+.stat-figure {
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, #fff 30%, rgba(255, 255, 255, 0.65));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.stat-item:hover .stat-figure {
+  -webkit-text-fill-color: #57c021;
+}
+
+/* ── Motion preferences ──────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  #intro.hero::before,
+  #intro.hero::after,
+  .status-dot::after,
+  .ticker-track { animation: none; }
+  .hero-photo, .hero-photo:hover { transform: none; transition: none; }
+}
