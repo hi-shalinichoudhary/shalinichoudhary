@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact - Shalini Choudhary | Let's Collaborate</title>
     <meta name="description"
         content="Get in touch with Shalini Choudhary for SEO consulting, audits, and social impact projects.">
@@ -13,9 +13,10 @@
     <link rel="apple-touch-icon" href="images/android-icon-36x36.png">
     <link rel="shortcut icon" type="image/png" href="images/android-icon-36x36.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/bundle.min.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
@@ -170,16 +171,16 @@
         <section class="section contact">
             <div class="contact-header">
                 <span class="sc-label">01 / GET IN TOUCH</span>
-                <h2>Let’s Talk <em>Growth</em></h2>
+                <h1 class="hero-title" style="font-size: clamp(2.2rem, 4.5vw, 3.4rem);">Let’s Talk <em>Growth</em></h1>
                 <p>
                     Whether you have a project in mind, want to discuss strategy,
-                    or just want to connect - I’d love to hear from you.
+                    or are hiring for a senior search and growth role, I’d love to hear from you.
                 </p>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-info">
-                    <h3>Direct Contact</h3>
+                    <h2 style="font-size: 1.35rem; margin-bottom: 16px;">Direct Contact</h2>
 
                     <div class="contact-card">
                         <span class="contact-icon">✉️</span>
@@ -206,8 +207,7 @@
                     </div>
 
                     <div class="contact-note">
-                        “I typically respond within 24–48 hours.
-                        For urgent inquiries, LinkedIn messages get the fastest response.”
+                        Explore verified <a href="/work.html" style="color: var(--terracotta-deep); font-weight: 600;">enterprise case studies</a>, review my <a href="/about.html" style="color: var(--terracotta-deep); font-weight: 600;">background and credentials</a>, or see how I approach <a href="/seo-strategy-consultant.html" style="color: var(--terracotta-deep); font-weight: 600;">SEO, GEO and AEO strategy</a>.
                     </div>
                 </div>
 
@@ -215,23 +215,23 @@
                     <form action="https://formspree.io/f/meeloqor" method="POST">
                         <div class="form-row">
                             <div class="form-field">
-                                <label>Name</label>
-                                <input type="text" name="name" placeholder="Your name" required>
+                                <label for="contact-name">Name</label>
+                                <input id="contact-name" type="text" name="name" placeholder="Your name" required>
                             </div>
                             <div class="form-field">
-                                <label>Email</label>
-                                <input type="email" name="email" placeholder="you@company.com" required>
+                                <label for="contact-email">Email</label>
+                                <input id="contact-email" type="email" name="email" placeholder="you@company.com" required>
                             </div>
                         </div>
 
                         <div class="form-field">
-                            <label>Company (optional)</label>
-                            <input type="text" name="company" placeholder="Your company">
+                            <label for="contact-company">Company (optional)</label>
+                            <input id="contact-company" type="text" name="company" placeholder="Your company">
                         </div>
 
                         <div class="form-field">
-                            <label>Message</label>
-                            <textarea name="message" placeholder="Tell me about your growth challenge..."
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell me about your growth challenge..."
                                 required></textarea>
                         </div>
 
@@ -249,7 +249,7 @@
                 </div>
                 <ul>
                     <li>I review your message and reply promptly.</li>
-                    <li>We book a 20-minute discovery call if it’s a fit.</li>
+                    <li>We schedule an introductory discovery conversation if it’s a fit.</li>
                     <li>You receive a clear summary of next steps.</li>
                 </ul>
             </div>
@@ -313,10 +313,8 @@
       <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
     </div>
   </footer>
-     
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 
 </html>
