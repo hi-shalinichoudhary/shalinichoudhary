@@ -197,6 +197,18 @@
   -webkit-text-fill-color: var(--terracotta);
 }
 
+/* ── Footer CTA Button: Terracotta fill with Ivory text at 18px+ bold ── */
+.tj-footer-area .footer-cta-button {
+  background: var(--terracotta) !important;
+  color: var(--ivory) !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+}
+.tj-footer-area .footer-cta-button:hover {
+  background: var(--terracotta-deep) !important;
+  color: var(--ivory) !important;
+}
+
 /* ── Motion preferences ──────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   #intro.hero::before,

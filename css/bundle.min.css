@@ -4576,7 +4576,7 @@ h3 {
 
 .copyright {
     font-size: 0.85rem;
-    color: var(--ink-soft);
+    color: var(--stone);
 }
 
 /* Responsive */
@@ -5625,3 +5625,150 @@ h2 em,
     transition: none;
   }
 }
+
+/* -------------------------------------------------------------
+   WARM EDITORIAL IDENTITY ENHANCEMENTS (All Pages)
+------------------------------------------------------------- */
+/* Display Headings in Instrument Serif */
+h1, h2,
+.hero-title,
+.section-head h2,
+.post-header-text h1,
+.contact-header h2,
+.category-page-title,
+.blog-hero h1,
+.categories-header h2,
+.medium-head h2,
+.section-title {
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Heading Italic Accent Key Phrase */
+h1 em, h2 em, h3 em,
+.hero-title em,
+.section-head h2 em,
+.hero-title .accent,
+.post-header-text h1 em,
+.contact-header h2 em,
+.category-page-title em,
+.blog-hero h1 em,
+.footer-brand h2 em {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: var(--terracotta) !important;
+}
+
+/* Numbered Section Labels */
+.sc-label,
+.eyebrow,
+.contact-eyebrow,
+.reading-meta,
+.results-group-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta-deep) !important;
+  margin-bottom: 12px;
+}
+
+/* Terracotta Buttons */
+.cta-button,
+.contact-submit,
+.btn-primary,
+button[type="submit"],
+.footer-cta-button,
+#loadMoreBtn {
+  background: var(--terracotta) !important;
+  color: var(--ivory) !important;
+  font-weight: 700 !important;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover,
+.contact-submit:hover,
+.btn-primary:hover,
+button[type="submit"]:hover,
+.footer-cta-button:hover,
+#loadMoreBtn:hover {
+  background: var(--terracotta-deep) !important;
+  color: var(--ivory) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--charcoal) 18%, transparent);
+}
+
+/* Standardized Charcoal Footer */
+.tj-footer-area {
+  background: var(--charcoal) !important;
+  color: var(--ivory) !important;
+  border-top: none !important;
+  padding: clamp(3rem, 6vw, 4.5rem) 20px 30px !important;
+}
+
+.tj-footer-area .footer-content {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.tj-footer-area .footer-brand h2 {
+  font-family: var(--font-display) !important;
+  font-size: 2.2rem !important;
+  font-weight: 400 !important;
+  color: var(--ivory) !important;
+  line-height: 1.15 !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.tj-footer-area .footer-kicker,
+.tj-footer-area .footer-small,
+.tj-footer-area .footer-heading,
+.tj-footer-area .copyright {
+  color: var(--stone) !important;
+}
+
+.tj-footer-area .footer-nav a,
+.tj-footer-area .footer-email,
+.tj-footer-area .footer-social-link {
+  color: var(--ivory) !important;
+  text-decoration: none;
+}
+
+.tj-footer-area .footer-nav a:hover,
+.tj-footer-area .footer-email:hover {
+  color: var(--stone) !important;
+}
+
+.tj-footer-area .footer-cta-button {
+  background: var(--terracotta) !important;
+  color: var(--ivory) !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  padding: 12px 28px !important;
+  margin-top: 8px !important;
+}
+
+.tj-footer-area .footer-social-link {
+  border: 1px solid color-mix(in srgb, var(--stone) 30%, transparent) !important;
+}
+
+.tj-footer-area .footer-social-link:hover {
+  background: var(--surface) !important;
+  color: var(--charcoal) !important;
+  border-color: var(--stone) !important;
+}
+
