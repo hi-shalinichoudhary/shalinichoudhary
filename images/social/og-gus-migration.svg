@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-mig-title og-mig-desc">
+  <title id="og-mig-title">Schematic of Drupal replatform variance band and one-month recovery</title>
+  <desc id="og-mig-desc">Schematic diagram showing a 5 per cent traffic variance band, zero ranking positions lost, and a one-month full recovery marker across two replatformed education brand sites.</desc>
+  <style>
+    :root {
+      --ivory: #F3F2EF;
+      --charcoal: #181818;
+      --stone: #B7B5AF;
+      --terracotta: #A65F43;
+      --terracotta-deep: #8F4F36;
+    }
+  </style>
+
+  <rect width="1200" height="630" fill="var(--ivory, #F3F2EF)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="20" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="10" rx="5" fill="var(--terracotta, #A65F43)"/>
+
+  <text x="72" y="92" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="15" font-weight="700" letter-spacing="2">CASE STUDY · GLOBAL UNIVERSITY SYSTEMS · HIGHER EDUCATION</text>
+  <text x="72" y="154" font-family="Georgia, 'Times New Roman', serif" fill="var(--charcoal, #181818)" font-size="46">Replatform two sites <tspan font-style="italic" fill="var(--terracotta-deep, #8F4F36)">without losing a ranking.</tspan></text>
+
+  <!-- Schematic visual -->
+  <g transform="translate(72, 196)">
+    <rect x="0" y="0" width="1056" height="360" rx="16" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="1.5"/>
+    <text x="36" y="44" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="14" font-weight="700" letter-spacing="1.8">DRUPAL REPLATFORM · TWO LEGACY EDUCATION BRAND SITES</text>
+    <rect x="860" y="20" width="160" height="36" rx="18" fill="var(--charcoal, #181818)"/>
+    <text x="940" y="43" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="14" font-weight="700" letter-spacing="2">SCHEMATIC</text>
+
+    <text x="36" y="116" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="16" font-weight="700">+5% bound</text>
+    <text x="36" y="188" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--charcoal, #181818)" font-size="16" font-weight="700">Baseline</text>
+    <text x="36" y="260" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="16" font-weight="700">-5% bound</text>
+
+    <rect x="156" y="106" width="540" height="152" rx="10" fill="var(--stone, #B7B5AF)" fill-opacity="0.24"/>
+    <line x1="156" y1="106" x2="696" y2="106" stroke="var(--terracotta, #A65F43)" stroke-width="2.5" stroke-dasharray="8 6"/>
+    <line x1="156" y1="182" x2="696" y2="182" stroke="var(--charcoal, #181818)" stroke-width="3"/>
+    <line x1="156" y1="258" x2="696" y2="258" stroke="var(--terracotta, #A65F43)" stroke-width="2.5" stroke-dasharray="8 6"/>
+
+    <rect x="276" y="156" width="280" height="52" rx="26" fill="var(--ivory, #F3F2EF)" stroke="var(--terracotta, #A65F43)" stroke-width="2"/>
+    <text x="416" y="188" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--charcoal, #181818)" font-size="18" font-weight="700">5% variance band</text>
+
+    <line x1="646" y1="78" x2="646" y2="286" stroke="var(--terracotta, #A65F43)" stroke-width="3.5"/>
+    <circle cx="646" cy="182" r="9" fill="var(--terracotta, #A65F43)"/>
+    <text x="646" y="320" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--terracotta-deep, #8F4F36)" font-size="17" font-weight="700">1-month recovery marker</text>
+
+    <rect x="736" y="86" width="284" height="196" rx="14" fill="var(--charcoal, #181818)"/>
+    <text x="878" y="164" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="64">0</text>
+    <text x="878" y="204" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="22" font-weight="700">positions lost</text>
+    <text x="878" y="238" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--stone, #B7B5AF)" font-size="16">Zero ranking loss</text>
+  </g>
+</svg>

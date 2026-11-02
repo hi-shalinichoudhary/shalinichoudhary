@@ -6,24 +6,48 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Scroll Reveal: Script loaded');
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Elements to reveal
+    // 1. Inline SVG Case Visuals draw-in on scroll once
+    const svgVisuals = document.querySelectorAll('.sc-case-svg');
+    if (svgVisuals.length) {
+        if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+            svgVisuals.forEach(svg => svg.classList.add('is-drawn'));
+        } else {
+            svgVisuals.forEach(svg => svg.classList.add('js-anim'));
+            const svgObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-drawn');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            });
+            svgVisuals.forEach(svg => svgObserver.observe(svg));
+            setTimeout(() => {
+                svgVisuals.forEach(svg => {
+                    const rect = svg.getBoundingClientRect();
+                    if (rect.top < window.innerHeight) {
+                        svg.classList.add('is-drawn');
+                    }
+                });
+            }, 400);
+        }
+    }
+
+    // 2. Standard reveal elements
     const revealElements = document.querySelectorAll('.reveal');
-    console.log(`Scroll Reveal: Found ${revealElements.length} elements to reveal`);
-
     if (!revealElements.length) return;
 
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                console.log('Scroll Reveal: Revealing element', target);
-
-                // Add class to trigger CSS transition
                 target.classList.add('is-visible');
-
-                // Stop observing once revealed (run once)
                 observer.unobserve(target);
             }
         });
@@ -35,8 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // SAFETY FALLBACK: If observer doesn't fire (e.g. initial load glitch), 
-    // force reveal visible elements after a short delay
     setTimeout(() => {
         revealElements.forEach(el => {
             const rect = el.getBoundingClientRect();

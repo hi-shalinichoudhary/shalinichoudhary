@@ -1016,7 +1016,7 @@ body.lightbox-open {
 .portfolio-lightbox {
   position: fixed;
   inset: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background: color-mix(in srgb, var(--charcoal) 75%, transparent);
@@ -1029,6 +1029,7 @@ body.lightbox-open {
 }
 
 .portfolio-lightbox.is-open {
+  display: flex;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -1594,7 +1595,7 @@ h3 {
 .portfolio-lightbox {
     position: fixed;
     inset: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background: color-mix(in srgb, var(--charcoal) 75%, transparent);
@@ -1607,6 +1608,7 @@ h3 {
 }
 
 .portfolio-lightbox.is-open {
+    display: flex;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -5901,5 +5903,82 @@ button[type="submit"]:hover,
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* ---- Inline SVG Case Visuals & Scroll Draw-In ---- */
+.sc-case-art {
+  margin: 0;
+  width: 100%;
+}
+
+.sc-case-hero-art {
+  margin: 1.75rem 0 0;
+  width: 100%;
+  max-width: 792px;
+}
+
+.sc-case-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+@media (min-width: 920px) {
+  .sc-stack__card--with-art {
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+    align-items: center;
+    gap: 1.75rem;
+  }
+}
+
+.sc-case-svg.js-anim .svg-draw {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.sc-case-svg.js-anim.is-drawn .svg-draw {
+  stroke-dashoffset: 0;
+}
+
+.sc-case-svg.js-anim .svg-bar {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.sc-case-svg.js-anim.is-drawn .svg-bar {
+  transform: scaleX(1);
+}
+
+.sc-case-svg.js-anim .svg-node {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sc-case-svg.js-anim .svg-d1 { transition-delay: 0.1s; }
+.sc-case-svg.js-anim .svg-d2 { transition-delay: 0.24s; }
+.sc-case-svg.js-anim .svg-d3 { transition-delay: 0.38s; }
+
+.sc-case-svg.js-anim.is-drawn .svg-node {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-case-svg.js-anim .svg-draw,
+  .sc-case-svg.js-anim .svg-bar,
+  .sc-case-svg.js-anim .svg-node {
+    transition: none !important;
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
 
 

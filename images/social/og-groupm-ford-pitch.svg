@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-ford-title og-ford-desc">
+  <title id="og-ford-title">GroupM Ford pitch modules and 20 per cent non-branded organic badge</title>
+  <desc id="og-ford-desc">Two stacked module blocks for Website technical analysis and Competitor and market analysis, paired with a badge showing plus 20 per cent non-branded organic at zero budget.</desc>
+  <style>
+    :root {
+      --ivory: #F3F2EF;
+      --charcoal: #181818;
+      --stone: #B7B5AF;
+      --terracotta: #A65F43;
+      --terracotta-deep: #8F4F36;
+    }
+  </style>
+
+  <rect width="1200" height="630" fill="var(--ivory, #F3F2EF)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="20" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="10" rx="5" fill="var(--terracotta, #A65F43)"/>
+
+  <text x="72" y="92" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="15" font-weight="700" letter-spacing="2">CASE STUDY · GROUPM, WPP GROUP · AUTOMOTIVE</text>
+  <text x="72" y="154" font-family="Georgia, 'Times New Roman', serif" fill="var(--charcoal, #181818)" font-size="46">Win the pitch <tspan font-style="italic" fill="var(--terracotta-deep, #8F4F36)">with the analysis.</tspan></text>
+
+  <!-- Stacked modules and badge -->
+  <g transform="translate(72, 196)">
+    <rect x="0" y="0" width="1056" height="360" rx="16" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="1.5"/>
+    <text x="36" y="44" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="14" font-weight="700" letter-spacing="1.8">GROUPM · FORD PITCH WIN &amp; NON-BRANDED ORGANIC GROWTH</text>
+
+    <!-- Module 1 -->
+    <rect x="36" y="74" width="576" height="114" rx="14" fill="var(--charcoal, #181818)"/>
+    <rect x="58" y="98" width="6" height="66" rx="3" fill="var(--terracotta, #A65F43)"/>
+    <text x="84" y="116" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--stone, #B7B5AF)" font-size="14" font-weight="700" letter-spacing="1.6">PITCH MODULE 01 · OWNED</text>
+    <text x="84" y="154" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="24" font-weight="700">Website technical analysis</text>
+
+    <!-- Module 2 -->
+    <rect x="36" y="208" width="576" height="114" rx="14" fill="var(--charcoal, #181818)"/>
+    <rect x="58" y="232" width="6" height="66" rx="3" fill="var(--terracotta, #A65F43)"/>
+    <text x="84" y="250" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--stone, #B7B5AF)" font-size="14" font-weight="700" letter-spacing="1.6">PITCH MODULE 02 · OWNED</text>
+    <text x="84" y="288" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="24" font-weight="700">Competitor and market analysis</text>
+
+    <path d="M 612 131 L 642 131 L 642 265 L 612 265 M 642 198 L 672 198" fill="none" stroke="var(--terracotta, #A65F43)" stroke-width="3.5"/>
+
+    <!-- Badge -->
+    <rect x="672" y="74" width="348" height="248" rx="16" fill="var(--terracotta-deep, #8F4F36)"/>
+    <text x="704" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="14" font-weight="700" letter-spacing="1.8">VERIFIED OUTCOME</text>
+    <text x="704" y="188" font-family="Georgia, 'Times New Roman', serif" fill="var(--ivory, #F3F2EF)" font-size="64">+20%</text>
+    <text x="704" y="232" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="21" font-weight="700">non-branded organic,</text>
+    <text x="704" y="262" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="21" font-weight="700">zero budget</text>
+    <text x="704" y="296" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="15">Outperforming paid on same queries</text>
+  </g>
+</svg>

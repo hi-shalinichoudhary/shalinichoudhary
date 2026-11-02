@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-ai-title og-ai-desc">
+  <title id="og-ai-title">AI citation range bar showing plus 15 to 20 per cent citations</title>
+  <desc id="og-ai-desc">Range bar showing plus 15 to 20 per cent citations on restructured deep content pages, accompanied by tags for answer-first, FAQ, schema, and entity signals.</desc>
+  <style>
+    :root {
+      --ivory: #F3F2EF;
+      --charcoal: #181818;
+      --stone: #B7B5AF;
+      --terracotta: #A65F43;
+      --terracotta-deep: #8F4F36;
+    }
+  </style>
+
+  <rect width="1200" height="630" fill="var(--ivory, #F3F2EF)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="20" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="10" rx="5" fill="var(--terracotta, #A65F43)"/>
+
+  <text x="72" y="92" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="15" font-weight="700" letter-spacing="2">CASE STUDY · GLOBAL UNIVERSITY SYSTEMS · HIGHER EDUCATION</text>
+  <text x="72" y="154" font-family="Georgia, 'Times New Roman', serif" fill="var(--charcoal, #181818)" font-size="46">Get cited when <tspan font-style="italic" fill="var(--terracotta-deep, #8F4F36)">search becomes answers.</tspan></text>
+
+  <!-- Range bar and tags visual -->
+  <g transform="translate(72, 196)">
+    <rect x="0" y="0" width="1056" height="360" rx="16" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="1.5"/>
+    <text x="36" y="44" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="14" font-weight="700" letter-spacing="1.8">GEO &amp; AEO · RESTRUCTURED DEEP CONTENT PAGES</text>
+
+    <text x="36" y="138" font-family="Georgia, 'Times New Roman', serif" fill="var(--terracotta-deep, #8F4F36)" font-size="64">+15-20%</text>
+    <text x="36" y="176" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--charcoal, #181818)" font-size="22" font-weight="700">citations</text>
+    <text x="36" y="204" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="17" font-weight="600">on restructured deep content pages</text>
+
+    <rect x="348" y="76" width="672" height="142" rx="14" fill="var(--charcoal, #181818)"/>
+    <text x="384" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--stone, #B7B5AF)" font-size="16" font-weight="600">Baseline</text>
+    <text x="716" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="16" font-weight="700">+15%</text>
+    <text x="960" y="118" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="end" fill="var(--ivory, #F3F2EF)" font-size="16" font-weight="700">+20%</text>
+
+    <rect x="384" y="140" width="600" height="32" rx="16" fill="var(--stone, #B7B5AF)" fill-opacity="0.28"/>
+    <rect x="384" y="140" width="332" height="32" rx="16" fill="var(--stone, #B7B5AF)"/>
+    <rect x="716" y="134" width="244" height="44" rx="12" fill="var(--terracotta, #A65F43)" stroke="var(--ivory, #F3F2EF)" stroke-width="2.5"/>
+    <text x="838" y="162" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="17" font-weight="700">+15-20% citations</text>
+
+    <!-- Tags row -->
+    <rect x="36" y="258" width="226" height="58" rx="29" fill="var(--charcoal, #181818)"/>
+    <text x="149" y="294" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="19" font-weight="600">answer-first</text>
+
+    <rect x="284" y="258" width="180" height="58" rx="29" fill="var(--charcoal, #181818)"/>
+    <text x="374" y="294" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="19" font-weight="600">FAQ</text>
+
+    <rect x="486" y="258" width="214" height="58" rx="29" fill="var(--charcoal, #181818)"/>
+    <text x="593" y="294" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="19" font-weight="600">schema</text>
+
+    <rect x="722" y="258" width="268" height="58" rx="29" fill="var(--charcoal, #181818)"/>
+    <text x="856" y="294" font-family="Helvetica Neue, Arial, sans-serif" text-anchor="middle" fill="var(--ivory, #F3F2EF)" font-size="19" font-weight="600">entity signals</text>
+  </g>
+</svg>

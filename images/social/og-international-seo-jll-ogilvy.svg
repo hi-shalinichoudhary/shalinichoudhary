@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="og-intl-title og-intl-desc">
+  <title id="og-intl-title">International SEO region chips and scale badges for JLL and Ogilvy</title>
+  <desc id="og-intl-desc">Region chips for Americas, MENA, EMEA, and APAC paired with blocks showing 10 plus accounts and entity-level schema.</desc>
+  <style>
+    :root {
+      --ivory: #F3F2EF;
+      --charcoal: #181818;
+      --stone: #B7B5AF;
+      --terracotta: #A65F43;
+      --terracotta-deep: #8F4F36;
+    }
+  </style>
+
+  <rect width="1200" height="630" fill="var(--ivory, #F3F2EF)"/>
+  <rect x="28" y="28" width="1144" height="574" rx="20" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="2"/>
+  <rect x="28" y="28" width="1144" height="10" rx="5" fill="var(--terracotta, #A65F43)"/>
+
+  <text x="72" y="92" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="15" font-weight="700" letter-spacing="2">CASE STUDY · JLL &amp; OGILVY · INTERNATIONAL SEO</text>
+  <text x="72" y="154" font-family="Georgia, 'Times New Roman', serif" fill="var(--charcoal, #181818)" font-size="46">Scale schema and playbooks <tspan font-style="italic" fill="var(--terracotta-deep, #8F4F36)">across regions.</tspan></text>
+
+  <!-- Region chips and scale blocks -->
+  <g transform="translate(72, 196)">
+    <rect x="0" y="0" width="1056" height="360" rx="16" fill="var(--ivory, #F3F2EF)" stroke="var(--stone, #B7B5AF)" stroke-width="1.5"/>
+    <text x="36" y="44" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="14" font-weight="700" letter-spacing="1.8">INTERNATIONAL SEO · JLL &amp; OGILVY (SEP 2016 - OCT 2019)</text>
+
+    <!-- 4 region chips -->
+    <rect x="36" y="72" width="232" height="76" rx="38" fill="var(--charcoal, #181818)"/>
+    <circle cx="78" cy="110" r="8" fill="var(--terracotta, #A65F43)"/>
+    <text x="104" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="22" font-weight="700">Americas</text>
+
+    <rect x="286" y="72" width="232" height="76" rx="38" fill="var(--charcoal, #181818)"/>
+    <circle cx="328" cy="110" r="8" fill="var(--terracotta, #A65F43)"/>
+    <text x="354" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="22" font-weight="700">MENA</text>
+
+    <rect x="536" y="72" width="232" height="76" rx="38" fill="var(--charcoal, #181818)"/>
+    <circle cx="578" cy="110" r="8" fill="var(--terracotta, #A65F43)"/>
+    <text x="604" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="22" font-weight="700">EMEA</text>
+
+    <rect x="786" y="72" width="234" height="76" rx="38" fill="var(--charcoal, #181818)"/>
+    <circle cx="828" cy="110" r="8" fill="var(--terracotta, #A65F43)"/>
+    <text x="854" y="118" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--ivory, #F3F2EF)" font-size="22" font-weight="700">APAC</text>
+
+    <line x1="152" y1="172" x2="903" y2="172" stroke="var(--terracotta, #A65F43)" stroke-width="3"/>
+
+    <!-- Block 1: 10+ accounts -->
+    <rect x="36" y="196" width="482" height="130" rx="14" fill="var(--ivory, #F3F2EF)" stroke="var(--charcoal, #181818)" stroke-width="2.5"/>
+    <text x="68" y="232" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--terracotta-deep, #8F4F36)" font-size="14" font-weight="700" letter-spacing="1.6">OGILVY · MULTI-SECTOR</text>
+    <text x="68" y="280" font-family="Georgia, 'Times New Roman', serif" fill="var(--charcoal, #181818)" font-size="42">10+ accounts</text>
+    <text x="68" y="308" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--charcoal, #181818)" font-size="16">Automotive, luxury, healthcare, e-commerce</text>
+
+    <!-- Block 2: entity-level schema -->
+    <rect x="538" y="196" width="482" height="130" rx="14" fill="var(--charcoal, #181818)"/>
+    <text x="570" y="232" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--stone, #B7B5AF)" font-size="14" font-weight="700" letter-spacing="1.6">JLL · GLOBAL &amp; REGIONAL SITES</text>
+    <text x="570" y="280" font-family="Georgia, 'Times New Roman', serif" fill="var(--ivory, #F3F2EF)" font-size="40">entity-level schema</text>
+    <text x="570" y="308" font-family="Helvetica Neue, Arial, sans-serif" fill="var(--stone, #B7B5AF)" font-size="16">Sites of 1,000s of pages &amp; 100-200 page regional sites</text>
+  </g>
+</svg>

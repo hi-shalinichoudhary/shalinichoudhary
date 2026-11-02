@@ -154,6 +154,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         lightbox.classList.remove('is-open');
         lightbox.setAttribute('aria-hidden', 'true');
+        lightbox.hidden = true;
+        if (lightboxClose) {
+            lightboxClose.setAttribute('tabindex', '-1');
+        }
         lightboxImage.src = '';
         lightboxImage.alt = '';
         document.body.classList.remove('lightbox-open');
@@ -165,8 +169,12 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         lightboxImage.src = imageSrc;
         lightboxImage.alt = imageAlt;
+        lightbox.hidden = false;
         lightbox.classList.add('is-open');
         lightbox.setAttribute('aria-hidden', 'false');
+        if (lightboxClose) {
+            lightboxClose.removeAttribute('tabindex');
+        }
         document.body.classList.add('lightbox-open');
     };
 
