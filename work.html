@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://shalinichoudhary.in/images/test_shalini.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/android-icon-36x36.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,19 +42,67 @@
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Work & Case Studies | Shalini Choudhary",
-    "url": "https://shalinichoudhary.in/work.html",
-    "description": "Enterprise SEO, GEO and AEO case studies covering complex replatforms, answer engine visibility, and organic pipeline scale.",
-    "publisher": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Person",
       "@id": "https://shalinichoudhary.in/#person",
       "name": "Shalini Choudhary",
-      "jobTitle": "SEO, GEO and AEO Strategy Leader"
+      "url": "https://shalinichoudhary.in",
+      "jobTitle": "SEO, GEO and AEO Strategy Leader",
+      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems (GUS). MSc Marketing Management with Advertising (First Class), University of Leeds.",
+      "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
+      "email": "hi.shalinichoudhary@gmail.com",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Leeds",
+          "url": "https://www.leeds.ac.uk"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Haridev Joshi University of Journalism",
+          "url": "https://www.hju.ac.in"
+        }
+      ],
+      "sameAs": [
+        "https://in.linkedin.com/in/shalini-choudhary",
+        "https://twitter.com/shalinihooda",
+        "https://medium.com/@hi.shalinichoudhary",
+        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
+        "https://www.wikidata.org/wiki/Q139947690"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://shalinichoudhary.in/work.html#webpage",
+      "name": "Work & Case Studies | Shalini Choudhary",
+      "url": "https://shalinichoudhary.in/work.html",
+      "description": "Enterprise SEO, GEO and AEO case studies covering complex replatforms, answer engine visibility, and organic pipeline scale.",
+      "author": {
+        "@id": "https://shalinichoudhary.in/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shalinichoudhary.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Work",
+          "item": "https://shalinichoudhary.in/work.html"
+        }
+      ]
     }
-  }
+  ]
+}
   </script>
 
   <style>
@@ -375,12 +423,22 @@
         <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
       </a>
 
-      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="hamburger"></span>
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-        <a href="/work.html" class="active">Work</a>
+        <div class="nav-dropdown">
+          <a href="/work.html" class="nav-dropdown-toggle active">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+            <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+            <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+            <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+            <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+            <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+            <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+          </div>
+        </div>
         <a href="/seo-strategy-consultant.html">SEO Strategy</a>
         <a href="/growth-marketing-strategy.html">Growth Strategy</a>
         <a href="/about.html">About</a>
@@ -613,7 +671,7 @@
                 <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
                 <div>
                   <div class="acc-label">Engagement</div>
-                  <div class="acc-text">2–4 weeks, project-based (audit → sizing → roadmap)</div>
+                  <div class="acc-text">Project-based or ongoing advisory (audit → sizing → roadmap)</div>
                 </div>
               </div>
 
@@ -672,7 +730,7 @@
                 <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
                 <div>
                   <div class="acc-label">Engagement</div>
-                  <div class="acc-text">4–8 weeks project, or ongoing roadmap + execution + iteration.</div>
+                  <div class="acc-text">Project-based or ongoing roadmap, execution, and iteration.</div>
                 </div>
               </div>
 
@@ -700,7 +758,7 @@
           <summary class="acc-summary">
             <div class="acc-title">
               <h3>Measurement & Performance Reporting (GA4)</h3>
-              <p>Turn analytics into decision infrastructure — tracking clarity, attribution signals, and leader-ready reporting. GA4 setup, marketing analytics, and performance reporting for SEO and paid channels.</p>
+              <p>Turn analytics into decision infrastructure, tracking clarity, attribution signals, and leader-ready reporting. GA4 setup, marketing analytics, and performance reporting for SEO and paid channels.</p>
             </div>
 
             <span class="acc-chevron" aria-hidden="true">
@@ -731,7 +789,7 @@
                 <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
                 <div>
                   <div class="acc-label">Engagement</div>
-                  <div class="acc-text">2–6 weeks, project-based (setup → reporting → insight loop).</div>
+                  <div class="acc-text">Project-based (setup → reporting → insight loop).</div>
                 </div>
               </div>
 
@@ -790,7 +848,7 @@
                 <span class="acc-icon acc-icon-accent" aria-hidden="true">◷</span>
                 <div>
                   <div class="acc-label">Engagement</div>
-                  <div class="acc-text">4–8 weeks (diagnosis → backlog → tests → learnings).</div>
+                  <div class="acc-text">Project-based (diagnosis → backlog → tests → learnings).</div>
                 </div>
               </div>
 
@@ -842,24 +900,24 @@
             <img
               class="result-card-img"
               src="images/1.webp"
-              alt="Ogilvy — agency SEO work across e-commerce, healthcare, and luxury brands"
+              alt="Ogilvy, agency SEO work across e-commerce, healthcare, and luxury brands"
               loading="lazy"
-            >
+             width="1028" height="621">
             <div class="result-card-body">
               <div class="result-card-sector">Ogilvy · E-commerce, Healthcare, Luxury</div>
               <h3 class="result-card-title">Unveiling the Organic Potential: Transforming Diverse Brands for Organic Success</h3>
               <div class="result-metrics">
                 <div class="result-metric">
                   <div class="result-metric-num">10%</div>
-                  <div class="result-metric-label">Increase in avg. order value — e-commerce brand (product page optimisation)</div>
+                  <div class="result-metric-label">Increase in avg. order value, e-commerce brand (product page optimisation)</div>
                 </div>
                 <div class="result-metric">
                   <div class="result-metric-num">16%</div>
-                  <div class="result-metric-label">Growth in total keywords ranking in top 3 — healthcare brand</div>
+                  <div class="result-metric-label">Growth in total keywords ranking in top 3, healthcare brand</div>
                 </div>
                 <div class="result-metric">
                   <div class="result-metric-num">33%</div>
-                  <div class="result-metric-label">Growth in organic traffic — luxury craft brand</div>
+                  <div class="result-metric-label">Growth in organic traffic, luxury craft brand</div>
                 </div>
               </div>
             </div>
@@ -870,9 +928,9 @@
             <img
               class="result-card-img"
               src="images/3.webp"
-              alt="GroupM — data-driven SEO across FMCG, automotive, and hospitality clients"
+              alt="GroupM, data-driven SEO across FMCG, automotive, and hospitality clients"
               loading="lazy"
-            >
+             width="1028" height="621">
             <div class="result-card-body">
               <div class="result-card-sector">GroupM · FMCG, Automotive, Hospitality</div>
               <h3 class="result-card-title">Data-Driven SEO &amp; Boosting Client Visibility Across Industries</h3>
@@ -883,7 +941,7 @@
                 </div>
                 <div class="result-metric">
                   <div class="result-metric-num">15%</div>
-                  <div class="result-metric-label">YoY increase in organic website leads — automotive client</div>
+                  <div class="result-metric-label">YoY increase in organic website leads, automotive client</div>
                 </div>
                 <div class="result-metric">
                   <div class="result-metric-num">35%</div>
@@ -906,9 +964,9 @@
             <img
               class="result-card-img"
               src="images/2.webp"
-              alt="UPES — SEO strategy improving organic visibility, leads and conversions in education"
+              alt="UPES, SEO strategy improving organic visibility, leads and conversions in education"
               loading="lazy"
-            >
+             width="1028" height="621">
             <div class="result-card-body">
               <div class="result-card-sector">UPES · Education</div>
               <h3 class="result-card-title">Redefining SEO Strategy to Enhance Organic Visibility, Leads &amp; Conversions</h3>
@@ -933,10 +991,10 @@
           <article class="result-card reveal delay-200">
             <img
               class="result-card-img"
-              src="images/pearl.webp"
-              alt="Pearl Academy — targeted SEO strategies increasing organic visibility and leads"
+              src="images/4.webp"
+              alt="Pearl Academy, targeted SEO strategies increasing organic visibility and leads"
               loading="lazy"
-            >
+             width="1028" height="621">
             <div class="result-card-body">
               <div class="result-card-sector">Pearl Academy · Education</div>
               <h3 class="result-card-title">SEO Spotlight: Shining a Light on Pearl Academy's Programmes with Targeted Strategies</h3>
@@ -1014,18 +1072,23 @@
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Services</h3>
-        <nav class="footer-nav" aria-label="Footer Services Navigation">
-          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
-          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
-          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
+        <h3 class="footer-heading">Case Studies</h3>
+        <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+          <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+          <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+          <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+          <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+          <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
         </nav>
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Explore</h3>
-        <nav class="footer-nav" aria-label="Footer Explore Navigation">
+        <h3 class="footer-heading">Services &amp; Explore</h3>
+        <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
+          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
+          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
           <a href="/work.html">Work</a>
           <a href="/about.html">About</a>
           <a href="/blogs.html">Blog</a>
@@ -1035,7 +1098,7 @@
 
       <div class="footer-contact">
         <h3 class="footer-heading">Connect</h3>
-        <div class="footer-social">
+        <div class="footer-social" aria-label="Social links">
           <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
@@ -1049,7 +1112,6 @@
           hi.shalinichoudhary@gmail.com
         </a>
       </div>
-
     </div>
 
     <div class="footer-meta">

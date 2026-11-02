@@ -48,25 +48,18 @@
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Person",
       "@id": "https://shalinichoudhary.in/#person",
       "name": "Shalini Choudhary",
       "url": "https://shalinichoudhary.in",
       "jobTitle": "SEO, GEO and AEO Strategy Leader",
-      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems. Technical SEO, international SEO, GEO/AI Overviews, and organic demand generation. Based in the UK.",
+      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems (GUS). MSc Marketing Management with Advertising (First Class), University of Leeds.",
       "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
       "email": "hi.shalinichoudhary@gmail.com",
-      "sameAs": [
-        "https://in.linkedin.com/in/shalini-choudhary",
-        "https://twitter.com/shalinihooda",
-        "https://medium.com/@hi.shalinichoudhary",
-        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
-        "https://www.wikidata.org/wiki/Q139947690"
-      ],
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
@@ -79,27 +72,23 @@
           "url": "https://www.hju.ac.in"
         }
       ],
+      "sameAs": [
+        "https://in.linkedin.com/in/shalini-choudhary",
+        "https://twitter.com/shalinihooda",
+        "https://medium.com/@hi.shalinichoudhary",
+        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
+        "https://www.wikidata.org/wiki/Q139947690"
+      ],
       "knowsAbout": [
-        "Marketing Strategy",
-        "Digital Marketing",
-        "Demand Generation",
-        "SEO",
-        "Performance Marketing",
-        "Marketing Analytics",
-        "Brand Strategy",
-        "Search Engine Optimization",
-        "Growth Hacking",
-        "Google Analytics 4",
-        "Content Strategy",
-        "Python for SEO",
-        "Revenue Operations",
+        "Enterprise SEO Strategy",
         "GEO (Generative Engine Optimization)",
         "AEO (Answer Engine Optimization)",
         "Site Migrations",
         "International SEO",
         "hreflang",
-        "Crawl Diagnostics",
-        "Programmatic SEO"
+        "Demand Generation",
+        "Google Analytics 4",
+        "Looker Studio"
       ],
       "review": [
         {
@@ -109,7 +98,7 @@
             "name": "Leighann Follis",
             "jobTitle": "Marketing Manager, Seattle Sutton's Healthy Engine"
           },
-          "reviewBody": "I had the pleasure of working with Shalini during our time at JLL. While she was not my direct report, we did work on the same team to scale SEO best practices on a global scale. What sticks out in my mind about Shalini is her incredible work ethic. She is very smart and grasps new and highly technical concepts very easily. I always appreciated her ability to work independently and produce top-quality deliverables. That said, she never hesitated to ask questions or think outside of the box when it came to difficult tasks. I whole-heartedly recommend Shalini for any SEO leadership role."
+          "reviewBody": "I had the pleasure of working with Shalini during our time at JLL. While she was not my direct report, we did work on the same team to scale SEO best practices on a global scale. What sticks out in my mind about Shalini is her incredible work ethic. She is very smart and grasps new and highly technical concepts very easily."
         },
         {
           "@type": "Review",
@@ -118,21 +107,34 @@
             "name": "Krzysztof Sagański",
             "jobTitle": "Head of SEO and GEO (SEO Lead), Global University Systems"
           },
-          "reviewBody": "I had an amazing opportunity to work with Shalini in two different organizations over the years. It gave me a unique chance to see how dedicated she is and how eager she has always been to grow. She evolved remarkably from a junior role into senior positions where leadership and strong business understanding are essential. She is highly dedicated to her work and has unique skills in SEO and marketing overall."
+          "reviewBody": "I had an amazing opportunity to work with Shalini in two different organizations over the years. She evolved remarkably from a junior role into senior positions where leadership and strong business understanding are essential."
         }
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://shalinichoudhary.in/#website",
+      "url": "https://shalinichoudhary.in/",
+      "name": "Shalini Choudhary",
+      "description": "Portfolio of Shalini Choudhary, SEO, GEO and AEO strategy leader.",
+      "publisher": {
+        "@id": "https://shalinichoudhary.in/#person"
+      }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://shalinichoudhary.in/#profilepage",
+      "url": "https://shalinichoudhary.in/",
+      "name": "Shalini Choudhary | SEO, GEO and AEO Strategy Leader",
+      "isPartOf": {
+        "@id": "https://shalinichoudhary.in/#website"
+      },
+      "mainEntity": {
+        "@id": "https://shalinichoudhary.in/#person"
+      }
     }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Shalini Choudhary",
-    "url": "https://shalinichoudhary.in",
-    "description": "Portfolio and insights from Shalini Choudhary, SEO, GEO and AEO Strategy Leader based in the UK.",
-    "author": { "@id": "https://shalinichoudhary.in/#person" }
-  }
+  ]
+}
   </script>
 
   <style>
@@ -371,12 +373,22 @@
         <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
       </a>
 
-      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="hamburger"></span>
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-        <a href="/work.html">Work</a>
+        <div class="nav-dropdown">
+          <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+            <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+            <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+            <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+            <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+            <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+            <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+          </div>
+        </div>
         <a href="/seo-strategy-consultant.html">SEO Strategy</a>
         <a href="/growth-marketing-strategy.html">Growth Strategy</a>
         <a href="/about.html">About</a>
@@ -853,7 +865,7 @@
               </p>
               <div class="testimonial-author">
                 <div class="author-img-wrapper">
-                  <img src="images/Leighann.png" alt="Leighann Follis" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                  <img src="images/Leighann.png" alt="Leighann Follis" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" width="800" height="800">
                   <div class="author-initials">LF</div>
                 </div>
                 <div class="author-info">
@@ -878,7 +890,7 @@
               </p>
               <div class="testimonial-author">
                 <div class="author-img-wrapper">
-                  <img src="images/Krys.jpeg" alt="Krzysztof Sagański" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy">
+                  <img src="images/Krys.jpeg" alt="Krzysztof Sagański" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" loading="lazy" width="327" height="327">
                   <div class="author-initials">KS</div>
                 </div>
                 <div class="author-info">
@@ -1059,21 +1071,27 @@
         <span class="footer-kicker">Let’s build momentum</span>
         <h2>Let's talk</h2>
         <p class="footer-small">SEO and growth marketing rooted in evidence. Built for outcomes that last.</p>
-        <a class="cta-button footer-cta-button" style="background: var(--terracotta) !important; color: var(--ivory) !important; font-size: 1.2rem !important; font-weight: 700 !important;" href="https://cal.com/shalini-choudhary/30min" target="_blank">Get in touch</a>
+        <a class="footer-cta-button" href="/contact.html">Get in touch</a>
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Services</h3>
-        <nav class="footer-nav footer-nav--stacked">
+        <h3 class="footer-heading">Case Studies</h3>
+        <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+          <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+          <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+          <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+          <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+          <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+        </nav>
+      </div>
+
+      <div class="footer-links">
+        <h3 class="footer-heading">Services &amp; Explore</h3>
+        <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
           <a href="/seo-strategy-consultant.html">SEO Strategy</a>
           <a href="/growth-marketing-strategy.html">Growth Marketing</a>
           <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
           <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
-        </nav>
-      </div>
-      <div class="footer-links">
-        <h3 class="footer-heading">Explore</h3>
-        <nav class="footer-nav footer-nav--stacked">
           <a href="/work.html">Work</a>
           <a href="/about.html">About</a>
           <a href="/blogs.html">Blog</a>
@@ -1084,12 +1102,10 @@
       <div class="footer-contact">
         <h3 class="footer-heading">Connect</h3>
         <div class="footer-social" aria-label="Social links">
-          <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank"
-            rel="noopener noreferrer" aria-label="LinkedIn">
+          <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>
-          <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank"
-            rel="noopener noreferrer" aria-label="Twitter">
+          <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
             <i class="fab fa-twitter" aria-hidden="true"></i>
           </a>
         </div>
@@ -1099,7 +1115,6 @@
           hi.shalinichoudhary@gmail.com
         </a>
       </div>
-
     </div>
 
     <div class="footer-meta">

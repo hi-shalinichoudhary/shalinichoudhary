@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://shalinichoudhary.in/images/test_shalini.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/android-icon-36x36.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,30 +34,82 @@
 
   <!-- Structured Data: TechArticle -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "Securing the Ford Account Win Through Technical Audits and Market Intelligence",
-    "description": "Case study outlining the technical SEO audits, competitor intelligence, and zero-budget non-branded growth that underpinned the Ford account win at GroupM.",
-    "author": {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Person",
       "@id": "https://shalinichoudhary.in/#person",
       "name": "Shalini Choudhary",
+      "url": "https://shalinichoudhary.in",
       "jobTitle": "SEO, GEO and AEO Strategy Leader",
-      "url": "https://shalinichoudhary.in"
+      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems (GUS). MSc Marketing Management with Advertising (First Class), University of Leeds.",
+      "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
+      "email": "hi.shalinichoudhary@gmail.com",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Leeds",
+          "url": "https://www.leeds.ac.uk"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Haridev Joshi University of Journalism",
+          "url": "https://www.hju.ac.in"
+        }
+      ],
+      "sameAs": [
+        "https://in.linkedin.com/in/shalini-choudhary",
+        "https://twitter.com/shalinihooda",
+        "https://medium.com/@hi.shalinichoudhary",
+        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
+        "https://www.wikidata.org/wiki/Q139947690"
+      ]
     },
-    "publisher": {
-      "@type": "Person",
-      "name": "Shalini Choudhary",
-      "url": "https://shalinichoudhary.in"
+    {
+      "@type": "Article",
+      "@id": "https://shalinichoudhary.in/work/groupm-ford-pitch.html#article",
+      "headline": "Securing the Ford Account Win Through Technical Audits & Market Intelligence",
+      "description": "Case study: Winning the Ford pitch at GroupM through technical website audits, market analysis, and driving 20% non-branded growth at zero budget.",
+      "author": {
+        "@id": "https://shalinichoudhary.in/#person"
+      },
+      "publisher": {
+        "@id": "https://shalinichoudhary.in/#person"
+      },
+      "datePublished": "2026-10-01",
+      "dateModified": "2026-11-02",
+      "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://shalinichoudhary.in/work/groupm-ford-pitch.html"
+      }
     },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://shalinichoudhary.in/work/groupm-ford-pitch.html"
-    },
-    "datePublished": "2026-10-01",
-    "dateModified": "2026-10-01"
-  }
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shalinichoudhary.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Work",
+          "item": "https://shalinichoudhary.in/work.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Securing the Ford Account Win Through Technical Audits & Market Intelligence",
+          "item": "https://shalinichoudhary.in/work/groupm-ford-pitch.html"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <style>
@@ -278,12 +330,22 @@
         <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
       </a>
 
-      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="hamburger"></span>
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-        <a href="/work.html" class="active">Work</a>
+        <div class="nav-dropdown">
+          <a href="/work.html" class="nav-dropdown-toggle active">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+            <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+            <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+            <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+            <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+            <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+            <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+          </div>
+        </div>
         <a href="/seo-strategy-consultant.html">SEO Strategy</a>
         <a href="/growth-marketing-strategy.html">Growth Strategy</a>
         <a href="/about.html">About</a>
@@ -411,18 +473,23 @@
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Services</h3>
-        <nav class="footer-nav" aria-label="Footer Services Navigation">
-          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
-          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
-          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
+        <h3 class="footer-heading">Case Studies</h3>
+        <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+          <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+          <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+          <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+          <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+          <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
         </nav>
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Explore</h3>
-        <nav class="footer-nav" aria-label="Footer Explore Navigation">
+        <h3 class="footer-heading">Services &amp; Explore</h3>
+        <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
+          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
+          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
           <a href="/work.html">Work</a>
           <a href="/about.html">About</a>
           <a href="/blogs.html">Blog</a>
@@ -432,7 +499,7 @@
 
       <div class="footer-contact">
         <h3 class="footer-heading">Connect</h3>
-        <div class="footer-social">
+        <div class="footer-social" aria-label="Social links">
           <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>

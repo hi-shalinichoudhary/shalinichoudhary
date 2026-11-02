@@ -27,65 +27,108 @@
     </script>
   
     <link rel="canonical" href="https://shalinichoudhary.in/blogs/analytics-measurement.html" />
-
-<script type="application/ld+json">
+  <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Analytics & Measurement",
-    "url": "https://shalinichoudhary.in/blogs/analytics-measurement.html",
-    "isPartOf": {
-        "@type": "WebSite",
-        "name": "Shalini Choudhary",
-        "url": "https://shalinichoudhary.in"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://shalinichoudhary.in/#person",
+      "name": "Shalini Choudhary",
+      "url": "https://shalinichoudhary.in",
+      "jobTitle": "SEO, GEO and AEO Strategy Leader",
+      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems (GUS). MSc Marketing Management with Advertising (First Class), University of Leeds.",
+      "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
+      "email": "hi.shalinichoudhary@gmail.com",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Leeds",
+          "url": "https://www.leeds.ac.uk"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Haridev Joshi University of Journalism",
+          "url": "https://www.hju.ac.in"
+        }
+      ],
+      "sameAs": [
+        "https://in.linkedin.com/in/shalini-choudhary",
+        "https://twitter.com/shalinihooda",
+        "https://medium.com/@hi.shalinichoudhary",
+        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
+        "https://www.wikidata.org/wiki/Q139947690"
+      ]
     },
-    "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://shalinichoudhary.in"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://shalinichoudhary.in/blogs.html"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Analytics & Measurement",
-                "item": "https://shalinichoudhary.in/blogs/analytics-measurement.html"
-            }
-        ]
+    {
+      "@type": "CollectionPage",
+      "@id": "https://shalinichoudhary.in/blogs/analytics-measurement.html#webpage",
+      "name": "Analytics & Measurement",
+      "url": "https://shalinichoudhary.in/blogs/analytics-measurement.html",
+      "author": {
+        "@id": "https://shalinichoudhary.in/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shalinichoudhary.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://shalinichoudhary.in/blogs.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Analytics & Measurement",
+          "item": "https://shalinichoudhary.in/blogs/analytics-measurement.html"
+        }
+      ]
     }
+  ]
 }
-</script>
+  </script>
 </head>
 
 <body>
 
 <header class="site-header">
     <div class="site-header-inner">
-        <a href="/" class="brand" aria-label="Go to homepage">
-            <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
-        </a>
-        <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
-            <span class="hamburger"></span>
-        </button>
-        <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-            <a href="/work.html">Work</a>
-            <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-            <a href="/growth-marketing-strategy.html">Growth Strategy</a>
-            <a href="/about.html">About</a>
-            <a href="/blogs.html">Blog</a>
-            <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
-        </nav>
+      <a href="/" class="brand" aria-label="Go to homepage">
+        <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
+      </a>
+
+      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
+        <div class="nav-dropdown">
+          <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+            <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+            <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+            <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+            <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+            <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+            <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+          </div>
+        </div>
+        <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+        <a href="/growth-marketing-strategy.html">Growth Strategy</a>
+        <a href="/about.html">About</a>
+        <a href="/blogs.html" class="active">Blog</a>
+        <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
+      </nav>
     </div>
-</header>
+  </header>
 <main class="site-content">
 
         <nav aria-label="Breadcrumb" style="max-width: 1100px; margin: 0 auto; padding: 15px 20px 0 20px; font-size: 0.85rem; color: var(--muted-text, var(--ink-soft));">
@@ -97,6 +140,14 @@
     <section class="section-wrapper category-header-area" style="border-top: none;">
         <h1 class="category-page-title">Analytics & <em>Measurement</em></h1>
         <p class="section-description category-page-description">Focus on GA4, attribution, and performance clarity.</p>
+        <nav class="category-cross-nav" aria-label="Blog categories" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:18px;">
+          <a href="/blogs/ai-search.html" style="padding:6px 14px; border-radius:999px; font-size:0.82rem; font-weight:600; text-decoration:none; background:var(--surface); color:var(--charcoal); border:1px solid var(--hairline);">AI Search & Modern Search</a>
+          <a href="/blogs/analytics-measurement.html" style="padding:6px 14px; border-radius:999px; font-size:0.82rem; font-weight:600; text-decoration:none; background:var(--terracotta); color:var(--ivory);">Analytics & Measurement</a>
+          <a href="/blogs/conversion-performance.html" style="padding:6px 14px; border-radius:999px; font-size:0.82rem; font-weight:600; text-decoration:none; background:var(--surface); color:var(--charcoal); border:1px solid var(--hairline);">Conversion & Performance</a>
+          <a href="/blogs/growth-strategy.html" style="padding:6px 14px; border-radius:999px; font-size:0.82rem; font-weight:600; text-decoration:none; background:var(--surface); color:var(--charcoal); border:1px solid var(--hairline);">Growth Strategy</a>
+          <a href="/blogs/seo-strategy.html" style="padding:6px 14px; border-radius:999px; font-size:0.82rem; font-weight:600; text-decoration:none; background:var(--surface); color:var(--charcoal); border:1px solid var(--hairline);">SEO Strategy</a>
+        </nav>
+
         
         <div class="category-index-bar">
              <a href="../blogs.html" class="category-link">← All Categories</a>
@@ -113,7 +164,7 @@
                         class="blog-image-link">
                         <img src="../images/blog-images/ga/ga4%20vs%20ua.webp"
                             alt="Google Analytics 4 vs. Universal Analytics: A Head-to-Head Comparison for Beginners"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -131,7 +182,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="../images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="../images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="analytics-measurement/google-analytics-4-vs-universal-analytics-a-head-to-head-comparison-for-beginners.html"
@@ -149,7 +200,7 @@
                         class="blog-image-link">
                         <img src="../images/blog-images/ga/power%20of%20ga4%20integrations.webp"
                             alt="Unleashing the Power of Integrations: Expanding Your GA4 Capabilities"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -167,7 +218,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="../images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="../images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="analytics-measurement/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html"
@@ -185,7 +236,7 @@
                         class="blog-image-link">
                         <img src="../images/blog-images/ga/ga4%20guide.webp"
                             alt="Unveiling the Power of Google Analytics 4: A Comprehensive Guide" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -203,7 +254,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="../images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="../images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="analytics-measurement/unveiling-the-power-of-google-analytics-4-a-comprehensive-guide.html"
@@ -225,58 +276,61 @@
 </main>
 
 <footer class="tj-footer-area">
-  <div class="footer-content footer-grid">
-    <div class="footer-brand">
-      <span class="footer-kicker">Let’s build momentum</span>
-      <h2>Let's talk</h2>
-      <p class="footer-small">SEO and growth marketing rooted in evidence. Built for outcomes that last.</p>
-      <a class="cta-button footer-cta-button" style="background: var(--terracotta) !important; color: var(--ivory) !important; font-size: 1.2rem !important; font-weight: 700 !important;" href="https://cal.com/shalini-choudhary/30min" target="_blank">Get in touch</a>
-    </div>
+    <div class="footer-content footer-grid">
+      <div class="footer-brand">
+        <span class="footer-kicker">Let’s build momentum</span>
+        <h2>Let's talk</h2>
+        <p class="footer-small">SEO and growth marketing rooted in evidence. Built for outcomes that last.</p>
+        <a class="footer-cta-button" href="/contact.html">Get in touch</a>
+      </div>
 
-    <div class="footer-links">
-      <h3 class="footer-heading">Services</h3>
-      <nav class="footer-nav footer-nav--stacked">
-        <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-        <a href="/growth-marketing-strategy.html">Growth Marketing</a>
-        <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
-        <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
-      </nav>
-    </div>
-    <div class="footer-links">
-      <h3 class="footer-heading">Explore</h3>
-      <nav class="footer-nav footer-nav--stacked">
-        <a href="/work.html">Work</a>
-        <a href="/about.html">About</a>
-        <a href="/blogs.html">Blog</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Case Studies</h3>
+        <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+          <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+          <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+          <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+          <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+          <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+        </nav>
+      </div>
 
-    <div class="footer-contact">
-      <h3 class="footer-heading">Connect</h3>
-      <div class="footer-social" aria-label="Social links">
-        <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank"
-          rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-        </a>
-        <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank"
-          rel="noopener noreferrer" aria-label="Twitter">
-          <i class="fab fa-twitter" aria-hidden="true"></i>
+      <div class="footer-links">
+        <h3 class="footer-heading">Services &amp; Explore</h3>
+        <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
+          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
+          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
+          <a href="/work.html">Work</a>
+          <a href="/about.html">About</a>
+          <a href="/blogs.html">Blog</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-contact">
+        <h3 class="footer-heading">Connect</h3>
+        <div class="footer-social" aria-label="Social links">
+          <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
+        </div>
+        <h3 class="footer-heading footer-heading--spaced">Write</h3>
+        <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          hi.shalinichoudhary@gmail.com
         </a>
       </div>
-      <h3 class="footer-heading footer-heading--spaced">Write</h3>
-      <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-        hi.shalinichoudhary@gmail.com
-      </a>
     </div>
 
-  </div>
-
-  <div class="footer-meta">
-    <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
-  </div>
-</footer>
+    <div class="footer-meta">
+      <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
+    </div>
+  </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="../js/script.js"></script>

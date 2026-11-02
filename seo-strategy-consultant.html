@@ -45,75 +45,101 @@
 
   <!-- Schema.org JSON-LD: BreadcrumbList & FAQPage -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://shalinichoudhary.in"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Work",
-            "item": "https://shalinichoudhary.in/work.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "SEO, GEO and AEO Strategy",
-            "item": "https://shalinichoudhary.in/seo-strategy-consultant.html"
-          }
-        ]
-      },
-      {
-        "@type": "Service",
-        "name": "SEO, GEO and AEO Strategy",
-        "provider": {
-          "@type": "Person",
-          "@id": "https://shalinichoudhary.in/#person",
-          "name": "Shalini Choudhary",
-          "jobTitle": "SEO, GEO and AEO Strategy Leader"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://shalinichoudhary.in/#person",
+      "name": "Shalini Choudhary",
+      "url": "https://shalinichoudhary.in",
+      "jobTitle": "SEO, GEO and AEO Strategy Leader",
+      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems (GUS). MSc Marketing Management with Advertising (First Class), University of Leeds.",
+      "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
+      "email": "hi.shalinichoudhary@gmail.com",
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Leeds",
+          "url": "https://www.leeds.ac.uk"
         },
-        "description": "Enterprise SEO, GEO and AEO strategy integrating technical foundations, answer-first content restructuring, AI visibility KPIs, and CRM pipeline attribution.",
-        "url": "https://shalinichoudhary.in/seo-strategy-consultant.html"
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Haridev Joshi University of Journalism",
+          "url": "https://www.hju.ac.in"
+        }
+      ],
+      "sameAs": [
+        "https://in.linkedin.com/in/shalini-choudhary",
+        "https://twitter.com/shalinihooda",
+        "https://medium.com/@hi.shalinichoudhary",
+        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
+        "https://www.wikidata.org/wiki/Q139947690"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shalinichoudhary.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Work",
+          "item": "https://shalinichoudhary.in/work.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "SEO, GEO and AEO Strategy",
+          "item": "https://shalinichoudhary.in/seo-strategy-consultant.html"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "SEO, GEO and AEO Strategy",
+      "provider": {
+        "@id": "https://shalinichoudhary.in/#person"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is GEO (Generative Engine Optimization)?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Generative Engine Optimisation (GEO) is the discipline of optimising digital content and brand entity signals so that generative AI engines, including Google AI Overviews, Perplexity, and ChatGPT, discover, parse, and cite your domain in synthetic answers. Unlike traditional SEO which focuses primarily on ranking within blue-link result pages, GEO focuses on structured answer-first passages, semantic entity relevance, and third-party authority that encourage AI models to quote your brand as a trusted source."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is AEO different from traditional SEO?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Answer Engine Optimisation (AEO) specifically targets zero-click searches and conversational interfaces that deliver direct answers rather than a list of search links. While classical SEO targets page-level keyword relevance and backlink volume to win top organic SERP positions, AEO structures information into modular question-and-answer formats, concise summary passages, and nested schema markup, making it seamless for both search engines and answer engines to extract and credit your content directly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How do you measure AI visibility?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AI visibility is measured through a dedicated KPI framework tracking brand mention rate, citation count and share, AI share of voice, AI Overview presence, sentiment, and AI referral traffic. These metrics are evaluated alongside traditional organic traffic, user engagement, and CRM pipeline attribution to provide leadership with a comprehensive view of organic market presence in both search engines and generative models."
-            }
+      "description": "Enterprise SEO, GEO and AEO strategy integrating technical foundations, answer-first content restructuring, AI visibility KPIs, and CRM pipeline attribution.",
+      "url": "https://shalinichoudhary.in/seo-strategy-consultant.html"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is GEO (Generative Engine Optimization)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Generative Engine Optimisation (GEO) is the discipline of optimising digital content and brand entity signals so that generative AI engines, including Google AI Overviews, Perplexity, and ChatGPT, discover, parse, and cite your domain in synthetic answers. Unlike traditional SEO which focuses primarily on ranking within blue-link result pages, GEO focuses on structured answer-first passages, semantic entity relevance, and third-party authority that encourage AI models to quote your brand as a trusted source."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "How is AEO different from traditional SEO?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Answer Engine Optimisation (AEO) specifically targets zero-click searches and conversational interfaces that deliver direct answers rather than a list of search links. While classical SEO targets page-level keyword relevance and backlink volume to win top organic SERP positions, AEO structures information into modular question-and-answer formats, concise summary passages, and nested schema markup, making it seamless for both search engines and answer engines to extract and credit your content directly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you measure AI visibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI visibility is measured through a dedicated KPI framework tracking brand mention rate, citation count and share, AI share of voice, AI Overview presence, sentiment, and AI referral traffic. These metrics are evaluated alongside traditional organic traffic, user engagement, and CRM pipeline attribution to provide leadership with a comprehensive view of organic market presence in both search engines and generative models."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <style>
@@ -390,12 +416,22 @@
         <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
       </a>
 
-      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
+      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="hamburger"></span>
       </button>
 
       <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-        <a href="/work.html">Work</a>
+        <div class="nav-dropdown">
+          <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+            <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+            <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+            <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+            <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+            <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+            <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+          </div>
+        </div>
         <a href="/seo-strategy-consultant.html" class="active">SEO Strategy</a>
         <a href="/growth-marketing-strategy.html">Growth Strategy</a>
         <a href="/about.html">About</a>
@@ -776,18 +812,23 @@
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Services</h3>
-        <nav class="footer-nav" aria-label="Footer Services Navigation">
-          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
-          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
-          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
+        <h3 class="footer-heading">Case Studies</h3>
+        <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+          <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+          <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+          <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+          <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+          <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
         </nav>
       </div>
 
       <div class="footer-links">
-        <h3 class="footer-heading">Explore</h3>
-        <nav class="footer-nav" aria-label="Footer Explore Navigation">
+        <h3 class="footer-heading">Services &amp; Explore</h3>
+        <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
+          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
+          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
           <a href="/work.html">Work</a>
           <a href="/about.html">About</a>
           <a href="/blogs.html">Blog</a>
@@ -797,7 +838,7 @@
 
       <div class="footer-contact">
         <h3 class="footer-heading">Connect</h3>
-        <div class="footer-social">
+        <div class="footer-social" aria-label="Social links">
           <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i class="fab fa-linkedin-in" aria-hidden="true"></i>
           </a>

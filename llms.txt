@@ -1,60 +1,56 @@
-# Shalini Choudhary — Senior SEO Manager & Growth Marketer
+# Shalini Choudhary: SEO, GEO and AEO Strategy Leader
 
-Senior SEO and growth marketing professional with 8+ years across GroupM, Ogilvy, JLL, and Global University Systems. Core expertise in technical SEO, international SEO (hreflang), GEO/AI Overviews, demand generation, and marketing analytics (GA4). Currently based in the UK, completing an MSc in Marketing Management at the University of Leeds.
+Fluent in search & growth. Native to revenue.
+
+Shalini Choudhary is an SEO, GEO (Generative Engine Optimisation) and AEO (Answer Engine Optimisation) strategy leader specialising in search-led growth since 2016. Her career spans agency, real estate, media and global higher education: Ogilvy (Digital Marketing Analyst, Sep 2016 to Jan 2019), JLL (Digital Marketing Analyst, Feb 2019 to Oct 2019), GroupM, WPP Group (Marketing Manager, Digital and Integrated Marketing, Nov 2019 to Jan 2022), and Global University Systems, GUS (Senior SEO Manager, Digital Portfolio and Content Strategy, Feb 2022 to Sep 2025).
+
+She holds an MSc in Marketing Management with Advertising from the University of Leeds (First Class, Sep 2025 to Sep 2026), where her dissertation examined hyper-personalised Instagram ads and consumer purchasing decisions, and an MA in Media Studies from Haridev Joshi University, India (First Class, 2013 to 2015). In 2026, she was shortlisted among the top 13 UK teams in the CIM x IBM "The Pitch" competition for a GBP 400K go-to-market strategy involving AI-driven commercial marketing, designing a multi-channel growth loop for "Green AI" and pitching it to IBM and CIM leadership. She also serves as a voluntary Marketing Associate at 180 Degrees Consulting Leeds.
+
+## Verified Proof Points
+
+### Global University Systems, GUS (Feb 2022 to Sep 2025)
+- Organic traffic +65% YoY with no paid amplification; qualified leads +20% YoY.
+- One-year SEO page performance: 9,800 leads converted into 3,200 applications, creating an application pipeline of roughly INR 416 crore at INR 13 lakh average programme value (application pipeline, before enrolment conversion).
+- Replatformed two legacy education brand sites onto Drupal with zero ranking loss, under 5% traffic variance, and full recovery within one month.
+- Increased citations by 15-20% on restructured deep content pages (answer-first passages, FAQ, schema). Built entity signals and a hub-and-spoke content model after Ahrefs and SEMrush visibility tests showed low initial AI visibility, supported by Reddit and forum answers and genuine review growth on GMB and education portals.
+- Reported AI visibility KPIs: brand mention rate, citation count and share, AI share of voice, AI Overview presence, sentiment, and AI referral traffic, alongside organic traffic, engagement and conversion.
+- Lifted lead-to-application conversion by 10-12% and reduced bounce rate by 15-20% across 50-60K annual leads converting at roughly 30% lead-to-application.
+- Reduced content production time by 40% through AI-enabled workflows.
+- Led a team of 7-10 (5 SEO specialists, 2 content writers, 1 analyst) and built the cross-functional operating model with dev, brand and analytics leads.
+- Delivered an annual organic roadmap signed off by the CBO and marketing director, gave weekly briefings to leadership on AI answers reducing organic clicks, defended SEO investment by tracing Salesforce-tracked leads from SEO pages, and built executive dashboards in Looker Studio alongside audit templates, playbooks and stakeholder training.
+
+### GroupM, WPP Group (Nov 2019 to Jan 2022)
+- Won the Ford pitch by owning the website technical analysis and the competitor and market analysis.
+- Grew non-branded organic traffic by 20% at zero budget, outperforming paid on the same queries.
+- Led 5-6 SEO and marketing specialists delivering international SEO across Americas and MENA for clients including Ford, PepsiCo and Zee5.
+- Contributed to pitches, proposals and scoping, presented performance data to client stakeholders, and built investment rationale when budgets were under scrutiny.
+
+### JLL (Feb 2019 to Oct 2019)
+- Delivered multi-market SEO across EMEA and APAC on a globally indexed domain.
+- Deployed entity-level schema on sites with thousands of pages and regional sites of 100-200 pages, authoring audit templates and playbooks for global regional sites.
+
+### Ogilvy (Sep 2016 to Jan 2019)
+- Managed SEO across 10+ accounts in automotive, luxury, healthcare and e-commerce, delivering international SEO across Americas and MENA and contributing SEO sections of client pitch decks.
 
 ## Key Pages
 
-- [About](https://shalinichoudhary.in/about.html): Professional background, career experience across agencies and in-house, education at University of Leeds, and working approach.
-- [Work / Capabilities](https://shalinichoudhary.in/work.html): Functional expertise in growth strategy, SEO, performance marketing, analytics, and conversion optimisation.
-- [Blog Hub](https://shalinichoudhary.in/blogs.html): Collection of strategic insights on search, AI, measurement, and growth.
-- [Contact](https://shalinichoudhary.in/contact.html): Email and booking details.
+- [Home](https://shalinichoudhary.in/): Executive overview, career record, selected case studies, capabilities, timeline and testimonials.
+- [About](https://shalinichoudhary.in/about.html): Career timeline since 2016, leadership approach, University of Leeds MSc, and CIM x IBM recognition.
+- [Work & Case Studies Hub](https://shalinichoudhary.in/work.html): Enterprise case studies, growth levers and verified client outcomes.
+- [Blog Hub](https://shalinichoudhary.in/blogs.html): Strategic articles on AI search, GEO, AEO, SEO strategy, growth frameworks and GA4 measurement.
+- [Contact](https://shalinichoudhary.in/contact.html): Direct contact form and email details (hi.shalinichoudhary@gmail.com).
 
-## Service Pages
+## Case Studies
 
-- [SEO Strategy Consultant](https://shalinichoudhary.in/seo-strategy-consultant.html): Technical SEO, intent mapping, and content architecture for pipeline growth.
-- [Growth Marketing Strategy](https://shalinichoudhary.in/growth-marketing-strategy.html): Aligning acquisition, product, and channels into compounding growth frameworks.
-- [Marketing Analytics (GA4)](https://shalinichoudhary.in/marketing-analytics-ga4-consultant.html): Event-based tracking, tag management, and reporting focused on commercial outcomes.
-- [Conversion Optimisation](https://shalinichoudhary.in/conversion-optimisation-strategy.html): Landing page performance and UX alignment to increase lead-to-pipeline conversion.
+- [GUS Drupal Migration](https://shalinichoudhary.in/work/gus-migration.html): Two legacy education brand sites replatformed onto Drupal with zero ranking loss, under 5% traffic variance, and full recovery within one month.
+- [GUS AI Discovery & GEO](https://shalinichoudhary.in/work/gus-ai-discovery.html): Reversing AI-answer traffic erosion through answer-first content restructuring, schema, entity signals, and a +15-20% citation gain.
+- [GUS Organic Growth Pipeline](https://shalinichoudhary.in/work/gus-growth-pipeline.html): Scaling an INR 416 crore application pipeline (before enrolment conversion) from 9,800 SEO leads and 3,200 applications, with +65% YoY organic traffic growth.
+- [GroupM Ford Pitch & Non-Branded Growth](https://shalinichoudhary.in/work/groupm-ford-pitch.html): Winning the Ford pitch through technical and market analysis and driving +20% non-branded organic traffic at zero budget.
+- [International SEO at JLL & Ogilvy](https://shalinichoudhary.in/work/international-seo-jll-ogilvy.html): Multi-market SEO across EMEA, APAC, Americas and MENA, entity-level schema at scale, and 10+ global brand accounts.
 
-## Blog Posts — AI & Modern Search
+## Strategy & Service Pages
 
-- [How to Get Cited in AI Overviews in 2026](https://shalinichoudhary.in/blogs/ai-search/how-to-get-cited-in-ai-overviews-in-2026.html): What's actually working for AI Overview citations based on observation, not theory.
-- [AEO vs SEO: What Changes and What Stays](https://shalinichoudhary.in/blogs/ai-search/aeo-vs-seo-what-changes-and-what-stays.html): Strategic differences between Answer Engine Optimization and traditional SEO.
-- [GEO vs SEO: Why Losing Clicks Is Fine](https://shalinichoudhary.in/blogs/ai-search/geo-vs-seo.html): The shift to Generative Engine Optimization and turning entity authority into revenue.
-- [The Invisible Layer: Building a Website AI Wants to Crawl](https://shalinichoudhary.in/blogs/ai-search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.html): Firewall whitelisting, Markdown data structuring, and llms.txt for LLM retrieval.
-- [Demystifying E-A-T in 2024](https://shalinichoudhary.in/blogs/ai-search/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html): Expertise, Authoritativeness, and Trustworthiness explained.
-- [Beyond Backlinks: SEO Factors in 2024](https://shalinichoudhary.in/blogs/ai-search/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html): The expanding landscape of ranking factors beyond traditional link building.
-- [The Rise of Voice Search](https://shalinichoudhary.in/blogs/ai-search/the-rise-of-voice-search-optimizing-for-how-we-speak-not-type.html): Optimising for conversational, spoken queries.
-- [Top 5 SEO Trends 2024](https://shalinichoudhary.in/blogs/ai-search/top-5-seo-trends-2024.html): Key search trends shaping strategy.
-
-## Blog Posts — Growth Strategy
-
-- [The Growth Dashboard Nobody in the C-Suite Actually Reads](https://shalinichoudhary.in/blogs/growth-strategy/the-growth-dashboard-nobody-in-the-c-suite-actually-reads.html): Why C-suite leaders stop opening channel dashboards and how to frame growth metrics commercially.
-- [What UK Companies Are Hiring Senior SEO Managers For in 2026](https://shalinichoudhary.in/blogs/growth-strategy/what-uk-companies-are-actually-hiring-senior-seo-managers-for-in-2026.html): First-person analysis of UK hiring patterns for senior SEO roles.
-- [What Eight Years in Marketing Taught Me About Strategy](https://shalinichoudhary.in/blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html): Lessons from agency life at Ogilvy, GroupM, and beyond.
-- [Why the Channel Is Never the Strategy](https://shalinichoudhary.in/blogs/growth-strategy/why-the-channel-is-never-the-strategy.html): Why organising around channels produces fragmented results.
-- [What the UK Market Reveals About Brand Trust](https://shalinichoudhary.in/blogs/growth-strategy/what-the-uk-market-reveals-about-brand-trust.html): Brand trust dynamics in the UK market.
-- [AEO and AI: How Answer Engines Are Redefining SEO](https://shalinichoudhary.in/blogs/growth-strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html): Answer engines reshaping SEO strategy.
-- [Content Strategy Powerhouse](https://shalinichoudhary.in/blogs/growth-strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html): Aligning content with SEO and business goals.
-- [Off-Page Optimisation Strategy](https://shalinichoudhary.in/blogs/growth-strategy/off-page-optimization-strategy-building-authority-beyond-your-website.html): Building authority beyond your website.
-- [Technical SEO Foundations](https://shalinichoudhary.in/blogs/growth-strategy/technical-seo-foundations-building-a-strong-house-for-your-content.html): Building strong technical foundations for content.
-- [The SEO Roadmap](https://shalinichoudhary.in/blogs/growth-strategy/the-seo-roadmap-a-strategic-guide-to-planning-and-execution.html): Strategic guide to planning and execution.
-
-## Blog Posts — SEO Strategy
-
-- [Internal Linking Isn't Housekeeping](https://shalinichoudhary.in/blogs/seo-strategy/internal-linking-is-not-housekeeping-its-how-ai-finds-what-you-know.html): How internal architecture signals expertise and entity corroboration to search engines and AI.
-- [What Is SEO Strategy](https://shalinichoudhary.in/blogs/seo-strategy/what-is-seo-strategy.html): Comprehensive guide to SEO strategy.
-- [5 Tips to Craft Content That Ranks](https://shalinichoudhary.in/blogs/seo-strategy/5-tips-to-craft-content-that-ranks-and-engages.html): Content creation for ranking and engagement.
-- [Backlink Building Basics](https://shalinichoudhary.in/blogs/seo-strategy/backlink-building-basics-4-strategies-to-earn-valuable-links-and-boost-authority.html): Strategies to earn valuable links.
-- [Local SEO Domination](https://shalinichoudhary.in/blogs/seo-strategy/local-seo-domination-6-steps-to-optimize-your-website-for-local-searches.html): Steps to optimise for local searches.
-- [Technical SEO Quick Wins](https://shalinichoudhary.in/blogs/seo-strategy/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html): Easy fixes to boost website health.
-
-## Blog Posts — Analytics & Measurement
-
-- [GA4 vs Universal Analytics Comparison](https://shalinichoudhary.in/blogs/analytics-measurement/google-analytics-4-vs-universal-analytics-a-head-to-head-comparison-for-beginners.html): Head-to-head comparison for beginners.
-- [Unveiling the Power of GA4](https://shalinichoudhary.in/blogs/analytics-measurement/unveiling-the-power-of-google-analytics-4-a-comprehensive-guide.html): Comprehensive guide to Google Analytics 4.
-- [Expanding GA4 Capabilities with Integrations](https://shalinichoudhary.in/blogs/analytics-measurement/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html): Extending GA4 with integrations.
-
-## Blog Posts — Conversion Performance
-
-- [Advanced GA4 Techniques](https://shalinichoudhary.in/blogs/conversion-performance/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html): Advanced techniques for mastering Google Analytics 4.
+- [SEO, GEO and AEO Strategy](https://shalinichoudhary.in/seo-strategy-consultant.html): Enterprise organic growth, technical search health, answer-first content, and AI visibility measurement.
+- [Growth Strategy and Prioritisation](https://shalinichoudhary.in/growth-marketing-strategy.html): Strategy before channels, hypothesis structuring, capital allocation, and AI workflow efficiency.
+- [Marketing Analytics & GA4](https://shalinichoudhary.in/marketing-analytics-ga4-consultant.html): Event tracking, Looker Studio executive dashboards, and pipeline attribution.
+- [Conversion Optimisation Strategy](https://shalinichoudhary.in/conversion-optimisation-strategy.html): Structured A/B testing, landing page intent alignment, and lead-to-application conversion lift.

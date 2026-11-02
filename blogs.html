@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta name="description"
-        content="Thinking on marketing strategy, modern search, measurement, and brand: from a practitioner with experience at Ogilvy and GroupM, currently completing her MSc in the UK.">
+        content="Thinking on marketing strategy, modern search, measurement, and brand from Shalini Choudhary, with experience since 2016 across Ogilvy, JLL, GroupM and GUS, and an MSc from the University of Leeds.">
 
     <title>Marketing Insights & Growth Strategy | Shalini Choudhary</title>
     <meta name="robots" content="index,follow" />
@@ -276,9 +276,7 @@
                 text-align: center !important;
                 gap: 40px !important;
             }
-            .tj-footer-area .footer-brand,
-            .tj-footer-area .footer-links,
-            .tj-footer-area .footer-contact {
+            .tj-footer-area .footer-brand.tj-footer-area .footer-links.tj-footer-area .footer-contact {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
@@ -308,8 +306,7 @@
         }
 
         /* ── Category Pills Green Override ── */
-        .category-pill:hover,
-        .category-pill:focus-visible {
+        .category-pill:hover.category-pill:focus-visible {
             background: var(--terracotta) !important;
             border-color: var(--terracotta) !important;
             color: var(--ivory) !important;
@@ -381,12 +378,8 @@
         }
 
         /* ── Enforce Block Stacking (Anti-Overlapping) ── */
-        .blog-page main,
-        .blog-page main > section,
-        .blog-page main > div,
-        #medium-articles,
-        .footer-cta,
-        .tj-footer-area {
+        .blog-page main.blog-page main > section.blog-page main > div,
+        #medium-articles.footer-cta.tj-footer-area {
             display: block !important;
             position: relative !important;
             clear: both !important;
@@ -404,25 +397,19 @@
     </style>
 
     <!-- PRO SEO: Entity Schema -->
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfilePage",
-    "mainEntity": {
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
       "@type": "Person",
+      "@id": "https://shalinichoudhary.in/#person",
       "name": "Shalini Choudhary",
       "url": "https://shalinichoudhary.in",
-      "jobTitle": "Marketing Strategist & Growth Specialist",
-      "description": "Marketing professional with 8+ years of experience across Ogilvy, GroupM and GUS Global. Currently based in the UK completing an MSc in Marketing Management at the University of Leeds.",
+      "jobTitle": "SEO, GEO and AEO Strategy Leader",
+      "description": "SEO, GEO and AEO strategy leader since 2016 across GroupM, Ogilvy, JLL, and Global University Systems (GUS). MSc Marketing Management with Advertising (First Class), University of Leeds.",
       "image": "https://shalinichoudhary.in/images/test_shalini.jpg",
       "email": "hi.shalinichoudhary@gmail.com",
-      "sameAs": [
-        "https://in.linkedin.com/in/shalini-choudhary",
-        "https://twitter.com/shalinihooda",
-        "https://medium.com/@hi.shalinichoudhary",
-        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
-        "https://www.wikidata.org/wiki/Q139947690"
-      ],
       "alumniOf": [
         {
           "@type": "CollegeOrUniversity",
@@ -435,30 +422,43 @@
           "url": "https://www.hju.ac.in"
         }
       ],
-      "worksFor": {
-        "@type": "Organization",
-        "name": "GUS Global",
-        "url": "https://globaluniversitysystems.com"
-      },
-      "knowsAbout": [
-        "Marketing Strategy",
-        "Digital Marketing",
-        "Demand Generation",
-        "SEO",
-        "Performance Marketing",
-        "Marketing Analytics",
-        "Brand Strategy",
-        "Search Engine Optimization",
-        "Growth Hacking",
-        "Google Analytics 4",
-        "Content Strategy",
-        "Python for SEO",
-        "Revenue Operations",
-        "GEO (Generative Engine Optimization)",
-        "AEO (Answer Engine Optimization)"
+      "sameAs": [
+        "https://in.linkedin.com/in/shalini-choudhary",
+        "https://twitter.com/shalinihooda",
+        "https://medium.com/@hi.shalinichoudhary",
+        "https://www.crunchbase.com/person/shalini-choudhary-6b39",
+        "https://www.wikidata.org/wiki/Q139947690"
+      ]
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://shalinichoudhary.in/blogs.html#webpage",
+      "name": "Marketing Insights & Strategy Blog | Shalini Choudhary",
+      "url": "https://shalinichoudhary.in/blogs.html",
+      "description": "Articles on SEO, GEO, AEO, growth strategy, and marketing analytics by Shalini Choudhary.",
+      "author": {
+        "@id": "https://shalinichoudhary.in/#person"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shalinichoudhary.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://shalinichoudhary.in/blogs.html"
+        }
       ]
     }
-  }
+  ]
+}
   </script>
     <link rel="preload" as="image" href="images/blog-images/strategy/AEO%20and%20AI.webp">
 
@@ -476,25 +476,35 @@
 <body class="blog-page">
 
     <header class="site-header">
-        <div class="site-header-inner">
-            <a href="/" class="brand" aria-label="Go to homepage">
-                <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
-            </a>
+    <div class="site-header-inner">
+      <a href="/" class="brand" aria-label="Go to homepage">
+        <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
+      </a>
 
-            <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
+      <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="hamburger"></span>
+      </button>
 
-            <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
-                <a href="/work.html">Work</a>
-                <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-                <a href="/growth-marketing-strategy.html">Growth Strategy</a>
-                <a href="/about.html">About</a>
-                <a href="/blogs.html">Blog</a>
-                <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
-            </nav>
+      <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
+        <div class="nav-dropdown">
+          <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+          <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+            <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+            <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+            <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+            <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+            <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+            <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+          </div>
         </div>
-    </header>
+        <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+        <a href="/growth-marketing-strategy.html">Growth Strategy</a>
+        <a href="/about.html">About</a>
+        <a href="/blogs.html" class="active">Blog</a>
+        <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
+      </nav>
+    </div>
+  </header>
 
     <main class="site-content">
 
@@ -613,52 +623,52 @@
             </div>
 
             <div class="impact-grid-pro">
-                <!-- Card 1: Revenue Focused -->
+                <!-- Card 1: Pipeline Focused -->
                 <div class="impact-card-pro">
                     <div class="card-top">
-                        <span class="card-label">Pipeline Generated</span>
+                        <span class="card-label">Application Pipeline</span>
                         <span class="card-trend positive">
-                            <i class="fas fa-arrow-up"></i> 140% YoY
+                            <i class="fas fa-arrow-up" aria-hidden="true"></i> +65% YoY Organic
                         </span>
                     </div>
-                    <div class="card-number">$2.4M+</div>
+                    <div class="card-number">INR 416 Cr</div>
                     <div class="card-bar-bg">
                         <div class="card-bar-fill" style="width: 85%"></div>
                     </div>
-                    <p class="card-desc">Attributed via multi-touch model across B2B SaaS portfolio.</p>
+                    <p class="card-desc">Application pipeline, before enrolment conversion, from 9,800 SEO leads and 3,200 applications at GUS.</p>
                 </div>
 
-                <!-- Card 2: Efficiency Focused -->
+                <!-- Card 2: AI Discovery Focused -->
                 <div class="impact-card-pro">
                     <div class="card-top">
-                        <span class="card-label">CAC Reduction</span>
+                        <span class="card-label">AI Search Visibility</span>
                         <span class="card-trend positive">
-                            <i class="fas fa-arrow-down"></i> 35%
+                            <i class="fas fa-arrow-up" aria-hidden="true"></i> GEO &amp; AEO
                         </span>
                     </div>
-                    <div class="card-number">-$120</div>
+                    <div class="card-number">+15-20%</div>
                     <div class="card-bar-bg">
-                        <div class="card-bar-fill" style="width: 60%"></div>
+                        <div class="card-bar-fill" style="width: 75%"></div>
                     </div>
-                    <p class="card-desc">Achieved by scaling organic intent to replace high-cost paid search terms.</p>
+                    <p class="card-desc">Citation gain on restructured deep content pages using answer-first passages, FAQs, and entity schema.</p>
                 </div>
 
-                <!-- Card 3: Scale Focused -->
+                <!-- Card 3: Efficiency Focused -->
                 <div class="impact-card-pro">
                     <div class="card-top">
-                        <span class="card-label">Traffic Quality</span>
-                        <span class="card-trend neutral">High Intent</span>
+                        <span class="card-label">Content Operations</span>
+                        <span class="card-trend neutral">AI Workflows</span>
                     </div>
-                    <div class="card-number">300k</div>
+                    <div class="card-number">-40%</div>
                     <div class="card-bar-bg">
-                        <div class="card-bar-fill" style="width: 92%"></div>
+                        <div class="card-bar-fill" style="width: 90%"></div>
                     </div>
-                    <p class="card-desc">Monthly active users acquired through "Pain-Point" SEO clusters.</p>
+                    <p class="card-desc">Reduction in content production time through AI-enabled workflows and editorial playbooks at GUS.</p>
                 </div>
             </div>
         </section>
 
-        <!-- LINKEDIN TICKER (Dynamic — reads from data/linkedin-posts.json) -->
+        <!-- LINKEDIN TICKER (Dynamic, reads from data/linkedin-posts.json) -->
         <section class="section-wrapper linkedin-ticker-section" aria-label="LinkedIn Posts" style="padding-top: 2rem; padding-bottom: 2rem;">
             <div class="latest-posts-header" style="margin-bottom: 2rem;">
                 <div>
@@ -711,7 +721,7 @@
                     <a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html"
                         class="featured-image-link">
                         <img src="images/blog-images/strategy/Blog_image_marketing_202604211718.webp" alt="Marketing Strategy Lessons"
-                            class="featured-image">
+                            class="featured-image" width="690" height="385">
                         <span class="featured-image-tag">Growth Strategy</span>
                     </a>
                 </div>
@@ -728,7 +738,7 @@
                         </span>
                         <span class="featured-date">Apr 2026</span>
                     </div>
-                    <h2><a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html">What Eight Years in Marketing Actually Taught Me About Strategy</a></h2>
+                    <h2><a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html">What Working in Marketing Since 2016 Actually Taught Me About Strategy</a></h2>
                     <p class="section-description">Not a career retrospective; a series of hard-won lessons from agency life at Ogilvy, GroupM and beyond. What experience actually teaches you, and what it can't.</p>
                     <div class="featured-metrics">
                         <div class="featured-metric-card">
@@ -742,7 +752,7 @@
                     </div>
                     <div class="featured-author-row">
                         <div class="featured-author">
-                            <img src="images/author-me.webp" alt="Shalini Choudhary" class="featured-author-avatar">
+                            <img src="images/author-me.webp" alt="Shalini Choudhary" class="featured-author-avatar" width="176" height="176">
                             <span class="featured-author-name">Shalini Choudhary</span>
                         </div>
                         <div class="featured-actions">
@@ -802,7 +812,7 @@
                     <a href="blogs/growth-strategy/the-growth-dashboard-nobody-in-the-c-suite-actually-reads.html"
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/growth%20dashboard%20c%20suite%20will%20actually%20read.webp"
-                            alt="The Growth Dashboard Nobody in the C-Suite Actually Reads" class="blog-image">
+                            alt="The Growth Dashboard Nobody in the C-Suite Actually Reads" class="blog-image" width="1920" height="1080">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -817,7 +827,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/the-growth-dashboard-nobody-in-the-c-suite-actually-reads.html"
@@ -835,7 +845,7 @@
                     <a href="blogs/seo-strategy/internal-linking-is-not-housekeeping-its-how-ai-finds-what-you-know.html"
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/interlnal%20linking%20for%20ai%20visibility.gif"
-                            alt="Internal Linking Isn't Housekeeping. It's How AI Finds What You Know." class="blog-image">
+                            alt="Internal Linking Isn't Housekeeping. It's How AI Finds What You Know." class="blog-image" width="1152" height="648">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -843,14 +853,14 @@
                             <span class="blog-meta-reading">5 min read</span>
                         </div>
                         <h3><a href="blogs/seo-strategy/internal-linking-is-not-housekeeping-its-how-ai-finds-what-you-know.html">Internal Linking Isn't Housekeeping. It's How AI Finds What You Know.</a></h3>
-                        <p class="blog-excerpt">Internal linking isn't a tidiness exercise. It's how search engines and AI systems figure out what you actually know — and most sites are doing it by accident.</p>
+                        <p class="blog-excerpt">Internal linking isn't a tidiness exercise. It's how search engines and AI systems figure out what you actually know, and most sites are doing it by accident.</p>
                         <div class="blog-card-foot">
                             <span class="blog-card-signal">Focus: Site Architecture</span>
                             <span class="blog-card-signal">Outcome: Entity Verification</span>
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/seo-strategy/internal-linking-is-not-housekeeping-its-how-ai-finds-what-you-know.html"
@@ -868,7 +878,7 @@
                     <a href="blogs/growth-strategy/what-uk-companies-are-actually-hiring-senior-seo-managers-for-in-2026.html"
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/what%20companies%20actually%20hiring%20for%20in%202026.webp"
-                            alt="What UK Companies Are Actually Hiring Senior SEO Managers For in 2026" class="blog-image">
+                            alt="What UK Companies Are Actually Hiring Senior SEO Managers For in 2026" class="blog-image" width="1376" height="768">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -883,7 +893,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/what-uk-companies-are-actually-hiring-senior-seo-managers-for-in-2026.html"
@@ -901,7 +911,7 @@
                     <a href="blogs/ai-search/how-to-get-cited-in-ai-overviews-in-2026.html"
                         class="blog-image-link">
                         <img src="images/blog-images/ai%20search/AI%20Overviews%20what's%20actually%20working.webp"
-                            alt="How to Get Cited in AI Overviews: What's Actually Working in 2026" class="blog-image">
+                            alt="How to Get Cited in AI Overviews: What's Actually Working in 2026" class="blog-image" width="1376" height="768">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -909,14 +919,14 @@
                             <span class="blog-meta-reading">4 min read</span>
                         </div>
                         <h3><a href="blogs/ai-search/how-to-get-cited-in-ai-overviews-in-2026.html">How to Get Cited in AI Overviews: What's Actually Working in 2026</a></h3>
-                        <p class="blog-excerpt">Most pages chasing AI Overview citations are doing it wrong. Here's what's actually working in 2026 — based on observation, not theory.</p>
+                        <p class="blog-excerpt">Most pages chasing AI Overview citations are doing it wrong. Here's what's actually working in 2026, based on observation, not theory.</p>
                         <div class="blog-card-foot">
                             <span class="blog-card-signal">Focus: Modern Search</span>
                             <span class="blog-card-signal">Outcome: Citations</span>
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/how-to-get-cited-in-ai-overviews-in-2026.html"
@@ -934,7 +944,7 @@
                     <a href="blogs/ai-search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.html"
                         class="blog-image-link">
                         <img src="images/blog-images/ai search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.png"
-                            alt="The Invisible Layer: Building a Website That AI Actually Wants to Crawl" class="blog-image">
+                            alt="The Invisible Layer: Building a Website That AI Actually Wants to Crawl" class="blog-image" width="1024" height="1024">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -949,7 +959,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/the-invisible-layer-building-a-website-that-ai-actually-wants-to-crawl.html"
@@ -967,7 +977,7 @@
                     <a href="blogs/growth-strategy/why-the-channel-is-never-the-strategy.html"
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/Why%20the%20Channel%20Is%20Never%20the%20Strategy.webp"
-                            alt="Channel Is Never the Strategy" class="blog-image">
+                            alt="Channel Is Never the Strategy" class="blog-image" width="690" height="385">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -982,7 +992,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/why-the-channel-is-never-the-strategy.html"
@@ -1000,7 +1010,7 @@
                     <a href="blogs/growth-strategy/what-the-uk-market-reveals-about-brand-trust.html"
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/UK%20Market%20Reveals%20About%20Brand%20Trust.webp"
-                            alt="UK Market Brand Trust" class="blog-image">
+                            alt="UK Market Brand Trust" class="blog-image" width="690" height="385">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1015,7 +1025,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/what-the-uk-market-reveals-about-brand-trust.html"
@@ -1033,14 +1043,14 @@
                     <a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html"
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/Blog_image_marketing_202604211718.webp"
-                            alt="Marketing Strategy Lessons" class="blog-image">
+                            alt="Marketing Strategy Lessons" class="blog-image" width="690" height="385">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
                             <span class="blog-meta-category">GROWTH STRATEGY | April 2026</span>
                             <span class="blog-meta-reading">4 min read</span>
                         </div>
-                        <h3><a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html">What Eight Years in Marketing Actually Taught Me About Strategy</a></h3>
+                        <h3><a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html">What Working in Marketing Since 2016 Actually Taught Me About Strategy</a></h3>
                         <p class="blog-excerpt">Not a career retrospective; a series of hard-won lessons from agency life at Ogilvy, GroupM and beyond...</p>
                         <div class="blog-card-foot">
                             <span class="blog-card-signal">Focus: Strategy</span>
@@ -1048,7 +1058,7 @@
                         </div>
                         <div class="blog-card-footer">
                             <div class="blog-author">
-                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy">
+                                <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar" loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/what-eight-years-in-marketing-actually-taught-me-about-strategy.html"
@@ -1066,7 +1076,7 @@
                 <article class="blog-card" data-category="ai-search">
                     <a href="blogs/ai-search/geo-vs-seo.html" class="blog-image-link">
                         <img src="images/blog-images/ai%20search/geo%20vs%20seo.webp"
-                            alt="GEO vs. SEO: Let’s Talk About the Clicks You’re Losing" class="blog-image">
+                            alt="GEO vs. SEO: Let’s Talk About the Clicks You’re Losing" class="blog-image" width="1376" height="768">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1082,7 +1092,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/geo-vs-seo.html"
@@ -1100,7 +1110,7 @@
                 <article class="blog-card" data-category="ai-search">
                     <a href="blogs/ai-search/aeo-vs-seo-what-changes-and-what-stays.html" class="blog-image-link">
                         <img src="images/blog-images/strategy/aeo%20vs%20geo%20blog%20image.webp"
-                            alt="AEO vs SEO: What Changes and What Stays" class="blog-image">
+                            alt="AEO vs SEO: What Changes and What Stays" class="blog-image" width="690" height="385">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1118,7 +1128,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/aeo-vs-seo-what-changes-and-what-stays.html"
@@ -1136,7 +1146,7 @@
                 <article class="blog-card" data-category="seo-strategy">
                     <a href="blogs/seo-strategy/what-is-seo-strategy.html" class="blog-image-link">
                         <img src="images/blog-images/strategy/what%20is%20seo%20strategy.webp"
-                            alt="What Is SEO Strategy (And Why Most Teams Get It Wrong)" class="blog-image">
+                            alt="What Is SEO Strategy (And Why Most Teams Get It Wrong)" class="blog-image" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1154,7 +1164,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/seo-strategy/what-is-seo-strategy.html" class="blog-card-read">Read <i
@@ -1174,7 +1184,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ga/advanced%20ga4%20techniques.webp"
                             alt="Beyond the Basics: Advanced Techniques for Mastering Google Analytics 4"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1193,7 +1203,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/conversion-performance/beyond-the-basics-advanced-techniques-for-mastering-google-analytics-4.html"
@@ -1213,7 +1223,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ga/ga4%20vs%20ua.webp"
                             alt="Google Analytics 4 vs. Universal Analytics: A Head-to-Head Comparison for Beginners"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1232,7 +1242,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/analytics-measurement/google-analytics-4-vs-universal-analytics-a-head-to-head-comparison-for-beginners.html"
@@ -1252,7 +1262,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ga/power%20of%20ga4%20integrations.webp"
                             alt="Unleashing the Power of Integrations: Expanding Your GA4 Capabilities"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1271,7 +1281,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/analytics-measurement/unleashing-the-power-of-integrations-expanding-your-ga4-capabilities.html"
@@ -1291,7 +1301,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ga/ga4%20guide.webp"
                             alt="Unveiling the Power of Google Analytics 4: A Comprehensive Guide" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1310,7 +1320,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/analytics-measurement/unveiling-the-power-of-google-analytics-4-a-comprehensive-guide.html"
@@ -1330,7 +1340,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ai%20search/beyond%20backlinks.webp"
                             alt="Beyond Backlinks: The Expanding Landscape of SEO Factors in 2026" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1349,7 +1359,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/beyond-backlinks-the-expanding-landscape-of-seo-factors-in-2024.html"
@@ -1369,7 +1379,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ai%20search/google%20eeat.webp"
                             alt="Demystifying E-A-T: Expertise, Authoritativeness, and Trustworthiness in 2026"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1388,7 +1398,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/demystifying-eat-expertise-authoritativeness-and-trustworthiness-in-2024.html"
@@ -1408,7 +1418,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/ai%20search/voice%20search.webp"
                             alt="The Rise of Voice Search: Optimizing for How We Speak, Not Type" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1427,7 +1437,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/the-rise-of-voice-search-optimizing-for-how-we-speak-not-type.html"
@@ -1445,7 +1455,7 @@
                 <article class="blog-card" data-category="ai-search">
                     <a href="blogs/ai-search/top-5-seo-trends-2024.html" class="blog-image-link">
                         <img src="images/blog-images/ai%20search/top5%20seo%20trends%202026.webp"
-                            alt="Top 5 SEO Trends Shaping 2026" class="blog-image" loading="lazy">
+                            alt="Top 5 SEO Trends Shaping 2026" class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1463,7 +1473,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/ai-search/top-5-seo-trends-2024.html" class="blog-card-read">Read <i
@@ -1483,7 +1493,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/seo-tips/content%20optimization%20powerhouse.webp"
                             alt="5 Ways to Make Your Content Work Harder in Search"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1500,7 +1510,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/seo-strategy/5-tips-to-craft-content-that-ranks-and-engages.html"
@@ -1520,7 +1530,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/seo-tips/backlink%20building%20basics.webp"
                             alt="How to Build Authority: A Practitioner's Guide to Earning Links"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1538,7 +1548,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/seo-strategy/backlink-building-basics-4-strategies-to-earn-valuable-links-and-boost-authority.html"
@@ -1558,7 +1568,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/seo-tips/local%20seo%20optimization.webp"
                             alt="How to Build Local Search Visibility: A Practical 6-Step Guide"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1576,7 +1586,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/seo-strategy/local-seo-domination-6-steps-to-optimize-your-website-for-local-searches.html"
@@ -1596,7 +1606,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/seo-tips/technical%20seo%20quick%20wins.webp"
                             alt="7 Technical Fixes That Improve How Search Engines Read Your Site"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1615,7 +1625,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/seo-strategy/technical-seo-quick-wins-7-easy-fixes-to-boost-your-websites-health.html"
@@ -1635,7 +1645,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/AEO%20and%20AI.webp"
                             alt="AEO and AI: How Answer Engines Are Redefining SEO in 2025" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2816" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1654,7 +1664,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/aeo-and-ai-how-answer-engines-are-redefining-seo-in-2025.html"
@@ -1674,7 +1684,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/content%20strategy%20powerhouse.webp"
                             alt="Content Strategy Powerhouse: Aligning Content with SEO and Business Goals"
-                            class="blog-image" loading="lazy">
+                            class="blog-image" loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1693,7 +1703,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/content-strategy-powerhouse-aligning-content-with-seo-and-business-goals.html"
@@ -1713,7 +1723,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/backlinks%20strategy.webp"
                             alt="Building Authority Beyond Your Website: An Off-Page Strategy Guide" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1732,7 +1742,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/off-page-optimization-strategy-building-authority-beyond-your-website.html"
@@ -1752,7 +1762,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/technical%20seo%20foundation.webp"
                             alt="The Technical Foundations That Let Good Content Perform" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1771,7 +1781,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/technical-seo-foundations-building-a-strong-house-for-your-content.html"
@@ -1791,7 +1801,7 @@
                         class="blog-image-link">
                         <img src="images/blog-images/strategy/seo%20roadmap.webp"
                             alt="The SEO Roadmap: A Strategic Guide to Planning and Execution" class="blog-image"
-                            loading="lazy">
+                            loading="lazy" width="2752" height="1536">
                     </a>
                     <div class="blog-content-area">
                         <div class="blog-card-meta">
@@ -1810,7 +1820,7 @@
                         <div class="blog-card-footer">
                             <div class="blog-author">
                                 <img src="images/author-me.webp" alt="Shalini Choudhary" class="blog-author-avatar"
-                                    loading="lazy">
+                                    loading="lazy" width="176" height="176">
                                 <span class="blog-author-name">Shalini Choudhary</span>
                             </div>
                             <a href="blogs/growth-strategy/the-seo-roadmap-a-strategic-guide-to-planning-and-execution.html"
@@ -1933,58 +1943,61 @@
     </main>
 
     <footer class="tj-footer-area">
-        <div class="footer-content footer-grid">
-            <div class="footer-brand">
-                <span class="footer-kicker">Let’s build momentum</span>
-                <h2>Let's talk</h2>
-                <p class="footer-small">SEO and growth marketing rooted in evidence. Built for outcomes that last.</p>
-                <a class="cta-button footer-cta-button" style="background: var(--terracotta) !important; color: var(--ivory) !important; font-size: 1.2rem !important; font-weight: 700 !important;" href="https://cal.com/shalini-choudhary/30min" target="_blank">Get in touch</a>
-            </div>
+    <div class="footer-content footer-grid">
+      <div class="footer-brand">
+        <span class="footer-kicker">Let’s build momentum</span>
+        <h2>Let's talk</h2>
+        <p class="footer-small">SEO and growth marketing rooted in evidence. Built for outcomes that last.</p>
+        <a class="footer-cta-button" href="/contact.html">Get in touch</a>
+      </div>
 
-            <div class="footer-links">
-                <h3 class="footer-heading">Services</h3>
-                <nav class="footer-nav footer-nav--stacked">
-                    <a href="/seo-strategy-consultant.html">SEO Strategy</a>
-                    <a href="/growth-marketing-strategy.html">Growth Marketing</a>
-                    <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
-                    <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
-                </nav>
-            </div>
-            <div class="footer-links">
-                <h3 class="footer-heading">Explore</h3>
-                <nav class="footer-nav footer-nav--stacked">
-                    <a href="/work.html">Work</a>
-                    <a href="/about.html">About</a>
-                    <a href="/blogs.html">Blog</a>
-                    <a href="/contact.html">Contact</a>
-                </nav>
-            </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Case Studies</h3>
+        <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+          <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+          <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+          <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+          <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+          <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Global SEO</a>
+        </nav>
+      </div>
 
-            <div class="footer-contact">
-                <h3 class="footer-heading">Connect</h3>
-                <div class="footer-social" aria-label="Social links">
-                    <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank"
-                        rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                    </a>
-                    <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank"
-                        rel="noopener noreferrer" aria-label="Twitter">
-                        <i class="fab fa-twitter" aria-hidden="true"></i>
-                    </a>
-                </div>
-                <h3 class="footer-heading footer-heading--spaced">Write</h3>
-                <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    hi.shalinichoudhary@gmail.com
-                </a>
-            </div>
+      <div class="footer-links">
+        <h3 class="footer-heading">Services &amp; Explore</h3>
+        <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+          <a href="/seo-strategy-consultant.html">SEO Strategy</a>
+          <a href="/growth-marketing-strategy.html">Growth Marketing</a>
+          <a href="/marketing-analytics-ga4-consultant.html">Marketing Analytics</a>
+          <a href="/conversion-optimisation-strategy.html">CRO Strategy</a>
+          <a href="/work.html">Work</a>
+          <a href="/about.html">About</a>
+          <a href="/blogs.html">Blog</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+      </div>
 
+      <div class="footer-contact">
+        <h3 class="footer-heading">Connect</h3>
+        <div class="footer-social" aria-label="Social links">
+          <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="fab fa-twitter" aria-hidden="true"></i>
+          </a>
         </div>
+        <h3 class="footer-heading footer-heading--spaced">Write</h3>
+        <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          hi.shalinichoudhary@gmail.com
+        </a>
+      </div>
+    </div>
 
-        <div class="footer-meta">
-            <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
-        </div>
-    </footer>
+    <div class="footer-meta">
+      <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
+    </div>
+  </footer>
 
     <script src="js/script.js?v=4"></script>
 
