@@ -226,11 +226,11 @@
       transform: scale(1.05);
     }
 
-    /* Testimonials slider & cards on Ivory */
+    /* Testimonials slider & cards (scoped to section tokens) */
     .testimonials-section {
-      background: var(--ivory);
+      background: var(--bg, var(--charcoal));
       padding: clamp(3.5rem, 8vw, 6rem) 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: none;
     }
     .testimonials-slider-container {
       position: relative;
@@ -239,8 +239,8 @@
       padding: 0 20px;
     }
     .testimonial-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--card-bg, var(--surface));
+      border: 1px solid var(--line, var(--border));
       border-radius: var(--radius);
       padding: clamp(24px, 5vw, 40px);
       box-shadow: var(--shadow-1);
@@ -249,18 +249,25 @@
       color: var(--terracotta);
       font-size: 1.8rem;
       margin-bottom: 14px;
-      opacity: 0.8;
+      opacity: 0.9;
     }
     .testimonial-text {
       font-size: 1.05rem;
       line-height: 1.75;
-      color: var(--charcoal);
+      color: var(--fg, var(--charcoal));
       margin-bottom: 24px;
     }
     .testimonial-author {
       display: flex;
       align-items: center;
       gap: 16px;
+      border-top-color: var(--line, var(--border));
+    }
+    .author-name {
+      color: var(--fg, var(--charcoal));
+    }
+    .author-title {
+      color: var(--fg-soft, var(--ink-soft));
     }
     .author-img-wrapper {
       width: 52px;
@@ -268,7 +275,7 @@
       border-radius: 50%;
       overflow: hidden;
       flex-shrink: 0;
-      border: 1px solid var(--border);
+      border: 1px solid var(--line, var(--border));
     }
     .author-img-wrapper img {
       width: 100%;
@@ -276,7 +283,7 @@
       object-fit: cover;
     }
 
-    /* Reading Cards Grid */
+    /* Reading Cards Grid (scoped to section tokens) */
     .reading-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -288,8 +295,8 @@
     .reading-card {
       display: flex;
       flex-direction: column;
-      background: var(--surface);
-      border: 1px solid var(--border);
+      background: var(--card-bg, var(--surface));
+      border: 1px solid var(--line, var(--border));
       border-radius: var(--radius);
       padding: 32px;
       box-shadow: var(--shadow-1);
@@ -307,7 +314,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--terracotta-deep);
+      color: var(--accent-text, var(--terracotta-deep));
       margin-bottom: 12px;
     }
     .reading-card h3 {
@@ -315,20 +322,20 @@
       font-size: 1.55rem;
       font-weight: 400;
       line-height: 1.2;
-      color: var(--charcoal);
+      color: var(--fg, var(--charcoal));
       margin-bottom: 12px;
     }
     .reading-card p {
       font-size: 0.94rem;
       line-height: 1.65;
-      color: var(--ink-soft);
+      color: var(--fg-soft, var(--ink-soft));
       margin-bottom: 20px;
       flex-grow: 1;
     }
     .reading-link {
       font-size: 0.88rem;
       font-weight: 700;
-      color: var(--terracotta-deep);
+      color: var(--fg, var(--terracotta-deep));
     }
 
     /* Mobile adjustments */
@@ -420,13 +427,15 @@
       <div class="hero-grid">
 
         <div class="hero-media">
-          <div class="hero-editorial-portrait reveal">
+          <div class="hero-editorial-portrait reveal" tabindex="0" role="button" aria-label="Portrait of Shalini Choudhary. Hover or tap to view alternate frame.">
             <img src="images/test_shalini.jpg" alt="Shalini Choudhary" width="533" height="800">
+            <img src="images/me-1.png" alt="Shalini Choudhary alternate frame" class="portrait-alt" width="437" height="475" loading="lazy">
             <div class="portrait-chip">
               <strong>Shalini Choudhary</strong>
               <small>Formerly Senior SEO Manager, GUS</small>
             </div>
           </div>
+          <p class="hero-portrait-caption"><a href="about.html" class="sc-link">Open profile</a></p>
         </div>
 
         <div class="hero-copy reveal delay-200">
@@ -446,11 +455,26 @@
             Application pipelines, zero-loss migrations and AI-search visibility, built across GroupM, Ogilvy, JLL and GUS.
           </p>
 
-          <div class="hero-actions" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 24px;">
+          <div class="hero-actions" style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px;">
             <a href="#selected-work" class="sc-btn sc-btn--terracotta">See the work</a>
             <a href="#contact-section" class="sc-btn sc-btn--charcoal">Get in touch</a>
             <a href="/images/Shalinicv.pdf" class="sc-btn sc-btn--ghost" download>Download CV <span aria-hidden="true">↓</span></a>
           </div>
+
+          <ul class="hero-compact-stats" aria-label="Headline results">
+            <li class="hero-compact-stat">
+              <span class="hero-compact-stat__num">INR 416 crore</span>
+              <span class="hero-compact-stat__label">application pipeline, before enrolment conversion</span>
+            </li>
+            <li class="hero-compact-stat">
+              <span class="hero-compact-stat__num">+65%</span>
+              <span class="hero-compact-stat__label">YoY organic traffic</span>
+            </li>
+            <li class="hero-compact-stat">
+              <span class="hero-compact-stat__num">0</span>
+              <span class="hero-compact-stat__label">ranking positions lost in a Drupal replatform</span>
+            </li>
+          </ul>
 
           <div class="social-icons">
             <a href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer"
@@ -494,8 +518,8 @@
       </div>
     </div>
 
-    <!-- 01 THE RECORD (stat strip) -->
-    <section id="the-record" class="sc-section" style="padding-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: clamp(2.5rem, 6vw, 4rem);" aria-labelledby="record-title">
+    <!-- 01 THE RECORD (charcoal band with ivory text and terracotta numbers) -->
+    <section id="the-record" class="sc-section is-dark" style="padding-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: clamp(2.5rem, 6vw, 4rem);" aria-labelledby="record-title">
       <div class="sc-wrap">
         <p class="sc-label"><span class="sc-label__n">01</span> <span>The record</span></p>
         <h2 id="record-title" class="sr-only">Documented performance record</h2>
@@ -528,14 +552,14 @@
           </li>
         </ul>
 
-        <p style="margin-top: 1.75rem; font-size: 0.98rem; font-weight: 600; color: var(--terracotta-deep); text-align: center;">
+        <p style="margin-top: 1.75rem; font-size: 0.98rem; font-weight: 600; color: var(--ivory); text-align: center;">
           9,800 SEO-page leads became 3,200 applications in one year.
         </p>
       </div>
     </section>
 
-    <!-- 02 PROFILE -->
-    <section id="profile" class="sc-section" style="padding-top: clamp(2rem, 5vw, 3.5rem); padding-bottom: clamp(2rem, 5vw, 3.5rem); background: var(--surface);" aria-labelledby="profile-title">
+    <!-- 02 PROFILE (ivory band) -->
+    <section id="profile" class="sc-section" style="padding-top: clamp(2.5rem, 6vw, 4rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem);" aria-labelledby="profile-title">
       <div class="sc-wrap" style="max-width: 880px;">
         <p class="sc-label"><span class="sc-label__n">02</span> <span>Profile</span></p>
         <h2 id="profile-title" style="margin-bottom: 1.5rem;">Connecting search visibility to <em>commercial outcomes.</em></h2>
@@ -547,8 +571,8 @@
       </div>
     </section>
 
-    <!-- WHERE THE WORK HAPPENED -->
-    <section id="trust-section" class="section trust-section" style="padding: 2.75rem 0;">
+    <!-- WHERE THE WORK HAPPENED (continues ivory band) -->
+    <section id="trust-section" class="section trust-section" style="padding: 2rem 0 3.25rem; background: var(--ivory); border-top: none;">
       <div class="section-head reveal" style="margin-bottom: 22px; text-align: center;">
         <h3 style="font-size: 0.82rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-text); font-weight: 700; margin-bottom: 0;">Where the work happened</h3>
       </div>
@@ -561,8 +585,8 @@
       </div>
     </section>
 
-    <!-- 03 SELECTED WORK (STACKING CARDS) -->
-    <section id="selected-work" class="sc-section" aria-labelledby="work-title">
+    <!-- 03 SELECTED WORK (charcoal band) -->
+    <section id="selected-work" class="sc-section is-dark" aria-labelledby="work-title">
       <!-- Legacy anchor for links targeting #impact-section -->
       <span id="impact-section" style="position: absolute; top: -80px;"></span>
       <div class="sc-wrap">
@@ -816,8 +840,8 @@
       </div>
     </section>
 
-    <!-- 04 EXPERIENCE (career timeline with expandable rows) -->
-    <section id="experience" class="sc-section" style="background: var(--surface);" aria-labelledby="experience-heading">
+    <!-- 04 EXPERIENCE (ivory band: career timeline with expandable rows) -->
+    <section id="experience" class="sc-section" aria-labelledby="experience-heading">
       <div class="sc-wrap">
         <p class="sc-label"><span class="sc-label__n">04</span> <span>Experience</span></p>
         <h2 id="experience-heading" style="margin-bottom: 2.5rem;">Career <em>timeline.</em></h2>
@@ -900,8 +924,8 @@
       </div>
     </section>
 
-    <!-- 05 SIX CAPABILITIES (numbered grid) and LABELLED ROWS -->
-    <section id="capabilities" class="sc-section" aria-labelledby="capabilities-heading">
+    <!-- 05 SIX CAPABILITIES (charcoal band: numbered grid and labelled rows) -->
+    <section id="capabilities" class="sc-section is-dark" aria-labelledby="capabilities-heading">
       <div class="sc-wrap">
         <p class="sc-label"><span class="sc-label__n">05</span> <span>Capabilities</span></p>
         <h2 id="capabilities-heading" style="margin-bottom: 2rem;">Six capabilities. <em>One commercial system.</em></h2>
@@ -981,8 +1005,8 @@
       </div>
     </section>
 
-    <!-- 06 EDUCATION AND RECOGNITION (dark charcoal band) -->
-    <section id="education-recognition" class="sc-section is-dark" aria-labelledby="edu-heading">
+    <!-- 06 EDUCATION AND RECOGNITION (ivory band) -->
+    <section id="education-recognition" class="sc-section" aria-labelledby="edu-heading">
       <div class="sc-wrap">
         <p class="sc-label"><span class="sc-label__n">06</span> <span>Education &amp; recognition</span></p>
         <h2 id="edu-heading" style="margin-bottom: 2.5rem;">Academic credentials &amp; <em>commercial recognition.</em></h2>
@@ -990,39 +1014,39 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 2.5rem;">
           <!-- Leeds MSc -->
           <article style="background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px;">
-            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); display: block; margin-bottom: 12px;">Postgraduate Degree · Sep 2025 to Sep 2026</span>
-            <h3 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; color: var(--ivory); margin-bottom: 8px;">University of Leeds</h3>
-            <p style="font-size: 1.2rem; font-weight: 600; color: var(--ivory); margin-bottom: 8px;">MSc Marketing Management with Advertising</p>
-            <p style="font-size: 0.95rem; color: var(--stone); margin-bottom: 12px;">Graduated with First Class honours.</p>
-            <p style="font-size: 0.88rem; color: var(--stone); line-height: 1.6; border-top: 1px solid var(--line); padding-top: 12px;">Dissertation on hyper-personalised Instagram ads and consumer purchasing decisions.</p>
+            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta-deep); display: block; margin-bottom: 12px;">Postgraduate Degree · Sep 2025 to Sep 2026</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; color: var(--charcoal); margin-bottom: 8px;">University of Leeds</h3>
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--charcoal); margin-bottom: 8px;">MSc Marketing Management with Advertising</p>
+            <p style="font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 12px;">Graduated with First Class honours.</p>
+            <p style="font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; border-top: 1px solid var(--line); padding-top: 12px;">Dissertation on hyper-personalised Instagram ads and consumer purchasing decisions.</p>
           </article>
 
           <!-- CIM x IBM Pitch -->
           <article style="background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px;">
-            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); display: block; margin-bottom: 12px;">National Competition · 2026</span>
-            <h3 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; color: var(--ivory); margin-bottom: 8px;">CIM x IBM &ldquo;The Pitch&rdquo; 2026</h3>
-            <p style="font-size: 1.2rem; font-weight: 600; color: var(--ivory); margin-bottom: 8px;">Shortlisted, Top 13 UK Teams</p>
-            <p style="font-size: 0.95rem; color: var(--stone); margin-bottom: 12px;">GBP 400K go-to-market strategy involving AI-driven commercial marketing.</p>
-            <p style="font-size: 0.88rem; color: var(--stone); line-height: 1.6; border-top: 1px solid var(--line); padding-top: 12px;">Designed a multi-channel growth loop for &ldquo;Green AI&rdquo; and pitched it to IBM and CIM leadership.</p>
+            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta-deep); display: block; margin-bottom: 12px;">National Competition · 2026</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; color: var(--charcoal); margin-bottom: 8px;">CIM x IBM &ldquo;The Pitch&rdquo; 2026</h3>
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--charcoal); margin-bottom: 8px;">Shortlisted, Top 13 UK Teams</p>
+            <p style="font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 12px;">GBP 400K go-to-market strategy involving AI-driven commercial marketing.</p>
+            <p style="font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; border-top: 1px solid var(--line); padding-top: 12px;">Designed a multi-channel growth loop for &ldquo;Green AI&rdquo; and pitched it to IBM and CIM leadership.</p>
           </article>
 
           <!-- Haridev Joshi University -->
           <article style="background: var(--card-bg); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px;">
-            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); display: block; margin-bottom: 12px;">Master's Degree · 2013 to 2015</span>
-            <h3 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; color: var(--ivory); margin-bottom: 8px;">Haridev Joshi University, India</h3>
-            <p style="font-size: 1.2rem; font-weight: 600; color: var(--ivory); margin-bottom: 8px;">MA Media Studies</p>
-            <p style="font-size: 0.95rem; color: var(--stone);">Graduated with First Class honours.</p>
+            <span style="font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--terracotta-deep); display: block; margin-bottom: 12px;">Master's Degree · 2013 to 2015</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.85rem; font-weight: 400; color: var(--charcoal); margin-bottom: 8px;">Haridev Joshi University, India</h3>
+            <p style="font-size: 1.2rem; font-weight: 600; color: var(--charcoal); margin-bottom: 8px;">MA Media Studies</p>
+            <p style="font-size: 0.95rem; color: var(--ink-soft);">Graduated with First Class honours.</p>
           </article>
         </div>
 
         <div style="border-top: 1px solid var(--line); padding-top: 1.5rem;">
-          <p style="font-size: 0.95rem; color: var(--stone); margin: 0;">Marketing Associate, 180 Degrees Consulting Leeds, voluntary.</p>
+          <p style="font-size: 0.95rem; color: var(--ink-soft); margin: 0;">Marketing Associate, 180 Degrees Consulting Leeds, voluntary.</p>
         </div>
       </div>
     </section>
 
-    <!-- 07 TESTIMONIALS -->
-    <section id="recommendations-section" class="section testimonials-section">
+    <!-- 07 TESTIMONIALS (charcoal band) -->
+    <section id="recommendations-section" class="sc-section is-dark testimonials-section">
       <div class="sc-wrap" style="text-align: center; margin-bottom: 2.5rem;">
         <p class="sc-label" style="justify-content: center;"><span class="sc-label__n">07</span> <span>Testimonials</span></p>
         <h2>What people say after <em>working together.</em></h2>
@@ -1100,21 +1124,79 @@
       </div>
     </section>
 
-    <!-- 08 HOW I WORK -->
-    <section id="skills-glance" class="sc-section" style="padding-top: clamp(3rem, 6vw, 4.5rem); padding-bottom: clamp(3rem, 6vw, 4.5rem);" aria-labelledby="how-heading">
-      <div class="sc-wrap" style="max-width: 880px;">
-        <p class="sc-label"><span class="sc-label__n">08</span> <span>How I work</span></p>
-        <h2 id="how-heading" style="margin-bottom: 1.5rem;">Operating at the <em>commercial core.</em></h2>
-        <div style="border-left: 3px solid var(--terracotta); padding-left: 1.5rem;">
-          <p style="font-size: 1.15rem; line-height: 1.85; color: var(--charcoal); margin: 0;">
-            Most SEO managers operate strictly inside a single channel. I work across the broader commercial system, connecting search strategy directly to pipeline and revenue. This focus is why organisations bring me in for migrations that cannot afford traffic loss, multi-market expansions that must scale quickly, and inbound engines built to compound over time.
-          </p>
+    <!-- 08 WHO YOU WOULD BE WORKING WITH (ivory band: two columns) -->
+    <section id="skills-glance" class="sc-section" aria-labelledby="how-heading">
+      <div class="sc-wrap">
+        <p class="sc-label"><span class="sc-label__n">08</span> <span>Who you would be working with</span></p>
+        <h2 id="how-heading" style="margin-bottom: 2rem;">Who you would be <em>working with.</em></h2>
+
+        <div class="sc-working-grid">
+          <div>
+            <div class="hero-editorial-portrait" tabindex="0" role="button" aria-label="Portrait of Shalini Choudhary. Hover or tap to view alternate frame.">
+              <img src="images/me-1.png" alt="Shalini Choudhary" width="437" height="475" loading="lazy">
+              <img src="images/test_shalini.jpg" alt="Shalini Choudhary alternate frame" class="portrait-alt" width="533" height="800" loading="lazy">
+            </div>
+          </div>
+
+          <div>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--charcoal); margin: 0 0 1.75rem 0;">
+              Most SEO managers operate strictly inside a single channel. I work across the broader commercial system, connecting search strategy directly to pipeline and revenue for migrations that cannot afford traffic loss, multi-market expansions that must scale quickly, and inbound engines built to compound over time.
+            </p>
+
+            <dl class="sc-tags" style="margin-bottom: 1.75rem;">
+              <div class="sc-tags__row">
+                <dt>Specialism</dt>
+                <dd>
+                  <ul>
+                    <li>Enterprise SEO, GEO and AEO</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="sc-tags__row">
+                <dt>Scale</dt>
+                <dd>
+                  <ul>
+                    <li>Sites with thousands of pages, multi-market</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="sc-tags__row">
+                <dt>Markets</dt>
+                <dd>
+                  <ul>
+                    <li>Americas</li>
+                    <li>MENA</li>
+                    <li>EMEA</li>
+                    <li>APAC</li>
+                  </ul>
+                </dd>
+              </div>
+              <div class="sc-tags__row">
+                <dt>Sectors</dt>
+                <dd>
+                  <ul>
+                    <li>Education</li>
+                    <li>Automotive</li>
+                    <li>FMCG</li>
+                    <li>Luxury</li>
+                    <li>Healthcare</li>
+                    <li>E-commerce</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center;">
+              <a href="about.html" class="sc-link">Full profile →</a>
+              <a href="work.html" class="sc-link">Read the case studies →</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 09 LATEST THINKING -->
-    <section id="thinking-section" class="sc-section" style="background: var(--surface);" aria-labelledby="thinking-heading">
+    <!-- 09 LATEST THINKING (charcoal band) -->
+    <section id="thinking-section" class="sc-section is-dark" aria-labelledby="thinking-heading">
       <div class="sc-wrap" style="margin-bottom: 2.5rem;">
         <p class="sc-label"><span class="sc-label__n">09</span> <span>Latest thinking</span></p>
         <h2 id="thinking-heading">Writing on search, AI and <em>commercial execution.</em></h2>
@@ -1146,10 +1228,11 @@
       </div>
     </section>
 
-    <!-- 10 CONTACT -->
+    <!-- 10 CONTACT (ivory band) -->
     <section id="contact-section" class="section contact" style="background: var(--ivory); padding: clamp(3.5rem, 8vw, 6rem) 0;">
       <!-- Header -->
       <div class="contact-header reveal" style="max-width: 800px; margin: 0 auto 3rem auto; text-align: center; padding: 0 20px;">
+        <p class="sc-availability-line">Available for senior search and growth strategy roles.</p>
         <p class="sc-label" style="justify-content: center;"><span class="sc-label__n">10</span> <span>Contact</span></p>
         <h2>Let's talk</h2>
         <p class="sc-lede" style="margin: 12px auto 0 auto;">
