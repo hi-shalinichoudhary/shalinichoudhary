@@ -78,3 +78,11 @@ Single source of truth for every claim on shalinichoudhary.in. Rules for use are
 3. No em dashes in any copy. Use commas, colons or full stops.
 4. Never describe the INR 416 crore as revenue.
 5. British English spelling.
+
+## POSITIONING RULES
+
+- New positioning: digital and integrated marketing strategist, with depth in search and AI discovery (SEO, GEO and AEO). Matches the GroupM title "Marketing Manager (Digital and Integrated Marketing)".
+- Audience: recruiters hiring for brand, digital, communications, marketing, growth and product-marketing roles in the UK, UAE and other regions. The site must read as a broad marketer with depth, not an SEO specialist.
+- Never claim: paid media ownership, budget ownership, events, PR or media relations, product management ownership, or brand identity ownership.
+- SEO, GEO and AEO stays as one capability and one expertise page, not the headline of the whole site.
+
