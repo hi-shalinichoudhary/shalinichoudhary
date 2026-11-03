@@ -66,3 +66,56 @@
     });
   });
 })();
+
+/* Accessible keyboard-operable tabs for [role="tablist"] */
+(function () {
+  'use strict';
+  var tablists = document.querySelectorAll('[role="tablist"]');
+  tablists.forEach(function (tablist) {
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    if (!tabs.length) return;
+
+    function activateTab(nextTab, moveFocus) {
+      tabs.forEach(function (tab) {
+        var selected = tab === nextTab;
+        tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+        tab.setAttribute('tabindex', selected ? '0' : '-1');
+        var panelId = tab.getAttribute('aria-controls');
+        var panel = panelId ? document.getElementById(panelId) : null;
+        if (panel) {
+          if (selected) {
+            panel.removeAttribute('hidden');
+          } else {
+            panel.setAttribute('hidden', '');
+          }
+        }
+      });
+      if (moveFocus) {
+        nextTab.focus();
+      }
+    }
+
+    tabs.forEach(function (tab, idx) {
+      tab.addEventListener('click', function () {
+        activateTab(tab, false);
+      });
+
+      tab.addEventListener('keydown', function (e) {
+        var targetIdx = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          targetIdx = (idx + 1) % tabs.length;
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          targetIdx = (idx - 1 + tabs.length) % tabs.length;
+        } else if (e.key === 'Home') {
+          targetIdx = 0;
+        } else if (e.key === 'End') {
+          targetIdx = tabs.length - 1;
+        }
+        if (targetIdx !== null) {
+          e.preventDefault();
+          activateTab(tabs[targetIdx], true);
+        }
+      });
+    });
+  });
+})();
