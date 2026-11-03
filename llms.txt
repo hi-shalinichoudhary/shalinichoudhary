@@ -1,10 +1,10 @@
-# Shalini Choudhary: SEO, GEO and AEO Strategy Leader
+# Shalini Choudhary: Digital and Integrated Marketing Strategist
 
-Fluent in search & growth. Native to revenue.
+Brand, content and growth, accountable to revenue.
 
-Shalini Choudhary is an SEO, GEO (Generative Engine Optimisation) and AEO (Answer Engine Optimisation) strategy leader specialising in search-led growth since 2016. Her career spans agency, real estate, media and global higher education: Ogilvy (Digital Marketing Analyst, Sep 2016 to Jan 2019), JLL (Digital Marketing Analyst, Feb 2019 to Oct 2019), GroupM, WPP Group (Marketing Manager, Digital and Integrated Marketing, Nov 2019 to Jan 2022), and Global University Systems, GUS (Senior SEO Manager, Digital Portfolio and Content Strategy, Feb 2022 to Sep 2025).
+Shalini Choudhary is a digital and integrated marketing strategist, with depth in search and AI discovery (SEO, GEO and AEO), tying brand, content, analytics and demand to commercial outcomes since 2016. Her career spans agency, commercial real estate, media and global higher education: Ogilvy (Digital Marketing Analyst, Sep 2016 to Jan 2019), JLL (Digital Marketing Analyst, Feb 2019 to Oct 2019), GroupM, WPP Group (Marketing Manager, Digital and Integrated Marketing, Nov 2019 to Jan 2022), and Global University Systems, GUS (Senior SEO Manager, Digital Portfolio and Content Strategy, Feb 2022 to Sep 2025).
 
-She holds an MSc in Marketing Management with Advertising from the University of Leeds (First Class, Sep 2025 to Sep 2026), where her dissertation examined hyper-personalised Instagram ads and consumer purchasing decisions, and an MA in Media Studies from Haridev Joshi University, India (First Class, 2013 to 2015). In 2026, she was shortlisted among the top 13 UK teams in the CIM x IBM "The Pitch" competition for a GBP 400K go-to-market strategy involving AI-driven commercial marketing, designing a multi-channel growth loop for "Green AI" and pitching it to IBM and CIM leadership. She also serves as a voluntary Marketing Associate at 180 Degrees Consulting Leeds.
+She holds an MSc in Marketing Management with Advertising from the University of Leeds (First Class, Sep 2025 to Sep 2026), where her dissertation examined hyper-personalised Instagram ads and consumer purchasing decisions, and an MA in Media Studies from Haridev Joshi University, India (First Class, 2013 to 2015). In 2026, she was shortlisted among the top 13 UK teams in the CIM x IBM "The Pitch" competition for a GBP 400K go-to-market strategy involving AI-driven commercial marketing, designing a multi-channel growth loop for "Green AI" and pitching it to IBM and CIM leadership. She also serves as a voluntary Marketing Associate at 180 Degrees Consulting Leeds. Based in the UK, she is open to senior marketing, digital and growth roles across the UK, UAE and international markets.
 
 ## Verified Proof Points
 
@@ -36,8 +36,8 @@ She holds an MSc in Marketing Management with Advertising from the University of
 
 - [Home](https://shalinichoudhary.in/): Executive overview, career record, selected case studies, capabilities, timeline and testimonials.
 - [About](https://shalinichoudhary.in/about.html): Career timeline since 2016, leadership approach, University of Leeds MSc, and CIM x IBM recognition.
-- [Work & Case Studies Hub](https://shalinichoudhary.in/work.html): Enterprise case studies, growth levers and verified client outcomes.
-- [Blog Hub](https://shalinichoudhary.in/blogs.html): Strategic articles on AI search, GEO, AEO, SEO strategy, growth frameworks and GA4 measurement.
+- [Work & Case Studies Hub](https://shalinichoudhary.in/work.html): Enterprise case studies, expertise levers and verified client outcomes.
+- [Blog Hub](https://shalinichoudhary.in/blogs.html): Strategic articles on AI search, GEO, AEO, marketing strategy, growth frameworks and GA4 measurement.
 - [Contact](https://shalinichoudhary.in/contact.html): Direct contact form and email details (hi.shalinichoudhary@gmail.com).
 
 ## Case Studies
@@ -46,11 +46,11 @@ She holds an MSc in Marketing Management with Advertising from the University of
 - [GUS AI Discovery & GEO](https://shalinichoudhary.in/work/gus-ai-discovery.html): Reversing AI-answer traffic erosion through answer-first content restructuring, schema, entity signals, and a +15-20% citation gain.
 - [GUS Organic Growth Pipeline](https://shalinichoudhary.in/work/gus-growth-pipeline.html): Scaling an INR 416 crore application pipeline (before enrolment conversion) from 9,800 SEO leads and 3,200 applications, with +65% YoY organic traffic growth.
 - [GroupM Ford Pitch & Non-Branded Growth](https://shalinichoudhary.in/work/groupm-ford-pitch.html): Winning the Ford pitch through technical and market analysis and driving +20% non-branded organic traffic at zero budget.
-- [International SEO at JLL & Ogilvy](https://shalinichoudhary.in/work/international-seo-jll-ogilvy.html): Multi-market SEO across EMEA, APAC, Americas and MENA, entity-level schema at scale, and 10+ global brand accounts.
+- [Multi-Market Strategy at JLL & Ogilvy](https://shalinichoudhary.in/work/international-seo-jll-ogilvy.html): Multi-market digital and search execution across EMEA, APAC, Americas and MENA, entity-level schema at scale, and 10+ global brand accounts.
 
-## Strategy & Service Pages
+## Expertise & Depth Pages
 
-- [SEO, GEO and AEO Strategy](https://shalinichoudhary.in/seo-strategy-consultant.html): Enterprise organic growth, technical search health, answer-first content, and AI visibility measurement.
-- [Growth Strategy and Prioritisation](https://shalinichoudhary.in/growth-marketing-strategy.html): Strategy before channels, hypothesis structuring, capital allocation, and AI workflow efficiency.
-- [Marketing Analytics & GA4](https://shalinichoudhary.in/marketing-analytics-ga4-consultant.html): Event tracking, Looker Studio executive dashboards, and pipeline attribution.
-- [Conversion Optimisation Strategy](https://shalinichoudhary.in/conversion-optimisation-strategy.html): Structured A/B testing, landing page intent alignment, and lead-to-application conversion lift.
+- [Search and AI Discovery](https://shalinichoudhary.in/seo-strategy-consultant.html): Depth in SEO, GEO and AEO, technical search health, answer-first content, and AI visibility measurement within an integrated marketing system.
+- [Growth and Conversion](https://shalinichoudhary.in/growth-marketing-strategy.html): Strategy before channels, hypothesis structuring, capital allocation, and AI workflow efficiency.
+- [Analytics](https://shalinichoudhary.in/marketing-analytics-ga4-consultant.html): GA4 event tracking, Looker Studio executive dashboards, and Salesforce pipeline attribution.
+- [CRO](https://shalinichoudhary.in/conversion-optimisation-strategy.html): Structured A/B testing, landing page intent alignment, and lead-to-application conversion lift.
