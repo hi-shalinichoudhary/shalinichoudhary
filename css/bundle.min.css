@@ -6040,32 +6040,77 @@ button[type="submit"]:hover,
 
 .hero-editorial-portrait {
   position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--ivory);
   overflow: hidden;
   cursor: pointer;
+}
+
+.hero-editorial-portrait .portrait-primary-pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-editorial-portrait .portrait-primary {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 300ms ease;
 }
 
 .hero-editorial-portrait .portrait-alt {
   position: absolute;
   inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 50%;
   border-radius: 20px;
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 300ms ease;
   pointer-events: none;
+  background: var(--ivory);
 }
 
-.hero-editorial-portrait:hover .portrait-alt,
+.hero-editorial-portrait .portrait-alt img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  border-radius: 20px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-editorial-portrait:hover .portrait-alt {
+    opacity: 1;
+  }
+  .hero-editorial-portrait:hover .portrait-primary {
+    opacity: 0;
+  }
+}
+
 .hero-editorial-portrait:focus-visible .portrait-alt,
 .hero-editorial-portrait.is-alt .portrait-alt {
   opacity: 1;
 }
 
+.hero-editorial-portrait:focus-visible .portrait-primary,
+.hero-editorial-portrait.is-alt .portrait-primary {
+  opacity: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .hero-editorial-portrait,
+  .hero-editorial-portrait .portrait-primary,
   .hero-editorial-portrait .portrait-alt {
-    transition: none;
+    transition: none !important;
   }
 }
 

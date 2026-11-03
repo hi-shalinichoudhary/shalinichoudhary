@@ -56,12 +56,14 @@
   portraits.forEach(function (frame) {
     if (!frame.querySelector('.portrait-alt')) return;
     frame.addEventListener('click', function () {
-      frame.classList.toggle('is-alt');
+      var active = frame.classList.toggle('is-alt');
+      frame.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
     frame.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        frame.classList.toggle('is-alt');
+        var active = frame.classList.toggle('is-alt');
+        frame.setAttribute('aria-pressed', active ? 'true' : 'false');
       }
     });
   });

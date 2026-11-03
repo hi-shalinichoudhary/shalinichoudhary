@@ -154,24 +154,29 @@
     /* Hero Portrait with terracotta offset outline */
     .hero-editorial-portrait {
       position: relative;
+      aspect-ratio: 4 / 5;
+      background: var(--ivory);
       border-radius: 20px;
       outline: 1.5px solid var(--terracotta);
       outline-offset: 10px;
       box-shadow: 0 20px 48px color-mix(in srgb, var(--charcoal) 16%, transparent);
       transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), outline-offset 0.4s ease;
       max-width: 360px;
+      width: 100%;
       margin: 0 auto;
     }
-    .hero-editorial-portrait:hover {
+    .hero-editorial-portrait:hover,
+    .hero-editorial-portrait:focus-visible {
       transform: translateY(-4px);
       outline-offset: 14px;
     }
-    .hero-editorial-portrait img {
+    .hero-editorial-portrait > img {
       border-radius: 20px;
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
+      transition: opacity 300ms ease;
     }
 
     /* Subtitle & Hero Role typography */
@@ -432,9 +437,12 @@
       <div class="hero-grid">
 
         <div class="hero-media">
-          <div class="hero-editorial-portrait reveal" tabindex="0" role="button" aria-label="Portrait of Shalini Choudhary. Hover or tap to view alternate frame.">
-            <img src="images/test_shalini.jpg" alt="Shalini Choudhary" width="533" height="800">
-            <img src="images/me-1.png" alt="Shalini Choudhary alternate frame" class="portrait-alt" width="437" height="475" loading="lazy">
+          <div class="hero-editorial-portrait reveal" tabindex="0" role="button" aria-pressed="false" aria-label="Portrait of Shalini Choudhary. Hover, focus or tap to view alternate frame.">
+            <img src="images/test_shalini.jpg" alt="Shalini Choudhary" class="portrait-primary" width="533" height="800">
+            <picture class="portrait-alt">
+              <source srcset="/images/portrait-leeds-full-ivory.webp" type="image/webp">
+              <img src="/images/portrait-leeds-full-ivory.jpg" alt="Shalini Choudhary smiling beside illuminated LUBS lettering at Leeds University Business School" width="960" height="1200" loading="lazy" decoding="async">
+            </picture>
             <div class="portrait-chip">
               <strong>Shalini Choudhary</strong>
               <small>Formerly Senior SEO Manager, GUS</small>
@@ -1327,9 +1335,12 @@
 
         <div class="sc-working-grid">
           <div>
-            <div class="hero-editorial-portrait" tabindex="0" role="button" aria-label="Portrait of Shalini Choudhary. Hover or tap to view alternate frame.">
-              <img src="images/me-1.png" alt="Shalini Choudhary" width="437" height="475" loading="lazy">
-              <img src="images/test_shalini.jpg" alt="Shalini Choudhary alternate frame" class="portrait-alt" width="533" height="800" loading="lazy">
+            <div class="hero-editorial-portrait" tabindex="0" role="button" aria-pressed="false" aria-label="Portrait of Shalini Choudhary at Leeds University Business School. Hover, focus or tap to view alternate frame.">
+              <picture class="portrait-primary-pic">
+                <source srcset="/images/portrait-leeds-full-ivory.webp" type="image/webp">
+                <img src="/images/portrait-leeds-full-ivory.jpg" alt="Shalini Choudhary smiling beside illuminated LUBS lettering at Leeds University Business School" class="portrait-primary" width="960" height="1200" loading="lazy" decoding="async">
+              </picture>
+              <img src="images/test_shalini.jpg" alt="Shalini Choudhary" class="portrait-alt" width="533" height="800" loading="lazy" decoding="async">
             </div>
           </div>
 
