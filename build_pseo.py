@@ -6,7 +6,7 @@ import re
 csv_file_path = 'data.csv'
 template_file_path = 'template.md'
 # Change this path to match exactly where your growth strategy posts live
-output_directory = 'content/blogs/growth-strategy/' 
+output_directory = 'blogs/growth-strategy/' 
 
 # Ensure output directory exists
 os.makedirs(output_directory, exist_ok=True)
