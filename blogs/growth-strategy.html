@@ -106,6 +106,144 @@
   ]
 }
   </script>
+    <style>
+        /* RevOps Integration Directory Section & Grid */
+        .revops-directory-section {
+            padding-top: 30px;
+            padding-bottom: 60px;
+        }
+
+        .directory-header {
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .directory-header h2 {
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: var(--charcoal, #181818);
+            margin-bottom: 12px;
+            line-height: 1.25;
+        }
+
+        .directory-header p {
+            font-size: 1.02rem;
+            color: var(--ink-soft, #555555);
+            max-width: 840px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .revops-directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* Minimalist Directory Card (No Images) */
+        .directory-card {
+            background: #ffffff;
+            border: 1px solid color-mix(in srgb, var(--charcoal, #181818) 10%, transparent);
+            border-radius: 8px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+
+        .directory-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--terracotta, #A65F43);
+            box-shadow: 0 10px 24px color-mix(in srgb, var(--charcoal, #181818) 7%, transparent);
+        }
+
+        .directory-card-top {
+            margin-bottom: 16px;
+        }
+
+        /* CSS Badge */
+        .directory-badge {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: color-mix(in srgb, var(--terracotta, #A65F43) 12%, transparent);
+            color: var(--terracotta-deep, #8F4F36);
+            margin-bottom: 12px;
+        }
+
+        /* Prominent Bold Title Link */
+        .directory-card-title {
+            font-size: 1.08rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 10px 0;
+            color: var(--charcoal, #181818);
+        }
+
+        .directory-card-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .directory-card-title a:hover {
+            color: var(--terracotta, #A65F43);
+        }
+
+        /* Concise Grey Description */
+        .directory-card-desc {
+            font-size: 0.88rem;
+            color: var(--ink-soft, #555555);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Action Link */
+        .directory-card-footer {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid color-mix(in srgb, var(--hairline, #B7B5AF) 50%, transparent);
+        }
+
+        .directory-read-link {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--terracotta-deep, #8F4F36);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .directory-card:hover .directory-read-link {
+            color: var(--terracotta, #A65F43);
+            gap: 9px;
+        }
+
+        .directory-divider {
+            border: none;
+            border-top: 1px solid var(--hairline, #B7B5AF);
+            margin: 50px auto 40px auto;
+            max-width: 1400px;
+        }
+
+        @media (max-width: 768px) {
+            .revops-directory-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .directory-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -589,6 +727,717 @@
         
         <div class="load-more-container">
             <button id="loadMoreBtn" class="cta-button">Load More Posts</button>
+        </div>
+    </section>
+
+    <hr class="directory-divider">
+
+    <section class="section-wrapper revops-directory-section" id="revops-directory">
+        <div class="directory-header">
+            <h2>RevOps Integration Directory: GA4 &amp; CRM Architecture</h2>
+            <p>These technical guides outline the data architecture, custom dimensions, and setup requirements for tracking organic pipeline and closing the loop between Google Analytics 4 and your downstream CRM or product stack.</p>
+        </div>
+        <div class="revops-directory-grid">
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-activecampaign-organic-pipeline-ga4.html">How to Track ActiveCampaign Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating ActiveCampaign with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-activecampaign-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-acuity-organic-pipeline-ga4.html">How to Track Acuity Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Acuity with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-acuity-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-amplitude-organic-pipeline-ga4.html">How to Track Amplitude Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Amplitude with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-amplitude-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-brevo-organic-pipeline-ga4.html">How to Track Brevo Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Brevo with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-brevo-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-calendly-organic-pipeline-ga4.html">How to Track Calendly Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Calendly with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-calendly-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-chilipiper-organic-pipeline-ga4.html">How to Track Chili Piper Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Chili Piper with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-chilipiper-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-clickfunnels-organic-pipeline-ga4.html">How to Track ClickFunnels Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating ClickFunnels with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-clickfunnels-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-cognito-forms-organic-pipeline-ga4.html">How to Track Cognito Forms Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Cognito Forms with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-cognito-forms-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-convertkit-organic-pipeline-ga4.html">How to Track ConvertKit Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating ConvertKit with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-convertkit-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-copper-organic-pipeline-ga4.html">How to Track Copper Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Copper with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-copper-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-crazyegg-organic-pipeline-ga4.html">How to Track Crazy Egg Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Crazy Egg with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-crazyegg-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-crisp-organic-pipeline-ga4.html">How to Track Crisp Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Crisp with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-crisp-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-demio-organic-pipeline-ga4.html">How to Track Demio Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Demio with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-demio-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-drift-organic-pipeline-ga4.html">How to Track Drift Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Drift with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-drift-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-formstack-organic-pipeline-ga4.html">How to Track Formstack Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Formstack with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-formstack-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-freshsales-organic-pipeline-ga4.html">How to Track Freshsales Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Freshsales with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-freshsales-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-gotowebinar-organic-pipeline-ga4.html">How to Track GoToWebinar Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating GoToWebinar with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-gotowebinar-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-gravity-forms-organic-pipeline-ga4.html">How to Track Gravity Forms Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Gravity Forms with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-gravity-forms-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-hightouch-organic-pipeline-ga4.html">How to Track Hightouch Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Hightouch with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-hightouch-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-hotjar-organic-pipeline-ga4.html">How to Track Hotjar Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Hotjar with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-hotjar-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-hubspot-organic-pipeline-ga4.html">How to Track HubSpot Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating HubSpot with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-hubspot-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-insightly-organic-pipeline-ga4.html">How to Track Insightly Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Insightly with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-insightly-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-instapage-organic-pipeline-ga4.html">How to Track Instapage Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Instapage with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-instapage-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-intercom-organic-pipeline-ga4.html">How to Track Intercom Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Intercom with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-intercom-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-jotform-organic-pipeline-ga4.html">How to Track Jotform Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Jotform with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-jotform-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-keap-organic-pipeline-ga4.html">How to Track Keap Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Keap with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-keap-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-klaviyo-organic-pipeline-ga4.html">How to Track Klaviyo Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Klaviyo with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-klaviyo-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-leadpages-organic-pipeline-ga4.html">How to Track Leadpages Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Leadpages with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-leadpages-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-livestorm-organic-pipeline-ga4.html">How to Track Livestorm Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Livestorm with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-livestorm-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-marketo-organic-pipeline-ga4.html">How to Track Marketo Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Marketo with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-marketo-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-mixpanel-organic-pipeline-ga4.html">How to Track Mixpanel Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Mixpanel with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-mixpanel-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-mparticle-organic-pipeline-ga4.html">How to Track mParticle Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating mParticle with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-mparticle-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-omnisend-organic-pipeline-ga4.html">How to Track Omnisend Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Omnisend with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-omnisend-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-oncehub-organic-pipeline-ga4.html">How to Track OnceHub Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating OnceHub with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-oncehub-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-pardot-organic-pipeline-ga4.html">How to Track Pardot Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Pardot with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-pardot-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-pipedrive-organic-pipeline-ga4.html">How to Track Pipedrive Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Pipedrive with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-pipedrive-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-plausible-organic-pipeline-ga4.html">How to Track Plausible Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Plausible with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-plausible-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-rudderstack-organic-pipeline-ga4.html">How to Track RudderStack Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating RudderStack with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-rudderstack-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-salesforce-organic-pipeline-ga4.html">How to Track Salesforce Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Salesforce with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-salesforce-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-segment-organic-pipeline-ga4.html">How to Track Segment Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Segment with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-segment-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-tealium-organic-pipeline-ga4.html">How to Track Tealium Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Tealium with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-tealium-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-tidio-organic-pipeline-ga4.html">How to Track Tidio Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Tidio with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-tidio-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-typeform-organic-pipeline-ga4.html">How to Track Typeform Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Typeform with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-typeform-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-unbounce-organic-pipeline-ga4.html">How to Track Unbounce Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Unbounce with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-unbounce-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-webex-organic-pipeline-ga4.html">How to Track Webex Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Webex with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-webex-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-webflow-organic-pipeline-ga4.html">How to Track Webflow Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Webflow with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-webflow-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-youcanbookme-organic-pipeline-ga4.html">How to Track YouCanBookMe Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating YouCanBookMe with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-youcanbookme-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-zendesk-organic-pipeline-ga4.html">How to Track Zendesk Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Zendesk with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-zendesk-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Integration Guide</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-zoho-crm-organic-pipeline-ga4.html">How to Track Zoho CRM Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Zoho CRM with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-zoho-crm-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="directory-card">
+                <div class="directory-card-top">
+                    <span class="directory-badge">Data Architecture</span>
+                    <h3 class="directory-card-title">
+                        <a href="/blogs/growth-strategy/track-zoom-organic-pipeline-ga4.html">How to Track Zoom Organic Pipeline in GA4</a>
+                    </h3>
+                    <p class="directory-card-desc">A RevOps guide to integrating Zoom with Google Analytics 4 for closed-loop B2B organic attribution.</p>
+                </div>
+                <div class="directory-card-footer">
+                    <a href="/blogs/growth-strategy/track-zoom-organic-pipeline-ga4.html" class="directory-read-link">
+                        <span>View Architecture</span> <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
         </div>
     </section>
 </main>
