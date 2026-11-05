@@ -4,7 +4,7 @@ import re
 
 # --- Configuration ---
 csv_file_path = 'data.csv'
-template_file_path = 'template.md'
+template_file_path = 'template.html'
 # Change this path to match exactly where your growth strategy posts live
 output_directory = 'blogs/growth-strategy/' 
 
@@ -34,7 +34,7 @@ with open(csv_file_path, 'r', encoding='utf-8') as csv_file:
         clean_slug = re.sub(r'[^a-z0-9\-]', '', str(row['slug']).lower().strip())
         
         # Define the output filename
-        output_filename = f"track-{clean_slug}-organic-pipeline-ga4.md"
+        output_filename = f"track-{clean_slug}-organic-pipeline-ga4.html"
         output_path = os.path.join(output_directory, output_filename)
         
         # Write the new Markdown file
