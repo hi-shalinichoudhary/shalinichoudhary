@@ -3,13 +3,13 @@ import datetime
 from xml.sax.saxutils import escape
 
 # Configuration
-BASE_DIR = '/Users/shalini/Documents/shalinichoudhary'
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 BASE_URL = 'https://shalinichoudhary.in/'
 OUTPUT_FILE = os.path.join(BASE_DIR, 'sitemap.xml')
 
 # Files or directories to ignore
 IGNORE_FILES = {'template.html', 'temp_cards.html', 'generated_cards.html', '404.html', 'seo-tips.html', 'google-analytics.html', 'strategy.html', 'seo-industry.html'}
-IGNORE_DIRS = {'.git', '.github', 'unused_assets', 'css', 'js', 'images', 'google-analytics', 'strategy', 'seo-industry', 'seo-tips'}
+IGNORE_DIRS = {'.git', '.github', 'unused_assets', 'tools', 'css', 'js', 'images', 'google-analytics', 'strategy', 'seo-industry', 'seo-tips'}
 
 def get_priority(rel_path):
     # Root index gets highest priority
