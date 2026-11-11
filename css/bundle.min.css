@@ -5009,27 +5009,27 @@ h2 em,
   background: var(--line);
 }
 
-/* ---- Buttons: bold 18.72px (1.17rem) so ivory on terracotta (4.32:1) qualifies as large text ---- */
+/* ---- Buttons: Sleek, refined, and reduced in thickness and size ---- */
 .sc-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6em;
-  min-height: 48px;
-  padding: 0.7em 1.6em;
-  border: 2px solid transparent;
+  gap: 0.5em;
+  min-height: 38px;
+  padding: 8px 18px;
+  border: 1.5px solid transparent;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 1.17rem;
-  font-weight: 700;
-  line-height: 1.2;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.25;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .sc-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1.5px);
   opacity: 1;
 }
 
@@ -5038,8 +5038,18 @@ h2 em,
   color: var(--ivory);
 }
 
+.sc-btn--terracotta:hover {
+  background: var(--terracotta-deep);
+  color: var(--ivory);
+}
+
 .sc-btn--charcoal {
   background: var(--charcoal);
+  color: var(--ivory);
+}
+
+.sc-btn--charcoal:hover {
+  background: color-mix(in srgb, var(--charcoal) 85%, white);
   color: var(--ivory);
 }
 
@@ -5053,11 +5063,15 @@ h2 em,
   border-color: currentColor;
 }
 
+.sc-btn--ghost:hover {
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
 .sc-btn-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
 }
 
 /* ---- 2. Stat strip (count-up handled by js/components.js) ---- */
@@ -5686,7 +5700,7 @@ h1 em, h2 em, h3 em,
   color: var(--stone) !important;
 }
 
-/* Terracotta Buttons (1.17rem / 18.72px bold qualifies as large text at 4.32:1; small buttons use terracotta-deep at 5.62:1) */
+/* Refined CTA Buttons: Reduced thickness and size across desktop and mobile */
 .cta-button,
 .contact-submit,
 .btn-primary,
@@ -5695,11 +5709,11 @@ button[type="submit"],
 #loadMoreBtn {
   background: var(--terracotta) !important;
   color: var(--ivory) !important;
-  font-weight: 700 !important;
-  font-size: 1.17rem;
+  font-weight: 600 !important;
+  font-size: 0.95rem;
   border: none;
   border-radius: 999px;
-  padding: 12px 28px;
+  padding: 9px 22px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -5710,8 +5724,8 @@ button[type="submit"],
 
 .cta-button.small-btn {
   background: var(--terracotta-deep) !important;
-  font-size: 0.95rem;
-  padding: 8px 18px;
+  font-size: 0.86rem;
+  padding: 6px 15px;
 }
 
 .cta-button:hover,
@@ -6185,6 +6199,364 @@ button[type="submit"]:hover,
   color: var(--terracotta-deep);
   margin: 0 auto 1.25rem;
 }
+
+/* =============================================================
+   COMPREHENSIVE MOBILE RESPONSIVE & ADAPTIVE ENHANCEMENTS
+   Applies across homepage, about, work, blogs, & expertise pages
+============================================================= */
+
+/* 1. Global Viewport & Container Containment */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, svg, picture, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 2. Responsive Typography */
+@media (max-width: 768px) {
+  h1, .hero-title, .post-header-text h1, .blog-hero h1, .category-page-title {
+    font-size: clamp(1.85rem, 6.5vw, 2.4rem) !important;
+    line-height: 1.18 !important;
+  }
+
+  h2, .section-head h2, .section-title, .results-section-head h2 {
+    font-size: clamp(1.4rem, 5vw, 1.9rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  .sc-lede, .section-description, .hero-prose {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* 3. Header & Mobile Navigation Drawer */
+@media (max-width: 992px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .site-header-inner {
+    padding: 12px 18px !important;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 8px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid var(--border);
+    cursor: pointer;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 2px solid var(--terracotta);
+    box-shadow: 0 16px 36px color-mix(in srgb, var(--charcoal) 14%, transparent);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 20px 28px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    z-index: 9999;
+  }
+
+  .site-nav.active {
+    display: flex !important;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 12px 6px;
+    font-size: 0.96rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    border-bottom: 1px solid color-mix(in srgb, var(--stone) 30%, transparent);
+    text-align: left;
+  }
+
+  .nav-dropdown {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid color-mix(in srgb, var(--stone) 30%, transparent);
+  }
+
+  .nav-dropdown-toggle {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: none !important;
+  }
+
+  .nav-dropdown-menu {
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: color-mix(in srgb, var(--ivory) 40%, transparent) !important;
+    border-radius: 8px !important;
+    padding: 4px 0 8px 14px !important;
+    margin: 4px 0 8px !important;
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 8px 6px !important;
+    font-size: 0.88rem !important;
+    color: var(--ink-soft) !important;
+    border-bottom: none !important;
+  }
+
+  .site-nav .cta-button.small-btn {
+    margin-top: 16px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    border-bottom: none;
+    padding: 10px 20px;
+  }
+}
+
+/* 4. Homepage Hero Section Mobile Adaptation */
+@media (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 0 !important;
+  }
+
+  .hero-media {
+    max-width: 240px;
+    margin: 0 auto 8px auto;
+  }
+
+  .hero-editorial-portrait {
+    border-radius: 18px;
+    box-shadow: 0 16px 36px color-mix(in srgb, var(--charcoal) 16%, transparent);
+  }
+
+  .hero-copy {
+    text-align: left;
+  }
+
+  .hero-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px 10px !important;
+    margin-bottom: 18px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-actions {
+    gap: 8px !important;
+  }
+
+  .sc-btn {
+    font-size: 0.86rem !important;
+    padding: 7px 14px !important;
+    min-height: 36px !important;
+    border-width: 1.5px !important;
+  }
+
+  .hero-compact-stats {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 14px 0 !important;
+  }
+
+  .hero-compact-stat {
+    gap: 2px !important;
+  }
+
+  .hero-compact-stat__num {
+    font-size: 1.6rem !important;
+  }
+}
+
+/* 5. Mobile Stacking Cards Fix (#selected-work / .sc-stack) */
+@media (max-width: 860px) {
+  .sc-stack {
+    padding-bottom: 0 !important;
+  }
+
+  .sc-stack__card {
+    position: static !important;
+    max-height: none !important;
+    overflow: visible !important;
+    top: auto !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    margin-bottom: 22px !important;
+    padding: 20px 18px !important;
+    border-radius: 18px !important;
+  }
+
+  .sc-stack__card--with-art {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .sc-stack__card .sc-stack__result {
+    gap: 12px 20px !important;
+  }
+
+  .sc-stack__metric {
+    font-size: 1.85rem !important;
+  }
+}
+
+/* 6. Touch-Swipe Horizontal Tabs (#what-i-bring / .sc-tablist) */
+@media (max-width: 768px) {
+  .sc-tablist {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding: 4px 4px 10px 4px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .sc-tablist::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sc-tab {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    padding: 8px 16px !important;
+    font-size: 0.85rem !important;
+    border-radius: 999px !important;
+  }
+
+  .sc-tab-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .sc-tab-card {
+    padding: 20px !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* 7. Grid Adaptations across All Sub-pages */
+@media (max-width: 768px) {
+  .sc-wrap, .section-wrapper, .case-container, .contact-grid, .site-header-inner {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .sc-stats {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  .sc-stat {
+    padding: 16px 12px !important;
+  }
+
+  .sc-stat__num {
+    font-size: 1.55rem !important;
+  }
+
+  .sc-timeline {
+    padding-left: 1.6rem !important;
+  }
+
+  .sc-timeline__metric {
+    font-size: 1.85rem !important;
+  }
+
+  .sc-cap {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .sc-philosophy-grid,
+  .about-testimonials-grid,
+  .results-grid,
+  .tiles-4,
+  .impact-cards,
+  .services-acc-grid,
+  .reading-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+/* 8. Table & Code Block Responsive Overflow Prevention */
+@media (max-width: 768px) {
+  table, .comparison-table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    margin-bottom: 20px !important;
+  }
+
+  pre, code {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    word-break: break-word;
+  }
+}
+
+/* 9. Testimonials Slider Mobile Fix */
+@media (max-width: 768px) {
+  .testimonials-slider-container {
+    padding: 0 16px !important;
+  }
+
+  .testimonial-card {
+    padding: 20px 18px !important;
+  }
+
+  .testimonial-text {
+    font-size: 0.94rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
 
 
 
