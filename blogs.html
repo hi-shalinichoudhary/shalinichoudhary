@@ -1624,8 +1624,18 @@
 
             <div style="max-width: 900px; margin: 0 auto; padding: 0;">
                 <div id="medium-feed-container" class="reading-grid">
-                    <!-- JS will inject .reading-card items here -->
-                    <p class="muted" style="grid-column: 1 / -1; text-align: center;">Loading latest articles...</p>
+                    <a class="reading-card reveal delay-100 is-visible" href="https://medium.com/@hi.shalinichoudhary/your-crm-knows-the-deal-closed-ga4-never-heard-about-it-011b3de2b1ff" target="_blank" rel="noopener noreferrer">
+                        <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium &bull; Nov 12, 2026</div>
+                        <h3>Your CRM Knows the Deal Closed. GA4 Never Heard About It.</h3>
+                        <p class="muted">Most B2B attribution breaks the moment a deal enters Salesforce or HubSpot. Here is the data architecture to close the loop between CRM revenue and GA4...</p>
+                        <span class="reading-link">Read on Medium &rarr;</span>
+                    </a>
+                    <a class="reading-card reveal delay-200 is-visible" href="https://medium.com/@hi.shalinichoudhary/synthetic-authenticity-the-trust-problem-ai-content-hasnt-solved-e0a915dfbde6" target="_blank" rel="noopener noreferrer">
+                        <div class="reading-meta"><i class="fab fa-medium" style="margin-right: 5px;"></i> Medium &bull; Jul 2, 2026</div>
+                        <h3>Synthetic Authenticity: The Trust Problem AI Content Hasn't Solved</h3>
+                        <p class="muted">AI-generated content is flood-filling the web, but it's missing the one component that actually converts readers: real, hard-earned human perspective...</p>
+                        <span class="reading-link">Read on Medium &rarr;</span>
+                    </a>
                 </div>
             </div>
 
@@ -1720,6 +1730,12 @@
             const container = document.getElementById("medium-feed-container");
 
             const pinnedArticles = [
+                {
+                    title: "Your CRM Knows the Deal Closed. GA4 Never Heard About It.",
+                    link: "https://medium.com/@hi.shalinichoudhary/your-crm-knows-the-deal-closed-ga4-never-heard-about-it-011b3de2b1ff",
+                    pubDate: "2026-11-12 10:00:00",
+                    description: "Most B2B attribution breaks the moment a deal enters Salesforce or HubSpot. Here is the data architecture to close the loop between CRM revenue and GA4."
+                },
                 {
                     title: "Synthetic Authenticity: The Trust Problem AI Content Hasn't Solved",
                     link: "https://medium.com/@hi.shalinichoudhary/synthetic-authenticity-the-trust-problem-ai-content-hasnt-solved-e0a915dfbde6",
