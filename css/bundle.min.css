@@ -4421,9 +4421,16 @@ h3 {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
+    gap: 32px;
     align-items: start;
+}
+
+@media (max-width: 1080px) and (min-width: 861px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
 }
 
 /* Brand Column */
@@ -6640,8 +6647,7 @@ img, svg, picture, video, iframe {
   }
 
   /* 3. Connect & Email: Full width banner at bottom */
-  .tj-footer-area .footer-contact,
-  .tj-footer-area .footer-grid > :nth-child(4) {
+  .tj-footer-area .footer-contact {
     width: 100% !important;
     flex: 0 0 100% !important;
     display: flex !important;
