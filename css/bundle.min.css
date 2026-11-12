@@ -4581,76 +4581,7 @@ h3 {
     color: var(--stone);
 }
 
-/* Responsive */
-@media (max-width: 860px) {
-    .tj-footer-area {
-        padding: 40px 20px 30px;
-    }
-
-    .footer-content {
-        gap: 32px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "brand brand"
-            "links contact";
-        gap: 32px 20px;
-    }
-
-    .footer-brand {
-        grid-area: brand;
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .footer-links {
-        grid-area: links;
-    }
-
-    .footer-contact {
-        grid-area: contact;
-    }
-
-    .footer-brand h2 {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footer-kicker {
-        text-align: center;
-    }
-
-    /* Ensure CTA is visible and centered on mobile */
-    .footer-cta-button {
-        width: fit-content;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 36px;
-    }
-
-    .footer-brand,
-    .footer-links,
-    .footer-contact {
-        text-align: center;
-        align-items: center;
-    }
-
-    .footer-links,
-    .footer-contact,
-    .footer-nav {
-        align-items: center;
-    }
-}
+/* Responsive footer rules unified in Section 10 below */
 
 /* -------------------------
    Testimonials Slider
@@ -6592,7 +6523,7 @@ img, svg, picture, video, iframe {
 }
 
 /* 10. Sleek 2-Column Mobile Footer Layout */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
   .tj-footer-area {
     padding: clamp(2.5rem, 6vw, 3.5rem) clamp(18px, 5vw, 24px) 24px !important;
   }
@@ -6600,17 +6531,22 @@ img, svg, picture, video, iframe {
   .tj-footer-area .footer-content,
   .tj-footer-area .footer-grid {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 24px 16px !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto !important;
+    grid-template-areas: none !important;
+    gap: 24px 18px !important;
     text-align: left !important;
     align-items: start !important;
     max-width: 100% !important;
     width: 100% !important;
   }
 
-  /* Brand / CTA spans full width at the top */
-  .tj-footer-area .footer-brand {
+  /* Child 1: Brand / CTA spans full width (Row 1) */
+  .tj-footer-area .footer-brand,
+  .tj-footer-area .footer-grid > :nth-child(1) {
     grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+    grid-area: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -6619,7 +6555,7 @@ img, svg, picture, video, iframe {
     width: 100% !important;
     padding-bottom: 22px !important;
     border-bottom: 1px solid color-mix(in srgb, var(--stone) 18%, transparent) !important;
-    margin-bottom: 4px !important;
+    margin-bottom: 0 !important;
   }
 
   .tj-footer-area .footer-brand .footer-kicker {
@@ -6654,22 +6590,32 @@ img, svg, picture, video, iframe {
     width: fit-content !important;
   }
 
-  /* Two navigation columns: Column 1 (Case Studies) & Column 2 (Services & Explore) */
+  /* Shared styling for navigation columns */
   .tj-footer-area .footer-links {
+    grid-area: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     text-align: left !important;
     width: 100% !important;
+    min-width: 0 !important;
     gap: 10px !important;
   }
 
-  .tj-footer-area .footer-links:nth-of-type(1) {
+  /* Child 2: First .footer-links (Case Studies) -> Column 1, Row 2 */
+  .tj-footer-area .footer-grid > :nth-child(2),
+  .tj-footer-area .footer-grid > .footer-links:first-of-type {
     grid-column: 1 !important;
+    grid-row: 2 !important;
+    grid-area: auto !important;
   }
 
-  .tj-footer-area .footer-links:nth-of-type(2) {
+  /* Child 3: Second .footer-links (Services & Explore) -> Column 2, Row 2 */
+  .tj-footer-area .footer-grid > :nth-child(3),
+  .tj-footer-area .footer-grid > .footer-links:last-of-type {
     grid-column: 2 !important;
+    grid-row: 2 !important;
+    grid-area: auto !important;
   }
 
   .tj-footer-area .footer-heading {
@@ -6699,6 +6645,8 @@ img, svg, picture, video, iframe {
     text-decoration: none !important;
     text-align: left !important;
     margin: 0 !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
     transition: color 0.2s ease !important;
   }
 
@@ -6706,9 +6654,12 @@ img, svg, picture, video, iframe {
     color: var(--terracotta) !important;
   }
 
-  /* Contact & Social Bar spans full width below the 2 columns */
-  .tj-footer-area .footer-contact {
+  /* Child 4: Contact & Social Bar spans full width (Row 3) */
+  .tj-footer-area .footer-contact,
+  .tj-footer-area .footer-grid > :nth-child(4) {
     grid-column: 1 / -1 !important;
+    grid-row: 3 !important;
+    grid-area: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
