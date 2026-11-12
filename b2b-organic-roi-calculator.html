@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B Organic Pipeline ROI Calculator | Free RevOps Tool</title>
+    <meta name="description"
+        content="Stop reporting on vanity traffic. Calculate exactly how much closed-won revenue and pipeline your organic search strategy is generating.">
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://shalinichoudhary.in/b2b-organic-roi-calculator.html" />
+    <link rel="apple-touch-icon" href="images/android-icon-36x36.png">
+    <link rel="shortcut icon" type="image/png" href="images/android-icon-36x36.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bundle.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FFJDP43DXE');
+    </script>
+
+    <style>
+        .roi-tool-section {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+
+        .roi-hero {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 44px;
+        }
+
+        .roi-hero p {
+            color: var(--ink-soft);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .roi-inputs-card {
+            background: var(--surface);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow-1);
+        }
+
+        .roi-card-header {
+            margin-bottom: 24px;
+        }
+
+        .roi-card-header h2 {
+            font-size: 1.35rem;
+            margin: 6px 0 4px;
+            color: var(--charcoal);
+        }
+
+        .roi-card-header p {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .roi-form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .roi-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .roi-field label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .roi-field .roi-hint {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--ink-soft);
+        }
+
+        .roi-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .roi-input-prefix,
+        .roi-input-suffix {
+            position: absolute;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--ink-soft);
+            pointer-events: none;
+        }
+
+        .roi-input-prefix {
+            left: 14px;
+        }
+
+        .roi-input-suffix {
+            right: 14px;
+        }
+
+        .roi-field input[type="number"] {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--hairline);
+            border-radius: 10px;
+            background: #ffffff;
+            color: var(--charcoal);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .roi-field input[type="number"].has-prefix {
+            padding-left: 30px;
+        }
+
+        .roi-field input[type="number"].has-suffix {
+            padding-right: 34px;
+        }
+
+        .roi-field input[type="number"]:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--terracotta) 18%, transparent);
+        }
+
+        /* Column B: Dark Accented Results Dashboard */
+        .roi-dashboard-card {
+            background: var(--charcoal);
+            color: var(--ivory);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow-2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .roi-dashboard-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--terracotta), #d4896a);
+        }
+
+        .roi-dashboard-card .sc-label {
+            color: #d4896a;
+        }
+
+        .roi-dashboard-card .roi-card-header h2 {
+            color: var(--ivory);
+        }
+
+        .roi-dashboard-card .roi-card-header p {
+            color: var(--stone);
+        }
+
+        .roi-metrics-funnel {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .roi-metric-tile {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 14px;
+        }
+
+        .roi-metric-label {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--stone);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .roi-metric-value {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: var(--ivory);
+            line-height: 1.2;
+        }
+
+        .roi-pipeline-stack {
+            display: grid;
+            gap: 14px;
+        }
+
+        .roi-pipeline-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .roi-pipeline-box.is-primary {
+            background: color-mix(in srgb, var(--terracotta) 22%, var(--charcoal));
+            border-color: color-mix(in srgb, var(--terracotta) 65%, transparent);
+        }
+
+        .roi-pipeline-title {
+            font-size: 0.88rem;
+            color: var(--stone);
+            font-weight: 500;
+        }
+
+        .roi-pipeline-box.is-primary .roi-pipeline-title {
+            color: var(--ivory);
+            font-weight: 600;
+        }
+
+        .roi-pipeline-amount {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--ivory);
+            letter-spacing: -0.02em;
+        }
+
+        .roi-pipeline-box.is-primary .roi-pipeline-amount {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .roi-dashboard-footer {
+            margin-top: 22px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.82rem;
+            color: var(--stone);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .roi-dashboard-footer a {
+            color: #e5a388;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .roi-dashboard-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Strategic Authority Section */
+        .roi-authority-card {
+            margin-top: 44px;
+            background: var(--ivory-deep);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 36px;
+        }
+
+        .roi-authority-card h2 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: var(--charcoal);
+            margin: 8px 0 14px;
+        }
+
+        .roi-authority-card p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 82ch;
+            margin: 0 0 16px;
+        }
+
+        .roi-authority-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 900px) {
+            .roi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .roi-tool-section {
+                padding: 32px 16px 56px;
+            }
+
+            .roi-inputs-card,
+            .roi-dashboard-card,
+            .roi-authority-card {
+                padding: 24px 20px;
+            }
+
+            .roi-metrics-funnel {
+                grid-template-columns: 1fr;
+            }
+
+            .roi-pipeline-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://shalinichoudhary.in/b2b-organic-roi-calculator.html#app",
+          "name": "B2B Organic Pipeline ROI Calculator",
+          "url": "https://shalinichoudhary.in/b2b-organic-roi-calculator.html",
+          "description": "Stop reporting on vanity traffic. Calculate exactly how much closed-won revenue and pipeline your organic search strategy is generating.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://shalinichoudhary.in/#person",
+            "name": "Shalini Choudhary"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://shalinichoudhary.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "B2B Organic Pipeline ROI Calculator",
+              "item": "https://shalinichoudhary.in/b2b-organic-roi-calculator.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="/" class="brand" aria-label="Go to homepage">
+                <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
+            </a>
+
+            <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
+                <div class="nav-dropdown">
+                    <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+                        <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+                        <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+                        <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+                        <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+                        <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+                        <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Multi-Market</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="/seo-strategy-consultant.html" class="nav-dropdown-toggle">Expertise <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Expertise submenu">
+                        <a href="/seo-strategy-consultant.html">Search and AI Discovery</a>
+                        <a href="/growth-marketing-strategy.html">Growth and Conversion</a>
+                        <a href="/marketing-analytics-ga4-consultant.html">Analytics</a>
+                        <a href="/conversion-optimisation-strategy.html">CRO</a>
+                    </div>
+                </div>
+                <a href="/about.html">About</a>
+                <a href="/blogs.html">Blog</a>
+                <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-content">
+        <section class="roi-tool-section">
+            <div class="roi-hero">
+                <span class="sc-label" style="justify-content: center;">01 / REVOPS UTILITY</span>
+                <h1 class="hero-title" style="font-size: clamp(2.1rem, 4.4vw, 3.2rem);">B2B Organic Pipeline <em>ROI Calculator</em></h1>
+                <p>
+                    Stop reporting on vanity traffic. Model your full organic funnel from search sessions to closed-won ACV
+                    and see the exact revenue your SEO and AI discovery strategy generates.
+                </p>
+            </div>
+
+            <div class="roi-grid">
+                <!-- Column A: Inputs -->
+                <div class="roi-inputs-card">
+                    <div class="roi-card-header">
+                        <span class="sc-label">02 / FUNNEL INPUTS</span>
+                        <h2>Your Organic Funnel</h2>
+                        <p>Adjust any metric below — pipeline projections update in real time.</p>
+                    </div>
+
+                    <form class="roi-form" id="roi-calculator-form" onsubmit="return false;">
+                        <div class="roi-field">
+                            <label for="input-traffic">
+                                Monthly Organic Traffic
+                                <span class="roi-hint">Sessions / mo</span>
+                            </label>
+                            <div class="roi-input-wrap">
+                                <input id="input-traffic" type="number" min="0" step="100" value="10000" inputmode="decimal">
+                            </div>
+                        </div>
+
+                        <div class="roi-field">
+                            <label for="input-mql-rate">
+                                Traffic to MQL Conversion Rate
+                                <span class="roi-hint">% of traffic</span>
+                            </label>
+                            <div class="roi-input-wrap">
+                                <input id="input-mql-rate" class="has-suffix" type="number" min="0" max="100" step="0.1" value="2" inputmode="decimal">
+                                <span class="roi-input-suffix">%</span>
+                            </div>
+                        </div>
+
+                        <div class="roi-field">
+                            <label for="input-sql-rate">
+                                MQL to SQL Conversion Rate
+                                <span class="roi-hint">% qualified</span>
+                            </label>
+                            <div class="roi-input-wrap">
+                                <input id="input-sql-rate" class="has-suffix" type="number" min="0" max="100" step="0.5" value="30" inputmode="decimal">
+                                <span class="roi-input-suffix">%</span>
+                            </div>
+                        </div>
+
+                        <div class="roi-field">
+                            <label for="input-win-rate">
+                                SQL to Closed-Won Deal Rate
+                                <span class="roi-hint">Win rate %</span>
+                            </label>
+                            <div class="roi-input-wrap">
+                                <input id="input-win-rate" class="has-suffix" type="number" min="0" max="100" step="0.5" value="20" inputmode="decimal">
+                                <span class="roi-input-suffix">%</span>
+                            </div>
+                        </div>
+
+                        <div class="roi-field">
+                            <label for="input-acv">
+                                Average Contract Value (ACV)
+                                <span class="roi-hint">Annual deal value</span>
+                            </label>
+                            <div class="roi-input-wrap">
+                                <span class="roi-input-prefix">$</span>
+                                <input id="input-acv" class="has-prefix" type="number" min="0" step="500" value="12000" inputmode="decimal">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Column B: Results Dashboard -->
+                <div class="roi-dashboard-card" aria-live="polite">
+                    <div>
+                        <div class="roi-card-header">
+                            <span class="sc-label">03 / REVENUE DASHBOARD</span>
+                            <h2>Projected Organic Impact</h2>
+                            <p>Live pipeline and closed-won revenue output</p>
+                        </div>
+
+                        <div class="roi-metrics-funnel">
+                            <div class="roi-metric-tile">
+                                <span class="roi-metric-label">Monthly MQLs</span>
+                                <div class="roi-metric-value" id="out-mqls">200</div>
+                            </div>
+                            <div class="roi-metric-tile">
+                                <span class="roi-metric-label">Monthly SQLs</span>
+                                <div class="roi-metric-value" id="out-sqls">60</div>
+                            </div>
+                            <div class="roi-metric-tile">
+                                <span class="roi-metric-label">New Deals / Mo</span>
+                                <div class="roi-metric-value" id="out-deals">12</div>
+                            </div>
+                        </div>
+
+                        <div class="roi-pipeline-stack">
+                            <div class="roi-pipeline-box">
+                                <span class="roi-pipeline-title">Monthly Organic Pipeline</span>
+                                <span class="roi-pipeline-amount" id="out-monthly-pipeline">$144,000</span>
+                            </div>
+                            <div class="roi-pipeline-box is-primary">
+                                <span class="roi-pipeline-title">Annual Organic Pipeline</span>
+                                <span class="roi-pipeline-amount" id="out-annual-pipeline">$1,728,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roi-dashboard-footer">
+                        <span>Calculated from your live funnel assumptions.</span>
+                        <a href="/work/gus-growth-pipeline.html">See a real organic pipeline case study →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Authority Text -->
+            <article class="roi-authority-card">
+                <span class="sc-label">04 / STRATEGIC PERSPECTIVE</span>
+                <h2>Why RevOps Leaders Track Pipeline, Not Traffic</h2>
+                <p>
+                    Pageviews and keyword rankings don't survive CFO scrutiny. When economic pressure tightens, marketing
+                    budgets get cut first for teams that report on top-of-funnel vanity metrics instead of commercial
+                    impact. Connecting organic search directly to MQLs, SQLs, win rates, and Average Contract Value (ACV)
+                    transforms SEO from a content cost center into a predictable, board-level revenue engine.
+                </p>
+                <p>
+                    High-performing growth leaders align search intent with buyer stages, instrument end-to-end CRM
+                    attribution, and optimize conversion bottlenecks across every step of the funnel—proving exactly how
+                    organic discovery compounds closed-won revenue quarter after quarter.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="tj-footer-area">
+        <div class="footer-content footer-grid">
+            <div class="footer-brand">
+                <span class="footer-kicker">Open to senior roles</span>
+                <h2>Let's talk</h2>
+                <p class="footer-small">Integrated marketing strategy tied to commercial outcomes.</p>
+                <a class="footer-cta-button" href="/contact.html">Get in touch</a>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Case Studies</h3>
+                <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+                    <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+                    <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+                    <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+                    <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+                    <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Multi-Market</a>
+                </nav>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Services &amp; Explore</h3>
+                <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+                    <a href="/seo-strategy-consultant.html">Search and AI Discovery</a>
+                    <a href="/growth-marketing-strategy.html">Growth and Conversion</a>
+                    <a href="/marketing-analytics-ga4-consultant.html">Analytics</a>
+                    <a href="/conversion-optimisation-strategy.html">CRO</a>
+                    <a href="/work.html">Work</a>
+                    <a href="/about.html">About</a>
+                    <a href="/blogs.html">Blog</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="footer-contact">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="footer-social" aria-label="Social links">
+                    <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <h3 class="footer-heading footer-heading--spaced">Write</h3>
+                <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    hi.shalinichoudhary@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-meta">
+            <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+        (function () {
+            const trafficInput = document.getElementById('input-traffic');
+            const mqlRateInput = document.getElementById('input-mql-rate');
+            const sqlRateInput = document.getElementById('input-sql-rate');
+            const winRateInput = document.getElementById('input-win-rate');
+            const acvInput = document.getElementById('input-acv');
+
+            const outMqls = document.getElementById('out-mqls');
+            const outSqls = document.getElementById('out-sqls');
+            const outDeals = document.getElementById('out-deals');
+            const outMonthlyPipeline = document.getElementById('out-monthly-pipeline');
+            const outAnnualPipeline = document.getElementById('out-annual-pipeline');
+
+            const countFormatter = new Intl.NumberFormat('en-US', {
+                maximumFractionDigits: 1
+            });
+
+            const currencyFormatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            });
+
+            function parseNonNegative(inputEl) {
+                const value = parseFloat(inputEl.value);
+                return Number.isFinite(value) && value > 0 ? value : 0;
+            }
+
+            function calculatePipeline() {
+                const traffic = parseNonNegative(trafficInput);
+                const mqlRate = parseNonNegative(mqlRateInput) / 100;
+                const sqlRate = parseNonNegative(sqlRateInput) / 100;
+                const winRate = parseNonNegative(winRateInput) / 100;
+                const acv = parseNonNegative(acvInput);
+
+                const monthlyMqls = traffic * mqlRate;
+                const monthlySqls = monthlyMqls * sqlRate;
+                const newDealsPerMonth = monthlySqls * winRate;
+                const monthlyPipeline = newDealsPerMonth * acv;
+                const annualPipeline = monthlyPipeline * 12;
+
+                outMqls.textContent = countFormatter.format(monthlyMqls);
+                outSqls.textContent = countFormatter.format(monthlySqls);
+                outDeals.textContent = countFormatter.format(newDealsPerMonth);
+                outMonthlyPipeline.textContent = currencyFormatter.format(monthlyPipeline);
+                outAnnualPipeline.textContent = currencyFormatter.format(annualPipeline);
+            }
+
+            const inputs = [trafficInput, mqlRateInput, sqlRateInput, winRateInput, acvInput];
+            inputs.forEach(function (input) {
+                input.addEventListener('input', calculatePipeline);
+            });
+
+            calculatePipeline();
+        })();
+    </script>
+</body>
+
+</html>
+
