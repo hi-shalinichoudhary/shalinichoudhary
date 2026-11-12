@@ -101,9 +101,12 @@
   transform: translateY(-6px) rotate(-0.6deg);
   box-shadow: 0 40px 80px color-mix(in srgb, var(--charcoal) 28%, transparent), 0 0 0 1px color-mix(in srgb, var(--terracotta) 30%, transparent);
 }
-.hero-photo img {
+.hero-photo img,
+.hero-editorial-portrait img,
+.hero-editorial-portrait .portrait-primary {
   border-radius: 24px;
   display: block;
+  object-position: 50% 0% !important;
 }
 .portrait-chip {
   position: absolute;
@@ -315,6 +318,14 @@
   color: var(--terracotta-deep);
   align-self: flex-start;
 }
+@media (max-width: 860px) {
+  .hero-grid {
+    padding-left: clamp(20px, 5.5vw, 28px) !important;
+    padding-right: clamp(20px, 5.5vw, 28px) !important;
+    box-sizing: border-box !important;
+  }
+}
+
 @media (max-width: 768px) {
   .sc-tab-grid {
     grid-template-columns: 1fr;
