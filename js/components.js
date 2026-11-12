@@ -121,3 +121,74 @@
     });
   });
 })();
+
+/* Card Stacking recede animation (with fallback for iOS Safari & browsers without CSS scroll-timeline) */
+(function () {
+  'use strict';
+  var stack = document.querySelector('.sc-stack');
+  if (!stack) return;
+  var cards = Array.prototype.slice.call(stack.querySelectorAll('.sc-stack__card'));
+  if (cards.length < 2) return;
+
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  // If the browser natively supports CSS scroll-driven animation timeline, let CSS handle it
+  var supportsCSSScrollTimeline = false;
+  try {
+    supportsCSSScrollTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()') && CSS.supports('timeline-scope', '--a');
+  } catch (e) {}
+
+  if (supportsCSSScrollTimeline) return;
+
+  var ticking = false;
+
+  function updateCardTransforms() {
+    ticking = false;
+    var viewportH = window.innerHeight;
+    var stackRect = stack.getBoundingClientRect();
+
+    // If stack is completely outside the viewport, skip calculation
+    if (stackRect.bottom < 0 || stackRect.top > viewportH) {
+      return;
+    }
+
+    for (var i = 0; i < cards.length - 1; i++) {
+      var currentCard = cards[i];
+      var nextCard = cards[i + 1];
+
+      var currentRect = currentCard.getBoundingClientRect();
+      var nextRect = nextCard.getBoundingClientRect();
+
+      // Overlap calculation: as nextCard scrolls up over currentCard
+      var distance = nextRect.top - currentRect.top;
+      var range = 320; // px distance over which card recedes
+
+      var progress = 0;
+      if (distance < range) {
+        progress = Math.max(0, Math.min(1, (range - distance) / range));
+      }
+
+      if (progress > 0) {
+        var scale = 1 - progress * 0.04;
+        var brightness = 1 - progress * 0.08;
+        currentCard.style.transform = 'scale(' + scale.toFixed(3) + ')';
+        currentCard.style.filter = 'brightness(' + brightness.toFixed(3) + ')';
+      } else {
+        currentCard.style.transform = '';
+        currentCard.style.filter = '';
+      }
+    }
+  }
+
+  function onScroll() {
+    if (!ticking) {
+      requestAnimationFrame(updateCardTransforms);
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateCardTransforms();
+})();
