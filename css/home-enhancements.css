@@ -204,14 +204,21 @@
 .tj-footer-area .footer-cta-button {
   background: var(--terracotta) !important;
   color: var(--ivory) !important;
-  font-size: 0.95rem !important;
+  font-size: 0.92rem !important;
   font-weight: 600 !important;
-  padding: 10px 22px !important;
+  padding: 10px 24px !important;
   border-radius: 999px !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  text-decoration: none !important;
 }
 .tj-footer-area .footer-cta-button:hover {
   background: var(--terracotta-deep) !important;
   color: var(--ivory) !important;
+  transform: translateY(-2px) !important;
 }
 
 /* ── Refined CTA Buttons (Hero & Global) ── */

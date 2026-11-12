@@ -4421,38 +4421,41 @@ h3 {
 
 .footer-grid {
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: 1.35fr 1fr 1fr 1.05fr;
+    gap: 36px 32px;
     align-items: start;
 }
 
 @media (max-width: 1080px) and (min-width: 861px) {
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 28px;
+        gap: 32px 28px;
     }
 }
 
 /* Brand Column */
 .footer-brand {
     text-align: left;
-    max-width: 360px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .footer-kicker {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.12em;
     font-size: 0.75rem;
     color: var(--stone);
     /* Muted text */
     font-weight: 700;
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .footer-brand h2 {
-    margin: 0 0 16px 0;
-    font-size: 1.75rem;
+    margin: 0 0 10px 0;
+    font-size: 1.65rem;
     line-height: 1.25;
     font-weight: 700;
     color: var(--ivory);
@@ -4460,45 +4463,48 @@ h3 {
 }
 
 .footer-small {
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     color: var(--stone);
-    margin-bottom: 24px;
-    line-height: 1.6;
+    margin-bottom: 16px;
+    line-height: 1.55;
+    max-width: 290px;
 }
 
 .footer-cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--surface);
-    color: var(--charcoal) !important;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+    width: fit-content !important;
+    background: var(--terracotta) !important;
+    color: var(--ivory) !important;
+    padding: 10px 24px !important;
+    border-radius: 999px !important;
+    font-weight: 600 !important;
+    font-size: 0.92rem !important;
+    line-height: 1.4 !important;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+    text-decoration: none !important;
 }
 
 .footer-cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px color-mix(in srgb, var(--ivory) 15%, transparent);
-    background: var(--surface);
-    color: var(--charcoal);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px color-mix(in srgb, var(--charcoal) 20%, transparent) !important;
+    background: var(--terracotta-deep) !important;
+    color: var(--ivory) !important;
 }
 
 /* Navigation Columns */
-.footer-links,
-.footer-contact {
+.footer-links {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
 }
 
 .footer-heading {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.08em;
     color: var(--stone);
     font-weight: 700;
     margin: 0;
@@ -4507,71 +4513,93 @@ h3 {
 .footer-nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .footer-nav a {
-    font-size: 0.95rem;
-    /* Reduced from 1rem */
-    color: var(--ivory);
+    font-size: 0.88rem;
+    color: color-mix(in srgb, var(--ivory) 88%, transparent);
     text-decoration: none;
     transition: color 0.2s ease, transform 0.2s ease;
     display: inline-block;
     width: fit-content;
     white-space: nowrap;
-    /* FIX: Prevent text wrapping (e.g. Growth Levers) */
+    line-height: 1.35;
 }
 
 .footer-nav a:hover {
     color: var(--ivory);
-    transform: translateX(4px);
+    transform: translateX(3px);
 }
 
-/* Contact Column */
+/* Contact Column: spans full width as a dedicated bar on desktop */
 .footer-contact {
-    align-items: flex-start;
-}
-
-.footer-email {
-    display: inline-flex;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 10px;
-    color: var(--ivory);
-    text-decoration: none;
-    font-size: 0.95rem;
-    /* Reduced for consistency */
-    font-weight: 500;
-    margin-bottom: 20px;
-    transition: opacity 0.2s ease;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 24px;
+    border-top: 1px solid color-mix(in srgb, var(--stone) 15%, transparent);
+    margin-top: 8px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-.footer-email:hover {
-    opacity: 0.8;
+.footer-contact .footer-heading {
+    margin: 0;
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
+    color: var(--stone);
+}
+
+.footer-contact .footer-heading--spaced {
+    margin-left: auto;
+    margin-top: 0 !important;
 }
 
 .footer-social {
     display: flex;
-    gap: 16px;
+    align-items: center;
+    gap: 12px;
 }
 
 .footer-social-link {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid color-mix(in srgb, var(--hairline) 20%, transparent);
+    border: 1px solid color-mix(in srgb, var(--stone) 30%, transparent);
     color: var(--ivory);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     transition: all 0.2s ease;
 }
 
 .footer-social-link:hover {
     background: var(--surface);
     color: var(--charcoal);
-    border-color: var(--hairline);
+    border-color: var(--ivory);
     transform: translateY(-2px);
+}
+
+.footer-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ivory);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.footer-email:hover {
+    color: var(--terracotta);
 }
 
 /* Copyright */
@@ -5721,11 +5749,18 @@ button[type="submit"]:hover,
 .tj-footer-area .footer-cta-button {
   background: var(--terracotta) !important;
   color: var(--ivory) !important;
-  font-size: 1.15rem !important;
-  font-weight: 700 !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
   border-radius: 999px !important;
-  padding: 12px 28px !important;
+  padding: 10px 24px !important;
   margin-top: 8px !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
 }
 
 .tj-footer-area .footer-social-link {
@@ -6664,10 +6699,12 @@ img, svg, picture, video, iframe {
     text-align: center !important;
     font-size: 0.72rem !important;
     margin-bottom: 2px !important;
+    margin-left: 0 !important;
   }
 
   .tj-footer-area .footer-contact .footer-heading--spaced {
     margin-top: 6px !important;
+    margin-left: 0 !important;
   }
 
   .tj-footer-area .footer-social {
