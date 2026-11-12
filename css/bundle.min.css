@@ -6591,6 +6591,182 @@ img, svg, picture, video, iframe {
   }
 }
 
+/* 10. Sleek 2-Column Mobile Footer Layout */
+@media (max-width: 768px) {
+  .tj-footer-area {
+    padding: clamp(2.5rem, 6vw, 3.5rem) clamp(18px, 5vw, 24px) 24px !important;
+  }
+
+  .tj-footer-area .footer-content,
+  .tj-footer-area .footer-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px 16px !important;
+    text-align: left !important;
+    align-items: start !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Brand / CTA spans full width at the top */
+  .tj-footer-area .footer-brand {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-bottom: 22px !important;
+    border-bottom: 1px solid color-mix(in srgb, var(--stone) 18%, transparent) !important;
+    margin-bottom: 4px !important;
+  }
+
+  .tj-footer-area .footer-brand .footer-kicker {
+    font-size: 0.74rem !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: var(--terracotta) !important;
+    font-weight: 600 !important;
+    margin-bottom: 6px !important;
+    text-align: center !important;
+  }
+
+  .tj-footer-area .footer-brand .footer-small {
+    font-size: 0.9rem !important;
+    color: var(--stone) !important;
+    max-width: 380px !important;
+    margin: 0 auto 16px auto !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+  }
+
+  .tj-footer-area .footer-brand h2 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .tj-footer-area .footer-cta-button {
+    font-size: 0.95rem !important;
+    padding: 10px 24px !important;
+    margin: 0 auto !important;
+    width: fit-content !important;
+  }
+
+  /* Two navigation columns: Column 1 (Case Studies) & Column 2 (Services & Explore) */
+  .tj-footer-area .footer-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .tj-footer-area .footer-links:nth-of-type(1) {
+    grid-column: 1 !important;
+  }
+
+  .tj-footer-area .footer-links:nth-of-type(2) {
+    grid-column: 2 !important;
+  }
+
+  .tj-footer-area .footer-heading {
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+    color: var(--stone) !important;
+    margin: 0 0 8px 0 !important;
+    text-align: left !important;
+  }
+
+  .tj-footer-area .footer-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  .tj-footer-area .footer-nav a {
+    font-size: 0.8rem !important;
+    font-weight: 500 !important;
+    line-height: 1.35 !important;
+    color: color-mix(in srgb, var(--ivory) 92%, transparent) !important;
+    text-decoration: none !important;
+    text-align: left !important;
+    margin: 0 !important;
+    transition: color 0.2s ease !important;
+  }
+
+  .tj-footer-area .footer-nav a:hover {
+    color: var(--terracotta) !important;
+  }
+
+  /* Contact & Social Bar spans full width below the 2 columns */
+  .tj-footer-area .footer-contact {
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding-top: 22px !important;
+    border-top: 1px solid color-mix(in srgb, var(--stone) 18%, transparent) !important;
+    gap: 10px !important;
+  }
+
+  .tj-footer-area .footer-contact .footer-heading {
+    text-align: center !important;
+    font-size: 0.72rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .tj-footer-area .footer-contact .footer-heading--spaced {
+    margin-top: 8px !important;
+  }
+
+  .tj-footer-area .footer-social {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .tj-footer-area .footer-social-link {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.95rem !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .tj-footer-area .footer-email {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    font-size: 0.84rem !important;
+    color: var(--ivory) !important;
+    text-decoration: none !important;
+    word-break: break-all !important;
+    margin-bottom: 4px !important;
+  }
+
+  .tj-footer-area .footer-meta {
+    padding-top: 16px !important;
+  }
+
+  .tj-footer-area .copyright {
+    font-size: 0.76rem !important;
+    text-align: center !important;
+  }
+}
+
 
 
 
