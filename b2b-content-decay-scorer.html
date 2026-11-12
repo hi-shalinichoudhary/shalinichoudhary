@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>B2B SaaS Content Decay Scorer | Free SEO Utility Tool</title>
+    <meta name="description"
+        content="Calculate your content decay severity score and get immediate technical SEO recommendations on whether to prune, redirect, or rewrite your declining pages.">
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://shalinichoudhary.in/b2b-content-decay-scorer.html" />
+    <link rel="apple-touch-icon" href="images/android-icon-36x36.png">
+    <link rel="shortcut icon" type="image/png" href="images/android-icon-36x36.png">
+
+    <!-- Open Graph & Social -->
+    <meta property="og:title" content="B2B SaaS Content Decay Scorer | Free SEO Utility Tool" />
+    <meta property="og:description"
+        content="Calculate your content decay severity score and get immediate technical SEO recommendations on whether to prune, redirect, or rewrite your declining pages." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://shalinichoudhary.in/b2b-content-decay-scorer.html" />
+    <meta property="og:image" content="https://shalinichoudhary.in/images/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="B2B SaaS Content Decay Scorer | Free SEO Utility Tool" />
+    <meta name="twitter:description"
+        content="Calculate your content decay severity score and get immediate technical SEO recommendations on whether to prune, redirect, or rewrite your declining pages." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bundle.min.css?v=20261112d">
+    <link rel="stylesheet" href="css/home-enhancements.css?v=20261112d">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FFJDP43DXE');
+    </script>
+
+    <style>
+        .decay-tool-section {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+
+        .decay-hero {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 44px;
+        }
+
+        .decay-hero p {
+            color: var(--ink-soft);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+
+        .decay-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        /* Column A: Inputs */
+        .decay-inputs-card {
+            background: var(--surface);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow-1);
+        }
+
+        .decay-card-header {
+            margin-bottom: 24px;
+        }
+
+        .decay-card-header h2 {
+            font-size: 1.35rem;
+            margin: 6px 0 4px;
+            color: var(--charcoal);
+        }
+
+        .decay-card-header p {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .decay-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .decay-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .decay-field label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .decay-field .decay-hint {
+            font-size: 0.78rem;
+            font-weight: 400;
+            color: var(--ink-soft);
+        }
+
+        .decay-input-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .decay-input-suffix {
+            position: absolute;
+            right: 14px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+            pointer-events: none;
+        }
+
+        .decay-field input[type="number"],
+        .decay-field select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--hairline);
+            border-radius: 10px;
+            background: #ffffff;
+            color: var(--charcoal);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .decay-field input[type="number"].has-suffix {
+            padding-right: 75px;
+        }
+
+        .decay-field select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%235C5A55%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 14px;
+            padding-right: 38px;
+        }
+
+        .decay-field input[type="number"]:focus,
+        .decay-field select:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--terracotta) 18%, transparent);
+        }
+
+        /* Preset Benchmarks */
+        .decay-presets {
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .decay-presets-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--stone);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .decay-preset-btn {
+            background: color-mix(in srgb, var(--surface) 75%, var(--ivory-deep));
+            border: 1px solid var(--hairline);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .decay-preset-btn:hover {
+            border-color: var(--terracotta);
+            color: var(--terracotta);
+            background: #ffffff;
+        }
+
+        /* Column B: Diagnostic Dashboard Card */
+        .decay-dashboard-card {
+            background: var(--charcoal);
+            color: var(--ivory);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow-2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .decay-dashboard-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--terracotta), #d4896a);
+        }
+
+        .decay-dashboard-card .sc-label {
+            color: #d4896a;
+        }
+
+        .decay-dashboard-card .decay-card-header h2 {
+            color: var(--ivory);
+        }
+
+        .decay-dashboard-card .decay-card-header p {
+            color: var(--stone);
+        }
+
+        /* Dial & Score Section */
+        .decay-score-showcase {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 14px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+        }
+
+        .decay-dial-wrap {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decay-dial-svg {
+            transform: rotate(-90deg);
+            width: 100px;
+            height: 100px;
+        }
+
+        .decay-dial-bg {
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.12);
+            stroke-width: 8;
+        }
+
+        .decay-dial-progress {
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-dasharray: 264;
+            stroke-dashoffset: 66;
+            transition: stroke-dashoffset 0.4s ease, stroke 0.3s ease;
+        }
+
+        .decay-dial-text {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decay-dial-num {
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: -0.02em;
+        }
+
+        .decay-dial-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--stone);
+            margin-top: 2px;
+        }
+
+        .decay-score-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .decay-score-title {
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--stone);
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .decay-severity-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.84rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .decay-score-desc {
+            font-size: 0.84rem;
+            color: color-mix(in srgb, var(--ivory) 80%, transparent);
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        /* Metrics Row */
+        .decay-metrics-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .decay-metric-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 12px;
+            padding: 14px 16px;
+        }
+
+        .decay-metric-label {
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--stone);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .decay-metric-value {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--ivory);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.2;
+        }
+
+        .decay-metric-sub {
+            font-size: 0.76rem;
+            color: var(--stone);
+            margin-top: 4px;
+        }
+
+        /* The Prescription Box */
+        .decay-prescription-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 14px;
+            padding: 20px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .decay-prescription-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .decay-prescription-tag {
+            font-size: 0.74rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #d4896a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .decay-action-badge {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .decay-prescription-text {
+            font-size: 0.88rem;
+            line-height: 1.6;
+            color: color-mix(in srgb, var(--ivory) 88%, transparent);
+            margin: 0;
+        }
+
+        .decay-action-steps {
+            margin: 12px 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 8px;
+        }
+
+        .decay-action-steps li {
+            font-size: 0.82rem;
+            color: color-mix(in srgb, var(--ivory) 80%, transparent);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.45;
+        }
+
+        .decay-action-steps li i {
+            color: #d4896a;
+            font-size: 0.76rem;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .decay-dashboard-footer {
+            margin-top: 22px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.82rem;
+            color: var(--stone);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .decay-dashboard-footer a {
+            color: #e5a388;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .decay-dashboard-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Strategic Authority Section */
+        .decay-authority-card {
+            margin-top: 44px;
+            background: var(--ivory-deep);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 36px;
+        }
+
+        .decay-authority-card h2 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: var(--charcoal);
+            margin: 8px 0 14px;
+        }
+
+        .decay-authority-card p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 82ch;
+            margin: 0 0 16px;
+        }
+
+        .decay-authority-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .decay-authority-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .decay-pillar-box {
+            background: #ffffff;
+            border: 1px solid var(--hairline);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .decay-pillar-box h3 {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            margin: 0 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .decay-pillar-box h3 i {
+            color: var(--terracotta);
+            font-size: 0.9rem;
+        }
+
+        .decay-pillar-box p {
+            font-size: 0.85rem;
+            line-height: 1.55;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .decay-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .decay-authority-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .decay-tool-section {
+                padding: 32px 16px 56px;
+            }
+
+            .decay-inputs-card,
+            .decay-dashboard-card,
+            .decay-authority-card {
+                padding: 24px 18px;
+            }
+
+            .decay-score-showcase {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .decay-metrics-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://shalinichoudhary.in/b2b-content-decay-scorer.html#app",
+          "name": "B2B SaaS Content Decay Scorer",
+          "url": "https://shalinichoudhary.in/b2b-content-decay-scorer.html",
+          "description": "Calculate your content decay severity score and get immediate technical SEO recommendations on whether to prune, redirect, or rewrite your declining pages.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://shalinichoudhary.in/#person",
+            "name": "Shalini Choudhary"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://shalinichoudhary.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Free Tools",
+              "item": "https://shalinichoudhary.in/b2b-organic-roi-calculator.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "B2B SaaS Content Decay Scorer",
+              "item": "https://shalinichoudhary.in/b2b-content-decay-scorer.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="/" class="brand" aria-label="Go to homepage">
+                <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
+            </a>
+
+            <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
+                <div class="nav-dropdown">
+                    <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+                        <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+                        <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+                        <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+                        <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+                        <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+                        <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Multi-Market</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="/seo-strategy-consultant.html" class="nav-dropdown-toggle">Expertise <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Expertise submenu">
+                        <a href="/seo-strategy-consultant.html">Search and AI Discovery</a>
+                        <a href="/growth-marketing-strategy.html">Growth and Conversion</a>
+                        <a href="/marketing-analytics-ga4-consultant.html">Analytics</a>
+                        <a href="/conversion-optimisation-strategy.html">CRO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="/b2b-organic-roi-calculator.html" class="nav-dropdown-toggle active">Free Tools <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Free Tools submenu">
+                        <a href="/b2b-organic-roi-calculator.html">B2B ROI Calculator</a>
+                        <a href="/advanced-utm-builder.html">Advanced UTM Builder</a>
+                        <a href="/b2b-content-decay-scorer.html" class="active">Content Decay Scorer</a>
+                    </div>
+                </div>
+
+                <a href="/about.html">About</a>
+                <a href="/blogs.html">Blog</a>
+                <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-content">
+        <section class="decay-tool-section">
+            <div class="decay-hero">
+                <span class="sc-label">01 / FREE REVOPS &amp; SEO UTILITY</span>
+                <h1 style="font-size: clamp(2rem, 3.8vw, 2.9rem); color: var(--charcoal); margin: 12px 0 6px; line-height: 1.2;">
+                    B2B SaaS Content Decay Scorer
+                </h1>
+                <p>
+                    Stop carrying dead weight on your domain. Enter your page performance metrics to instantly calculate your content decay severity score and receive exact technical recommendations on whether to prune, redirect, or rewrite.
+                </p>
+            </div>
+
+            <div class="decay-grid">
+                <!-- Column A: Inputs -->
+                <div class="decay-inputs-card">
+                    <div class="decay-card-header">
+                        <span class="sc-label">02 / PAGE METRICS</span>
+                        <h2>Analyze Decaying Asset</h2>
+                        <p>Input search performance data from Google Search Console or GA4</p>
+                    </div>
+
+                    <form class="decay-form" id="decay-form" onsubmit="return false;">
+                        <div class="decay-field">
+                            <label for="input-peak-traffic">
+                                <span>Peak Monthly Organic Traffic</span>
+                                <span class="decay-hint">Highest 30-day session benchmark</span>
+                            </label>
+                            <div class="decay-input-wrap">
+                                <input type="number" id="input-peak-traffic" value="12000" min="1" step="50" class="has-suffix" required>
+                                <span class="decay-input-suffix">sessions/mo</span>
+                            </div>
+                        </div>
+
+                        <div class="decay-field">
+                            <label for="input-current-traffic">
+                                <span>Current Monthly Organic Traffic</span>
+                                <span class="decay-hint">Trailing 30-day organic sessions</span>
+                            </label>
+                            <div class="decay-input-wrap">
+                                <input type="number" id="input-current-traffic" value="3200" min="0" step="50" class="has-suffix" required>
+                                <span class="decay-input-suffix">sessions/mo</span>
+                            </div>
+                        </div>
+
+                        <div class="decay-field">
+                            <label for="input-months-since">
+                                <span>Time Since Peak Traffic</span>
+                                <span class="decay-hint">Months elapsed since peak peak volume</span>
+                            </label>
+                            <div class="decay-input-wrap">
+                                <input type="number" id="input-months-since" value="5" min="1" max="60" step="1" class="has-suffix" required>
+                                <span class="decay-input-suffix">months</span>
+                            </div>
+                        </div>
+
+                        <div class="decay-field">
+                            <label for="input-relevance">
+                                <span>Core Topic Relevance to Product</span>
+                                <span class="decay-hint">Commercial &amp; ICP strategic fit</span>
+                            </label>
+                            <select id="input-relevance">
+                                <option value="high" selected>Still highly relevant to product &amp; ICP</option>
+                                <option value="medium">Somewhat relevant (Tangential or top-of-funnel)</option>
+                                <option value="obsolete">Obsolete / Feature Pivot / Discontinued Offer</option>
+                            </select>
+                        </div>
+
+                        <div class="decay-presets">
+                            <span class="decay-presets-label">Common Scenarios:</span>
+                            <button type="button" class="decay-preset-btn" data-peak="15000" data-curr="2200" data-months="4" data-rel="high">Sudden Cliff Drop (Algorithmic)</button>
+                            <button type="button" class="decay-preset-btn" data-peak="8500" data-curr="6200" data-months="12" data-rel="high">Slow Drift Decay</button>
+                            <button type="button" class="decay-preset-btn" data-peak="6000" data-curr="600" data-months="18" data-rel="obsolete">Deprecated Legacy Feature</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Column B: Diagnostic Dashboard -->
+                <div class="decay-dashboard-card">
+                    <div>
+                        <div class="decay-card-header">
+                            <span class="sc-label">03 / DIAGNOSTIC ENGINE</span>
+                            <h2>Decay Analysis &amp; Prescription</h2>
+                            <p>Live technical recommendation &amp; action priority</p>
+                        </div>
+
+                        <!-- Score Showcase -->
+                        <div class="decay-score-showcase">
+                            <div class="decay-dial-wrap">
+                                <svg class="decay-dial-svg" viewBox="0 0 100 100">
+                                    <circle class="decay-dial-bg" cx="50" cy="50" r="42" />
+                                    <circle class="decay-dial-progress" id="dial-progress" cx="50" cy="50" r="42" stroke="#ef4444" />
+                                </svg>
+                                <div class="decay-dial-text">
+                                    <span class="decay-dial-num" id="out-score-number" style="color: #ef4444;">78</span>
+                                    <span class="decay-dial-label">Score</span>
+                                </div>
+                            </div>
+                            <div class="decay-score-details">
+                                <span class="decay-score-title">Severity Assessment</span>
+                                <div class="decay-severity-badge" id="out-severity-badge" style="background: rgba(239, 68, 68, 0.18); color: #f87171;">
+                                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                                    <span id="out-severity-text">High Severity</span>
+                                </div>
+                                <p class="decay-score-desc" id="out-severity-desc">
+                                    Severe traffic erosion requiring urgent remediation to preserve topical authority and ranking equity.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Metrics Row -->
+                        <div class="decay-metrics-row">
+                            <div class="decay-metric-box">
+                                <span class="decay-metric-label">Total Traffic Lost</span>
+                                <div class="decay-metric-value" id="out-traffic-lost" style="color: #f87171;">-73.3%</div>
+                                <div class="decay-metric-sub" id="out-traffic-lost-abs">-8,800 sessions/mo</div>
+                            </div>
+                            <div class="decay-metric-box">
+                                <span class="decay-metric-label">Decay Velocity</span>
+                                <div class="decay-metric-value" id="out-velocity-badge" style="color: #f87171;">Fast</div>
+                                <div class="decay-metric-sub" id="out-velocity-rate">-14.7% per month</div>
+                            </div>
+                        </div>
+
+                        <!-- The Prescription -->
+                        <div class="decay-prescription-card" id="prescription-card">
+                            <div class="decay-prescription-header">
+                                <span class="decay-prescription-tag">
+                                    <i class="fas fa-stethoscope" aria-hidden="true"></i> The Prescription
+                                </span>
+                                <span style="font-size: 0.74rem; color: var(--stone); font-family: 'JetBrains Mono', monospace;" id="out-action-code">ACTION / REWRITE</span>
+                            </div>
+                            <h3 class="decay-action-badge" id="out-action-badge">
+                                <i class="fas fa-bolt" aria-hidden="true" style="color: #ef4444;"></i>
+                                <span id="out-action-title">Aggressive Rewrite &amp; Relaunch</span>
+                            </h3>
+                            <p class="decay-prescription-text" id="out-action-text">
+                                This asset has suffered acute competitive or algorithmic decay but retains high ICP relevance. A minor tweak will not suffice. Conduct an end-to-end rewrite addressing current search intent and republish with updated schema.
+                            </p>
+                            <ul class="decay-action-steps" id="out-action-steps">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Conduct SERP gap analysis against new top-ranking competitors</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Overhaul copy to answer modern query intent with first-party data</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Update dateModified schema and submit for immediate recrawl in GSC</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="decay-dashboard-footer">
+                        <span>Calculated from real-time decay velocity and ICP relevance weighting.</span>
+                        <a href="/seo-strategy-consultant.html">Explore Enterprise SEO Strategy →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Authority Text -->
+            <article class="decay-authority-card">
+                <span class="sc-label">04 / STRATEGIC PERSPECTIVE</span>
+                <h2>The RevOps Approach to Content Pruning</h2>
+                <p>
+                    In mature B2B SaaS organizations, bloated content libraries are one of the quietest killers of organic pipeline. Content marketing teams celebrate publishing 50 new articles a quarter, while silently harboring hundreds of legacy posts that haven't generated an MQL or organic impression in over a year. Carrying dead weight on your domain wastes valuable Googlebot crawl budget, dilutes semantic topical authority, and confuses retrieval algorithms across both traditional search and LLM-powered answer engines.
+                </p>
+                <p>
+                    A revenue-focused SEO strategy treats every URL as a capital asset that must yield compounding returns or be liquidated. Ruthlessly auditing content decay—pruning low-intent vanity pages with HTTP 410 headers, consolidating cannibalizing variants into dominant pillar assets via 301 redirects, and aggressively refreshing declining high-intent URLs—routinely delivers double-digit pipeline rebounds without authoring a single net-new blog post.
+                </p>
+
+                <div class="decay-authority-grid">
+                    <div class="decay-pillar-box">
+                        <h3><i class="fas fa-broom" aria-hidden="true"></i> Status 410 Pruning</h3>
+                        <p>Eliminate zero-traffic, obsolete posts that lack backlinks. Reclaim crawl budget and concentrate search engine crawling on commercially viable revenue pages.</p>
+                    </div>
+                    <div class="decay-pillar-box">
+                        <h3><i class="fas fa-code-branch" aria-hidden="true"></i> 301 Cluster Merging</h3>
+                        <p>Consolidate splintered topical variants into a unified comprehensive asset. Transfer historical PageRank and pass accumulated trust to your primary conversion hub.</p>
+                    </div>
+                    <div class="decay-pillar-box">
+                        <h3><i class="fas fa-sync-alt" aria-hidden="true"></i> Intent-Driven Rewrites</h3>
+                        <p>Target declining URLs with proven historical ACV contribution. Refresh outdated data, incorporate expert POV, and optimize for AI Overviews and answer passages.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="tj-footer-area">
+        <div class="footer-content footer-grid">
+            <div class="footer-brand">
+                <span class="footer-kicker">Open to senior roles</span>
+                <h2>Let's talk</h2>
+                <p class="footer-small">Integrated marketing strategy tied to commercial outcomes.</p>
+                <a class="footer-cta-button" href="/contact.html">Get in touch</a>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Case Studies</h3>
+                <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+                    <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+                    <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+                    <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+                    <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+                    <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Multi-Market</a>
+                </nav>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Services &amp; Explore</h3>
+                <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+                    <a href="/seo-strategy-consultant.html">Search and AI Discovery</a>
+                    <a href="/growth-marketing-strategy.html">Growth and Conversion</a>
+                    <a href="/marketing-analytics-ga4-consultant.html">Analytics</a>
+                    <a href="/conversion-optimisation-strategy.html">CRO</a>
+                    <a href="/work.html">Work</a>
+                    <a href="/about.html">About</a>
+                    <a href="/blogs.html">Blog</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Free Tools</h3>
+                <nav class="footer-nav" aria-label="Footer Free Tools Navigation">
+                    <a href="/b2b-organic-roi-calculator.html">B2B ROI Calculator</a>
+                    <a href="/advanced-utm-builder.html">Advanced UTM Builder</a>
+                    <a href="/b2b-content-decay-scorer.html">Content Decay Scorer</a>
+                </nav>
+            </div>
+
+            <div class="footer-contact">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="footer-social" aria-label="Social links">
+                    <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <h3 class="footer-heading footer-heading--spaced">Write</h3>
+                <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    hi.shalinichoudhary@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-meta">
+            <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+        (function () {
+            // DOM Elements
+            const peakInput = document.getElementById('input-peak-traffic');
+            const currentInput = document.getElementById('input-current-traffic');
+            const monthsInput = document.getElementById('input-months-since');
+            const relevanceSelect = document.getElementById('input-relevance');
+
+            const outScoreNumber = document.getElementById('out-score-number');
+            const dialProgress = document.getElementById('dial-progress');
+            const outSeverityBadge = document.getElementById('out-severity-badge');
+            const outSeverityText = document.getElementById('out-severity-text');
+            const outSeverityDesc = document.getElementById('out-severity-desc');
+
+            const outTrafficLost = document.getElementById('out-traffic-lost');
+            const outTrafficLostAbs = document.getElementById('out-traffic-lost-abs');
+            const outVelocityBadge = document.getElementById('out-velocity-badge');
+            const outVelocityRate = document.getElementById('out-velocity-rate');
+
+            const prescriptionCard = document.getElementById('prescription-card');
+            const outActionCode = document.getElementById('out-action-code');
+            const outActionBadge = document.getElementById('out-action-badge');
+            const outActionTitle = document.getElementById('out-action-title');
+            const outActionText = document.getElementById('out-action-text');
+            const outActionSteps = document.getElementById('out-action-steps');
+
+            const presetButtons = document.querySelectorAll('.decay-preset-btn');
+
+            // Formatters
+            const numberFormatter = new Intl.NumberFormat('en-US');
+
+            function calculateDecay() {
+                const peak = Math.max(1, parseFloat(peakInput.value) || 1);
+                const current = Math.max(0, parseFloat(currentInput.value) || 0);
+                const months = Math.max(1, parseFloat(monthsInput.value) || 1);
+                const relevance = relevanceSelect.value;
+
+                // 1. Traffic Loss Calculation
+                const lostAbsolute = peak - current;
+                let lostPercent = (lostAbsolute / peak) * 100;
+                if (lostPercent < 0) lostPercent = 0; // Traffic is growing
+
+                outTrafficLost.textContent = (lostPercent === 0 ? '0.0%' : '-' + lostPercent.toFixed(1) + '%');
+                outTrafficLostAbs.textContent = (lostAbsolute <= 0 
+                    ? '+ ' + numberFormatter.format(Math.abs(lostAbsolute)) + ' sessions gain' 
+                    : '- ' + numberFormatter.format(lostAbsolute) + ' sessions/mo');
+
+                // 2. Velocity Calculation
+                const monthlyDropRate = lostPercent / months;
+                let velocity = 'Slow';
+                let velocityColor = '#10b981'; // Green
+
+                if (lostPercent < 10) {
+                    velocity = 'Negligible';
+                    velocityColor = '#10b981';
+                } else if (months <= 3 && lostPercent >= 35) {
+                    velocity = 'Fast (Cliff Drop)';
+                    velocityColor = '#ef4444';
+                } else if (monthlyDropRate >= 12) {
+                    velocity = 'Fast';
+                    velocityColor = '#ef4444';
+                } else if (monthlyDropRate >= 4.5) {
+                    velocity = 'Moderate';
+                    velocityColor = '#f59e0b';
+                } else {
+                    velocity = 'Slow';
+                    velocityColor = '#10b981';
+                }
+
+                outVelocityBadge.textContent = velocity;
+                outVelocityBadge.style.color = velocityColor;
+                outVelocityRate.textContent = (lostPercent <= 0 
+                    ? 'Growth trend' 
+                    : '-' + monthlyDropRate.toFixed(1) + '% per month');
+
+                // 3. Severity Score Calculation (0-100 scale)
+                let score = 0;
+
+                if (relevance === 'obsolete') {
+                    // Obsolete topics automatically trigger critical severity to force pruning/redirect
+                    score = Math.round(85 + (lostPercent * 0.15));
+                } else if (relevance === 'medium') {
+                    // Tangential topics have a higher baseline severity when decaying
+                    let base = lostPercent * 0.8;
+                    let velocityBonus = (velocity.startsWith('Fast')) ? 15 : (velocity === 'Moderate' ? 8 : 2);
+                    score = Math.round(base + velocityBonus + 5);
+                } else {
+                    // High relevance topics
+                    let base = lostPercent * 0.72;
+                    let velocityBonus = (velocity.startsWith('Fast')) ? 18 : (velocity === 'Moderate' ? 8 : 0);
+                    score = Math.round(base + velocityBonus);
+                }
+
+                // Clamping
+                score = Math.min(100, Math.max(0, score));
+
+                // 4. Color Code & Dial Update
+                // Dial circumference is 2 * PI * 42 = ~263.89
+                const circumference = 263.89;
+                const offset = circumference - (score / 100) * circumference;
+                dialProgress.style.strokeDashoffset = offset;
+                outScoreNumber.textContent = score;
+
+                let colorCode = '#10b981'; // Green (<50)
+                let severityCategory = 'Low Severity';
+                let severityDesc = 'Healthy performance or nominal drift. Standard monitoring recommended.';
+
+                if (score >= 75) {
+                    colorCode = '#ef4444'; // Red
+                    severityCategory = 'Critical Decay';
+                    severityDesc = 'Severe traffic erosion threatening topical authority. Urgent engineering or editorial intervention required.';
+                } else if (score >= 50) {
+                    colorCode = '#f59e0b'; // Amber / Orange
+                    severityCategory = 'Moderate Decay';
+                    severityDesc = 'Substantial performance decline. Prioritize for cluster consolidation or search intent refresh.';
+                }
+
+                outScoreNumber.style.color = colorCode;
+                dialProgress.style.stroke = colorCode;
+                outTrafficLost.style.color = colorCode;
+
+                outSeverityBadge.style.background = (score >= 75) 
+                    ? 'rgba(239, 68, 68, 0.18)' 
+                    : (score >= 50 ? 'rgba(245, 158, 11, 0.18)' : 'rgba(16, 185, 129, 0.18)');
+                outSeverityBadge.style.color = (score >= 75) 
+                    ? '#f87171' 
+                    : (score >= 50 ? '#fbbf24' : '#34d399');
+                outSeverityText.textContent = severityCategory;
+                outSeverityDesc.textContent = severityDesc;
+
+                // 5. Dynamic Technical Prescription
+                updatePrescription(relevance, lostPercent, score, velocity, lostAbsolute);
+            }
+
+            function updatePrescription(relevance, lostPercent, score, velocity, lostAbsolute) {
+                let actionCode = 'ACTION / AUDIT';
+                let actionIcon = 'fa-stethoscope';
+                let actionTitle = 'Monitor & Light Optimization';
+                let actionColor = '#10b981';
+                let actionText = '';
+                let steps = [];
+
+                if (relevance === 'obsolete') {
+                    // Deprecated / Obsolete Feature
+                    if (lostPercent >= 50 || lostAbsolute >= 2000) {
+                        actionCode = 'HTTP 301 / CONSOLIDATION';
+                        actionIcon = 'fa-code-branch';
+                        actionTitle = 'Consolidate & 301 Redirect to Core Pillar';
+                        actionColor = '#ef4444';
+                        actionText = 'This page covers a discontinued feature or obsolete topic with historical traffic and inbound link equity. Do not leave it live. Pass all accumulated PageRank directly into your modern equivalent product or high-level pillar page via a permanent 301 redirect.';
+                        steps = [
+                            'Identify the closest surviving parent or active product feature URL',
+                            'Implement a permanent server-side 301 redirect in your edge/proxy rules',
+                            'Update internal links pointing to this legacy URL across your CMS',
+                            'Preserve historical UTM campaign links if still generating residual visits'
+                        ];
+                    } else {
+                        actionCode = 'HTTP 410 / PRUNE';
+                        actionIcon = 'fa-trash-alt';
+                        actionTitle = 'Status 410 Gone: Prune Dead Weight';
+                        actionColor = '#ef4444';
+                        actionText = 'This obsolete asset has negligible traffic and zero strategic alignment. Carrying zombie URLs degrades search engine crawl efficiency. Return an HTTP 410 Gone header to tell search engine bots to purge the URL from the index immediately.';
+                        steps = [
+                            'Configure web server or CMS to issue an explicit HTTP 410 Gone status',
+                            'Remove the URL from your XML sitemap immediately',
+                            'Audit and eliminate all orphan internal links leading to this page',
+                            'Reclaim search engine crawl budget for high-converting product pages'
+                        ];
+                    }
+                } else if (relevance === 'high') {
+                    // High ICP Relevance
+                    if (score >= 75 || lostPercent >= 50) {
+                        actionCode = 'CONTENT / AGGRESSIVE REWRITE';
+                        actionIcon = 'fa-bolt';
+                        actionTitle = 'Aggressive Rewrite & Relaunch';
+                        actionColor = '#ef4444';
+                        actionText = 'This is a core revenue-driving topic that has experienced acute decay or SERP displacement. A light touch-up will not recover rankings. Undertake a comprehensive structural rewrite, align with current search intent and AI answer formats, and relaunch as an updated asset.';
+                        steps = [
+                            'Conduct SERP reverse-engineering against current top 3 competitors',
+                            'Structure answer-first passages with Schema FAQ and author credentials',
+                            'Update datePublished / dateModified and submit for immediate GSC inspection',
+                            'Deploy 3 to 5 internal links from high-authority recent blog posts'
+                        ];
+                    } else if (score >= 50 || lostPercent >= 25) {
+                        actionCode = 'CONTENT / TARGETED REFRESH';
+                        actionIcon = 'fa-sync-alt';
+                        actionTitle = 'Targeted Refresh & Schema Upgrade';
+                        actionColor = '#f59e0b';
+                        actionText = 'The page is drifting downward as competitor content gains freshness. Update statistical citations, expand under-developed subtopics, and re-verify internal commercial CTAs to reverse decay before it hits critical severity.';
+                        steps = [
+                            'Audit query impressions in GSC to spot declining primary keywords',
+                            'Add fresh industry statistics, diagrams, and updated practical examples',
+                            'Implement structured data (FAQPage or Article Schema) to win rich snippets',
+                            'Review and strengthen high-intent MQL conversion CTAs'
+                        ];
+                    } else {
+                        actionCode = 'MONITOR / HEALTHY';
+                        actionIcon = 'fa-shield-alt';
+                        actionTitle = 'Stable Performance: Light Maintenance';
+                        actionColor = '#10b981';
+                        actionText = 'Decay is nominal or within standard seasonal fluctuations. Maintain periodic monitoring and ensure all outbound references and links remain active.';
+                        steps = [
+                            'Monitor trailing 60-day impressions in Google Search Console',
+                            'Ensure all outgoing research citations and internal anchors resolve 200 OK',
+                            'Confirm GA4 conversion event tracking continues to fire smoothly'
+                        ];
+                    }
+                } else {
+                    // Medium Relevance (Tangential)
+                    if (score >= 70 || lostPercent >= 55) {
+                        actionCode = 'CLUSTER / CONSOLIDATE 301';
+                        actionIcon = 'fa-layer-group';
+                        actionTitle = 'Consolidate into Main Thematic Pillar';
+                        actionColor = '#ef4444';
+                        actionText = 'This secondary topic is losing ground and diluting topical focus. Rather than writing net-new copy for a tangential query, absorb its strongest insights into a broader parent guide and 301 redirect this URL to concentrate domain strength.';
+                        steps = [
+                            'Merge unique paragraphs and diagrams into your primary category pillar',
+                            'Deploy a 301 redirect from this URL to the consolidated pillar guide',
+                            'Update internal links across the domain to point directly to the parent guide',
+                            'Prevent self-cannibalization between loosely related blog posts'
+                        ];
+                    } else {
+                        actionCode = 'CONTENT / REPURPOSE';
+                        actionIcon = 'fa-retweet';
+                        actionTitle = 'Repurpose or Secondary Refresh';
+                        actionColor = '#f59e0b';
+                        actionText = 'This asset has moderate value but needs tighter integration with your conversion funnels. Refresh key sections and verify whether it assists pipeline creation before committing significant editorial hours.';
+                        steps = [
+                            'Evaluate assisted conversions in GA4 attribution reports',
+                            'Tightly connect the post to relevant case studies and product demo paths',
+                            'Trim outdated fluff sections to improve reader engagement time'
+                        ];
+                    }
+                }
+
+                // Render Action Details
+                outActionCode.textContent = actionCode;
+                outActionBadge.innerHTML = `<i class="fas ${actionIcon}" aria-hidden="true" style="color: ${actionColor};"></i> <span id="out-action-title">${actionTitle}</span>`;
+                outActionText.textContent = actionText;
+
+                outActionSteps.innerHTML = '';
+                steps.forEach(step => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-check" aria-hidden="true" style="color: ${actionColor};"></i> <span>${step}</span>`;
+                    outActionSteps.appendChild(li);
+                });
+            }
+
+            // Real-time Event Listeners
+            [peakInput, currentInput, monthsInput].forEach(el => {
+                el.addEventListener('input', calculateDecay);
+            });
+
+            relevanceSelect.addEventListener('change', calculateDecay);
+
+            // Preset Buttons
+            presetButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    peakInput.value = this.dataset.peak;
+                    currentInput.value = this.dataset.curr;
+                    monthsInput.value = this.dataset.months;
+                    relevanceSelect.value = this.dataset.rel;
+                    calculateDecay();
+                });
+            });
+
+            // Initial calculation
+            calculateDecay();
+        })();
+    </script>
+</body>
+
+</html>
+
