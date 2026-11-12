@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced UTM & Custom Dimension Builder | Free RevOps Tool</title>
+    <meta name="description"
+        content="Generate trackable B2B campaign URLs and get the exact GA4 custom dimension and CRM hidden field mappings for accurate pipeline attribution.">
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://shalinichoudhary.in/advanced-utm-builder.html" />
+    <link rel="apple-touch-icon" href="images/android-icon-36x36.png">
+    <link rel="shortcut icon" type="image/png" href="images/android-icon-36x36.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bundle.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFJDP43DXE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FFJDP43DXE');
+    </script>
+
+    <style>
+        .utm-tool-section {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 48px 24px 72px;
+        }
+
+        .utm-hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 44px;
+        }
+
+        .utm-hero p {
+            color: var(--ink-soft);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-top: 14px;
+        }
+
+        .utm-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        /* Column A: Inputs */
+        .utm-inputs-card {
+            background: var(--surface);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: var(--shadow-1);
+        }
+
+        .utm-card-header {
+            margin-bottom: 22px;
+        }
+
+        .utm-card-header h2 {
+            font-size: 1.35rem;
+            margin: 6px 0 4px;
+            color: var(--charcoal);
+        }
+
+        .utm-card-header p {
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .utm-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .utm-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .utm-field label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .utm-field .utm-param-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            font-weight: 500;
+            color: var(--terracotta-deep);
+            background: color-mix(in srgb, var(--terracotta) 12%, transparent);
+            padding: 2px 7px;
+            border-radius: 6px;
+        }
+
+        .utm-field input[type="text"],
+        .utm-field input[type="url"] {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid var(--hairline);
+            border-radius: 10px;
+            background: #ffffff;
+            color: var(--charcoal);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .utm-field input:focus {
+            outline: none;
+            border-color: var(--terracotta);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--terracotta) 18%, transparent);
+        }
+
+        .utm-group-divider {
+            margin: 14px 0 4px;
+            padding-top: 18px;
+            border-top: 1px dashed var(--hairline);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .utm-group-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .utm-badge-adv {
+            background: color-mix(in srgb, var(--terracotta) 15%, transparent);
+            color: var(--terracotta-deep);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .utm-presets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+            margin-bottom: 4px;
+        }
+
+        .utm-preset-btn {
+            background: #ffffff;
+            border: 1px solid var(--hairline);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .utm-preset-btn:hover {
+            border-color: var(--terracotta);
+            color: var(--terracotta-deep);
+            background: color-mix(in srgb, var(--terracotta) 8%, #ffffff);
+        }
+
+        /* Column B: Dashboard Card */
+        .utm-dashboard-card {
+            background: var(--charcoal);
+            color: var(--ivory);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: var(--shadow-2);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .utm-dashboard-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--terracotta), #d4896a);
+        }
+
+        .utm-dashboard-header {
+            margin-bottom: -4px;
+        }
+
+        .utm-dashboard-header .sc-label {
+            color: #d4896a;
+        }
+
+        .utm-dashboard-header h2 {
+            font-size: 1.35rem;
+            color: var(--ivory);
+            margin: 6px 0 4px;
+        }
+
+        .utm-dashboard-header p {
+            font-size: 0.88rem;
+            color: var(--stone);
+            margin: 0;
+        }
+
+        /* Section 1: Final URL Box */
+        .utm-output-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .utm-output-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .utm-panel-title {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--stone);
+            font-weight: 700;
+        }
+
+        .utm-copy-btn {
+            background: var(--terracotta);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .utm-copy-btn:hover {
+            background: #d4896a;
+            transform: translateY(-1px);
+        }
+
+        .utm-copy-btn.copied {
+            background: #2ea043;
+        }
+
+        .utm-url-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #f7fafc;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 14px;
+            word-break: break-all;
+            user-select: all;
+            max-height: 130px;
+            overflow-y: auto;
+        }
+
+        /* Section 2: GA4 Dimension Table */
+        .utm-mapping-panel {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 18px 20px;
+        }
+
+        .utm-mapping-panel h3 {
+            font-size: 0.88rem;
+            color: var(--ivory);
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .utm-status-indicator {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 10px;
+            background: rgba(46, 160, 67, 0.2);
+            color: #56d364;
+        }
+
+        .utm-status-indicator.inactive {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--stone);
+        }
+
+        .utm-table-wrap {
+            overflow-x: auto;
+        }
+
+        .utm-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+
+        .utm-table th {
+            color: var(--stone);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 8px 10px 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .utm-table td {
+            padding: 10px 10px 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--ivory);
+        }
+
+        .utm-table code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: #d4896a;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Section 3: CRM Hidden Fields */
+        .utm-crm-panel {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 14px;
+            padding: 18px 20px;
+        }
+
+        .utm-crm-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .utm-crm-header h3 {
+            font-size: 0.88rem;
+            color: var(--ivory);
+            margin: 0;
+        }
+
+        .utm-crm-copy-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--ivory);
+            border-radius: 6px;
+            padding: 4px 10px;
+            font-size: 0.76rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .utm-crm-copy-btn:hover {
+            border-color: #d4896a;
+            color: #d4896a;
+        }
+
+        .utm-code-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 12px;
+            color: #a5d6ff;
+            max-height: 140px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            margin: 0;
+        }
+
+        /* Strategic Authority Section */
+        .utm-authority-card {
+            margin-top: 44px;
+            background: var(--ivory-deep);
+            border: 1px solid var(--hairline);
+            border-radius: var(--radius);
+            padding: 36px;
+        }
+
+        .utm-authority-card h2 {
+            font-size: clamp(1.5rem, 2.5vw, 2rem);
+            color: var(--charcoal);
+            margin: 8px 0 14px;
+        }
+
+        .utm-authority-card p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 82ch;
+            margin: 0 0 16px;
+        }
+
+        .utm-authority-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 900px) {
+            .utm-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .utm-tool-section {
+                padding: 32px 16px 56px;
+            }
+
+            .utm-inputs-card,
+            .utm-dashboard-card,
+            .utm-authority-card {
+                padding: 24px 18px;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://shalinichoudhary.in/advanced-utm-builder.html#app",
+          "name": "Advanced UTM & Custom Dimension Builder",
+          "url": "https://shalinichoudhary.in/advanced-utm-builder.html",
+          "description": "Generate trackable B2B campaign URLs and get the exact GA4 custom dimension and CRM hidden field mappings for accurate pipeline attribution.",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "author": {
+            "@type": "Person",
+            "@id": "https://shalinichoudhary.in/#person",
+            "name": "Shalini Choudhary"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://shalinichoudhary.in/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Free Tools",
+              "item": "https://shalinichoudhary.in/b2b-organic-roi-calculator.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Advanced UTM & Custom Dimension Builder",
+              "item": "https://shalinichoudhary.in/advanced-utm-builder.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="site-header-inner">
+            <a href="/" class="brand" aria-label="Go to homepage">
+                <img src="/images/logo-image.webp" alt="Shalini Choudhary Logo" class="logo-image" width="156" height="156">
+            </a>
+
+            <button class="menu-toggle" aria-controls="main-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="site-nav" id="main-navigation" aria-label="Primary navigation">
+                <div class="nav-dropdown">
+                    <a href="/work.html" class="nav-dropdown-toggle">Work <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Case studies submenu">
+                        <a href="/work.html" class="nav-dropdown-hub">All Work &amp; Case Studies</a>
+                        <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+                        <a href="/work/gus-ai-discovery.html">GUS AI Discovery &amp; GEO</a>
+                        <a href="/work/gus-growth-pipeline.html">GUS Organic Pipeline</a>
+                        <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+                        <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Multi-Market</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="/seo-strategy-consultant.html" class="nav-dropdown-toggle">Expertise <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Expertise submenu">
+                        <a href="/seo-strategy-consultant.html">Search and AI Discovery</a>
+                        <a href="/growth-marketing-strategy.html">Growth and Conversion</a>
+                        <a href="/marketing-analytics-ga4-consultant.html">Analytics</a>
+                        <a href="/conversion-optimisation-strategy.html">CRO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="/b2b-organic-roi-calculator.html" class="nav-dropdown-toggle active">Free Tools <span class="nav-dropdown-caret" aria-hidden="true">▾</span></a>
+                    <div class="nav-dropdown-menu" aria-label="Free Tools submenu">
+                        <a href="/b2b-organic-roi-calculator.html">B2B ROI Calculator</a>
+                        <a href="/advanced-utm-builder.html" class="active">Advanced UTM Builder</a>
+                    </div>
+                </div>
+                <a href="/about.html">About</a>
+                <a href="/blogs.html">Blog</a>
+                <a href="/contact.html" class="cta-button small-btn">Get in touch</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-content">
+        <section class="utm-tool-section">
+            <div class="utm-hero">
+                <span class="sc-label" style="justify-content: center;">01 / ATTRIBUTION ARCHITECTURE</span>
+                <h1 class="hero-title" style="font-size: clamp(2.1rem, 4.4vw, 3.2rem);">Advanced UTM &amp; <em>Custom Dimension Builder</em></h1>
+                <p>
+                    Stop losing campaign touchpoints at lead conversion. Generate standardized B2B tracking URLs and get the exact
+                    GA4 Custom Dimension and CRM hidden field mappings to attribute pipeline and closed-won revenue.
+                </p>
+            </div>
+
+            <div class="utm-grid">
+                <!-- Column A: Inputs -->
+                <div class="utm-inputs-card">
+                    <div class="utm-card-header">
+                        <span class="sc-label">02 / CAMPAIGN INPUTS</span>
+                        <h2>Tracking Parameters</h2>
+                        <p>Real-time sanitization: spaces are automatically converted to hyphens and invalid characters are stripped.</p>
+                    </div>
+
+                    <div class="utm-presets">
+                        <button type="button" class="utm-preset-btn" data-preset="linkedin">LinkedIn Ads</button>
+                        <button type="button" class="utm-preset-btn" data-preset="google">Google Search</button>
+                        <button type="button" class="utm-preset-btn" data-preset="newsletter">Email Newsletter</button>
+                        <button type="button" class="utm-preset-btn" data-preset="partner">Co-Marketing</button>
+                    </div>
+
+                    <form class="utm-form" id="utm-form" onsubmit="return false;">
+                        <div class="utm-field">
+                            <label for="input-url">
+                                Target URL *
+                                <span class="utm-param-tag">Required destination</span>
+                            </label>
+                            <input id="input-url" type="url" placeholder="https://www.example.com" value="https://shalinichoudhary.in/work/gus-growth-pipeline.html" required>
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-source">
+                                Campaign Source
+                                <span class="utm-param-tag">utm_source</span>
+                            </label>
+                            <input id="input-source" type="text" placeholder="e.g. linkedin, google, newsletter" value="linkedin">
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-medium">
+                                Campaign Medium
+                                <span class="utm-param-tag">utm_medium</span>
+                            </label>
+                            <input id="input-medium" type="text" placeholder="e.g. cpc, paid-social, email" value="paid-social">
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-campaign">
+                                Campaign Name
+                                <span class="utm-param-tag">utm_campaign</span>
+                            </label>
+                            <input id="input-campaign" type="text" placeholder="e.g. q1-pipeline-accelerator" value="q1-enterprise-growth">
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-term">
+                                Campaign Term (Keywords / Audience)
+                                <span class="utm-param-tag">utm_term</span>
+                            </label>
+                            <input id="input-term" type="text" placeholder="e.g. revops-leaders, organic-growth" value="revops-directors">
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-content">
+                                Campaign Content (Creative / Ad Variant)
+                                <span class="utm-param-tag">utm_content</span>
+                            </label>
+                            <input id="input-content" type="text" placeholder="e.g. banner-v1, cta-calculator" value="hero-carousel-v1">
+                        </div>
+
+                        <!-- Advanced B2B Attribution Parameters -->
+                        <div class="utm-group-divider">
+                            <span class="utm-group-title">
+                                <i class="fas fa-layer-group"></i> Advanced Attribution
+                            </span>
+                            <span class="utm-badge-adv">RevOps &amp; CRM</span>
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-segment">
+                                [Advanced] B2B Lead Segment
+                                <span class="utm-param-tag">custom_segment</span>
+                            </label>
+                            <input id="input-segment" type="text" placeholder="e.g. enterprise, smb, mid-market" value="enterprise">
+                        </div>
+
+                        <div class="utm-field">
+                            <label for="input-id">
+                                [Advanced] CRM Campaign ID
+                                <span class="utm-param-tag">utm_id</span>
+                            </label>
+                            <input id="input-id" type="text" placeholder="e.g. 7015g00000123AB (Salesforce / HubSpot ID)" value="7015g000002RevOps">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Column B: Results & Architecture Dashboard -->
+                <div class="utm-dashboard-card" aria-live="polite">
+                    <div class="utm-dashboard-header">
+                        <span class="sc-label">03 / ATTRIBUTION OUTPUTS</span>
+                        <h2>Architecture Dashboard</h2>
+                        <p>Complete deployment blueprint: URL, GA4 registry, and CRM hidden capture.</p>
+                    </div>
+
+                    <!-- Section 1: Final Campaign URL -->
+                    <div class="utm-output-panel">
+                        <div class="utm-output-panel-header">
+                            <span class="utm-panel-title">1. Final Campaign URL</span>
+                            <button type="button" class="utm-copy-btn" id="copy-url-btn" title="Copy to clipboard">
+                                <i class="far fa-copy"></i>
+                                <span>Copy URL</span>
+                            </button>
+                        </div>
+                        <div class="utm-url-display" id="output-url">Generating URL...</div>
+                    </div>
+
+                    <!-- Section 2: GA4 Custom Dimension Mapping -->
+                    <div class="utm-mapping-panel">
+                        <h3>
+                            <span>2. GA4 Custom Dimension Mapping</span>
+                            <span class="utm-status-indicator" id="ga4-status">2 Custom Params</span>
+                        </h3>
+                        <div class="utm-table-wrap">
+                            <table class="utm-table">
+                                <thead>
+                                    <tr>
+                                        <th>Dimension Name</th>
+                                        <th>Scope</th>
+                                        <th>Event Parameter</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ga4-table-body">
+                                    <!-- Populated dynamically via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: CRM Hidden Field Setup -->
+                    <div class="utm-crm-panel">
+                        <div class="utm-crm-header">
+                            <h3>3. CRM Hidden Field Setup (HubSpot / Salesforce)</h3>
+                            <button type="button" class="utm-crm-copy-btn" id="copy-crm-btn">
+                                <i class="far fa-copy"></i> Copy Fields
+                            </button>
+                        </div>
+                        <pre class="utm-code-display" id="crm-code-block"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategic Authority Text -->
+            <article class="utm-authority-card">
+                <span class="sc-label">04 / STRATEGIC PERSPECTIVE</span>
+                <h2>Why B2B Needs Advanced UTM Architecture</h2>
+                <p>
+                    Most B2B organizations lose attribution the moment a prospect converts on a landing page form.
+                    Standard out-of-the-box web analytics records session source and medium, but when deals take 6 to 9 months
+                    and involve multi-stakeholder buying committees, web sessions alone cannot defend marketing spend in board meetings.
+                </p>
+                <p>
+                    True commercial attribution requires passing <code>utm_id</code>, <code>custom_segment</code>, and granular campaign tokens directly into hidden CRM fields across HubSpot, Salesforce, or Marketo. When campaign parameters stamp the CRM Lead and Opportunity objects at first-touch and multi-touch milestones, RevOps and growth leaders can connect top-of-funnel ad spend and organic campaigns directly to pipeline velocity, win rates, and closed-won ACV.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="tj-footer-area">
+        <div class="footer-content footer-grid">
+            <div class="footer-brand">
+                <span class="footer-kicker">Open to senior roles</span>
+                <h2>Let's talk</h2>
+                <p class="footer-small">Integrated marketing strategy tied to commercial outcomes.</p>
+                <a class="footer-cta-button" href="/contact.html">Get in touch</a>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Case Studies</h3>
+                <nav class="footer-nav" aria-label="Footer Case Studies Navigation">
+                    <a href="/work/gus-migration.html">GUS Drupal Migration</a>
+                    <a href="/work/gus-ai-discovery.html">GUS AI &amp; GEO Discovery</a>
+                    <a href="/work/gus-growth-pipeline.html">GUS Growth Pipeline</a>
+                    <a href="/work/groupm-ford-pitch.html">GroupM Ford Pitch</a>
+                    <a href="/work/international-seo-jll-ogilvy.html">JLL &amp; Ogilvy Multi-Market</a>
+                </nav>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Services &amp; Explore</h3>
+                <nav class="footer-nav" aria-label="Footer Services and Explore Navigation">
+                    <a href="/seo-strategy-consultant.html">Search and AI Discovery</a>
+                    <a href="/growth-marketing-strategy.html">Growth and Conversion</a>
+                    <a href="/marketing-analytics-ga4-consultant.html">Analytics</a>
+                    <a href="/conversion-optimisation-strategy.html">CRO</a>
+                    <a href="/work.html">Work</a>
+                    <a href="/about.html">About</a>
+                    <a href="/blogs.html">Blog</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="footer-links">
+                <h3 class="footer-heading">Free Tools</h3>
+                <nav class="footer-nav" aria-label="Footer Free Tools Navigation">
+                    <a href="/b2b-organic-roi-calculator.html">B2B ROI Calculator</a>
+                    <a href="/advanced-utm-builder.html">Advanced UTM Builder</a>
+                </nav>
+            </div>
+
+            <div class="footer-contact">
+                <h3 class="footer-heading">Connect</h3>
+                <div class="footer-social" aria-label="Social links">
+                    <a class="footer-social-link" href="https://in.linkedin.com/in/shalini-choudhary" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a class="footer-social-link" href="https://twitter.com/shalinihooda" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <h3 class="footer-heading footer-heading--spaced">Write</h3>
+                <a class="footer-email" href="mailto:hi.shalinichoudhary@gmail.com" aria-label="Email Shalini">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    hi.shalinichoudhary@gmail.com
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-meta">
+            <p class="copyright">© 2026 All rights reserved by Shalini Choudhary</p>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script>
+        (function () {
+            const urlInput = document.getElementById('input-url');
+            const sourceInput = document.getElementById('input-source');
+            const mediumInput = document.getElementById('input-medium');
+            const campaignInput = document.getElementById('input-campaign');
+            const termInput = document.getElementById('input-term');
+            const contentInput = document.getElementById('input-content');
+            const segmentInput = document.getElementById('input-segment');
+            const idInput = document.getElementById('input-id');
+
+            const outputUrl = document.getElementById('output-url');
+            const copyUrlBtn = document.getElementById('copy-url-btn');
+            const copyCrmBtn = document.getElementById('copy-crm-btn');
+            const ga4TableBody = document.getElementById('ga4-table-body');
+            const ga4Status = document.getElementById('ga4-status');
+            const crmCodeBlock = document.getElementById('crm-code-block');
+
+            // Sanitize parameter: replace spaces with hyphens, remove characters invalid in tracking parameters
+            function sanitizeParam(val, preserveCase) {
+                if (!val) return '';
+                // Replace consecutive whitespace with hyphens and strip unsafe characters
+                let cleaned = val.trim().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9_\-\.]/g, '');
+                return preserveCase ? cleaned : cleaned.toLowerCase();
+            }
+
+            function buildAttributionArchitecture() {
+                let baseUrl = urlInput.value.trim();
+                if (!baseUrl) {
+                    baseUrl = 'https://www.example.com';
+                } else if (!/^https?:\/\//i.test(baseUrl)) {
+                    baseUrl = 'https://' + baseUrl;
+                }
+
+                // Sanitize parameters
+                const source = sanitizeParam(sourceInput.value, false);
+                const medium = sanitizeParam(mediumInput.value, false);
+                const campaign = sanitizeParam(campaignInput.value, false);
+                const term = sanitizeParam(termInput.value, false);
+                const content = sanitizeParam(contentInput.value, false);
+                const segment = sanitizeParam(segmentInput.value, false);
+                const utmId = sanitizeParam(idInput.value, true); // Keep case for Salesforce/HubSpot IDs
+
+                // Construct URL
+                let parsedUrl;
+                try {
+                    parsedUrl = new URL(baseUrl);
+                } catch (e) {
+                    parsedUrl = new URL('https://www.example.com');
+                }
+
+                const searchParams = parsedUrl.searchParams;
+
+                // Standard UTM parameters
+                if (source) searchParams.set('utm_source', source); else searchParams.delete('utm_source');
+                if (medium) searchParams.set('utm_medium', medium); else searchParams.delete('utm_medium');
+                if (campaign) searchParams.set('utm_campaign', campaign); else searchParams.delete('utm_campaign');
+                if (term) searchParams.set('utm_term', term); else searchParams.delete('utm_term');
+                if (content) searchParams.set('utm_content', content); else searchParams.delete('utm_content');
+
+                // Advanced B2B parameters
+                if (utmId) searchParams.set('utm_id', utmId); else searchParams.delete('utm_id');
+                if (segment) searchParams.set('custom_segment', segment); else searchParams.delete('custom_segment');
+
+                const finalUrlString = parsedUrl.toString();
+                outputUrl.textContent = finalUrlString;
+
+                // --- 2. Update GA4 Custom Dimension Registry Table ---
+                let customCount = 0;
+                let rowsHtml = '';
+
+                // Advanced Dimension 1: custom_segment
+                if (segment) {
+                    customCount++;
+                    rowsHtml += `
+                        <tr>
+                            <td><strong>Lead Segment</strong></td>
+                            <td>Event</td>
+                            <td><code>custom_segment</code></td>
+                            <td><span class="utm-status-indicator">Active ("${segment}")</span></td>
+                        </tr>
+                    `;
+                } else {
+                    rowsHtml += `
+                        <tr>
+                            <td><strong>Lead Segment</strong></td>
+                            <td>Event</td>
+                            <td><code>custom_segment</code></td>
+                            <td><span class="utm-status-indicator inactive">Not in URL</span></td>
+                        </tr>
+                    `;
+                }
+
+                // Advanced Dimension 2: utm_id / Campaign ID
+                if (utmId) {
+                    customCount++;
+                    rowsHtml += `
+                        <tr>
+                            <td><strong>CRM Campaign ID</strong></td>
+                            <td>Event / Traffic</td>
+                            <td><code>utm_id</code></td>
+                            <td><span class="utm-status-indicator">Active ("${utmId}")</span></td>
+                        </tr>
+                    `;
+                } else {
+                    rowsHtml += `
+                        <tr>
+                            <td><strong>CRM Campaign ID</strong></td>
+                            <td>Event / Traffic</td>
+                            <td><code>utm_id</code></td>
+                            <td><span class="utm-status-indicator inactive">Not in URL</span></td>
+                        </tr>
+                    `;
+                }
+
+                // Standard UTM reference row for clarity
+                rowsHtml += `
+                    <tr>
+                        <td><strong>Standard Campaign Tokens</strong></td>
+                        <td>Session / User</td>
+                        <td><code>utm_source, utm_medium, utm_campaign</code></td>
+                        <td><span class="utm-status-indicator">GA4 Auto-Registered</span></td>
+                    </tr>
+                `;
+
+                ga4TableBody.innerHTML = rowsHtml;
+                ga4Status.textContent = `${customCount} Custom Param${customCount === 1 ? '' : 's'} Active`;
+                if (customCount === 0) {
+                    ga4Status.className = 'utm-status-indicator inactive';
+                } else {
+                    ga4Status.className = 'utm-status-indicator';
+                }
+
+                // --- 3. Update CRM Hidden Field Setup Snippet ---
+                let crmFields = `<!-- Pass into HubSpot / Salesforce / Marketo Web-to-Lead Forms -->\n`;
+                if (source) crmFields += `<input type="hidden" name="utm_source" id="utm_source" value="${source}">\n`;
+                if (medium) crmFields += `<input type="hidden" name="utm_medium" id="utm_medium" value="${medium}">\n`;
+                if (campaign) crmFields += `<input type="hidden" name="utm_campaign" id="utm_campaign" value="${campaign}">\n`;
+                if (term) crmFields += `<input type="hidden" name="utm_term" id="utm_term" value="${term}">\n`;
+                if (content) crmFields += `<input type="hidden" name="utm_content" id="utm_content" value="${content}">\n`;
+                if (utmId) crmFields += `<input type="hidden" name="utm_id" id="utm_id" value="${utmId}"> <!-- Maps to SFDC Campaign ID -->\n`;
+                if (segment) crmFields += `<input type="hidden" name="custom_segment" id="custom_segment" value="${segment}"> <!-- Lead.Segment__c -->\n`;
+
+                if (!source && !medium && !campaign && !utmId && !segment) {
+                    crmFields += `<!-- Fill form fields on the left to generate dynamic hidden inputs -->`;
+                }
+
+                crmCodeBlock.textContent = crmFields.trim();
+            }
+
+            // Real-time input binding
+            const allInputs = [urlInput, sourceInput, mediumInput, campaignInput, termInput, contentInput, segmentInput, idInput];
+            allInputs.forEach(input => {
+                input.addEventListener('input', buildAttributionArchitecture);
+            });
+
+            // Preset Configurations
+            const presets = {
+                linkedin: {
+                    source: 'linkedin',
+                    medium: 'paid-social',
+                    campaign: 'q1-enterprise-growth',
+                    term: 'revops-decision-makers',
+                    content: 'carousel-roi-calculator',
+                    segment: 'enterprise',
+                    id: '7015g000002LiIn'
+                },
+                google: {
+                    source: 'google',
+                    medium: 'cpc',
+                    campaign: 'intent-search-revops',
+                    term: 'b2b-pipeline-attribution',
+                    content: 'ad-headline-v2',
+                    segment: 'mid-market',
+                    id: '7015g000003Goog'
+                },
+                newsletter: {
+                    source: 'newsletter',
+                    medium: 'email',
+                    campaign: 'monthly-growth-dispatch',
+                    term: 'subscriber-list',
+                    content: 'cta-footer-link',
+                    segment: 'all-tiers',
+                    id: '7015g000004News'
+                },
+                partner: {
+                    source: 'partner-ecosystem',
+                    medium: 'referral',
+                    campaign: 'co-marketing-webinar',
+                    term: 'joint-audience',
+                    content: 'partner-blog-mention',
+                    segment: 'enterprise',
+                    id: '7015g000005Part'
+                }
+            };
+
+            document.querySelectorAll('.utm-preset-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const presetKey = this.getAttribute('data-preset');
+                    const data = presets[presetKey];
+                    if (data) {
+                        sourceInput.value = data.source;
+                        mediumInput.value = data.medium;
+                        campaignInput.value = data.campaign;
+                        termInput.value = data.term;
+                        contentInput.value = data.content;
+                        segmentInput.value = data.segment;
+                        idInput.value = data.id;
+                        buildAttributionArchitecture();
+                    }
+                });
+            });
+
+            // Copy to Clipboard Utility
+            function copyText(text, btnElement, successLabel) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        triggerCopiedState(btnElement, successLabel);
+                    }).catch(() => fallbackCopy(text, btnElement, successLabel));
+                } else {
+                    fallbackCopy(text, btnElement, successLabel);
+                }
+            }
+
+            function fallbackCopy(text, btnElement, successLabel) {
+                const tempTextArea = document.createElement('textarea');
+                tempTextArea.value = text;
+                tempTextArea.style.position = 'fixed';
+                tempTextArea.style.opacity = '0';
+                document.body.appendChild(tempTextArea);
+                tempTextArea.select();
+                try {
+                    document.execCommand('copy');
+                    triggerCopiedState(btnElement, successLabel);
+                } catch (err) {
+                    console.error('Copy fallback failed', err);
+                }
+                document.body.removeChild(tempTextArea);
+            }
+
+            function triggerCopiedState(btnElement, successLabel) {
+                const originalHtml = btnElement.innerHTML;
+                btnElement.classList.add('copied');
+                btnElement.innerHTML = `<i class="fas fa-check"></i> <span>${successLabel}</span>`;
+                setTimeout(() => {
+                    btnElement.classList.remove('copied');
+                    btnElement.innerHTML = originalHtml;
+                }, 2000);
+            }
+
+            copyUrlBtn.addEventListener('click', () => {
+                copyText(outputUrl.textContent, copyUrlBtn, 'Copied!');
+            });
+
+            copyCrmBtn.addEventListener('click', () => {
+                copyText(crmCodeBlock.textContent, copyCrmBtn, 'Copied!');
+            });
+
+            // Initial execution
+            buildAttributionArchitecture();
+        })();
+    </script>
+</body>
+
+</html>
+
