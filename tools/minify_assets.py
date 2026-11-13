@@ -275,14 +275,14 @@ def run():
 
                 new_content = orig_content
                 # Update CSS: home-enhancements.css -> home-enhancements.min.css
-                new_content = re.sub(r'home-enhancements\.css(?:\?[^"\'\s>]+)?', 'home-enhancements.min.css', new_content)
+                new_content = re.sub(r'(?<![a-zA-Z0-9_-])home-enhancements\.css(?:\?[^"\'\s>]+)?', 'home-enhancements.min.css', new_content)
                 
                 # Update JS references
-                new_content = re.sub(r'(?<=/|\b)components\.js(?:\?[^"\'\s>]+)?', 'components.min.js', new_content)
-                new_content = re.sub(r'(?<=/|\b)script\.js(?:\?[^"\'\s>]+)?', 'script.min.js', new_content)
-                new_content = re.sub(r'(?<=/|\b)prototype\.js(?:\?[^"\'\s>]+)?', 'prototype.min.js', new_content)
-                new_content = re.sub(r'(?<=/|\b)antigravity\.js(?:\?[^"\'\s>]+)?', 'antigravity.min.js', new_content)
-                new_content = re.sub(r'(?<=/|\b)scroll-reveal\.js(?:\?[^"\'\s>]+)?', 'scroll-reveal.min.js', new_content)
+                new_content = re.sub(r'(?<![a-zA-Z0-9_-])components\.js(?:\?[^"\'\s>]+)?', 'components.min.js', new_content)
+                new_content = re.sub(r'(?<![a-zA-Z0-9_-])script\.js(?:\?[^"\'\s>]+)?', 'script.min.js', new_content)
+                new_content = re.sub(r'(?<![a-zA-Z0-9_-])prototype\.js(?:\?[^"\'\s>]+)?', 'prototype.min.js', new_content)
+                new_content = re.sub(r'(?<![a-zA-Z0-9_-])antigravity\.js(?:\?[^"\'\s>]+)?', 'antigravity.min.js', new_content)
+                new_content = re.sub(r'(?<![a-zA-Z0-9_-])scroll-reveal\.js(?:\?[^"\'\s>]+)?', 'scroll-reveal.min.js', new_content)
 
                 if new_content != orig_content:
                     with open(fpath, 'w', encoding='utf-8') as fh:
