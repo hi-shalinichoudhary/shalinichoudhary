@@ -3043,7 +3043,16 @@ h3 {
     padding: 0 40px;
     margin-bottom: 20px;
     padding-bottom: 15px;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: none;
+}
+
+.category-header-area {
+    border-bottom: none !important;
+}
+
+.category-header-area + .category-grid-section::before,
+.category-grid-section::before {
+    display: none !important;
 }
 
 /* Redefine Category Link to look like the secondary button style */
