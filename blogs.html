@@ -651,7 +651,7 @@
             </div>
         </section>
 
-        <!-- LINKEDIN TICKER (Dynamic, reads from data/linkedin-posts.json) -->
+        <!-- LINKEDIN FEED (Elfsight Carousel) -->
         <section class="section-wrapper linkedin-ticker-section" aria-label="LinkedIn Posts" style="padding-top: 2rem; padding-bottom: 2rem;">
             <div class="latest-posts-header" style="margin-bottom: 2rem;">
                 <div>
@@ -661,41 +661,10 @@
                 </div>
             </div>
 
-            <div class="ticker" aria-label="Latest LinkedIn posts">
-                <div class="ticker-inner">
-                    <h3 class="sr-only">Latest LinkedIn posts</h3>
-                    <div class="ticker-track" id="linkedin-ticker-track" role="list">
-                        <!-- JS populates this from data/linkedin-posts.json -->
-                    </div>
-                </div>
-            </div>
+            <!-- Elfsight LinkedIn Feed | Untitled LinkedIn Feed -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-17d07969-e9f5-486c-98c5-4ae4c80fc0f3" data-elfsight-app-lazy></div>
         </section>
-
-        <script>
-        (function() {
-            fetch('data/linkedin-posts.json')
-                .then(function(res) { return res.json(); })
-                .then(function(posts) {
-                    var track = document.getElementById('linkedin-ticker-track');
-                    if (!track || !posts.length) return;
-
-                    var html = '';
-                    posts.forEach(function(post) {
-                        html += '<div class="ticker-item" role="listitem">'
-                            + '<span class="ticker-source"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn Post</span>'
-                            + '<a class="ticker-heading" href="' + post.url + '" target="_blank" rel="noopener noreferrer">'
-                            + post.title + '</a>'
-                            + '</div>';
-                    });
-
-                    // Duplicate the set so the infinite scroll animation loops seamlessly
-                    track.innerHTML = html + html;
-                })
-                .catch(function(err) {
-                    console.warn('LinkedIn ticker: Could not load posts.', err);
-                });
-        })();
-        </script>
 
         <!-- FEATURED INSIGHT -->
         <section class="section-wrapper featured-insight">
